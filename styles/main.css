@@ -205,12 +205,45 @@ main {
     align-content: center;
     width: 100%;
     justify-content: center;
-    background-color: #e0e0e0; /* Light grey paper base */
+    
+    /* Set a backup color in case the image fails to load */
+    background-color: #767676;
 
-    background-image: linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%), 
-                      url('images/bg-texture.png'); /* Put your image here */
+    /* WE ARE DEFINING TWO LAYERS HERE */
+    background-image: 
+        /* LAYER 1 (Top): The Shadow/Gradient */
+        /* This stays on top and creates the dark header/footer */
+        linear-gradient(
+            to bottom, 
+            rgba(0,0,0,1) 0%,      /* Solid Black at Top */
+            rgba(0,0,0,0.5) 10%,   /* Fading out */
+            rgba(0,0,0,0) 25%,     /* Transparent Middle */
+            rgba(0,0,0,0) 75%,     /* Still Transparent */
+            rgba(0,0,0,0.5) 90%,   /* Fading back in */
+            rgba(0,0,0,1) 100%     /* Solid Black at Bottom */
+        ),
+        
+        /* LAYER 2 (Bottom): Your Image File */
+        url('/images/manga-texture.png'); 
+
+    /* SIZING THE LAYERS */
+    /* 1. The Gradient: Stretches to cover the full width/height (100% 100%) */
+    /* 2. The Image: Keeps its original pixel size (auto) so it stays crisp */
+    background-size: 100% 100%, auto;
+
+    /* REPEATING THE LAYERS */
+    /* 1. Gradient: NO repeat (we want it to stretch) */
+    /* 2. Image: REPEAT (we want it to tile infinitely) */
     background-repeat: no-repeat, repeat;
-    background-size: 100% 100%, auto; /* 'auto' keeps the texture crisp */
+
+    /* SCROLLING BEHAVIOR */
+    /* 'scroll' = The texture moves up when you scroll (Normal) */
+    /* 'fixed' = The texture stays still while text slides over it (Parallax) */
+    background-attachment: scroll, scroll; 
+    
+    /* Ensure the body is at least as tall as the screen */
+    min-height: 100vh;
+    margin: 0;
 
 }
 
@@ -298,12 +331,12 @@ section {
 }
 
 footer {
-    background-color: #3a3a3aeb;
-    color: whitesmoke;
+    background-color: #d11b1beb;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 1em;
-    margin-top: 2em;
-    border-top: 1px solid black;
+    margin-bottom: 0;
+    border-top: 2px solid black;
     font-family: 'Comic Relief', cursive;
     font-size: 1.1em;
 }
