@@ -1,9 +1,8 @@
 @import url('https://db.onlinewebfonts.com/c/3ba5f774e7fd55929fc1bfa6205986a4?family=Copperplate+Gothic+LT+W01+29BC');
 @import url('https://online-fonts.com/fonts/comica-regular');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&display=swap');
 @import url('https://www.1001fonts.com/sonoftime-font.html'); /* future use for 1500+ theme, interesting bg story for this font */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 
 /* Resets the box model for every single element */
@@ -155,7 +154,6 @@ body::-webkit-scrollbar {
     border-bottom: 2px solid black;
 }
 
-
 .nav-link {
     font-family: 'Anime Ace', sans-serif;
     font-weight: 600;
@@ -169,7 +167,7 @@ body::-webkit-scrollbar {
     border-radius: 8px;
 }
 
-.navbar-nav .nav-link::after :not(.dropdown-toggle)::after { /* Well, now it's not doing it in ANY case wth */
+.navbar-nav .nav-link:not(.dropdown-toggle)::after {
     content: '';
     position: absolute;
     width: 0;
@@ -181,23 +179,37 @@ body::-webkit-scrollbar {
     transform: translateX(-50%);
 }
 
-.navbar-nav .nav-link:hover::after :not(.dropdown-toggle)::after {
+.navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
     width: 45%; /* Line grows to 70% of the link width */
 }
 
-@media (min-width: 992px) {
-    .navbar-nav.mx-auto {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    }
+.dropdown-menu {
+    background-color: #565656eb;
+    border: 1px solid black;
+    font-family: 'Anime Ace', sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+}
 
-    /*.navbar-nav.absolute-center {
+@media (min-width: 768px) {
+    #dropdown-themes {
+        text-align: right;
+    }
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.371);
+    color:#fffffff1 !important;
+    
+}
+
+@media (min-width: 768px) {
+    .navbar-nav.mx-auto {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-    }*/
-} 
+    }
+}
 
 main {
     display: flex;
@@ -251,7 +263,7 @@ section {
     background-color: rgb(194, 194, 194);
     margin: 2em 2em;
     padding: 0.2em;
-    border: 1px solid black;
+    border: 1.5px solid black;
 }
 
 .section-title {
@@ -331,12 +343,15 @@ section {
 }
 
 footer {
-    background-color: #d11b1beb;
+    background-color: #393737eb;
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 1em;
+    padding-bottom: 0.5em;
     margin-bottom: 0;
     border-top: 2px solid black;
-    font-family: 'Comic Relief', cursive;
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+    font-style: italic;
     font-size: 1.1em;
 }
