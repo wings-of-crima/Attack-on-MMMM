@@ -1,0 +1,121 @@
+HTML (before main)
+        <div class="d-flex align-items-center" id="pre-loader"> <!-- this is a pre-loader spinner in case things need to load -->
+            <strong role="status"> What is freedom for you? </strong>
+            <div class="spinner-border text-light ms-auto" aria-hidden="true"></div>
+        </div>
+       
+        <div class="loader-screen" id="loader-screen"> <!-- this is a pre-loader that the user is obliged to go through -->
+            <!-- <img src="images/loader-screen-bg.gif" alt="Colossal Titan appearing over the wall gif"> -->
+            <p id="loader-screen-text"> 
+                "That day, the human race remembered... the terror of being dominated by <b>them</b>... and the shame of being held captive in a birdcage." 
+            </p>
+            <audio id="gate-sfx">
+                <source src="iron-gate-opening.mp3" type="audio/mpeg">
+            </audio>
+            <a role="button" class="btn btn-outline-secondary" href="#main-content" id="enter-button"> ENTER THE WALLS </a>
+        </div>
+
+
+
+
+---------------------------------------------------------
+
+CSS (after body)
+
+#pre-loader, #loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: center; */
+    color: white;
+    transition: opacity 4s ease, visibility 4s;
+}
+
+#pre-loader {
+    z-index: 3000;
+}
+
+#loader-screen {
+    z-index: 2000;
+}
+
+#loader-screen-text { /*typwriter effect*/
+    width: 60%;
+    font-family: monospace, sans-serif;
+    font-size: 1.2em;
+    font-weight: medium;
+    margin-inline: auto;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    border-right: 1px solid white;
+    animation: typing 11s steps(132, end) forwards, blink-caret 0.85s step-end infinite;
+}
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: 132ch; 
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% { 
+        border-color: white; 
+    }
+    50% { 
+        border-color: transparent; 
+    }
+}
+
+#enter-button {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1em;
+    font-weight: medium;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Ensures clicks pass through to the layer below */
+}
+
+
+----------------------------------------
+
+JS 
+window.addEventListener("load", ()  =>{
+    const preLoader = document.getElementById("pre-loader");
+
+    preLoader.classList.add("fade-out");
+
+    setTimeout(() => {
+        preLoader.remove();
+    }, 1000);
+});
+
+const gateSfx = document.getElementById("gate-sfx");
+const enterButton = document.getElementById("enter-button");
+const loadScreen = document.getElementById("loader-screen");
+
+
+enterButton.addEventListener("click", () => {
+    loadScreen.classList.add("fade-out");
+
+    gateSfx.currentTime = 0.5; 
+    gateSfx.play()
+    gateSfx.volume = 0.3;
+    console.log("Welcome to Trost, the Shiganshina District where everything started...");
+    setTimeout(() => {
+        loadScreen.remove();
+    }, 5900);
+});

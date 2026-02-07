@@ -1,0 +1,134 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Attack on MMMM</title>
+        <meta name="author" content="Martina Marchesi and Cristina Vercelli" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+        <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    </head>
+
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        
+        <div class="header">
+            <img id="header-bg" src="images/manga-walls.jpg" alt="A panel of the manga which shows the walls outlining Trost district">
+            <a href="#Home"><img id="header-logo" src="images/aot-logo.png" alt="Attack on Titan Logo"> </a>
+            <h2 id="header-subtitle"> A Multimedia Museum Meta Mirror </h2> 
+            <!-- <img id="header" src="images/aot-header.png" alt="Header of the website showing a manga panel of the walls of Trost District with an overlay of the logo of Attack on Titan and the subtitle 'A Multimedia Museum Meta Mirror'">   -->
+        </div>
+
+        <nav class="navbar navbar-expand-sm sticky-top">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> <!-- Hamburger menu on smaller screens -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center"> <!-- mx-auto to center the items in the nav -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#Home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Collection</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Narratives</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Documentation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container-fluid" id="main-content">
+            <section class="intro">
+                <div class="intro-quotes">
+                    <h2 id="motto-title-en"> "Offer your heart!" </h2>
+                    <h3 id="motto-title-jp"> 『心臓を捧げよ！』</h3>
+                </div>
+                <p class="section-text" id="intro-text">
+                    Attack on Titan is a manga created by Hajime Isayama. First published in Japan in the autumn of 2009 and completed with its last chapter — no. 139 — in April 2021, for years the journey of the three main characters and their friends, as well as the intricate and complex storyline of this world has impacted people from all over the world and continues to have a incredible influence to this day. In a dystopian reality where humanity has been segregated between walls and the outside world seems like a distant dream of escape and possibilities ruined by the presence of Titans, human-shaped creatures who actively decimated the population and still do, follow the journey of Eren, Mikasa and Armin, three young kids who’s life took a life-changing turn on a random sunny day.
+                </p>
+            </section>
+
+
+            <section class="carousel">
+                <h3 class="section-title"> Chapter 1 - The collection </h3>
+                <p class="section-text" id="collection-intro"> Explore the collection of items we have researched to inspire a real-life manifestation of symbols and objects you can find in Attack on Titan. </p>
+                <div class="first-carousel">
+                    <!--! first carousel sliding, with zoom over selected (mouse hovering) item -->
+                </div>
+                <div class="second-carousel">
+                    <!--! second carousel sliding, with zoom over selected (mouse hovering) item -->
+                </div>
+            </section>
+
+            <section class="themes">
+                <h3 class="section-title"> Chapter 2 - The themes </h3>
+                <p class="section-text" id="themes-intro"> This is only the beginning of your journey on this website. whether you know of attack on titan or not, do you ever wonder how things would "look" like if they were represented in different times and periods? well, we tried to give this question an answer by selecting themes of different aesthetics for this exhibition, click on one of the buttons below to choose one.</p>
+                <ul> <!-- maybe the ul tag is redundant atp -->
+                    <li> <button type="button" class="btn btn-light">1500-1800</button> </li>
+                    <li> <button type="button" class="btn btn-light">1900-1950</button> </li>
+                    <li> <button type="button" class="btn btn-light">1950-2000</button> </li>
+                    <li> <button type="button" class="btn btn-light">2035</button> </li>
+                </ul>
+            </section>
+
+            <section class="narratives">
+                <h3 class="section-title"> Chapter 3 - The narratives </h3>
+                <p class="section-text" id="narratives-intro"> Dive into the world of Attack on Titan through different narratives that explore various aspects of the story, characters, and themes. Choose a narrative to experience a unique perspective: </p>
+                <ul>
+                    <li> <button type="button" class="btn btn-light">Historical Timeline</button> </li>
+                    <li> <button type="button" class="btn btn-light">Legendary Timeline</button> </li>
+                    <li> <button type="button" class="btn btn-light">Technological Timeline</button> </li>
+                </ul>
+            </section>
+
+            <section class="team" id="team">
+                <h3 class="section-title"> Epilogue - The Team </h3>
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0 justify-content-center d-flex">
+                        <div class="card"> <div class="card-body">
+                                <h5 class="card-title">Martina Marchesi</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Contributor</h6>
+                                <p class="card-text">Some quick example text.</p>
+                                <a href="https://www.github.com/martinamrc" class="card-link" target="_blank">Github</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cristina Vercelli</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Contributor</h6>
+                                <p class="card-text">Some quick example text.</p>
+                                <a href="https://www.github.com/cristinavercelli" class="card-link" target="_blank">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <blockquote>
+                <p>"This world is cruel, but also beautiful."</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                Mikasa Ackermann
+            </figcaption>
+        </footer>
+
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
