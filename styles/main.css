@@ -1,0 +1,285 @@
+@import url('https://db.onlinewebfonts.com/c/3ba5f774e7fd55929fc1bfa6205986a4?family=Copperplate+Gothic+LT+W01+29BC');
+@import url('https://online-fonts.com/fonts/comica-regular');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&display=swap');
+@import url('https://www.1001fonts.com/sonoftime-font.html'); /* future use for 1500+ theme, interesting bg story for this font */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
+
+
+/* Resets the box model for every single element */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Anime Ace';
+    src: url('fonts/animeace.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Who Dares';
+    src: url('fonts/Who\ Dares!.otf') format('truetype');
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        text-align: center;
+    }
+    section {
+        margin: 0.5em 0.1em 0.5em; /* Much smaller side margins on mobile */
+        padding: 0.2em 0.1em;
+        font-size: 0.8em; /* Slightly smaller font size for mobile */
+        align-items: center;
+        justify-content: center;
+    }
+    .section-title {
+        font-size: 1.5em; /* Slightly smaller title for mobile */
+        padding-left: 0.3em;
+    }
+    .section-text {
+        font-size: 0.9em; /* Slightly smaller text for mobile */
+        padding: 0.4em 0.5em;
+        margin: 0.2em 0.3em;
+    }
+    .intro-quotes {
+        align-items: center;
+        justify-content: center;
+        padding: 0.1em;
+        margin: 1em auto 1em; /* Adjusted margins for mobile */
+        font-size: 1em; /* Slightly smaller font size for mobile */
+        min-width: auto;
+    }
+    #intro-text {
+        align-items: center;
+        justify-content: center;
+        min-width: auto;
+    }
+}
+
+:root {
+    --navbar-overlap: 58px;
+    --navbar-height: 60px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* 1. FIX THE WHITE SPACE ON THE RIGHT */
+    /* This cuts off anything that sticks out horizontally */
+    overflow-x: hidden; 
+    
+    /* 2. HIDE THE SCROLLBAR (Firefox) */
+    scrollbar-width: none;  
+    /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
+    -ms-overflow-style: none;  
+}
+
+/* 3. HIDE THE SCROLLBAR (Chrome, Safari, Opera) */
+body::-webkit-scrollbar { 
+    display: none !important; 
+}
+
+
+/* TODO: make header bg overlpa in bg with navbar and make repsonsive */
+.header {
+    /* background-color: #e22012; temporary set */
+    width: 100%;
+    margin: 0;
+    height: calc(25vh + var(--navbar-overlap)) !important; /* Adjust height to account for navbar overlap */
+    overflow-x: hidden; 
+    /* border-bottom: 2px solid black; */
+}
+
+.header a {
+    display: block;      /* Removes inline spacing weirdness */
+    line-height: 0;      /* Kills any text-height gaps inside the link */
+    margin-bottom: 0;    /* Ensure no extra push from the link itself */
+}
+
+#header-bg {
+    width: 100%;
+    height: calc(25vh + var(--navbar-overlap));
+    /* properties in case of using background-image: here:width:
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    object-position: center 5%;
+    position: absolute;
+    z-index: 0; 
+}
+
+#header-logo, #header-subtitle {
+    z-index: 5;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#header-logo {
+    max-width: 350px;
+    margin-bottom: 1px;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.443));
+}
+
+#header-subtitle {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.92);
+    position: relative;
+    margin-top: 0;
+    margin-top: -38px;
+    margin-bottom: 5px;
+    padding: 0.1em 1em;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
+}
+
+.navbar {
+    background-color: #565656eb;
+    width:100%;
+    margin-top: calc(var(--navbar-overlap) * -1); /* Pull the navbar up to overlap with the header */
+    position: sticky;
+    z-index: 10; /* Ensures the navbar stays above the header */
+    border-top: 1.5px solid black;
+    border-bottom: 2px solid black;
+}
+
+.nav-link {
+    font-family: 'Anime Ace', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    color: rgb(28, 28, 28) !important;
+}
+
+.nav-link:hover {
+    color:#fffffff1 !important;
+    background-color: rgba(255, 255, 255, 0.371);
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #e22012;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 45%; /* Line grows to 70% of the link width */
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    justify-content: center;
+}
+
+section {
+    background-color: rgb(194, 194, 194);
+    margin: 2em 2em;
+    padding: 0.2em;
+    border: 1px solid black;
+}
+
+.section-title {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 2em;
+    padding-top: 0.3em;
+    padding-left: 0.9em;
+    margin-bottom: 0.5px;
+    
+    /* 1. Set the inside color */
+    color: black; 
+
+    /* 2. Create the true vector border */
+    -webkit-text-stroke: 5px white; 
+    
+    /* 3. CRITICAL: This ensures the border sits BEHIND the letter.
+       Without this, the white border will bleed inside and make 
+       your black text look too thin. */
+    paint-order: stroke fill;
+    
+    /* 4. Remove the old hack */
+    text-shadow: none;
+}
+
+.section-text {
+    font-family: 'Anime Ace', sans-serif;
+    text-transform: uppercase;
+    text-align: justify;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    color: black;
+}
+
+
+.intro-quotes {
+    background-color: rgb(226, 226, 226);
+    padding: 1em;
+    margin: 2em auto 1em; /* TODO: I don't why it's not shrinking both left and right but check */
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 30%);
+    text-align: center;
+    width: 30%;
+    min-width: 300px;
+}
+
+#motto-title-en {
+    font-family: 'Who Dares', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color:#d12619;
+}
+
+#motto-title-jp {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 1.7em;
+    font-weight: bold;
+    color:#d12619;
+}
+
+#intro-text{
+    background-color: rgb(226, 226, 226);
+    padding: 1.2em 2.1em;
+    margin: 3em 6em;
+    border: 1px solid black;
+    font-size: 0.7em;
+    color: black;
+    text-align: center;
+}
+
+#team .card {
+    width: 80%;       /* Fill the column completely */
+    height: 90%;      /* Make both cards the same height */
+    margin: 0 auto;    /* Center them just in case */
+    /* Optional: Add a shadow to make them pop like the header subtitle */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+}
+
+footer {
+    background-color: #3a3a3aeb;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 1em;
+    margin-top: 2em;
+    border-top: 1px solid black;
+    font-family: 'Comic Relief', cursive;
+    font-size: 1.1em;
+}
