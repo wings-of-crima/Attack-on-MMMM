@@ -19,30 +19,51 @@
             <!-- <img id="header" src="images/aot-header.png" alt="Header of the website showing a manga panel of the walls of Trost District with an overlay of the logo of Attack on Titan and the subtitle 'A Multimedia Museum Meta Mirror'">   -->
         </div>
 
-        <nav class="navbar navbar-expand-sm sticky-top">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container-fluid position-relative">
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button> <!-- Hamburger menu on smaller screens -->
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center"> <!-- mx-auto to center the items in the nav -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-lg-0"> <!-- mx-auto to center the items in the nav, removed mb-2 and fixed the "weird" addition of bottom margin when shrinking the size of the window -->
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#Home">HOME</a>
+                            <a class="nav-link active" aria-current="page" href="#Home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Map</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Collection</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Narratives</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Documentation</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#team">Disclaimer</a></li>
+                                <li><a class="dropdown-item" href="#">The creators</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto mb-lg-0"> <!-- ms-auto to align the items to the right -->
+                        <li class="nav-item dropdown nav-pills"> 
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Themes
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li> <a class="dropdown-item" href="#">1500-1800</a></li>
+                                <li> <a class="dropdown-item" href="#">1900-1950</a></li>
+                                <li> <a class="dropdown-item" href="#">1950-2000</a></li>
+                                <li> <a class="dropdown-item" href="#">2035</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

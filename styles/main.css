@@ -21,6 +21,7 @@
     src: url('fonts/Who\ Dares!.otf') format('truetype');
 }
 
+
 @media screen and (max-width: 576px) {
     .navbar {
         text-align: center;
@@ -75,6 +76,7 @@ body {
     scrollbar-width: none;  
     /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
     -ms-overflow-style: none;  
+
 }
 
 /* 3. HIDE THE SCROLLBAR (Chrome, Safari, Opera) */
@@ -124,6 +126,7 @@ body::-webkit-scrollbar {
 
 #header-logo {
     max-width: 350px;
+    margin-top: -20px;
     margin-bottom: 1px;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.443));
 }
@@ -152,6 +155,7 @@ body::-webkit-scrollbar {
     border-bottom: 2px solid black;
 }
 
+
 .nav-link {
     font-family: 'Anime Ace', sans-serif;
     font-weight: 600;
@@ -165,7 +169,7 @@ body::-webkit-scrollbar {
     border-radius: 8px;
 }
 
-.navbar-nav .nav-link::after {
+.navbar-nav .nav-link::after :not(.dropdown-toggle)::after { /* Well, now it's not doing it in ANY case wth */
     content: '';
     position: absolute;
     width: 0;
@@ -177,10 +181,23 @@ body::-webkit-scrollbar {
     transform: translateX(-50%);
 }
 
-.navbar-nav .nav-link:hover::after {
+.navbar-nav .nav-link:hover::after :not(.dropdown-toggle)::after {
     width: 45%; /* Line grows to 70% of the link width */
 }
 
+@media (min-width: 992px) {
+    .navbar-nav.mx-auto {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    /*.navbar-nav.absolute-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }*/
+} 
 
 main {
     display: flex;
@@ -188,6 +205,13 @@ main {
     align-content: center;
     width: 100%;
     justify-content: center;
+    background-color: #e0e0e0; /* Light grey paper base */
+
+    background-image: linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%), 
+                      url('images/bg-texture.png'); /* Put your image here */
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 100%, auto; /* 'auto' keeps the texture crisp */
+
 }
 
 section {
