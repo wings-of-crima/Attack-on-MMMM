@@ -21,7 +21,7 @@
 }
 
 
-@media screen and (max-width: 576px) {
+@media (max-width: 576px) {
     .navbar {
         text-align: center;
     }
@@ -45,14 +45,15 @@
         align-items: center;
         justify-content: center;
         padding: 0.1em;
-        margin: 1em auto 1em; /* Adjusted margins for mobile */
+        margin: 0.5em auto 1em; /* Adjusted margins for mobile */
         font-size: 1em; /* Slightly smaller font size for mobile */
-        min-width: auto;
     }
     #intro-text {
+        margin: 1em 1em 0.5em !important; /* Adjusted margins for mobile */
         align-items: center;
+        padding: 0.8em 1.1em 0.8em;
         justify-content: center;
-        min-width: auto;
+        font-size: 1.1em;
     }
 }
 
@@ -290,49 +291,89 @@ section {
 
 .section-text {
     font-family: 'Anime Ace', sans-serif;
-    text-transform: uppercase;
     text-align: justify;
     font-size: 0.9em;
     padding: 0.5em 1em;
     color: black;
 }
 
+.intro {
+    background-color: transparent;
+    border: 0;
+}
 
 .intro-quotes {
+    color:#b71b10;
     background-color: rgb(226, 226, 226);
-    padding: 1em;
-    margin: 2em auto 1em; /* TODO: I don't why it's not shrinking both left and right but check */
-    border: 1px solid black;
-    border-radius: 10px;
+    padding: 0.8em;
+    margin: 0.5em auto 1.5em; /* TODO: I don't why it's not shrinking both left and right but check */
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 30%);
     text-align: center;
-    width: 30%;
-    min-width: 300px;
+    width: fit-content;
+    max-width: 90%;
 }
 
 #motto-title-en {
     font-family: 'Who Dares', sans-serif;
     font-size: 2em;
-    font-weight: bold;
-    color:#d12619;
+    font-weight: 700;
+    text-wrap: nowrap;
 }
 
 #motto-title-jp {
     font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 1.7em;
-    font-weight: bold;
-    color:#d12619;
+    font-size: 1.5em;
 }
 
-#intro-text{
+#intro-text {
     background-color: rgb(226, 226, 226);
     padding: 1.2em 2.1em;
-    margin: 3em 6em;
-    border: 1px solid black;
-    font-size: 0.7em;
+    margin: 2em 8em 1em;
+    border: 1.5px solid black;
+    font-size: 0.8em;
     color: black;
     text-align: center;
 }
+
+#intro-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+#intro-text a:hover {
+    text-decoration: underline;
+}
+
+#intro-text em {
+    font-size: 1.1em;
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
+.bigger-cap {
+    font-size: 1.3em;
+    display: inline-block;
+}
+
+.collection {
+    margin-bottom: 0.5rem; /* Adjusting this specifically to these two sections sit closer together */
+}
+
+/* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
+.collection-container {
+    margin-top: 0;
+    background-color: black;
+    border: 1.5px solid black;
+    padding: 1.5rem;
+
+    /* Approach with CSS grid: */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grdi-template-rows: 
+}
+
 
 #team .card {
     width: 80%;       /* Fill the column completely */
@@ -343,15 +384,19 @@ section {
 }
 
 footer {
-    background-color: #393737eb;
+    background-color: #252525eb;
     color: rgb(255, 255, 255);
     text-align: center;
-    padding-top: 1em;
-    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.1em;
     margin-bottom: 0;
     border-top: 2px solid black;
     font-family: 'Playfair Display', serif;
     font-weight: 200;
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 1em;
+}
+
+figcaption {
+    color:rgb(196, 196, 196);
 }
