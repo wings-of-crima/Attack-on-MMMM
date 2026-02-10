@@ -28,6 +28,11 @@
     .navbar {
         text-align: center;
     }
+    #header-logo  {
+        max-width: 200px;
+        min-width: 100px;
+        width: fit-content;
+    }
     section {
         margin: 0.5em 0.1em 0.5em; /* Much smaller side margins on mobile */
         padding: 0.2em 0.1em;
@@ -47,6 +52,7 @@
     .intro-quotes {
         align-items: center;
         justify-content: center;
+        width: fit-content;
         padding: 0.1em;
         margin: 0.5em auto 1em; /* Adjusted margins for mobile */
         font-size: 1em; /* Slightly smaller font size for mobile */
@@ -119,18 +125,19 @@ body::-webkit-scrollbar {
 
 #header-logo, #header-subtitle {
     z-index: 5;
-    align-self: center;
-    justify-self: center;
+    /*align-self: center;
+    justify-self: center;*/
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
     align-items: center;
     text-align: center;
 }
 
 #header-logo {
     max-width: 350px;
-    margin-top: -20px;
-    margin-bottom: 1px;
+    margin: -20px auto 1px;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.443));
 }
 
@@ -139,12 +146,10 @@ body::-webkit-scrollbar {
     font-size: 1em;
     background-color: rgba(255, 255, 255, 0.92);
     position: relative;
-    margin-top: 0;
-    margin-top: -38px;
-    margin-bottom: 5px;
+    width: fit-content;
+    margin: -25px auto 5px;
     padding: 0.1em 1em;
     border-radius: 3px;
-    text-align: center;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
 }
 
@@ -223,7 +228,7 @@ main {
     justify-content: center;
     
     /* Set a backup color in case the image fails to load */
-    background-color: #767676;
+    background-color: #6d6d6d;
 
     /* WE ARE DEFINING TWO LAYERS HERE */
     background-image: 
@@ -240,7 +245,7 @@ main {
         ),
         
         /* LAYER 2 (Bottom): Your Image File */
-        url('/images/manga-texture.png'); 
+        url('/images/bg-manga-texture.png'); 
 
     /* SIZING THE LAYERS */
     /* 1. The Gradient: Stretches to cover the full width/height (100% 100%) */
