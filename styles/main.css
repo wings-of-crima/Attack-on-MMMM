@@ -237,15 +237,15 @@ main {
         linear-gradient(
             to bottom, 
             rgba(0,0,0,1) 0%,      /* Solid Black at Top */
-            rgba(0,0,0,0.5) 10%,   /* Fading out */
+            rgba(0, 0, 0, 0.6) 10%,   /* Fading out */
             rgba(0,0,0,0) 25%,     /* Transparent Middle */
             rgba(0,0,0,0) 75%,     /* Still Transparent */
-            rgba(0,0,0,0.5) 90%,   /* Fading back in */
+            rgba(0,0,0,0.6) 90%,   /* Fading back in */
             rgba(0,0,0,1) 100%     /* Solid Black at Bottom */
         ),
         
         /* LAYER 2 (Bottom): Your Image File */
-        url('/images/bg-manga-texture.png'); 
+        url('/images/manga-texture.png'); 
 
     /* SIZING THE LAYERS */
     /* 1. The Gradient: Stretches to cover the full width/height (100% 100%) */
@@ -270,7 +270,7 @@ main {
 
 section {
     background-color: rgb(194, 194, 194);
-    margin: 2em 2em;
+    margin: 2em 3em 2em;
     padding: 0.2em;
     border: 1.5px solid black;
 }
@@ -295,6 +295,7 @@ section {
     
     /* 4. Remove the old hack */
     text-shadow: none;
+    letter-spacing: 0.08rem;
 }
 
 .section-text {
@@ -367,19 +368,80 @@ section {
 
 .collection {
     margin-bottom: 0.5rem; /* Adjusting this specifically to these two sections sit closer together */
+    background-color: black;
+    padding: 1.5rem;
+}
+
+#collection-intro {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
 }
 
 /* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
 .collection-container {
-    margin-top: 0;
-    background-color: black;
-    border: 1.5px solid black;
-    padding: 1.5rem;
-
     /* Approach with CSS grid: */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-columns: repeat(6, 1fr); /* Three equal columns */
     grid-template-rows: 200px 250px 200px;
+    gap: 15px;
+}
+
+.manga-panel {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    grid-column: span 2;
+}
+
+.wide-panel {
+    grid-column: 1 / span 6; /* This makes the panel take up two columns */
+}
+
+.panel-left {
+    grid-column: 1 / span 3;
+    margin-left: 0;
+}
+
+.panel-right {
+    grid-column: 1 / span 3;
+    margin-right: 0;
+}
+
+.manga-panel .card {
+    height: 100%;
+    width: auto;
+    border: none;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.manga-panel .card-img-top {
+    height: 100%; /* Adjust image height within the panel */
+    object-fit: cover; /* Ensure image covers area without distorting */
+}
+
+.card-body {
+    overflow-y: auto; /* Add scroll if text is too long for panel height */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .manga-container {
+        grid-template-columns: 1fr; /* Stack everything in 1 column */
+        grid-template-rows: auto; /* Auto height rows */
+        gap: 10px;
+        padding: 10px;
+    }
+    /* Reset spans and clips for mobile view */
+    .panel-wide, .panel-slant-left, .panel-slant-right {
+        grid-column: auto;
+        margin-right: 0;
+        clip-path: none;
+        padding: 0;
+        height: 250px; /* Give them a fixed height on mobile */
+    }
 }
 
 
