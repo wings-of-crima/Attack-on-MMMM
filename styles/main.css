@@ -188,7 +188,7 @@ body::-webkit-scrollbar {
     transform: translateX(-50%);
 } */
 
-./* navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
+/* .navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
     width: 45%;  Line grows to 70% of the link width 
 } */
 
