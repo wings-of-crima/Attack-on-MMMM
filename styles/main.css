@@ -277,7 +277,7 @@ section {
 
 .section-title {
     font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    font-size: 2em;
+    font-size: 2.5em;
     padding-top: 0.3em;
     padding-left: 0.9em;
     margin-bottom: 0.5px;
@@ -286,7 +286,7 @@ section {
     color: black; 
 
     /* 2. Create the true vector border */
-    -webkit-text-stroke: 5px white; 
+    -webkit-text-stroke: 4.5px white; 
     
     /* 3. CRITICAL: This ensures the border sits BEHIND the letter.
        Without this, the white border will bleed inside and make 
@@ -295,13 +295,13 @@ section {
     
     /* 4. Remove the old hack */
     text-shadow: none;
-    letter-spacing: 0.08rem;
+    letter-spacing: 0.09rem;
 }
 
 .section-text {
     font-family: 'Anime Ace', sans-serif;
     text-align: justify;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 0.5em 1em;
     color: black;
 }
@@ -326,14 +326,14 @@ section {
 
 #motto-title-en {
     font-family: 'Who Dares', sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 700;
     text-wrap: nowrap;
 }
 
 #motto-title-jp {
     font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 #intro-text {
@@ -368,8 +368,13 @@ section {
 
 .collection {
     margin-bottom: 0.5rem; /* Adjusting this specifically to these two sections sit closer together */
-    background-color: black;
-    padding: 1.5rem;
+    background-color: rgb(13, 13, 13);
+    padding: 1rem;
+}
+
+.collection .section-title {
+    margin-top: 0;
+    padding-top: 0.3em !important;
 }
 
 #collection-intro {
@@ -377,13 +382,24 @@ section {
     paint-order: stroke fill;
 }
 
+.note {
+    text-align: right;
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.65em;
+    -webkit-text-stroke: 2.4px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+}
+
 /* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
 .collection-container {
     /* Approach with CSS grid: */
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Three equal columns */
-    grid-template-rows: 200px 200px 200px;
-    gap: 15px;
+    grid-template-rows: 250px 250px 250px;
+    gap: 20px;
+    padding: 1.5rem;
 }
 
 .manga-panel {
@@ -395,18 +411,18 @@ section {
 }
 
 .wide-panel {
-    grid-column: 1 / span 3; /* This makes the panel take up two columns */
+    grid-column: 4 / span 3; /* This makes the panel take up two columns */
     grid-row: 2 / span 2; /* This makes the panel take up two rows */
 }
 
-.panel-left {
-    grid-column: 4 / span 3;
+.panel-left-top {
+    grid-column: 1 / span 3;
     grid-row: 3 / span 1;
     margin-left: 0;
 }
 
-.panel-right {
-    grid-column: 4 / span 3;
+.panel-left-bottom {
+    grid-column: 1 / span 3;
     grid-row: 2 / span 1;
     margin-right: 0;
 }
@@ -422,12 +438,16 @@ section {
 
 .manga-panel .card-img {
     height: 100%; /* Adjust image height within the panel */
-    width: 100%;
+    width: auto;
     object-fit: cover; /* Ensure image covers area without distorting */
+    border-radius: 0%;
 }
 
 .card-img-overlay {
     display: none;
+    background-color: #000000ba;
+    color:#ffffff;
+    border-radius: 0%;
 }
 
 .card:hover .card-img-overlay {
