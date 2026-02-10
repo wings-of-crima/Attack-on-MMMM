@@ -1,6 +1,5 @@
 @import url('https://db.onlinewebfonts.com/c/3ba5f774e7fd55929fc1bfa6205986a4?family=Copperplate+Gothic+LT+W01+29BC');
-@import url('https://online-fonts.com/fonts/comica-regular');
-@import url('https://www.1001fonts.com/sonoftime-font.html'); /* future use for 1500+ theme, interesting bg story for this font */
+@import url('https://www.1001fonts.com/sonoftime-font.html'); /* TO BE DOWNLOADED: future use for 1500+ theme, interesting bg story for this font */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
@@ -20,6 +19,10 @@
     src: url('fonts/Who\ Dares!.otf') format('truetype');
 }
 
+@font-face { /* NOT USED YET */
+    font-family: 'Comica Regular';
+    src: url('fonts/ComicaRegular.otf') format('truetype');
+}
 
 @media (max-width: 576px) {
     .navbar {
@@ -371,7 +374,7 @@ section {
     /* Approach with CSS grid: */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    grdi-template-rows: 
+    grid-template-rows: 200px 250px 200px;
 }
 
 
