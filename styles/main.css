@@ -1,5 +1,4 @@
 @import url('https://db.onlinewebfonts.com/c/3ba5f774e7fd55929fc1bfa6205986a4?family=Copperplate+Gothic+LT+W01+29BC');
-@import url('https://www.1001fonts.com/sonoftime-font.html'); /* TO BE DOWNLOADED: future use for 1500+ theme, interesting bg story for this font */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
@@ -24,6 +23,11 @@
     src: url('fonts/ComicaRegular.otf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Son of Time';
+    src: url('fonts/SonOfTmU.ttf') fomrat('truetype');
+}
+
 @media (max-width: 576px) {
     .navbar {
         text-align: center;
@@ -41,8 +45,9 @@
         justify-content: center;
     }
     .section-title {
-        font-size: 1.5em; /* Slightly smaller title for mobile */
+        font-size: 1.2em; /* Slightly smaller title for mobile */
         padding-left: 0.3em;
+
     }
     .section-text {
         font-size: 0.9em; /* Slightly smaller text for mobile */
@@ -58,9 +63,9 @@
         font-size: 1em; /* Slightly smaller font size for mobile */
     }
     #intro-text {
-        margin: 1em 1em 0.5em !important; /* Adjusted margins for mobile */
+        margin: 1em auto 0.5em !important; /* Adjusted margins for mobile */
         align-items: center;
-        padding: 0.8em 1.1em 0.8em;
+        padding: 0.8em 1em 0.8em;
         justify-content: center;
         font-size: 1.1em;
     }
@@ -306,6 +311,21 @@ section {
     color: black;
 }
 
+section ul {
+    list-style-type: none; /* Removes Bullets */
+    padding: 0;            /* Removes Indentation */
+    margin: 1em 0;
+    display: flex;         /* Optional: aligns buttons horizontally */
+    flex-wrap: wrap;       /* Wraps if they don't fit */
+    justify-content: space-around;
+    font-size: 1em;
+}
+
+li #five-hundred {
+    font-family: 'Son of Time', serif;
+    color: #704214;
+}
+
 .intro {
     background-color: transparent;
     border: 0;
@@ -392,6 +412,20 @@ section {
     padding: 0 1.5rem;
 }
 
+.note u {
+    text-underline-offset: 0.25rem;
+}
+
+#remainder {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+#remainder a {
+    color: #a11e15;
+    text-underline-offset: 0.25rem;
+}
+
 /* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
 .collection-container {
     /* Approach with CSS grid: */
@@ -402,11 +436,27 @@ section {
     padding: 1.5rem;
 }
 
+@media (max-width: 568px) {
+    .collection {
+        padding: 0.5rem;
+    }
+    .collection-container {
+        grid-template-rows: 150px 150px 150x;
+        gap: 10px;
+        padding: 0.5rem;
+    }
+    .note u {
+        text-underline-offset: 0.1rem;
+    }
+    #remainder a {
+        text-underline-offset: 0.15rem;
+    }
+}
+
 .manga-panel {
     background-color: #f4f4f4;
     overflow: hidden;
     position: relative;
-    border: 1px solid black;
     grid-column: span 2;
 }
 
@@ -453,25 +503,6 @@ section {
 .card:hover .card-img-overlay {
     display: block;
 }
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .manga-container {
-        grid-template-columns: 1fr; /* Stack everything in 1 column */
-        grid-template-rows: auto; /* Auto height rows */
-        gap: 10px;
-        padding: 10px;
-    }
-    /* Reset spans and clips for mobile view */
-    .panel-wide, .panel-slant-left, .panel-slant-right {
-        grid-column: auto;
-        margin-right: 0;
-        clip-path: none;
-        padding: 0;
-        height: 250px; /* Give them a fixed height on mobile */
-    }
-}
-
 
 #team .card {
     width: 80%;       /* Fill the column completely */
