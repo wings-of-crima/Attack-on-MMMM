@@ -25,7 +25,7 @@
 
 @font-face {
     font-family: 'Son of Time';
-    src: url('fonts/SonOfTmU.ttf') fomrat('truetype');
+    src: url('fonts/SonOfTmU.ttf') format('truetype');
 }
 
 @media (max-width: 576px) {
@@ -53,6 +53,41 @@
         font-size: 0.9em; /* Slightly smaller text for mobile */
         padding: 0.4em 0.5em;
         margin: 0.2em 0.3em;
+    }
+    button.btn {
+        font-size: 0.8em;
+        padding: 0.5em;
+        margin: 0.5rem 0.5rem; /* Added vertical spacing between wrapped buttons */
+    }
+    /* 2x2 grid layout for themes section buttons */
+    .themes ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 1rem; /* Space between buttons */
+        padding: 0 1rem;
+    }
+    .themes ul li {
+        width: 100%; /* Fill the grid cell */
+    }
+    .themes button.btn {
+        width: 100%; /* Make buttons fill their container */
+        margin: 0; /* Remove margin since gap handles spacing */
+        font-size: 1.3em;
+    }
+    .narratives ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .narratives ul li {
+        width: 100%;
+    }
+    .narratives button.btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        font-size: 1.3em;
     }
     .intro-quotes {
         align-items: center;
@@ -198,8 +233,8 @@ body::-webkit-scrollbar {
 } */
 
 .dropdown-menu {
-    background-color: #565656eb;
-    border: 1px solid black;
+    background-color: #565656fb;
+    border: 1.5px solid black;
     font-family: 'Anime Ace', sans-serif;
     font-weight: 600;
     font-size: 0.8em;
@@ -318,12 +353,20 @@ section ul {
     display: flex;         /* Optional: aligns buttons horizontally */
     flex-wrap: wrap;       /* Wraps if they don't fit */
     justify-content: space-around;
-    font-size: 1em;
+}
+
+button.btn {
+    font-size: 1.4em;
+    margin: 0 auto;
+    padding: 1em 1.5em;
+    border-radius: 20px;
 }
 
 li #five-hundred {
-    font-family: 'Son of Time', serif;
+    font-family: 'Son of Time', sans-serif;
     color: #704214;
+    background-image: url('images/images/Judith_Beheading_Holofernes_-_Caravaggio.jpg');
+    background-size: cover;
 }
 
 .intro {
