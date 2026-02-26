@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attack on MMMM: Collection</title>
+        <meta name="author" content="Martina Marchesi and Cristina Vercelli" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+        <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    </head>
+
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <div class="header">
+            <img id="header-bg" src="images/manga-walls.jpg" alt="A panel of the manga which shows the walls outlining Trost district">
+            <a href="#Home"><img id="header-logo" src="images/aot-logo.png" alt="Attack on Titan Logo"> </a>
+            <h2 id="header-subtitle"> A Multimedia Museum Meta Mirror </h2> 
+            <!-- <img id="header" src="images/aot-header.png" alt="Header of the website showing a manga panel of the walls of Trost District with an overlay of the logo of Attack on Titan and the subtitle 'A Multimedia Museum Meta Mirror'">   -->
+        </div>
+
+        <nav class="navbar navbar-expand-md sticky-top">
+            <div class="container-fluid position-relative">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> <!-- Hamburger menu on smaller screens -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-lg-0"> <!-- mx-auto to center the items in the nav, removed mb-2 and fixed the "weird" addition of bottom margin when shrinking the size of the window -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="map.html">Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="collection.html">Collection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Narratives</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="documentation.html">Documentation</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Disclaimer</a></li>
+                                <li><a class="dropdown-item" href="#">The creators</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto mb-lg-0"> <!-- ms-auto to align the items to the right -->
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Themes
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" id="dropdown-themes">
+                                <li> <a class="dropdown-item" href="#">1500-1800</a></li>
+                                <li> <a class="dropdown-item" href="#">1900-1950</a></li>
+                                <li> <a class="dropdown-item" href="#">1950-2000</a></li>
+                                <li> <a class="dropdown-item" href="#">2035</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container-fluid" id="main-content">
+            <h1 class="text-center">Narratives</h1>
+            <p class="text-center">This is the narratives page.</p>
+        </main>
+    </body>
+</html>
