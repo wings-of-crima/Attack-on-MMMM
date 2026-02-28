@@ -96,6 +96,7 @@
         padding: 0.1em;
         margin: 0.5em auto 1em; /* Adjusted margins for mobile */
         font-size: 1em; /* Slightly smaller font size for mobile */
+        text-wrap: nowrap;
     }
     #intro-text {
         margin: 1em auto 0.5em !important; /* Adjusted margins for mobile */
@@ -390,7 +391,7 @@ button.btn {
 
 #motto-title-en {
     font-family: 'Who Dares', sans-serif;
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: 700;
     text-wrap: nowrap;
 }
@@ -611,3 +612,24 @@ footer {
 figcaption {
     color:rgb(196, 196, 196);
 }
+
+
+/* MAP PAGE SPECIFIC STYLES: */
+section.map img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding: 0.5rem;
+}
+
+section.map img:hover {
+    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
+    cursor: pointer;
+
+}
+
+.map em {
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
