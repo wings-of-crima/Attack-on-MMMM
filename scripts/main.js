@@ -25,6 +25,7 @@ enterButton.addEventListener("click", () => {
     }, 5900);
 });
 
+
 // function updateNavbarHeight() {
     // 1. Grab the navbar element
     // const navbar = document.querySelector('.navbar');
