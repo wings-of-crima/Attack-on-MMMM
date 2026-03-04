@@ -28,6 +28,11 @@
     src: url('fonts/SonOfTmU.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Ditty';
+    src: url('fonts/Ditty.ttf') format('truetype');
+}
+
 @media (max-width: 576px) {
     .navbar {
         text-align: center;
@@ -619,12 +624,55 @@ button.btn {
     }
 }
 
-#team .card {
-    width: 80%;       /* Fill the column completely */
-    height: 90%;      /* Make both cards the same height */
+.team .card {
+    width: 60%;       /* Fill the column completely */
+    height: fit-content;      /* Make both cards the same height */
     margin: 0 auto;    /* Center them just in case */
+    margin-bottom: 0.5rem;
     /* Optional: Add a shadow to make them pop like the header subtitle */
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+    background-color:rgba(156, 156, 156, 0.92)
+}
+
+.team .card-img-top {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: 280px;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.section-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+.section-text a:hover {
+    text-decoration: underline;
+}
+
+.team .card-body {
+    padding-bottom: 0.5em;
+}
+
+.team .card-title {
+    font-family: 'Ditty', serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+}
+
+.team .card-subtitle {
+    font-family: 'Ditty', serif;
+    font-size: 1em;
+    letter-spacing: 0.04rem;
+}
+
+.team .card .btn {
+    background-color: #252525eb;
+    color: rgb(255, 255, 255);
+    border: 2px solid black;
 }
 
 footer {
