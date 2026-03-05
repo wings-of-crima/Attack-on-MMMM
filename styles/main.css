@@ -33,85 +33,6 @@
     src: url('fonts/Ditty.ttf') format('truetype');
 }
 
-@media (max-width: 576px) {
-    .navbar {
-        text-align: center;
-    }
-    #header-logo  {
-        max-width: 200px;
-        min-width: 100px;
-        width: fit-content;
-    }
-    section {
-        margin: 0.5em 0.1em 0.5em; /* Much smaller side margins on mobile */
-        padding: 0.2em 0.1em;
-        font-size: 0.8em; /* Slightly smaller font size for mobile */
-        align-items: center;
-        justify-content: center;
-    }
-    .section-title {
-        font-size: 1.2em; /* Slightly smaller title for mobile */
-        padding-left: 0.3em;
-
-    }
-    .section-text {
-        font-size: 0.9em; /* Slightly smaller text for mobile */
-        padding: 0.4em 0.5em;
-        margin: 0.2em 0.3em;
-    }
-    button.btn {
-        font-size: 0.8em;
-        padding: 0.5em;
-        margin: 0.5rem 0.5rem; /* Added vertical spacing between wrapped buttons */
-    }
-    /* 2x2 grid layout for themes section buttons */
-    .themes ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 1rem; /* Space between buttons */
-        padding: 0 1rem;
-    }
-    .themes ul li {
-        width: 100%; /* Fill the grid cell */
-    }
-    .themes button.btn {
-        width: 100%; /* Make buttons fill their container */
-        margin: 0; /* Remove margin since gap handles spacing */
-        font-size: 1.3em;
-    }
-    .narratives ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        padding: 0 0.5rem;
-    }
-    .narratives ul li {
-        width: 100%;
-    }
-    .narratives button.btn {
-        width: 100%;
-        margin: 0;
-        text-align: center;
-        font-size: 1.3em;
-    }
-    .intro-quotes {
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        padding: 0.1em;
-        margin: 0.5em auto 1em; /* Adjusted margins for mobile */
-        font-size: 1em; /* Slightly smaller font size for mobile */
-        text-wrap: nowrap;
-    }
-    #intro-text {
-        margin: 1em auto 0.5em !important; /* Adjusted margins for mobile */
-        align-items: center;
-        padding: 0.8em 1em 0.8em;
-        justify-content: center;
-        font-size: 1.1em;
-    }
-}
-
 :root {
     --navbar-overlap: 58px;
     --navbar-height: 60px;
@@ -184,7 +105,7 @@ body::-webkit-scrollbar {
 #header-logo {
     max-width: 350px;
     margin: -20px auto 1px;
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.443));
+    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
 }
 
 #header-subtitle {
@@ -213,7 +134,7 @@ body::-webkit-scrollbar {
     font-family: 'Anime Ace', sans-serif;
     font-weight: 600;
     font-size: 1em;
-    color: rgb(28, 28, 28) !important;
+    color: rgb(20, 20, 20) !important;
 }
 
 .nav-link:hover {
@@ -319,20 +240,22 @@ section {
     margin: 2em 3em 2em;
     padding: 0.2em;
     border: 1.5px solid black;
+    align-items: center;
+    justify-content: center;
 }
 
 .section-title {
     font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    font-size: 2.5em;
-    padding-top: 0.3em;
-    padding-left: 0.9em;
-    margin-bottom: 0.5px;
+    font-size: 2.8em;
+    padding-top: 0.2em;
+    padding-left: 0.8em;
+    margin-bottom: 0.5rem;
     
     /* 1. Set the inside color */
     color: black; 
 
     /* 2. Create the true vector border */
-    -webkit-text-stroke: 4.5px white; 
+    -webkit-text-stroke: 7px white; 
     
     /* 3. CRITICAL: This ensures the border sits BEHIND the letter.
        Without this, the white border will bleed inside and make 
@@ -347,8 +270,8 @@ section {
 .section-text {
     font-family: 'Anime Ace', sans-serif;
     text-align: justify;
-    font-size: 1em;
-    padding: 0.5em 1em;
+    font-size: 1.1em;
+    padding: 0 1em;
     color: black;
 }
 
@@ -385,7 +308,7 @@ button.btn {
     color:#b71b10;
     background-color: rgb(226, 226, 226);
     padding: 0.8em;
-    margin: 0.5em auto 1.5em; /* TODO: I don't why it's not shrinking both left and right but check */
+    margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
     border: 1px solid rgb(238, 238, 238);
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 30%);
@@ -409,9 +332,9 @@ button.btn {
 #intro-text {
     background-color: rgb(226, 226, 226);
     padding: 1.2em 2.1em;
-    margin: 2em 8em 1em;
+    margin: 2em 7em 0.5em;
     border: 1.5px solid black;
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: black;
     text-align: center;
 }
@@ -573,14 +496,14 @@ button.btn {
     }
 }
 
-@media (max-width: 568px) {
+@media (max-width: 576px) {
     .collection {
         padding: 0.5rem;
     }
     .collection-container {
         grid-template-rows: fit-content(100%);
         gap: 10px;
-        padding: 0.5rem;
+        padding: 1rem;
     }
     .manga-panel .card-img {
         object-fit: scale-down; /* Switch to contain for smaller screens */
@@ -624,9 +547,26 @@ button.btn {
     }
 }
 
+.team {
+    padding: 0.5em;
+}
+
+.team .section-title {
+    font-size: 2em;
+}
+
+.team .section-text {
+    font-size: 0.9em;
+}
+
+.team .row {
+    padding: 0 2rem 1rem;
+    justify-content: space-around;
+}
+
 .team .card {
-    width: 60%;       /* Fill the column completely */
-    height: fit-content;      /* Make both cards the same height */
+    width: 40%;       /* Fill the column completely */
+    height: fit-content;
     margin: 0 auto;    /* Center them just in case */
     margin-bottom: 0.5rem;
     /* Optional: Add a shadow to make them pop like the header subtitle */
@@ -635,20 +575,20 @@ button.btn {
 }
 
 .team .card-img-top {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    height: 280px;
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: 20%;
     object-fit: cover;
     object-position: center 20%;
     display: block;
 }
 
-.section-text a {
+.team .section-text a {
     color: #a11e15;
     text-decoration: none;
 }
 
-.section-text a:hover {
+.team .section-text a:hover {
     text-decoration: underline;
 }
 
@@ -658,8 +598,9 @@ button.btn {
 
 .team .card-title {
     font-family: 'Ditty', serif;
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: 600;
+    text-wrap: nowrap;
     letter-spacing: 0.08rem;
 }
 
@@ -713,3 +654,92 @@ section.map img:hover {
     color: #a11e15;
 }
 
+/* MOBILE-SPECIFIC STYLES: */
+@media (max-width: 576px) {
+    .navbar {
+        text-align: center;
+        font-size: 0.9em;
+    }
+    #header-logo  {
+        max-width: 280px;
+        margin: -8px auto 0;
+    }
+    #header-subtitle {
+        margin: -20px auto 8px;
+        font-size: 0.85em;
+        padding: 0.1em 0.7em;
+    }
+    section {
+        margin: 1em 0.5em; /* Much smaller side margins on mobile */
+        padding: 0.3em 0.5em;        
+        align-items: center;
+        justify-content: center;
+    }
+    .section-title {
+        font-size: 1.8em;
+        padding-left: 0.8em;
+        letter-spacing: 0.06rem;
+    }
+    .section-text {
+        font-size: 0.8em; /* Slightly smaller text for mobile */
+    }
+    .intro-quotes {
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 1em auto; /* Adjusted margins for mobile */
+        padding: 0.8em;
+        font-size: 0.8em; /* Slightly smaller font size for mobile */
+        text-wrap: nowrap;
+    }
+    #intro-text {
+        margin: 1em auto 1.5em;
+        align-items: center;
+        padding: 0.9em auto 1em;
+        justify-content: center;
+        font-size: 0.8em;
+    }
+    button.btn {
+        font-size: 0.8em;
+        padding: 0.5em;
+        margin: 0.5rem 0.5rem; /* Added vertical spacing between wrapped buttons */
+    }
+    /* 2x2 grid layout for themes section buttons */
+    .themes ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 1rem; /* Space between buttons */
+        padding: 0 1rem;
+    }
+    .themes ul li {
+        width: 100%; /* Fill the grid cell */
+    }
+    .themes button.btn {
+        width: 100%; /* Make buttons fill their container */
+        margin: 0; /* Remove margin since gap handles spacing */
+        font-size: 1.3em;
+    }
+    .narratives ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .narratives ul li {
+        width: 100%;
+    }
+    .narratives button.btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    .team .row {
+        padding: 0 1.5rem;
+    }
+    .team .card {
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+    }
+}
