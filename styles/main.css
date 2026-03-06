@@ -38,26 +38,27 @@
     --navbar-height: 60px;
 }
 
+html {
+    /* 1. FIX THE WHITE SPACE ON THE RIGHT */
+    /* This cuts off anything that sticks out horizontally */
+    overflow-x: hidden; 
+    /* 2. HIDE THE SCROLLBAR (Firefox) */
+    scrollbar-width: none;  
+    /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
+    -ms-overflow-style: none; 
+}
+
 body {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0;
     padding: 0;
-    /* 1. FIX THE WHITE SPACE ON THE RIGHT */
-    /* This cuts off anything that sticks out horizontally */
-    overflow-x: hidden; 
-    
-    /* 2. HIDE THE SCROLLBAR (Firefox) */
-    scrollbar-width: none;  
-    /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
-    -ms-overflow-style: none;  
-
 }
 
 /* 3. HIDE THE SCROLLBAR (Chrome, Safari, Opera) */
-body::-webkit-scrollbar { 
-    display: none !important; 
+html::-webkit-scrollbar, body::-webkit-scrollbar { 
+    display: none; 
 }
 
 
@@ -66,7 +67,7 @@ body::-webkit-scrollbar {
     /* background-color: #e22012; temporary set */
     width: 100%;
     margin: 0;
-    height: calc(25vh + var(--navbar-overlap)) !important; /* Adjust height to account for navbar overlap */
+    height: calc(26vh + var(--navbar-overlap)) !important; /* Adjust height to account for navbar overlap */
     overflow-x: hidden; 
     /* border-bottom: 2px solid black; */
 }
@@ -79,7 +80,7 @@ body::-webkit-scrollbar {
 
 #header-bg {
     width: 100%;
-    height: calc(25vh + var(--navbar-overlap));
+    height: calc(26vh + var(--navbar-overlap));
     /* properties in case of using background-image: here:width:
     background-size: cover;  
     background-position: center; 
@@ -103,8 +104,8 @@ body::-webkit-scrollbar {
 }
 
 #header-logo {
-    max-width: 350px;
-    margin: -20px auto 1px;
+    max-width: 370px;
+    margin: -25px auto 1px;
     filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
 }
 
@@ -114,7 +115,7 @@ body::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0.92);
     position: relative;
     width: fit-content;
-    margin: -25px auto 5px;
+    margin: -40px auto 5px;
     padding: 0.1em 1em;
     border-radius: 3px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
@@ -339,6 +340,13 @@ button.btn {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    #intro-text { /* to fix width when shrinking screen size */
+        margin: 2em auto 0.5em;
+        padding: 1em 1.5em;
+    }
+}
+
 #intro-text a {
     color: #a11e15;
     text-decoration: none;
@@ -454,6 +462,10 @@ button.btn {
     object-fit: scale-down;
 }
 
+.manga-panel .card-img-overlay::-webkit-scrollbar {
+    display: none;
+}
+
 .card-img-overlay {
     display: none;
     width: auto;
@@ -461,6 +473,11 @@ button.btn {
     background-color: #000000ba;
     color:#ffffff;
     border-radius: 0%;
+    /* to operate the animation of the title */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
 }
 
 .card:hover .card-img-overlay {
@@ -471,11 +488,49 @@ button.btn {
     font-family: 'Copperplate Gothic LT W01 29BC', serif;
     font-size: 1.7em;
     font-weight: 800;
+    text-align: left;
+    text-wrap: nowrap;
 }
 
 .card-text {
     font-family: 'Anime Ace', sans-serif;
     font-size: 0.8em;
+    text-align: justify;
+}
+
+.card-title#long-title {
+    /* for title animation: */
+    display: inline-block;
+    width: max-content;
+    padding-right: 1.5rem;
+    animation: card-title-auto-scroll 9s linear infinite;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes card-title-auto-scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+    
+.card-img-overlay .card-title#long-title:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 1200px) {
+    .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 9s linear infinite;
+        animation-delay: 0.5s;
+        animation-fill-mode: backwards;
+    }
 }
 
 @media (max-width: 768px) {
@@ -523,27 +578,19 @@ button.btn {
         object-fit: contain;
         border-radius: 0%;
     }
-    .manga-panel .card-img-overlay::-webkit-scrollbar {
-        display: none;
-    }
-    .card-title {
-        font-size: 0.8rem; 
-        font-weight: 700;
-        margin-bottom: 0.2rem;
-    }
-    .card-text {
-        font-size: 0.4rem; 
-        line-height: 1.1;
-    }
     .card-img-overlay {
         padding: 0.8rem; 
         border-radius: 0%;
-        overflow: scroll;
-        scrollbar-width: none; 
-        -ms-overflow-style: none;
     }
-    .manga-panel .card-img-overlay::-webkit-scrollbar {
-        display: none;
+    .card-img-overlay .card-title {
+        font-size: 0.9rem; 
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+        letter-spacing: auto;
+    }
+    .card-img-overlay .card-text {
+        font-size: 0.4rem; 
+        line-height: 1.1;
     }
 }
 
@@ -662,10 +709,10 @@ section.map img:hover {
     }
     #header-logo  {
         max-width: 280px;
-        margin: -8px auto 0;
+        margin: -5px auto 0;
     }
     #header-subtitle {
-        margin: -20px auto 8px;
+        margin: -15px auto 8px;
         font-size: 0.85em;
         padding: 0.1em 0.7em;
     }
