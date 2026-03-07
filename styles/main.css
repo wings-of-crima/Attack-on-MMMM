@@ -144,6 +144,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     border-radius: 8px;
 }
 
+.nav-link.active {
+    color:#fffffff1 !important;
+}
+
 /* .navbar-nav .nav-link:not(.dropdown-toggle)::after {
     content: '';
     position: absolute;
@@ -179,6 +183,13 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     color:#fffffff1 !important;
     
 }
+
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+    color: #fffffff1 !important;
+    background-color: transparent !important;
+}
+
 
 @media (min-width: 768px) {
     .navbar-nav.mx-auto {
@@ -608,11 +619,12 @@ button.btn {
 
 .team .row {
     padding: 0 2rem 1rem;
-    justify-content: space-around;
+    display: flex; 
+    justify-content: space-between;
 }
 
 .team .card {
-    width: 40%;       /* Fill the column completely */
+    width: 50%;       /* Fill the column completely */
     height: fit-content;
     margin: 0 auto;    /* Center them just in case */
     margin-bottom: 0.5rem;
@@ -645,22 +657,48 @@ button.btn {
 
 .team .card-title {
     font-family: 'Ditty', serif;
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 600;
     text-wrap: nowrap;
     letter-spacing: 0.08rem;
+    text-align: center;
 }
 
 .team .card-subtitle {
     font-family: 'Ditty', serif;
     font-size: 1em;
     letter-spacing: 0.04rem;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .team .card {
+        width: 80%;
+        height: fit-content;
+    }
+    .team .card-title {
+        font-size: 1.4em;
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+    }
+    .team .card-subtitle {
+        font-size: 0.9em;
+        letter-spacing: 0.03rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team .card-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+    }
 }
 
 .team .card .btn {
-    background-color: #252525eb;
-    color: rgb(255, 255, 255);
-    border: 2px solid black;
+    background-color: #2d2d2deb;
+    color: rgb(241, 241, 241);
+    border: 2px solid rgb(22, 22, 22);
 }
 
 footer {
@@ -668,17 +706,24 @@ footer {
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 0.5em;
-    padding-bottom: 0.1em;
+    padding-bottom: 0.5em;
     margin-bottom: 0;
     border-top: 2px solid black;
+}
+
+blockquote {
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
     font-size: 1.2em;
 }
 
-figcaption {
+.blockquote-footer {
     color:rgb(196, 196, 196);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 0.9em;
 }
 
 
@@ -785,8 +830,17 @@ section.map img:hover {
         padding: 0 1.5rem;
     }
     .team .card {
-        display: flex;
         width: fit-content;
         height: fit-content;
+    }
+    footer {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    blockquote {
+      font-size: 0.9em;  
+    }
+    .blockquote-footer {
+        font-size: 0.7em;
     }
 }
