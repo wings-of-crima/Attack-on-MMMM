@@ -25,6 +25,39 @@ enterButton.addEventListener("click", () => {
     }, 5900);
 });
 
+// Example: tap card to toggle overlay on touch/mobile
+document.addEventListener("click", (event) => {
+  const card = event.target.closest(".manga-panel .card");
+  if (!card) return;
+
+  // Limit this behavior to touch/mobile contexts
+  const isTouchLike =
+    window.matchMedia("(hover: none)").matches ||
+    window.matchMedia("(max-width: 768px)").matches;
+
+  if (!isTouchLike) return;
+
+  event.preventDefault();
+
+  // Optional: close others first
+  document
+    .querySelectorAll(".manga-panel .card.overlay-open")
+    .forEach((c) => {
+      if (c !== card) c.classList.remove("overlay-open");
+    });
+
+  card.classList.toggle("overlay-open");
+});
+
+// Optional: tap outside closes any open overlay
+document.addEventListener("click", (event) => {
+  const insideCard = event.target.closest(".manga-panel .card");
+  if (insideCard) return;
+
+  document
+    .querySelectorAll(".manga-panel .card.overlay-open")
+    .forEach((c) => c.classList.remove("overlay-open"));
+});
 
 // function updateNavbarHeight() {
     // 1. Grab the navbar element

@@ -172,12 +172,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-size: 0.8em;
 }
 
-@media (min-width: 768px) {
-    #dropdown-themes {
-        text-align: right;
-    }
-}
-
 .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.371);
     color:#fffffff1 !important;
@@ -190,12 +184,14 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-color: transparent !important;
 }
 
-
 @media (min-width: 768px) {
     .navbar-nav.mx-auto {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+    #dropdown-themes {
+        text-align: right;
     }
 }
 
@@ -224,7 +220,7 @@ main {
         ),
         
         /* LAYER 2 (Bottom): Your Image File */
-        url('/images/manga-texture.png'); 
+        url('images/manga-texture.png'); 
 
     /* SIZING THE LAYERS */
     /* 1. The Gradient: Stretches to cover the full width/height (100% 100%) */
@@ -303,7 +299,7 @@ button.btn {
     border-radius: 20px;
 }
 
-#five-hundred {
+.themes #old-hundred {
     font-family: 'Son of Time', sans-serif;
     color: #704214;
     background-image: url('../images/Judith_Beheading_Holofernes_-_Caravaggio.jpg');
@@ -352,6 +348,9 @@ button.btn {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
     #intro-text { /* to fix width when shrinking screen size */
         margin: 2em auto 0.5em;
         padding: 1em 1.5em;
@@ -560,6 +559,7 @@ button.btn {
     .card-text {
         font-size: 0.6em; 
     }
+    
 }
 
 @media (max-width: 576px) {
@@ -603,6 +603,17 @@ button.btn {
         font-size: 0.4rem; 
         line-height: 1.1;
     }
+}
+
+/* For mobile devices that don't have hover, we can use a click to toggle the overlay (+ JS) */
+@media (hover: none) {
+  .card-img-overlay {
+    display: none;
+  }
+
+  .card.overlay-open .card-img-overlay {
+    display: block;
+  }
 }
 
 .team {
