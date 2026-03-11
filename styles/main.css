@@ -386,30 +386,30 @@ button.btn {
     color: #fefefe;
 }
 
-.narratives-buttons {
+.narratives-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */
     gap: 10%;             /* Space between the panels */
-    margin: 1.5em auto;    
+    margin: 1em auto;  
+    padding-bottom: 1.5em;  
     justify-content: center;
     max-width: 900px;      /* Keeps them from stretching awkwardly wide */
 }
 
 /* Force all buttons to fill their grid spaces uniformly */
-.narratives-buttons .btn {
+.narratives-container button {
     width: 100%;           
-    margin: 0;     
-    font-size: 1.5em;        
+    margin: 0;           
 }
 
 /* Target the top button specifically to center it */
-#historical-tl {
+.narrative-panel#historical-panel {
     grid-column: 1 / -1;     /* Tells it to span across all columns */
     justify-self: center;    /* Keeps it in the middle */
     width: calc(50% - 10%); /* Calculates exactly half the container (minus the gap) so it matches the size of the buttons below it! */
 }
 
-.narratives-buttons .narrative-panel {
+.narratives-container .narrative-panel {
     position: relative; 
     background-color: rgb(24, 24, 24); 
     border: 3px solid rgb(24, 24, 24); 
@@ -421,15 +421,6 @@ button.btn {
     cursor: pointer;         
 }
 
-.narratives-buttons .narrative-panel:hover .narrative-img {
-    transform: scale(1.05);
-    border-radius: inherit;
-}
-
-.narratives-buttons .narrative-panel:hover .narrative-btn {
-    background-color: rgba(0, 0, 0, 0.70);
-    color: #000000;
-}
 
 .narrative-img {
     width: 100%;
@@ -445,14 +436,14 @@ button.btn {
     border-radius: inherit;
 }
 
-.narratives-buttons .narrative-btn {
+.narratives-container .narrative-btn {
     position: relative; 
     z-index: 10; 
     width: 100%;             
     height: 100%;            
     background-color: rgba(0, 0, 0, 0.382); 
-    color: #000000;          
-    font-size: 1.4em;
+    color: #ffffff;          
+    font-size: 1.5em;
     border: none;            
     border-radius: inherit; 
     display: flex;
@@ -460,6 +451,16 @@ button.btn {
     align-items: center;
     margin: 0;               
     transition: background-color 0.3s ease;
+}
+
+.narratives-container .narrative-panel:hover .narrative-img {
+    transform: scale(1.05);
+    border-radius: inherit;
+}
+
+.narratives-container .narrative-panel:hover .narrative-btn {
+    background-color: rgba(0, 0, 0, 0.70);
+    color: #000000;
 }
 
 .narrative-panel #legendary-tl {
