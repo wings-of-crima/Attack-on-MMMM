@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 /* Resets the box model for every single element */
 *, *::before, *::after {
@@ -131,7 +132,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     width:100%;
     margin-top: calc(var(--navbar-overlap) * -1); /* Pull the navbar up to overlap with the header */
     position: sticky;
-    z-index: 10; /* Ensures the navbar stays above the header */
+    z-index: 1030; /* Ensures the navbar stays above the header */
     border-top: 1.5px solid black;
     border-bottom: 2px solid black;
 }
@@ -353,7 +354,7 @@ button.btn {
 }
 
 .theme-panel:hover .theme-btn {
-    background-color: rgba(0, 0, 0, 0.60);
+    background-color: rgba(0, 0, 0, 0.687);
     color:#000000;
 }
 
@@ -363,6 +364,18 @@ button.btn {
     -webkit-text-stroke: 1px #dba26a;
     paint-order: stroke fill;
     color: #7d4712;
+}
+
+.themes #first-nine-hundred {
+    font-family: 'Comic Relief', sans-serif;
+    color: #490e04;
+}
+
+.themes #second-nine-hundred {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: #b0671d;
+    -webkit-text-stroke: 1.2px #fab876;
 }
 
 .themes #future {
