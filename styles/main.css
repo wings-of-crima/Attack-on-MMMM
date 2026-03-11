@@ -33,6 +33,11 @@
     src: url('fonts/Ditty.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Amarillo USAF';
+    src: url('fonts/amarurgt.ttf') format('truetype');
+}
+
 :root {
     --navbar-overlap: 58px;
     --navbar-height: 60px;
@@ -135,7 +140,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-family: 'Anime Ace', sans-serif;
     font-weight: 600;
     font-size: 1em;
-    color: rgb(20, 20, 20) !important;
+    color: rgb(28, 28, 28) !important;
 }
 
 .nav-link:hover {
@@ -148,22 +153,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     color:#fffffff1 !important;
 }
 
-/* .navbar-nav .nav-link:not(.dropdown-toggle)::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: #e22012;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-} */
-
-/* .navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
-    width: 45%;  Line grows to 70% of the link width 
-} */
-
 .dropdown-menu {
     background-color: #565656fb;
     border: 1.5px solid black;
@@ -172,16 +161,32 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-size: 0.8em;
 }
 
+.dropdown-item {
+    color: rgb(28, 28, 28);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.371);
     color:#fffffff1 !important;
-    
 }
 
 .dropdown-menu .dropdown-item.active,
 .dropdown-menu .dropdown-item:active {
     color: #fffffff1 !important;
     background-color: transparent !important;
+}
+
+.dropdown-item#old-hundred {
+    font-family: 'Son of Time', serif;
+    font-size: 1.5em;
+    color: rgb(214, 161, 75);
+}
+
+.dropdown-item#future {
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.7em;
+    color: rgb(29, 162, 183);
 }
 
 @media (min-width: 768px) {
@@ -220,7 +225,7 @@ main {
         ),
         
         /* LAYER 2 (Bottom): Your Image File */
-        url('images/manga-texture.png'); 
+        url('../images/manga-texture.png'); 
 
     /* SIZING THE LAYERS */
     /* 1. The Gradient: Stretches to cover the full width/height (100% 100%) */
@@ -283,28 +288,112 @@ section {
     color: black;
 }
 
-section ul {
-    list-style-type: none; /* Removes Bullets */
-    padding: 0;            /* Removes Indentation */
-    margin: 1em 0;
-    display: flex;         /* Optional: aligns buttons horizontally */
-    flex-wrap: wrap;       /* Wraps if they don't fit */
-    justify-content: space-around;
+button.btn {
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    border: 2px solid rgb(20, 20, 20);
+    border-radius: 10px;
 }
 
-button.btn {
+.themes-container {
+    margin: 1em; 
+    padding: 0.5em;
+    display: flex;           /* Switch back to flex */
+    flex-wrap: wrap;         /* Allows buttons to wrap on smaller screens */
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.theme-panel {
+    position: relative; 
+    background-color: rgb(24, 24, 24); 
+    border: 3px solid rgb(24, 24, 24); 
+    border-radius: 10px;     /* Gives it a nice button feel */
+    overflow: hidden;
+    flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 180px */
+    height: 150px;
+    padding: 0;              /* Strip padding so the button text can center properly */
+    cursor: pointer;         /* Makes the whole block feel clickable */
+}
+
+.theme-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease; /* Smooth reset when you stop hovering */
+    transform: translateZ(0); /* Fixes some weird blurring issues in Chrome when using transform */
+    border-radius: inherit;
+}
+
+.theme-panel:hover .theme-img {
+    transform: scale(1.05);
+    border-radius: inherit;
+}
+
+.theme-btn {
+    position: relative; 
+    z-index: 10; 
+    width: 100%;             /* Stretch to fill the panel */
+    height: 100%;            /* Stretch to fill the panel */
+    background-color: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
+    color: #000000;          /* White text */
     font-size: 1.4em;
-    margin: 0 auto;
-    padding: 1em 1.5em;
-    border-radius: 20px;
+    border: none;            /* Remove bootstrap's default button borders */
+    border-radius: inherit; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;               
+    transition: background-color 0.3s ease;
+}
+
+.theme-panel:hover .theme-btn {
+    background-color: rgba(0, 0, 0, 0.60);
+    color:#000000;
 }
 
 .themes #old-hundred {
     font-family: 'Son of Time', sans-serif;
-    color: #704214;
-    background-image: url('../images/Judith_Beheading_Holofernes_-_Caravaggio.jpg');
-    background-size: cover;
-    background-position: center;
+    font-size: 1.5em;
+    -webkit-text-stroke: 1px #dba26a;
+    paint-order: stroke fill;
+    color: #7d4712;
+}
+
+.themes #future {
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.8em;
+    -webkit-text-stroke: 1.2px #53f2f5;
+    paint-order: stroke fill;
+    color: #fefefe;
+}
+
+.narratives-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom buttons */
+    gap: 10%;             /* Space between the buttons */
+    margin: 1.5em auto;    
+    justify-content: center;
+    max-width: 900px;      /* Keeps them from stretching awkwardly wide on big monitors */
+}
+
+/* Force all buttons to fill their grid spaces uniformly */
+.narratives-button .btn {
+    width: 100%;           
+    margin: 0;     
+    font-size: 1.5em;        
+}
+
+/* Target the top button specifically to center it */
+#historical-tl {
+    grid-column: 1 / -1;     /* Tells it to span across all columns */
+    justify-self: center;    /* Keeps it in the middle */
+    width: calc(50% - 10%); /* Calculates exactly half the container (minus the gap) so it matches the size of the buttons below it! */
 }
 
 .intro {
@@ -378,7 +467,6 @@ button.btn {
 }
 
 .collection {
-    margin-bottom: 0.5rem; /* Adjusting this specifically to these two sections sit closer together */
     background-color: rgb(13, 13, 13);
     padding: 1rem;
 }
@@ -386,6 +474,8 @@ button.btn {
 .collection .section-title {
     margin-top: 0;
     padding-top: 0.3em !important;
+    -webkit-text-stroke: 6.5px white;
+    paint-order: stroke fill;
 }
 
 #collection-intro {
@@ -468,6 +558,12 @@ button.btn {
     border-radius: 0%;
 }
 
+.manga-panel:hover .card-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
 .card-img#ymir {
     object-fit: scale-down;
 }
@@ -513,7 +609,7 @@ button.btn {
     display: inline-block;
     width: max-content;
     padding-right: 1.5rem;
-    animation: card-title-auto-scroll 9s linear infinite;
+    animation: card-title-auto-scroll 13s linear infinite;
     animation-delay: 0.5s;
     animation-fill-mode: backwards;
 }
@@ -531,15 +627,19 @@ button.btn {
     animation-play-state: paused;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
     .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
         /* for title animation: */
         display: inline-block;
         width: max-content;
         padding-right: 1.5rem;
-        animation: card-title-auto-scroll 9s linear infinite;
-        animation-delay: 0.5s;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
         animation-fill-mode: backwards;
+    }
+    .card-img-overlay .card-title#med-title:hover {
+        
+        animation-play-state: paused;
     }
 }
 
@@ -622,6 +722,8 @@ button.btn {
 
 .team .section-title {
     font-size: 2em;
+    -webkit-text-stroke: 5px white;
+    paint-order: stroke fill;
 }
 
 .team .section-text {
@@ -717,8 +819,8 @@ footer {
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-bottom: 0;
+    padding-bottom: 0.2em;
+    margin-bottom: -20px;
     border-top: 2px solid black;
 }
 
@@ -805,37 +907,25 @@ section.map img:hover {
     button.btn {
         font-size: 0.8em;
         padding: 0.5em;
-        margin: 0.5rem 0.5rem; /* Added vertical spacing between wrapped buttons */
     }
-    /* 2x2 grid layout for themes section buttons */
-    .themes ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 1rem; /* Space between buttons */
-        padding: 0 1rem;
+    /* 2x2 layout for themes on mobile using Flexbox */
+    .theme-panel {
+        flex: 1 1 40%; /* Forces panels to wrap into 2 columns */
+        height: 140px; /* Shrink height slightly for smaller screens */
     }
-    .themes ul li {
-        width: 100%; /* Fill the grid cell */
+    .theme-btn {
+        font-size: 1.1em; /* Scale text down a bit to fit */
     }
-    .themes button.btn {
-        width: 100%; /* Make buttons fill their container */
-        margin: 0; /* Remove margin since gap handles spacing */
-        font-size: 1.3em;
+    .narratives-button {
+        grid-template-columns: 1fr; /* Drops it down to a single column */
+        padding: 0 1rem;            /* Adds a little breathing room on the sides */
     }
-    .narratives ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-        padding: 0 0.5rem;
+    #historical-tl {
+        grid-column: 1; /* Removes the multi-column span */
+        width: 100%;    /* Makes it fill the column just like the other two */
     }
-    .narratives ul li {
-        width: 100%;
-    }
-    .narratives button.btn {
-        width: 100%;
-        margin: 0;
-        text-align: center;
-        font-size: 1.3em;
+    .narratives-button .btn {
+        font-size: 1.2em; /* Optional: Adjust font size for mobile readability */
     }
     .team .row {
         padding: 0 1.5rem;
@@ -845,8 +935,7 @@ section.map img:hover {
         height: fit-content;
     }
     footer {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
+        padding: 0.3em auto;
     }
     blockquote {
       font-size: 0.9em;  

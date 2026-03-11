@@ -44,7 +44,7 @@
                         <div class="card">
                             <img src="images/items/macchina-volante.jpg" class="card-img" alt="Image of flying machine designed by Leonardo Da Vinci">
                             <div class="card-img-overlay">
-                                <h5 class="card-title" id="long-title">Leonardo da Vinci's flying machine</h5>
+                                <h5 class="card-title" id="med-title">Leonardo da Vinci's flying machine</h5>
                                 <p class="card-text">Short informational text about this specific object displayed here.</p>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
 
                     <div class="manga-panel">
                         <div class="card">
-                            <img src="images/items/key.jpg" class="card-img" alt="Key from the MET collection">
+                            <img src="images/items/key.jpg" class="card-img" alt="Image of a key from the MET collection">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Key</h5>
                                 <p class="card-text">Details regarding this rare item found in the archives.</p>
@@ -62,7 +62,7 @@
 
                     <div class="manga-panel wide-panel">
                         <div class="card flew-row"> 
-                            <img src="images/items/syringe.jpg" class="card-img" alt="Syringe from the Science Museum Group">
+                            <img src="images/items/syringe.jpg" class="card-img" alt="Image of a syringe from the Science Museum Group">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Syringe</h5>
                                 <p class="card-text">This is a wider panel perfect for a featured item or a more detailed description that requires more horizontal space. The layout adapts to fill the row.</p>
@@ -82,7 +82,7 @@
 
                     <div class="manga-panel panel-left-bottom">
                         <div class="card">
-                            <img src="images/items/ymir.jpg" class="card-img" id="ymir" alt="Ymir painting by Nicolai Abildgaard from the Museum of Modern Art">
+                            <img src="images/items/ymir.jpg" class="card-img" id="ymir" alt=" Image of painting Ymir suckling the cow Audhumla by Nicolai Abildgaard from the Museum of Modern Art">
                             <div class="card-img-overlay">
                                 <h5 class="card-title" id="long-title">"Ymir suckling the cow Audhumla" by Nicolai Abildgaard</h5>
                                 <p class="card-text">Notice how the container is clipped diagonally, but this text remains straight.</p>
@@ -90,28 +90,41 @@
                         </div>
                     </div>
                 </div>
-                <p class="section-text" id="remainder"> Browse the entire collection <a href="collection.html">here</a> or by going in the <i>Exhibition</i> page through the navbar.</p>
+                <p class="section-text" id="remainder"> Browse the entire collection <a href="collection.html">here</a> or by going in the <i>Collection</i> page through the navbar.</p>
             </section>
 
             <section class="themes">
                 <h3 class="section-title"> Chapter 2 - The themes </h3>
                 <p class="section-text" id="themes-intro"> This is only the beginning of your journey on this website. whether you know of attack on titan or not, do you ever wonder how things would "look" like if they were represented in different times and periods? well, we tried to give this question an answer by selecting themes of different aesthetics for this exhibition, click on one of the buttons below to choose one.</p>
-                <ul> <!-- maybe the ul tag is redundant atp -->
-                    <li> <button  type="button" class="btn btn-outline-dark" id="old-hundred">1500-1800</button> </li>
-                    <li> <button type="button" class="btn btn-outline-dark" id="first-nine-hundred">1900-1950</button> </li>
-                    <li> <button type="button" class="btn btn-outline-dark" id="second-nine-hundred">1950-2000</button> </li>
-                    <li> <button type="button" class="btn btn-outline-dark" id="future">2035</button> </li>
-                </ul>
+                <div class="themes-container">           
+                    <div class="theme-panel">
+                        <img src="images/Judith_Beheading_Holofernes_-_Caravaggio.jpg" class="theme-img" alt="Image of painting Judith Beheading Holofernes by Caravaggio"> 
+                        <button type="button" class="btn btn-outline-dark theme-btn" href="#" id="old-hundred">1500-1800</button> 
+                    </div>
+                    <div class="theme-panel">
+                        <img src="images/First_World_War_Trenches.jpg" class="theme-img" alt="Trenches from World War I"> 
+                        <button type="button" class="btn btn-outline-dark theme-btn" href="#" id="first-nine-hundred">1900-1950</button> 
+                    </div>
+                    <div class="theme-panel">
+                        <img src="images/1950s_Style.jpg" class="theme-img" alt="1950s style"> 
+                        <button type="button" class="btn btn-outline-dark theme-btn" href="#" id="second-nine-hundred">1950-2000</button> 
+                    </div>
+                    <div class="theme-panel">
+                        <img src="images/sibyl-system-crunchy.png" class="theme-img" alt="Image of the Sibyl System from the anime Psycho-Pass"> 
+                        <button type="button" class="btn btn-outline-dark theme-btn" href="#" id="future">2035</button> 
+                    </div>
+                </div>
+                </div>
             </section>
 
             <section class="narratives">
                 <h3 class="section-title"> Chapter 3 - The narratives </h3>
                 <p class="section-text" id="narratives-intro"> Dive into the world of Attack on Titan through different narratives that explore various aspects of the story, characters, and themes. Choose a narrative to experience a unique perspective: </p>
-                <ul>
-                    <li> <button type="button" class="btn btn-outline-dark" id="historical-tl">Historical Timeline</button> </li>
-                    <li> <button type="button" class="btn btn-outline-dark" id="legendary-tl">Legendary Timeline</button> </li>
-                    <li> <button type="button" class="btn btn-outline-dark" id="technoligical-tl">Technological Timeline</button> </li>
-                </ul>
+                <div class="narratives-button">
+                    <button type="button" class="btn btn-outline-dark" id="historical-tl">Historical Timeline</button>
+                    <button type="button" class="btn btn-outline-dark" id="legendary-tl">Legendary Timeline</button>
+                    <button type="button" class="btn btn-outline-dark" id="technoligical-tl">Technological Timeline</button>
+                </div>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
