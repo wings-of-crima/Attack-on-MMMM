@@ -1019,3 +1019,13 @@ section.map img:hover {
         font-size: 0.7em;
     }
 }
+/* --- disclaimer specific style --- */
+.readable-text {
+    font-family: 'Noto Sans', sans-serif !important;
+    /* anime style cleaning */
+    text-transform: none !important;  /* Elimino maiuscole */
+    letter-spacing: normal !important; /* Spaziatura normale */
+    line-height: 1.6 !important;      
+    font-size: 1rem;                 
+    text-align: left !important;      /* Alignment sx */
+}
