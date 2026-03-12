@@ -1019,13 +1019,31 @@ section.map img:hover {
         font-size: 0.7em;
     }
 }
-/* --- disclaimer specific style --- */
-.readable-text {
+/* --- Disclaimer Specific Style --- */
+
+/* Applichiamo il font a tutto ciò che sta dentro readable-text (incluso h3, p, li) */
+.readable-text, 
+.readable-text .section-title, 
+.readable-text p, 
+.readable-text li {
     font-family: 'Noto Sans', sans-serif !important;
-    /* anime style cleaning */
-    text-transform: none !important;  /* Elimino maiuscole */
-    letter-spacing: normal !important; /* Spaziatura normale */
-    line-height: 1.6 !important;      
-    font-size: 1rem;                 
-    text-align: left !important;      /* Alignment sx */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1.5 !important;
+    font-size: 0.85rem !important; /* Testo più piccolo come richiesto */
+    text-align: left !important;
+    -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
+    color: black !important; /* Assicura che il testo sia nero leggibile */
+}
+
+/* rule for Disclaimer title */
+.readable-text .section-title {
+    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
+    font-size: 2rem !important;                     /* Molto più grande */
+    font-weight: 800 !important;                    /* Grassetto extra */
+    text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
+    -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
+    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
+    margin-bottom: 25px !important;                 /* Spazio dal testo */
+    display: block !important;
 }
