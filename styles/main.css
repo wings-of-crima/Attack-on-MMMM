@@ -1062,7 +1062,7 @@ section.map img:hover {
 
 
 /* ============================================================
-   COLLECTION PAGE SPECIFIC STYLES — collection-page.css
+   COLLECTION PAGE SPECIFIC STYLES
    Linked only from collection.html
    Depends on: main.css (section, section-title, section-text, etc.)
    ============================================================ */
@@ -1178,9 +1178,9 @@ section.map img:hover {
     margin: 0;
 }
 
-.item-origin {
+.item-complete-title {
     font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    font-size: 0.80em;
+    font-size: 0.90em;
     color: #a11e15;
     font-style: italic;
     margin: 0;
@@ -1197,6 +1197,17 @@ section.map img:hover {
     flex: 1;
 }
 
+.item-readmore {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.65em;
+    color: #a11e15;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.item-readmore:hover {
+    text-decoration: underline;
+}
 
 /* --- QR code area (right side) --- */
 .item-qr {
