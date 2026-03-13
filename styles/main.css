@@ -52,6 +52,7 @@ html {
     scrollbar-width: none;  
     /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
     -ms-overflow-style: none; 
+    cursor: url('widgets/aot-gear-sword-sweezy-cursor.png'), auto; /* TODO: understand if keeping cursor or pointer */
 }
 
 body {
@@ -489,13 +490,18 @@ button.btn {
 }
 
 .intro-quotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     color:#b71b10;
     background-color: rgb(226, 226, 226);
-    padding: 0.8em;
+    padding: 0.8em 1em;
     margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
     border: 1px solid rgb(238, 238, 238);
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 30%);
+    border-radius: 18px;
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5);
     text-align: center;
     width: fit-content;
     max-width: 90%;
@@ -870,6 +876,8 @@ button.btn {
     letter-spacing: 0.04rem;
     text-align: center;
 }
+
+/* TODO: style git button and hover effect? */
 
 @media (max-width: 992px) {
     .team .card {

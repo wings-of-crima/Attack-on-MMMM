@@ -4,7 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
+/* 1500-1800 fonts: */
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
 
 /* Resets the box model for every single element */
 *, *::before, *::after {
@@ -51,11 +54,14 @@
     --navbar-overlap: 58px;
     --navbar-height: 60px;
 
-    --nav-bg-color: #dad5b4f5;
-    --section-bg-color: rgb(194, 194, 194);
+    --nav-bg-color: rgba(232, 217, 171, 0.961);
+    --section-bg-color: rgb(243, 229, 200);
     --main-text-color: black;
     --hover-bg-color: rgba(178, 157, 107, 0.40);
     --hover-text-color: rgba(178, 157, 107, 0.40);
+    --text-borders: rgba(80, 50, 6, 0.6); /* same as the shadow for the intro-quotes, but less transparent */
+    --red-highligh-manuscript: #6c1c13;
+    --footer-bg-color: rgb(62, 45, 40); /* can look like the exterior of a manuscript */
 }
 
 html {
@@ -237,10 +243,10 @@ main {
 }
 
 section {
-    background-color: var(--nav-bg-color);
+    background-color: var(--section-bg-color);
     margin: 2em 3em 2em;
     padding: 0.2em;
-    border: 1.5px solid black;
+    border: 1.5px solid var(--text-borders);
     align-items: center;
     justify-content: center;
 }
@@ -248,18 +254,18 @@ section {
 .section-title {
     font-family: 'Beffle Medium', serif;
     font-size: 2.5em;
-    padding-top: 0.2em;
+    padding-top: 0.5em;
     padding-left: 0.8em;
     margin-bottom: 0.5rem;
-    text-shadow: #ffffff 1px 1px 2px;
+    text-shadow: var(--text-borders) 1px 1px 2px;
     color: black;
 }
 
 .section-text {
-    font-family: 'Baskerville', serif;
+    font-family: 'ED Garamond', serif;
     text-align: justify;
     font-size: 1.2em;
-    padding: 0 1em;
+    padding: 0.1em 1.5em 0;
     color: black;
 }
 
@@ -451,37 +457,48 @@ button.btn {
 }
 
 .intro-quotes {
-    color:#b71b10;
-    background-color: rgb(226, 226, 226);
-    padding: 0.8em;
+    /* I don't understand why it feels like the text is not centered within the box, tried this but still doesn't do much: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center; /* This should center the content vertically, but it seems like the padding and line-height might be affecting it. */
+    color: var(--red-highligh-manuscript); /* burnt red for more of a manuscript/textbook feel */
+    background-color: var(--section-bg-color);
+    padding: 0.8em 1em;
     margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
-    border: 1px solid rgb(238, 238, 238);
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 30%);
+    border: 1px solid var(--text-borders);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(80, 50, 6, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
     text-align: center;
     width: fit-content;
-    max-width: 90%;
+    max-width: 100%;
 }
 
 #motto-title-en {
     font-family: 'Son of Time', sans-serif; /* TODO: maybe change to something more rococo? */
-    font-size: 2.5em;
+    font-size: 3.2em;
     font-style: italic;
     font-weight: 600;
     text-wrap: nowrap;
 }
 
 #motto-title-jp {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 2em;
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 1.8em;
 }
 
 #intro-text {
-    background-color: rgb(226, 226, 226);
+    font-family: 'EB Garamond', serif;
+    background-color: var(--section-bg-color);
     padding: 1.2em 2.1em;
     margin: 2em 7em 0.5em;
-    border: 1.5px solid black;
-    font-size: 0.9em;
+    border: 1.5px solid var(--text-borders);
+    font-size: 1.1em;
     color: black;
     text-align: center;
 }
@@ -497,7 +514,7 @@ button.btn {
 }
 
 #intro-text a {
-    color: #a11e15;
+    color: var(--red-highligh-manuscript);
     text-decoration: none;
 }
 
@@ -506,15 +523,17 @@ button.btn {
 }
 
 #intro-text em {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight: 600;
     padding: 0 0.2rem 0;
-    color: #a11e15;
+    color: var(--red-highligh-manuscript);
 }
 
+/* Not necessary here: 
 .bigger-cap {
-    font-size: 1.3em;
+    font-size: 1.2em;
     display: inline-block;
-}
+} */
 
 .collection {
     background-color: rgb(13, 13, 13);
@@ -553,7 +572,7 @@ button.btn {
 }
 
 #remainder a {
-    color: #a11e15;
+    color: var(--red-highligh-manuscript);
     text-underline-offset: 0.25rem;
 }
 
@@ -772,12 +791,11 @@ button.btn {
 
 .team .section-title {
     font-size: 2em;
-    -webkit-text-stroke: 5px white;
-    paint-order: stroke fill;
+    text-shadow: var(--text-borders) 1px 1px 2px;
 }
 
 .team .section-text {
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 .team .row {
@@ -806,7 +824,8 @@ button.btn {
 }
 
 .team .section-text a {
-    color: #a11e15;
+    color: var(--red-highligh-manuscript);
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -865,28 +884,28 @@ button.btn {
 }
 
 footer {
-    background-color: #252525eb;
+    background-color: var(--footer-bg-color);
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 0.5em;
     padding-bottom: 0.2em;
     margin-bottom: -20px;
-    border-top: 2px solid black;
+    border-top: 2px solid rgba(237, 198, 71, 0.8); /* gold-like colour for the top border to make it look like the edge of a manuscript */
 }
 
 blockquote {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'ED Garamond', serif;
+    font-weight: 400;
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .blockquote-footer {
     color:rgb(196, 196, 196);
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'ED Garamond', serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 
