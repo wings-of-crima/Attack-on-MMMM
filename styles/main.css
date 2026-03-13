@@ -112,7 +112,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 #header-logo {
     max-width: 370px;
     margin: -25px auto 1px;
-    filter: drop-shadow(1px 1px 1px rgb(255, 255, 255));
+    filter: drop-shadow(1px 1px 1px rgb(73, 73, 73));
 }
 
 #header-subtitle {
@@ -121,7 +121,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0.92);
     position: relative;
     width: fit-content;
-    margin: -40px auto 5px;
+    margin: -35px auto 10px;
     padding: 0.1em 1em;
     border-radius: 3px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
@@ -157,6 +157,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .dropdown-menu {
     background-color: #565656fb;
     border: 1.5px solid black;
+    border-radius: 5px;
     font-family: 'Anime Ace', sans-serif;
     font-weight: 600;
     font-size: 0.8em;
@@ -172,22 +173,33 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     color:#fffffff1 !important;
 }
 
+/*
+This is in case you want to change back to a JS logic to highlight the dropdown menu as well: 
+
 .dropdown-menu .dropdown-item.active,
 .dropdown-menu .dropdown-item:active {
     color: #fffffff1 !important;
     background-color: transparent !important;
 }
+*/
+
+.dropdown-item#default {
+    /* Adding the background so when the theme is selected this stays highlighted: */
+    background-color: rgba(255, 255, 255, 0.371);
+}
 
 .dropdown-item#old-hundred {
     font-family: 'Son of Time', serif;
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: rgb(214, 161, 75);
+    padding: 0 auto;
 }
 
 .dropdown-item#future {
     font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
     color: rgb(29, 162, 183);
+    padding: 0 auto;
 }
 
 @media (min-width: 768px) {

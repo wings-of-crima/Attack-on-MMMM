@@ -1,0 +1,996 @@
+@import url('https://db.onlinewebfonts.com/c/3ba5f774e7fd55929fc1bfa6205986a4?family=Copperplate+Gothic+LT+W01+29BC');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Resets the box model for every single element */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Anime Ace';
+    src: url('fonts/animeace.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Who Dares';
+    src: url('fonts/Who\ Dares!.otf') format('truetype');
+}
+
+@font-face { /* NOT USED YET */
+    font-family: 'Comica Regular';
+    src: url('fonts/ComicaRegular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ditty';
+    src: url('fonts/Ditty.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Amarillo USAF';
+    src: url('fonts/amarurgt.ttf') format('truetype');
+}
+
+/* 1500-1800 fonts: */
+@font-face {
+    font-family: 'Beffle Medium';
+    src: url('fonts/beffle.medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Son of Time';
+    src: url('fonts/SonOfTmU.ttf') format('truetype');
+}
+
+:root {
+    --navbar-overlap: 58px;
+    --navbar-height: 60px;
+
+    --nav-bg-color: #dad5b4f5;
+    --section-bg-color: rgb(194, 194, 194);
+    --main-text-color: black;
+    --hover-bg-color: rgba(178, 157, 107, 0.40);
+    --hover-text-color: rgba(178, 157, 107, 0.40);
+}
+
+html {
+    /* 1. FIX THE WHITE SPACE ON THE RIGHT */
+    /* This cuts off anything that sticks out horizontally */
+    overflow-x: hidden; 
+    /* 2. HIDE THE SCROLLBAR (Firefox) */
+    scrollbar-width: none;  
+    /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
+    -ms-overflow-style: none; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. HIDE THE SCROLLBAR (Chrome, Safari, Opera) */
+html::-webkit-scrollbar, body::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+/* TODO: make header bg overlap in bg with navbar and make repsonsive */
+.header {
+    /* background-color: #e22012; temporary set */
+    width: 100%;
+    margin: 0;
+    height: calc(26vh + var(--navbar-overlap)) !important; /* Adjust height to account for navbar overlap */
+    overflow-x: hidden; 
+    /* border-bottom: 2px solid black; */
+}
+
+
+.header a {
+    display: block;      /* Removes inline spacing weirdness */
+    line-height: 0;      /* Kills any text-height gaps inside the link */
+    margin-bottom: 0;    /* Ensure no extra push from the link itself */
+}
+
+#header-bg {
+    width: 100%;
+    height: calc(26vh + var(--navbar-overlap));
+    /* properties in case of using background-image: here:width:
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    object-position: center 5%;
+    position: absolute;
+    z-index: 0; 
+}
+
+#header-logo, #header-subtitle {
+    z-index: 5;
+    /*align-self: center;
+    justify-self: center;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#header-logo {
+    max-width: 370px;
+    margin: -25px auto 1px;
+    filter: drop-shadow(1px 1px 1px rgb(32, 65, 105));
+}
+
+#header-subtitle {
+    font-family: 'Baskervville', serif;
+    font-style: italic;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 0.9em;
+    background-color: rgba(255, 255, 255, 0.92);
+    position: relative;
+    width: fit-content;
+    margin: -35px auto 10px;
+    padding: 0.1em 1em;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
+}
+
+.navbar {
+    background-color: var(--nav-bg-color);
+    width:100%;
+    margin-top: calc(var(--navbar-overlap) * -1); /* Pull the navbar up to overlap with the header */
+    position: sticky;
+    z-index: 1030; /* Ensures the navbar stays above the header */
+    border-top: 1.5px solid black;
+    border-bottom: 2px solid black;
+}
+
+.nav-link {
+    font-family: 'Beffle Medium', serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0) !important; /* back to actual black compared to default theme */
+}
+
+.nav-link:hover {
+    color: var(--hover-text-color) !important;
+    background-color: var(--hover-bg-color);
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    background-color: var(--hover-bg-color);
+    color: black !important;
+    border-radius: 2px;
+}
+
+.dropdown-menu {
+    background-color: var(--nav-bg-color);
+    border: 1.5px solid black;
+    border-radius: 3px;
+    font-family: 'Anime Ace', sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.dropdown-item {
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--hover-bg-color);
+    color:var(--hover-text-color) !important;
+}
+
+.dropdown-item#old-hundred {
+    font-family: 'Son of Time', serif;
+    font-size: 1.4em;
+    color: rgb(214, 161, 75);
+    padding: 0 auto;
+    /* Adding the background so when the theme is selected this stays highlighted: */
+    background-color: var(--hover-bg-color);
+}
+
+.dropdown-item#future {
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.7em;
+    color: rgb(29, 162, 183);
+    padding: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav.mx-auto {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #dropdown-themes {
+        text-align: right;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    justify-content: center;
+    /* Set a backup color in case the image fails to load */
+    background-color: #6d6d6d;
+    background-image: url('../images/themes_imgs/old-theme-body-bg.png'); 
+    background-repeat: repeat;
+    background-attachment: scroll; 
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+section {
+    background-color: var(--nav-bg-color);
+    margin: 2em 3em 2em;
+    padding: 0.2em;
+    border: 1.5px solid black;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-family: 'Beffle Medium', serif;
+    font-size: 2.5em;
+    padding-top: 0.2em;
+    padding-left: 0.8em;
+    margin-bottom: 0.5rem;
+    text-shadow: #ffffff 1px 1px 2px;
+    color: black;
+}
+
+.section-text {
+    font-family: 'Baskerville', serif;
+    text-align: justify;
+    font-size: 1.2em;
+    padding: 0 1em;
+    color: black;
+}
+
+button.btn {
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    border: 2px solid rgb(20, 20, 20);
+    border-radius: 10px;
+}
+
+.themes-container {
+    margin: 1em; 
+    padding: 0.5em;
+    display: flex;           /* Switch back to flex */
+    flex-wrap: wrap;         /* Allows buttons to wrap on smaller screens */
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.theme-panel {
+    position: relative; 
+    background-color: rgb(24, 24, 24); 
+    border: 3px solid rgb(24, 24, 24); 
+    border-radius: 10px;     /* Gives it a nice button feel */
+    overflow: hidden;
+    flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 180px */
+    height: 150px;
+    padding: 0;              /* Strip padding so the button text can center properly */
+    cursor: pointer;         /* Makes the whole block feel clickable */
+}
+
+.theme-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease; /* Smooth reset when you stop hovering */
+    transform: translateZ(0); /* Fixes some weird blurring issues in Chrome when using transform */
+    border-radius: inherit;
+}
+
+.theme-panel:hover .theme-img {
+    transform: scale(1.05);
+    border-radius: inherit;
+}
+
+.theme-btn {
+    position: relative; 
+    z-index: 10; 
+    width: 100%;             /* Stretch to fill the panel */
+    height: 100%;            /* Stretch to fill the panel */
+    background-color: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
+    color: #000000;          /* White text */
+    font-size: 1.4em;
+    border: none;            /* Remove bootstrap's default button borders */
+    border-radius: inherit; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;               
+    transition: background-color 0.3s ease;
+}
+
+.theme-panel:hover .theme-btn {
+    background-color: rgba(0, 0, 0, 0.70);
+    color:#000000;
+}
+
+.themes #old-hundred {
+    font-family: 'Son of Time', sans-serif;
+    font-size: 1.5em;
+    -webkit-text-stroke: 1px #dba26a;
+    paint-order: stroke fill;
+    color: #7d4712;
+}
+
+.themes #first-nine-hundred {
+    font-family: 'Comic Relief', sans-serif;
+    color: #490e04;
+}
+
+.themes #second-nine-hundred {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: #b0671d;
+    -webkit-text-stroke: 1.2px #fab876;
+}
+
+.themes #future {
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.8em;
+    -webkit-text-stroke: 1.2px #53f2f5;
+    paint-order: stroke fill;
+    color: #fefefe;
+}
+
+.narratives-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */
+    gap: 10%;             /* Space between the panels */
+    margin: 1em auto;  
+    padding-bottom: 1.5em;  
+    justify-content: center;
+    max-width: 900px;      /* Keeps them from stretching awkwardly wide */
+}
+
+/* Force all buttons to fill their grid spaces uniformly */
+.narratives-container button {
+    width: 100%;           
+    margin: 0;           
+}
+
+/* Target the top button specifically to center it */
+.narrative-panel#historical-panel {
+    grid-column: 1 / -1;     /* Tells it to span across all columns */
+    justify-self: center;    /* Keeps it in the middle */
+    width: calc(50% - 10%); /* Calculates exactly half the container (minus the gap) so it matches the size of the buttons below it! */
+}
+
+.narratives-container .narrative-panel {
+    position: relative; 
+    background-color: rgb(24, 24, 24); 
+    border: 3px solid rgb(24, 24, 24); 
+    border-radius: 15px;     
+    height: 150px;
+    width: 100%;             /* Ensures panels stretch correctly in the grid */
+    overflow: hidden;
+    padding: 0;              
+    cursor: pointer;         
+}
+
+
+.narrative-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease; 
+    transform: translateZ(0); 
+    border-radius: inherit;
+}
+
+.narratives-container .narrative-btn {
+    position: relative; 
+    z-index: 10; 
+    width: 100%;             
+    height: 100%;            
+    background-color: rgba(0, 0, 0, 0.382); 
+    color: #ffffff;          
+    font-size: 1.5em;
+    border: none;            
+    border-radius: inherit; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;               
+    transition: background-color 0.3s ease;
+}
+
+.narratives-container .narrative-panel:hover .narrative-img {
+    transform: scale(1.05);
+    border-radius: inherit;
+}
+
+.narratives-container .narrative-panel:hover .narrative-btn {
+    background-color: rgba(0, 0, 0, 0.70);
+    color: #000000;
+}
+
+.narrative-panel #legendary-tl {
+    font-family: 'Ditty', serif;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    font-size: 1.6em;
+    color: rgb(172, 225, 252);
+}
+
+.intro {
+    background-color: transparent;
+    border: 0;
+}
+
+.intro-quotes {
+    color:#b71b10;
+    background-color: rgb(226, 226, 226);
+    padding: 0.8em;
+    margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 30%);
+    text-align: center;
+    width: fit-content;
+    max-width: 90%;
+}
+
+#motto-title-en {
+    font-family: 'Son of Time', sans-serif; /* TODO: maybe change to something more rococo? */
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: 600;
+    text-wrap: nowrap;
+}
+
+#motto-title-jp {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 2em;
+}
+
+#intro-text {
+    background-color: rgb(226, 226, 226);
+    padding: 1.2em 2.1em;
+    margin: 2em 7em 0.5em;
+    border: 1.5px solid black;
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+    #intro-text { /* to fix width when shrinking screen size */
+        margin: 2em auto 0.5em;
+        padding: 1em 1.5em;
+    }
+}
+
+#intro-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+#intro-text a:hover {
+    text-decoration: underline;
+}
+
+#intro-text em {
+    font-size: 1.1em;
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
+.bigger-cap {
+    font-size: 1.3em;
+    display: inline-block;
+}
+
+.collection {
+    background-color: rgb(13, 13, 13);
+    padding: 1rem;
+}
+
+.collection .section-title {
+    margin-top: 0;
+    padding-top: 0.3em !important;
+    -webkit-text-stroke: 6.5px white;
+    paint-order: stroke fill;
+}
+
+#collection-intro {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+.note {
+    text-align: right;
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.65em;
+    -webkit-text-stroke: 2.4px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+}
+
+.note u {
+    text-underline-offset: 0.25rem;
+}
+
+#remainder {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+#remainder a {
+    color: #a11e15;
+    text-underline-offset: 0.25rem;
+}
+
+/* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
+.collection-container {
+    /* Approach with CSS grid: */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Three equal columns */
+    grid-template-rows: 250px 250px 250px;
+    gap: 20px;
+    padding: 1.5rem;
+}
+
+.manga-panel {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+    grid-column: span 2;
+}
+
+.wide-panel {
+    grid-column: 4 / span 3; /* This makes the panel take up two columns */
+    grid-row: 2 / span 2; /* This makes the panel take up two rows */
+}
+
+.panel-left-top {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    margin-left: 0;
+}
+
+.panel-left-bottom {
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 1;
+    margin-right: 0;
+}
+
+.manga-panel .card {
+    height: 100%;
+    width: auto;
+    border: none;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.manga-panel .card-img {
+    height: 100%; /* Adjust image height within the panel */
+    width: auto;
+    object-fit: cover; /* Ensure image covers area without distorting */
+    object-position: center;
+    border-radius: 0%;
+}
+
+.manga-panel:hover .card-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.card-img#ymir {
+    object-fit: scale-down;
+}
+
+.manga-panel .card-img-overlay::-webkit-scrollbar {
+    display: none;
+}
+
+.card-img-overlay {
+    display: none;
+    width: auto;
+    height: 100%;
+    background-color: #000000ba;
+    color:#ffffff;
+    border-radius: 0%;
+    /* to operate the animation of the title */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.card:hover .card-img-overlay {
+    display: block;
+}
+
+.card-title {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 1.7em;
+    font-weight: 800;
+    text-align: left;
+    text-wrap: nowrap;
+}
+
+.card-text {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+.card-title#long-title {
+    /* for title animation: */
+    display: inline-block;
+    width: max-content;
+    padding-right: 1.5rem;
+    animation: card-title-auto-scroll 13s linear infinite;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes card-title-auto-scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+    
+.card-img-overlay .card-title#long-title:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 1440px) {
+    .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay .card-title#med-title:hover {
+        
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-container {
+        grid-template-columns: fit-content(100%);
+        grid-template-rows: fit-content(100%);
+        gap: 15px;
+        padding: 1rem;
+    }
+    .manga-panel .card-img {
+        object-fit: contain; /* Keep cover for medium screens */
+    }
+    .card-title {
+        font-size: 1.1em; 
+    }
+    .card-text {
+        font-size: 0.6em; 
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .collection {
+        padding: 0.5rem;
+    }
+    .collection-container {
+        grid-template-rows: fit-content(100%);
+        gap: 10px;
+        padding: 1rem;
+    }
+    .manga-panel .card-img {
+        object-fit: scale-down; /* Switch to contain for smaller screens */
+    }
+    .note u {
+        text-underline-offset: 0.1rem;
+    }
+    #remainder a {
+        text-underline-offset: 0.15rem;
+    }
+    .manga-panel .card {
+        width: auto;
+        height: 100%;
+        padding-top: 0;
+    }
+    .manga-panel .card-img {
+        object-fit: contain;
+        border-radius: 0%;
+    }
+    .card-img-overlay {
+        padding: 0.8rem; 
+        border-radius: 0%;
+    }
+    .card-img-overlay .card-title {
+        font-size: 0.9rem; 
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+        letter-spacing: auto;
+    }
+    .card-img-overlay .card-text {
+        font-size: 0.4rem; 
+        line-height: 1.1;
+    }
+}
+
+/* For mobile devices that don't have hover, we can use a click to toggle the overlay (+ JS) */
+@media (hover: none) {
+  .card-img-overlay {
+    display: none;
+  }
+
+  .card.overlay-open .card-img-overlay {
+    display: block;
+  }
+}
+
+.team {
+    padding: 0.5em;
+}
+
+.team .section-title {
+    font-size: 2em;
+    -webkit-text-stroke: 5px white;
+    paint-order: stroke fill;
+}
+
+.team .section-text {
+    font-size: 0.9em;
+}
+
+.team .row {
+    padding: 0 2rem 1rem;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.team .card {
+    width: 50%;       /* Fill the column completely */
+    height: fit-content;
+    margin: 0 auto;    /* Center them just in case */
+    margin-bottom: 0.5rem;
+    /* Optional: Add a shadow to make them pop like the header subtitle */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+    background-color:rgba(156, 156, 156, 0.92)
+}
+
+.team .card-img-top {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: 20%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.team .section-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+.team .section-text a:hover {
+    text-decoration: underline;
+}
+
+.team .card-body {
+    padding-bottom: 0.5em;
+}
+
+.team .card-title {
+    font-family: 'Ditty', serif;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-wrap: nowrap;
+    letter-spacing: 0.08rem;
+    text-align: center;
+}
+
+.team .card-subtitle {
+    font-family: 'Ditty', serif;
+    font-size: 1em;
+    letter-spacing: 0.04rem;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .team .card {
+        width: 80%;
+        height: fit-content;
+    }
+    .team .card-title {
+        font-size: 1.4em;
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+    }
+    .team .card-subtitle {
+        font-size: 0.9em;
+        letter-spacing: 0.03rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team .card-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+    }
+}
+
+.team .card .btn {
+    background-color: #2d2d2deb;
+    color: rgb(241, 241, 241);
+    border: 2px solid rgb(22, 22, 22);
+}
+
+footer {
+    background-color: #252525eb;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    margin-bottom: -20px;
+    border-top: 2px solid black;
+}
+
+blockquote {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.blockquote-footer {
+    color:rgb(196, 196, 196);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+
+/* MAP PAGE SPECIFIC STYLES: */
+section.map img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding: 0.5rem;
+}
+
+section.map img:hover {
+    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
+    cursor: pointer;
+
+}
+
+.map em {
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
+/* MOBILE-SPECIFIC STYLES: */
+@media (max-width: 576px) {
+    .navbar {
+        text-align: center;
+        font-size: 0.9em;
+    }
+    #header-logo  {
+        max-width: 280px;
+        margin: -5px auto 0;
+    }
+    #header-subtitle {
+        margin: -15px auto 8px;
+        font-size: 0.85em;
+        padding: 0.1em 0.7em;
+    }
+    section {
+        margin: 1em 0.5em; /* Much smaller side margins on mobile */
+        padding: 0.3em 0.5em;        
+        align-items: center;
+        justify-content: center;
+    }
+    .section-title {
+        font-size: 1.8em;
+        padding-left: 0.8em;
+        letter-spacing: 0.06rem;
+    }
+    .section-text {
+        font-size: 0.8em; /* Slightly smaller text for mobile */
+    }
+    .intro-quotes {
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 1em auto; /* Adjusted margins for mobile */
+        padding: 0.8em;
+        font-size: 0.8em; /* Slightly smaller font size for mobile */
+        text-wrap: nowrap;
+    }
+    #intro-text {
+        margin: 1em auto 1.5em;
+        align-items: center;
+        padding: 0.9em auto 1em;
+        justify-content: center;
+        font-size: 0.8em;
+    }
+    button.btn {
+        font-size: 0.8em;
+        padding: 0.5em;
+    }
+    /* 2x2 layout for themes on mobile using Flexbox */
+    .theme-panel {
+        flex: 1 1 40%; /* Forces panels to wrap into 2 columns */
+        height: 140px; /* Shrink height slightly for smaller screens */
+    }
+    .theme-btn {
+        font-size: 1.1em; /* Scale text down a bit to fit */
+    }
+    .narratives-button {
+        grid-template-columns: 1fr; /* Drops it down to a single column */
+        padding: 0 1rem;            /* Adds a little breathing room on the sides */
+    }
+    #historical-tl {
+        grid-column: 1; /* Removes the multi-column span */
+        width: 100%;    /* Makes it fill the column just like the other two */
+    }
+    .narratives-button .btn {
+        font-size: 1.2em; /* Optional: Adjust font size for mobile readability */
+    }
+    .team .row {
+        padding: 0 1.5rem;
+    }
+    .team .card {
+        width: fit-content;
+        height: fit-content;
+    }
+    footer {
+        padding: 0.3em auto;
+    }
+    blockquote {
+      font-size: 0.9em;  
+    }
+    .blockquote-footer {
+        font-size: 0.7em;
+    }
+}
