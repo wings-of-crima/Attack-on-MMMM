@@ -1,3 +1,3 @@
-Item;ID;Creator;Object type;Date;Title;Image source;Materials;Dimensions;Institution
-Liberty painting;ark:/53355/cl010065872;Eugene Delacroix;Painting;1830;July 28, 1830. Liberty Leading the People.;https://collections.louvre.fr/en/ark:/53355/cl010065872;Oil on canvas;"Height: 2.6 m; Height with accessory: 2.97 m; Width: 3.25 m; Width with accessory: 3.65 m";Louvre Museum
-;;;;;;;;;
+Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
+Liberty painting,ark:/53355/cl010065872,Eugene Delacroix,Painting,1830,"July 28, 1830. Liberty Leading the People.",https://collections.louvre.fr/en/ark:/53355/cl010065872,Oil on canvas,Height: 2.6 m; Height with accessory: 2.97 m; Width: 3.25 m; Width with accessory: 3.65 m,Louvre Museum
+,,,,,,,,,
