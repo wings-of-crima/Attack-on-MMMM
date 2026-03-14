@@ -608,7 +608,7 @@ button.btn {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Three equal columns */
     grid-template-rows: 250px 300px 300px;
-    gap: 20px;
+    gap: 30px;
     padding: 1.5rem;
 }
 
@@ -617,7 +617,6 @@ button.btn {
     overflow: hidden;
     position: relative;
     grid-column: span 2;
-    border: 0.5rem double black;
 }
 
 .wide-panel {
@@ -1107,7 +1106,6 @@ section.map img:hover {
 /* --- Item card --- */
 .item-card {
     background-color: #f4f4f4;
-    border: 0.5rem double black;
     overflow: hidden;
     position: relative;
     display: flex;
