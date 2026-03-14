@@ -1013,3 +1013,250 @@ section.map img:hover {
         font-size: 0.7em;
     }
 }
+
+/* ============================================================
+   COLLECTION PAGE SPECIFIC STYLES
+   Linked only from collection.html
+   Depends on: main.css (section, section-title, section-text, etc.)
+   ============================================================ */
+
+
+/* --- Section wrapper --- */
+.full-collection {
+    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
+    padding: 1rem;
+}
+
+.full-collection .section-title {
+    margin-top: 0;
+    padding-top: 0.3em !important;
+    -webkit-text-stroke: 6.5px white;
+    paint-order: stroke fill;
+}
+
+#collection-page-intro {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+
+/* --- Grid of item cards --- */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 1.5rem;
+}
+
+
+/* --- Item card --- */
+.item-card {
+    background-color: #f4f4f4;
+    border: 2px solid rgb(20, 20, 20);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
+}
+
+
+/* --- Item number badge (top-left corner) --- */
+.item-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a11e15;
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 1em;
+    letter-spacing: 0.05rem;
+    padding: 0.1em 0.55em;
+    z-index: 2;
+    border-bottom-right-radius: 3px;
+}
+
+
+/* --- Item photo --- */
+.item-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 2px solid rgb(20, 20, 20);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover .item-photo {
+    transform: scale(1.03);
+}
+
+/* Special case: paintings where full composition matters more than fill */
+#ymir-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#liberty-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#mask-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#yggdrasil-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+
+/* --- Card bottom: info + QR side by side --- */
+.item-card-body {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+
+/* --- Text info (left side) --- */
+.item-info {
+    flex: 1;
+    padding: 0.7em 0.9em 0.8em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    border-right: 2px solid rgb(20, 20, 20);
+}
+
+.item-title {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.82em;
+    color: rgb(20, 20, 20);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.item-complete-title {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 0.90em;
+    color: #a11e15;
+    font-style: italic;
+    margin: 0;
+    letter-spacing: 0.02rem;
+}
+
+.item-desc {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.72em;
+    color: #3a3a3a;
+    line-height: 1.45;
+    margin: 0;
+    text-align: justify;
+    flex: 1;
+}
+
+.item-readmore {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.65em;
+    color: #a11e15;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.item-readmore:hover {
+    text-decoration: underline;
+}
+
+/* --- QR code area (right side) --- */
+.item-qr {
+    width: 86px;
+    min-width: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+    padding: 0.6em 0.5em;
+    background-color: #e8e4db;
+}
+
+.qr-box {
+    width: 66px;
+    height: 66px;
+    border: 2px dashed #888;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* When a real QR image is dropped in, make it fill the box */
+.qr-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-label {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.55em;
+    color: #666;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+    margin: 0;
+}
+
+
+/* --- Responsive: 2 columns on medium screens --- */
+@media (max-width: 992px) {
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 1rem;
+    }
+}
+
+
+/* --- Responsive: single column on mobile --- */
+@media (max-width: 600px) {
+    .items-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0.8rem;
+    }
+
+    .full-collection .section-title {
+        font-size: 1.8em;
+        -webkit-text-stroke: 5px white;
+    }
+
+    .item-qr {
+        width: 72px;
+        min-width: 72px;
+    }
+
+    .qr-box {
+        width: 54px;
+        height: 54px;
+    }
+
+    .item-title {
+        font-size: 0.78em;
+    }
+
+    .item-desc {
+        font-size: 0.68em;
+    }
+}
