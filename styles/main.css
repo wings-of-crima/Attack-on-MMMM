@@ -1157,6 +1157,21 @@ section.map img:hover {
     background-color: #e8e4db;
 }
 
+#liberty-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#mask-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#yggdrasil-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
 
 /* --- Card bottom: info + QR side by side --- */
 .item-card-body {
