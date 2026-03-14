@@ -559,6 +559,8 @@ button.btn {
     display: inline-block;
 }
 
+/* ============================================================
+   SMALL COLLECTION SPECIFICS:                                  */
 .collection {
     background-color: rgb(13, 13, 13);
     padding: 1rem;
@@ -605,7 +607,7 @@ button.btn {
     /* Approach with CSS grid: */
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Three equal columns */
-    grid-template-rows: 250px 250px 250px;
+    grid-template-rows: 250px 300px 300px;
     gap: 20px;
     padding: 1.5rem;
 }
@@ -615,6 +617,7 @@ button.btn {
     overflow: hidden;
     position: relative;
     grid-column: span 2;
+    border: 0.5rem double black;
 }
 
 .wide-panel {
@@ -667,7 +670,7 @@ button.btn {
 
 .card-img-overlay {
     display: none;
-    width: auto;
+    width: 100%;
     height: 100%;
     background-color: #000000ba;
     color:#ffffff;
@@ -731,16 +734,28 @@ button.btn {
         animation-fill-mode: backwards;
     }
     .card-img-overlay .card-title#med-title:hover {
-        
+        animation-play-state: paused;
+    }
+    .card-title#med-er-title { 
+        /* specificaly to add the animation to Flying Machine as well; 
+        had to add this separate rule because of Old Theme specific settings for the animation */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay .card-title#med-er-title:hover { 
         animation-play-state: paused;
     }
 }
 
 @media (max-width: 768px) {
     .collection-container {
-        grid-template-columns: fit-content(100%);
-        grid-template-rows: fit-content(100%);
-        gap: 15px;
+        grid-template-rows: 150px 200px 200px;
+        gap: 10px;
         padding: 1rem;
     }
     .manga-panel .card-img {
@@ -751,8 +766,20 @@ button.btn {
     }
     .card-text {
         font-size: 0.6em; 
+        text-align: justify;
     }
-    
+    .card-img-overlay#trenches .card-title { /* Why isn't this working? */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay#trenches .card-title:hover { 
+        animation-play-state: paused;
+    }
 }
 
 @media (max-width: 576px) {
@@ -760,12 +787,27 @@ button.btn {
         padding: 0.5rem;
     }
     .collection-container {
-        grid-template-rows: fit-content(100%);
-        gap: 10px;
-        padding: 1rem;
+        /* Shrink the rows even further for small phones */
+        grid-template-rows: 130px 150px 150px; 
+        gap: 8px;
+        padding: 0.5rem;
+    }
+    /* Ensure the frame and content align perfectly on tiny screens */
+    .manga-panel {
+        padding: 0.1em;
+    }
+    .manga-panel .card {
+        padding: 0.1em;
     }
     .manga-panel .card-img {
-        object-fit: scale-down; /* Switch to contain for smaller screens */
+        object-fit: contain; 
+    }
+    /* OVERRIDE PADDINGS FOR TINY SCREENS */
+    .card-img-overlay,
+    .card-img-overlay#trenches, 
+    .card-img-overlay#ymir, 
+    .card-img-overlay#syringe {
+        padding: 1rem !important; 
     }
     .note u {
         text-underline-offset: 0.1rem;
@@ -773,22 +815,9 @@ button.btn {
     #remainder a {
         text-underline-offset: 0.15rem;
     }
-    .manga-panel .card {
-        width: auto;
-        height: 100%;
-        padding-top: 0;
-    }
-    .manga-panel .card-img {
-        object-fit: contain;
-        border-radius: 0%;
-    }
-    .card-img-overlay {
-        padding: 0.8rem; 
-        border-radius: 0%;
-    }
     .card-img-overlay .card-title {
-        font-size: 0.9rem; 
-        font-weight: 700;
+        font-size: 0.7rem; 
+        font-weight: 600;
         margin-bottom: 0.2rem;
         letter-spacing: auto;
     }
@@ -1039,35 +1068,6 @@ section.map img:hover {
         font-size: 0.7em;
     }
 }
-/* --- Disclaimer Specific Style --- */
-
-/* Applichiamo il font a tutto ciò che sta dentro readable-text (incluso h3, p, li) */
-.readable-text, 
-.readable-text .section-title, 
-.readable-text p, 
-.readable-text li {
-    font-family: 'Noto Sans', sans-serif !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    line-height: 1.5 !important;
-    font-size: 0.85rem !important; 
-    text-align: left !important;
-    -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
-    color: black !important; /* Assicura che il testo sia nero leggibile */
-}
-
-/* rule for Disclaimer title */
-.readable-text .section-title {
-    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
-    font-size: 2rem !important;                     /* Molto più grande */
-    font-weight: 800 !important;                    /* Grassetto extra */
-    text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
-    -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
-    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
-    margin-bottom: 25px !important;                 /* Spazio dal testo */
-    display: block !important;
-}
-
 
 /* ============================================================
    COLLECTION PAGE SPECIFIC STYLES
@@ -1107,7 +1107,7 @@ section.map img:hover {
 /* --- Item card --- */
 .item-card {
     background-color: #f4f4f4;
-    border: 2px solid rgb(20, 20, 20);
+    border: 0.5rem double black;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -1300,3 +1300,34 @@ section.map img:hover {
         font-size: 0.68em;
     }
 }
+
+
+/* --- Disclaimer Specific Style --- */
+
+/* Applichiamo il font a tutto ciò che sta dentro readable-text (incluso h3, p, li) */
+.readable-text, 
+.readable-text .section-title, 
+.readable-text p, 
+.readable-text li {
+    font-family: 'Noto Sans', sans-serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1.5 !important;
+    font-size: 0.85rem !important; 
+    text-align: left !important;
+    -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
+    color: black !important; /* Assicura che il testo sia nero leggibile */
+}
+
+/* rule for Disclaimer title */
+.readable-text .section-title {
+    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
+    font-size: 2rem !important;                     /* Molto più grande */
+    font-weight: 800 !important;                    /* Grassetto extra */
+    text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
+    -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
+    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
+    margin-bottom: 25px !important;                 /* Spazio dal testo */
+    display: block !important;
+}
+

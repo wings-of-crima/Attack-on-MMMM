@@ -50,12 +50,18 @@
     src: url('fonts/SonOfTmU.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Rebelink';
+    src: url('fonts/rebelink.regular.ttf') format('truetype');
+}
+
 :root {
     --navbar-overlap: 58px;
     --navbar-height: 60px;
 
     --nav-bg-color: rgba(232, 217, 171, 0.961);
     --section-bg-color: rgb(243, 229, 200);
+    --collection-bg-color: rgb(255, 249, 233); /* slightly warmer greyish for wall-like feel */
     --main-text-color: black;
     --hover-bg-color: rgba(178, 157, 107, 0.40);
     --hover-text-color: rgba(178, 157, 107, 0.40);
@@ -72,6 +78,7 @@ html {
     scrollbar-width: none;  
     /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
     -ms-overflow-style: none; 
+    cursor: url('widgets/aoe-hand-cursor.cur'), auto;
 }
 
 body {
@@ -233,9 +240,10 @@ main {
     width: 100%;
     justify-content: center;
     /* Set a backup color in case the image fails to load */
-    background-color: #6d6d6d;
+    background-color: #293831;
     background-image: url('../images/themes_imgs/old-theme-body-bg.png'); 
-    background-repeat: repeat;
+    background-size: 100%;
+    background-repeat: repeat, no-repeat;
     background-attachment: scroll; 
     min-height: 100vh;
     margin: 0;
@@ -243,6 +251,9 @@ main {
 }
 
 section {
+    background-image: 
+        linear-gradient(rgb(243, 221, 177, 0.3),rgba(243, 221, 177, 0.3)),
+        url('../images/themes_imgs/paper-texture.png');
     background-color: var(--section-bg-color);
     margin: 2em 3em 2em;
     padding: 0.2em;
@@ -253,6 +264,7 @@ section {
 
 .section-title {
     font-family: 'Beffle Medium', serif;
+    font-weight: 400; /* max 'fine' weight allowed */
     font-size: 2.5em;
     padding-top: 0.5em;
     padding-left: 0.8em;
@@ -262,9 +274,10 @@ section {
 }
 
 .section-text {
-    font-family: 'ED Garamond', serif;
+    font-family: 'EB Garamond', serif;
     text-align: justify;
     font-size: 1.2em;
+    font-weight: 450;
     padding: 0.1em 1.5em 0;
     color: black;
 }
@@ -291,8 +304,8 @@ button.btn {
     border: 3px solid rgb(24, 24, 24); 
     border-radius: 10px;     /* Gives it a nice button feel */
     overflow: hidden;
-    flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 180px */
-    height: 150px;
+    flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 150px */
+    height:150px;
     padding: 0;              /* Strip padding so the button text can center properly */
     cursor: pointer;         /* Makes the whole block feel clickable */
 }
@@ -401,7 +414,6 @@ button.btn {
     cursor: pointer;         
 }
 
-
 .narrative-img {
     width: 100%;
     height: 100%;
@@ -452,12 +464,16 @@ button.btn {
 }
 
 .intro {
+    background-image: none;
     background-color: transparent;
     border: 0;
 }
 
 .intro-quotes {
     /* I don't understand why it feels like the text is not centered within the box, tried this but still doesn't do much: */
+    background-image: 
+        linear-gradient(rgb(243, 221, 177, 0.3),rgba(243, 221, 177, 0.3)),
+        url('../images/themes_imgs/paper-texture.png');
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -493,6 +509,9 @@ button.btn {
 }
 
 #intro-text {
+    background-image: 
+        linear-gradient(rgb(243, 221, 177, 0.3),rgba(243, 221, 177, 0.3)),
+        url('../images/themes_imgs/paper-texture.png');
     font-family: 'EB Garamond', serif;
     background-color: var(--section-bg-color);
     padding: 1.2em 2.1em;
@@ -508,14 +527,23 @@ button.btn {
         text-align: center;
     }
     #intro-text { /* to fix width when shrinking screen size */
-        margin: 2em auto 0.5em;
+        margin: 2em 4em 0.5em;
         padding: 1em 1.5em;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    /* 2x2 layout for themes on mobile using Flexbox */
+    .theme-panel {
+        flex: 1 1 40%; /* Forces panels to wrap into 2 columns */
+        height: 140px; /* Shrink height slightly for smaller screens */
     }
 }
 
 #intro-text a {
     color: var(--red-highligh-manuscript);
     text-decoration: none;
+    font-weight: 500;
 }
 
 #intro-text a:hover {
@@ -535,62 +563,86 @@ button.btn {
     display: inline-block;
 } */
 
+
+/* ============================================================
+   SMALL COLLECTION SPECIFICS:                                  */
 .collection {
-    background-color: rgb(13, 13, 13);
+    background-image: none;
+    background-color: var(--collection-bg-color);
+    border: 1rem ridge rgba(136, 103, 60, 0.75);
     padding: 1rem;
 }
 
 .collection .section-title {
+    font-family: 'Rebelink', serif;
+    padding-left: 0.5em;
+    color:rgb(255, 251, 247);
+    letter-spacing: 0.1rem;
+    font-size: 3.5em;
     margin-top: 0;
-    padding-top: 0.3em !important;
-    -webkit-text-stroke: 6.5px white;
+    padding-top: 0.2em !important;
+    -webkit-text-stroke: 5px rgba(255, 217, 0, 0.7);
     paint-order: stroke fill;
 }
 
 #collection-intro {
-    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
-    paint-order: stroke fill;
+    -webkit-text-stroke: none;
 }
 
 .note {
     text-align: right;
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.65em;
-    -webkit-text-stroke: 2.4px rgba(255, 255, 255, 0.9);
+    font-family: 'Baskervville', serif;
+    font-size: 0.9em;
+    -webkit-text-stroke: 0.5px rgba(255, 217, 0, 0.7);
     paint-order: stroke fill;
     margin-bottom: 0;
     padding: 0 1.5rem;
 }
 
 .note u {
-    text-underline-offset: 0.25rem;
+    text-underline-offset: 0.1rem;
 }
 
 #remainder {
-    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
-    paint-order: stroke fill;
+    -webkit-text-stroke: none;
 }
 
 #remainder a {
-    color: var(--red-highligh-manuscript);
-    text-underline-offset: 0.25rem;
+    -webkit-text-stroke: 0.5px rgba(255, 217, 0, 0.7);
+    paint-order: stroke fill;
+    font-weight: 600;
+    color: black;
+    text-underline-offset: 0.2rem;
 }
 
-/* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
+/* MANGA-LIKE PANELS FOR SMALL COLLECTION DISPLAY: */
 .collection-container {
     /* Approach with CSS grid: */
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Three equal columns */
-    grid-template-rows: 250px 250px 250px;
+    grid-template-rows: 250px 300px 300px;
     gap: 20px;
     padding: 1.5rem;
 }
 
 .manga-panel {
-    background-color: #f4f4f4;
+    background-color: transparent;
     overflow: hidden;
     position: relative;
     grid-column: span 2;
+    padding: 1.3em;
+}
+
+.manga-panel::after {
+    content: "";
+    position: absolute;
+    inset: -1%;
+    background-image: url('../images/themes_imgs/painting-frame.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Ensures the border doesn't interfere with hover effects */
+    z-index: 2;
 }
 
 .wide-panel {
@@ -611,6 +663,9 @@ button.btn {
 }
 
 .manga-panel .card {
+    position: relative;
+    z-index: 1;
+    padding: 0.1em;
     height: 100%;
     width: auto;
     border: none;
@@ -620,6 +675,8 @@ button.btn {
 }
 
 .manga-panel .card-img {
+    z-index: 1;
+    padding: 0.5em;
     height: 100%; /* Adjust image height within the panel */
     width: auto;
     object-fit: cover; /* Ensure image covers area without distorting */
@@ -632,7 +689,6 @@ button.btn {
     transition: transform 0.3s ease;
 }
 
-
 .card-img#ymir {
     object-fit: scale-down;
 }
@@ -642,6 +698,8 @@ button.btn {
 }
 
 .card-img-overlay {
+    z-index: 10;
+    padding: 2em 2.5em;
     display: none;
     width: auto;
     height: 100%;
@@ -655,21 +713,29 @@ button.btn {
     -ms-overflow-style: none;
 }
 
+.card-img-overlay#trenches, .card-img-overlay#ymir {
+    padding: 2em 3.5em;
+}
+
+.card-img-overlay#syringe {
+    padding: 4.2em 4em;
+}
+
 .card:hover .card-img-overlay {
     display: block;
 }
 
 .card-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    font-size: 1.7em;
+    font-family: 'Baskervville', serif;
+    font-size: 1.3em;
     font-weight: 800;
     text-align: left;
     text-wrap: nowrap;
 }
 
 .card-text {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8em;
+    font-family: 'Baskervville', serif;
+    font-size: 1em;
     text-align: justify;
 }
 
@@ -696,8 +762,8 @@ button.btn {
     animation-play-state: paused;
 }
 
-@media (max-width: 1440px) {
-    .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
+@media (max-width: 1600px) {
+    .card-title#med-er-title { /* specificaly for Flying Machine */
         /* for title animation: */
         display: inline-block;
         width: max-content;
@@ -706,27 +772,42 @@ button.btn {
         animation-delay: 0.4s;
         animation-fill-mode: backwards;
     }
-    .card-img-overlay .card-title#med-title:hover {
-        
+    .card-img-overlay .card-title#med-er-title:hover {
         animation-play-state: paused;
     }
 }
 
 @media (max-width: 768px) {
+    .collection .section-title {
+        padding-left: 0.6em;
+        font-size: 2.5em;
+    }
     .collection-container {
         grid-template-columns: fit-content(100%);
         grid-template-rows: fit-content(100%);
-        gap: 15px;
+        gap: 5px;
         padding: 1rem;
+    }
+    .manga-panel {
+        padding: 0; /* TODO: Understand why this is not doing anything */
+    }
+    .manga-panel .card {
+        padding: 0;
     }
     .manga-panel .card-img {
         object-fit: contain; /* Keep cover for medium screens */
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .card-img-overlay {
+        padding: 0.1em 0.5em;
     }
     .card-title {
-        font-size: 1.1em; 
+        font-size: 0.8em; 
     }
     .card-text {
-        font-size: 0.6em; 
+        font-size: 0.2em; 
     }
     
 }
@@ -739,6 +820,9 @@ button.btn {
         grid-template-rows: fit-content(100%);
         gap: 10px;
         padding: 1rem;
+    }
+    .manga-panel {
+        padding: 0.1em;
     }
     .manga-panel .card-img {
         object-fit: scale-down; /* Switch to contain for smaller screens */
@@ -790,7 +874,7 @@ button.btn {
 }
 
 .team .section-title {
-    font-size: 2em;
+    font-size: 1.8em;
     text-shadow: var(--text-borders) 1px 1px 2px;
 }
 
@@ -894,7 +978,7 @@ footer {
 }
 
 blockquote {
-    font-family: 'ED Garamond', serif;
+    font-family: 'EB Garamond', serif;
     font-weight: 400;
     font-style: italic;
     font-size: 1.3em;
@@ -902,7 +986,7 @@ blockquote {
 
 .blockquote-footer {
     color:rgb(196, 196, 196);
-    font-family: 'ED Garamond', serif;
+    font-family: 'EB Garamond', serif;
     font-weight: 200;
     font-style: normal;
     font-size: 1em;
@@ -950,8 +1034,8 @@ section.map img:hover {
         justify-content: center;
     }
     .section-title {
-        font-size: 1.8em;
-        padding-left: 0.8em;
+        font-size: 1em;
+        padding-left: 0.6em;
         letter-spacing: 0.06rem;
     }
     .section-text {
@@ -976,11 +1060,6 @@ section.map img:hover {
     button.btn {
         font-size: 0.8em;
         padding: 0.5em;
-    }
-    /* 2x2 layout for themes on mobile using Flexbox */
-    .theme-panel {
-        flex: 1 1 40%; /* Forces panels to wrap into 2 columns */
-        height: 140px; /* Shrink height slightly for smaller screens */
     }
     .theme-btn {
         font-size: 1.1em; /* Scale text down a bit to fit */
@@ -1023,7 +1102,7 @@ section.map img:hover {
 
 /* --- Section wrapper --- */
 .full-collection {
-    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
+    background-color: var(--collection-bg-color);
     padding: 1rem;
 }
 
@@ -1052,18 +1131,18 @@ section.map img:hover {
 /* --- Item card --- */
 .item-card {
     background-color: #f4f4f4;
-    border: 2px solid rgb(20, 20, 20);
+    border: 1rem ridge rgba(136, 103, 60, 0.75);
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+    /* box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75); */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item-card:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
+    box-shadow: 5px 5px 0px rgba(11, 11, 11, 0.7);
 }
 
 
@@ -1259,4 +1338,40 @@ section.map img:hover {
     .item-desc {
         font-size: 0.68em;
     }
+}
+
+
+/* DISCLAIMER SPECIFIC STYLES: */
+
+.readable-text {
+    font-family: 'Baskervville', serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: black;
+    padding: 0 1em 0.5em;
+    text-align: justify;
+    margin-bottom: 0.5rem;
+}
+
+.readable-text .section-title {
+    font-size: 2em;
+    padding: 0.5em 0.5em 0;
+}
+
+.readable-text-links {
+    padding: 1em 0.5em;
+}
+
+.readable-text-links li {
+    list-style-type: circle;
+}
+
+.readable-text-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.readable-text-links a:hover {
+    text-decoration: underline;
 }
