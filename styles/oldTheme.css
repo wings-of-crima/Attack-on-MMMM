@@ -64,7 +64,7 @@
     --collection-bg-color: rgb(255, 249, 233); /* slightly warmer greyish for wall-like feel */
     --main-text-color: black;
     --hover-bg-color: rgba(178, 157, 107, 0.40);
-    --hover-text-color: rgba(178, 157, 107, 0.40);
+    --hover-text-color: rgb(113, 100, 68);
     --text-borders: rgba(80, 50, 6, 0.6); /* same as the shadow for the intro-quotes, but less transparent */
     --red-highligh-manuscript: #6c1c13;
     --footer-bg-color: rgb(62, 45, 40); /* can look like the exterior of a manuscript */
@@ -191,7 +191,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-color: var(--nav-bg-color);
     border: 1.5px solid black;
     border-radius: 3px;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Beffle Medium', serif;
     font-weight: 600;
     font-size: 0.8em;
 }
@@ -199,11 +199,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .dropdown-item {
     color: rgb(0, 0, 0);
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-item:hover {
-    background-color: var(--hover-bg-color);
-    color:var(--hover-text-color) !important;
 }
 
 .dropdown-item#old-hundred {
@@ -215,11 +210,22 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-color: var(--hover-bg-color);
 }
 
+.dropdown-item#second-nine-hundred {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.4em;
+    color: #b0671d;
+}
+
 .dropdown-item#future {
     font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
     color: rgb(29, 162, 183);
     padding: 0 auto;
+}
+
+.dropdown-item:hover {
+    background-color: var(--hover-bg-color);
+    color:var(--hover-text-color) !important;
 }
 
 @media (min-width: 768px) {
@@ -1102,14 +1108,20 @@ section.map img:hover {
 
 /* --- Section wrapper --- */
 .full-collection {
+    background-image: none;
     background-color: var(--collection-bg-color);
     padding: 1rem;
 }
 
 .full-collection .section-title {
+    font-family: 'Rebelink', serif;
+    padding-left: 0.5em;
+    color:rgb(255, 251, 247);
+    letter-spacing: 0.1rem;
+    font-size: 3.5em;
     margin-top: 0;
-    padding-top: 0.3em !important;
-    -webkit-text-stroke: 6.5px white;
+    padding-top: 0.2em !important;
+    -webkit-text-stroke: 5px rgba(255, 217, 0, 0.7);
     paint-order: stroke fill;
 }
 
@@ -1218,7 +1230,7 @@ section.map img:hover {
 }
 
 .item-title {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
     font-size: 0.82em;
     color: rgb(20, 20, 20);
     line-height: 1.3;
@@ -1226,18 +1238,19 @@ section.map img:hover {
 }
 
 .item-complete-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    font-size: 0.90em;
-    color: #a11e15;
+    font-family: 'Beffle Medium', serif;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #ceaf52;
     font-style: italic;
     margin: 0;
-    letter-spacing: 0.02rem;
 }
 
 .item-desc {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 0.72em;
-    color: #3a3a3a;
+    font-family: 'Baskervvile', serif;
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #000000;
     line-height: 1.45;
     margin: 0;
     text-align: justify;
@@ -1245,9 +1258,10 @@ section.map img:hover {
 }
 
 .item-readmore {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 0.65em;
-    color: #a11e15;
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #ceaf52;
     text-decoration: none;
     margin-top: auto;
 }
@@ -1288,12 +1302,12 @@ section.map img:hover {
 }
 
 .qr-label {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.55em;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.7em;
+    font-weight: 600;
     color: #666;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.04rem;
     margin: 0;
 }
 

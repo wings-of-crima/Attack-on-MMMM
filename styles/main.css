@@ -39,6 +39,11 @@
     src: url('fonts/amarurgt.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Gothicfed';
+    src: url('fonts/gothicfed.regular.ttf') format('truetype');
+}
+
 :root {
     --navbar-overlap: 58px;
     --navbar-height: 60px;
@@ -169,11 +174,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.371);
-    color:#fffffff1 !important;
-}
-
 /*
 This is in case you want to change back to a JS logic to highlight the dropdown menu as well: 
 
@@ -196,11 +196,22 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     padding: 0 auto;
 }
 
+.dropdown-item#second-nine-hundred {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.4em;
+    color: #b0671d;
+}
+
 .dropdown-item#future {
     font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
     color: rgb(29, 162, 183);
     padding: 0 auto;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.371);
+    color:#fffffff1 !important;
 }
 
 @media (min-width: 768px) {
@@ -475,12 +486,32 @@ button.btn {
     color: #000000;
 }
 
-.narrative-panel #legendary-tl, .narrative-panel #technological-tl {
+.narrative-panel #historical-tl {
+    font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
+    font-size: 1.5em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.narrative-panel #historical-tl:hover {
+    color: white;
+    transform: scale(1.15);
+}
+
+.narrative-panel #legendary-tl  {
+    font-family: 'Gothicfed', serif;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    font-size: 1.5em;
+    color: rgb(172, 225, 252);
+}
+
+.narrative-panel #technological-tl {
     font-family: 'Ditty', serif;
     font-weight: 500;
     letter-spacing: 0.05rem;
-    font-size: 1.6em;
-    color: rgb(172, 225, 252);
+    font-size: 1.3em;
+    color: rgb(217, 192, 192);
 }
 
 .intro {
@@ -840,14 +871,11 @@ button.btn {
     padding: 0.5em;
 }
 
-.team .section-title {
-    font-size: 2em;
-    -webkit-text-stroke: 5px white;
-    paint-order: stroke fill;
-}
+/* removed specific title styling here, not necessary */
 
 .team .section-text {
-    font-size: 0.9em;
+    font-size: 1em;
+    padding: 0 1.2em;
 }
 
 .team .row {
