@@ -39,6 +39,11 @@
     src: url('fonts/amarurgt.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Gothicfed';
+    src: url('fonts/gothicfed.regular.ttf') format('truetype');
+}
+
 /* 1500-1800 fonts: */
 @font-face {
     font-family: 'Beffle Medium';
@@ -68,6 +73,7 @@
     --text-borders: rgba(80, 50, 6, 0.6); /* same as the shadow for the intro-quotes, but less transparent */
     --red-highligh-manuscript: #6c1c13;
     --footer-bg-color: rgb(62, 45, 40); /* can look like the exterior of a manuscript */
+    --button-outline-color: rgb(154, 132, 109);
 }
 
 html {
@@ -291,7 +297,7 @@ section {
 button.btn {
     margin: 0 auto;
     padding: 0.5em 1em;
-    border: 2px solid rgb(20, 20, 20);
+    border: 2px solid var(--button-outline-color);
     border-radius: 10px;
 }
 
@@ -306,8 +312,8 @@ button.btn {
 
 .theme-panel {
     position: relative; 
-    background-color: rgb(24, 24, 24); 
-    border: 3px solid rgb(24, 24, 24); 
+    background-color: var(--button-outline-color); 
+    border: 3px solid var(--button-outline-color); 
     border-radius: 10px;     /* Gives it a nice button feel */
     overflow: hidden;
     flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 150px */
@@ -341,7 +347,7 @@ button.btn {
     width: 100%;             /* Stretch to fill the panel */
     height: 100%;            /* Stretch to fill the panel */
     background-color: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
-    color: #000000;          /* White text */
+    color: #000000;
     font-size: 1.4em;
     border: none;            /* Remove bootstrap's default button borders */
     border-radius: inherit; 
@@ -354,7 +360,7 @@ button.btn {
 
 .theme-panel:hover .theme-btn {
     background-color: rgba(0, 0, 0, 0.70);
-    color:#000000;
+    /*color:#000000;*/
 }
 
 .themes #old-hundred {
@@ -410,8 +416,8 @@ button.btn {
 
 .narratives-container .narrative-panel {
     position: relative; 
-    background-color: rgb(24, 24, 24); 
-    border: 3px solid rgb(24, 24, 24); 
+    background-color: var(--button-outline-color); 
+    border: 3px solid var(--button-outline-color); 
     border-radius: 15px;     
     height: 150px;
     width: 100%;             /* Ensures panels stretch correctly in the grid */
@@ -461,12 +467,34 @@ button.btn {
     color: #000000;
 }
 
-.narrative-panel #legendary-tl {
+.narrative-panel #historical-tl {
+    font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
+    font-size: 1.8em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    background-color: var(--nav-bg-color);
+    color: rgb(0, 0, 0);
+}
+
+.narrative-panel #historical-tl:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.10);
+}
+
+.narrative-panel #legendary-tl  {
+    font-family: 'Gothicfed', serif;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    font-size: 1.5em;
+    color: rgb(172, 225, 252);
+}
+
+.narrative-panel #technological-tl {
     font-family: 'Ditty', serif;
     font-weight: 500;
     letter-spacing: 0.05rem;
-    font-size: 1.6em;
-    color: rgb(172, 225, 252);
+    font-size: 1.3em;
+    color: rgb(217, 192, 192);
 }
 
 .intro {
@@ -1206,6 +1234,11 @@ section.map img:hover {
 }
 
 #yggdrasil-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#codex-full {
     object-fit: scale-down;
     background-color: #e8e4db;
 }
