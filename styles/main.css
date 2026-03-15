@@ -154,6 +154,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     color:#fffffff1 !important;
     background-color: rgba(255, 255, 255, 0.371);
     border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-link.active {
@@ -488,14 +489,14 @@ button.btn {
 
 .narrative-panel #historical-tl {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.7em;
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
 .narrative-panel #historical-tl:hover {
     color: white;
-    transform: scale(1.15);
+    transform: scale(1.10);
 }
 
 .narrative-panel #legendary-tl  {
@@ -1199,6 +1200,10 @@ section.map img:hover {
     background-color: #e8e4db;
 }
 
+#codex-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
 
 /* --- Card bottom: info + QR side by side --- */
 .item-card-body {
