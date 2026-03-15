@@ -434,7 +434,6 @@ button.btn {
     cursor: pointer;         
 }
 
-
 .narrative-img {
     width: 100%;
     height: 100%;
@@ -476,7 +475,7 @@ button.btn {
     color: #000000;
 }
 
-.narrative-panel #legendary-tl {
+.narrative-panel #legendary-tl, .narrative-panel #technological-tl {
     font-family: 'Ditty', serif;
     font-weight: 500;
     letter-spacing: 0.05rem;
