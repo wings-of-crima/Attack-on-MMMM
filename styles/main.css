@@ -197,6 +197,12 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     padding: 0 auto;
 }
 
+.dropdown-item#first-nine-hundred {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
+}
+
 .dropdown-item#second-nine-hundred {
     font-family: 'Bangers', sans-serif;
     font-size: 1.4em;
@@ -1402,3 +1408,68 @@ section.map img:hover {
     display: block !important;
 }
 
+/*Rules for Narratives page*/
+
+/* Stile per la riga delle narrative */
+.narratives-display-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: nowrap; /* Forza la riga singola su PC */
+}
+
+/* Stile per ogni singola box (cliccabile) */
+.narrative-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important; /* Rimuove la sottolineatura dei link */
+    color: inherit;
+    border: 3px solid #181818;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.narrative-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Immagine interna alla box */
+.narrative-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #181818;
+}
+
+/* Contenitore del testo */
+.narrative-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.narrative-text h3 {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.narrative-text p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .narratives-display-row {
+        flex-wrap: wrap; /* Una sotto l'altra su schermi piccoli */
+    }
+    .narrative-box {
+        flex: 1 1 100%;
+    }
+}

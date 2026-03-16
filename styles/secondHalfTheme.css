@@ -1012,7 +1012,7 @@ blockquote {
 .blockquote-footer {
     color: black;
     font-family: 'Comic Neue', sans-serif;
-    font-weight: 00;
+    font-weight: 500;
     font-style: normal;
     font-size: 1em;
 }
@@ -1422,4 +1422,93 @@ section.map img:hover {
     /* Leggero spostamento per dare feedback al click */
     position: relative;
     top: 1px;
+}
+
+/*Rules for Narratives page*/
+
+/* Stile per la riga delle narrative */
+.narratives-display-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: nowrap; /* Forza la riga singola su PC */
+}
+
+/* Stile per ogni singola box (cliccabile) */
+#main-content .narrative-panel, 
+.narrative-box {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* 1. Colori e Sfondo (Stile carta di giornale come .intro-quotes) */
+    background-color: #fdfcf0 !important;
+    color: #b71b10 !important;
+    
+    /* 2. Bordo da Fumetto */
+    border: 4px solid #000000 !important;
+    
+    /* 3. Angoli imperfetti (Il border-radius dinamico che hai postato) */
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+    
+    /* 4. Shadow netta nera */
+    box-shadow: 10px 10px 0px 0px #000000 !important;
+    
+    padding: 2.5em 1.5em !important;
+    margin: 1em !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    height: auto !important;
+    text-decoration: none !important; /* Essenziale se la box è un link */
+}
+
+/* Effetto al passaggio del mouse per renderlo coerente */
+#main-content .narrative-panel:hover, 
+.narrative-box:hover {
+    transform: rotate(0deg) scale(1.02) !important;
+    box-shadow: 15px 15px 0px 0px #b71b10 !important;
+    color: #b71b10 !important;
+}
+
+.narrative-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Immagine interna alla box */
+.narrative-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #181818;
+}
+
+/* Contenitore del testo */
+.narrative-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.narrative-text h3 {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.narrative-text p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #000000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .narratives-display-row {
+        flex-wrap: wrap; /* Una sotto l'altra su schermi piccoli */
+    }
+    .narrative-box {
+        flex: 1 1 100%;
+    }
 }
