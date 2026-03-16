@@ -237,6 +237,12 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     padding: 0 auto;
 }
 
+.dropdown-item#first-nine-hundred {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
+}
+
 .dropdown-item#second-nine-hundred {
     font-family: 'Bangers', sans-serif;
     font-size: 1.4em;
