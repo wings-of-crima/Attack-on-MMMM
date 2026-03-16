@@ -288,7 +288,7 @@ section {
     background-color: rgb(194, 194, 194);
     margin: 2em 3em 2em;
     padding: 0.2em;
-    border: 1.5px solid black;
+    border: 3px solid black;
     align-items: center;
     justify-content: center;
 }
@@ -1036,6 +1036,29 @@ blockquote {
 
 
 /* MAP PAGE SPECIFIC STYLES: */
+section.map {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(230, 230, 230, 0.6) 0%,
+        rgba(230, 230, 230, 0.6) 100%
+        ),
+
+        url('../images/walls-img.png');   
+    background-position: top;
+    background-size: 110% 130%;
+    background-repeat: no-repeat;
+}
+
+.map .section-text {
+    text-align: left;
+    font-size: 1em;
+}
+
+.map em {
+    color: #a11e15;
+} 
+
+/*
 section.map img {
     width: 100%;
     height: auto;
@@ -1046,35 +1069,55 @@ section.map img {
 section.map img:hover {
     filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
     cursor: pointer;
+} */
 
-}
 
-.map em {
-    padding: 0 0.2rem 0;
-    color: #a11e15;
-}
 
 /* styling the SVG: */
+/*
 .map-container {
     width: 100%;
-    max-width: 1400px; /* Optional: Stops the map from getting comically wide on ultra-wide monitors */
-    margin: 0 auto; /* Centers the map horizontally */
-
-    height: 115vh; /* Limits the container height to 80% of the screen */
+    max-width: 1400px; 
+    margin: 2rem auto; 
+    padding: 0.5em 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.map-container svg {
+    width: 100%;         
+    max-height: 110vh;     
+    height: auto;
+} */
+
+.row {
+    margin: 0.5em;
+    margin-top: 1em;
+}
+
+/* 1. The Window (Now controlled by Bootstrap's Grid) */
+.map-container {
+    width: 100%;
+    height: 80vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #e8e4db; 
+}
+
+.map-container:active {
+    cursor: grabbing;
 }
 
 .map-container svg {
-    background-color: rgb(0, 0, 0);
-    border: thick solid rgb(0,0,0);
-    padding: 0 10em;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
+
 }
 
 .interactive-shape {
