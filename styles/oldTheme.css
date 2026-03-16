@@ -404,6 +404,7 @@ button.btn {
     border-radius: 10px;
 }
 
+/* Themes buttons: */
 .themes-container {
     margin: 1em; 
     padding: 0.5em;
@@ -452,17 +453,18 @@ button.btn {
     background-color: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
     color: #000000;
     font-size: 1.4em;
-    border: none;            /* Remove bootstrap's default button borders */
+    border: none !important;            /* Remove bootstrap's default button borders */
     border-radius: inherit; 
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;               
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .theme-panel:hover .theme-btn {
     background-color: rgba(0, 0, 0, 0.70);
+    transform: scale(1.05);
     /*color:#000000;*/
 }
 
@@ -494,6 +496,7 @@ button.btn {
     color: #fefefe;
 }
 
+/* Narratives buttons: */
 .narratives-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */

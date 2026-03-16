@@ -453,6 +453,7 @@ button.btn {
     border-radius: 10px;
 }
 
+/* Themes buttons: */
 .themes-container {
     margin: 1em; 
     padding: 0.5em;
@@ -464,8 +465,8 @@ button.btn {
 
 .theme-panel {
     position: relative; 
-    background-color: rgb(24, 24, 24); 
-    border: 3px solid rgb(24, 24, 24); 
+    background-color: var(--background-dark-panel-colors); 
+    border: 3px double var(--highlight-outline-border); 
     border-radius: 10px;     /* Gives it a nice button feel */
     overflow: hidden;
     flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 180px */
@@ -486,7 +487,7 @@ button.btn {
     z-index: 1;
     transition: transform 0.3s ease; /* Smooth reset when you stop hovering */
     transform: translateZ(0); /* Fixes some weird blurring issues in Chrome when using transform */
-    border-radius: inherit;
+    border-radius: inherit !important;
 }
 
 .theme-panel:hover .theme-img {
@@ -500,19 +501,20 @@ button.btn {
     width: 100%;             /* Stretch to fill the panel */
     height: 100%;            /* Stretch to fill the panel */
     background-color: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
-    color: #000000;          /* White text */
+    color: #000000; 
     font-size: 1.4em;
-    border: none;            /* Remove bootstrap's default button borders */
+    border: none !important;            /* Remove bootstrap's default button borders */
     border-radius: inherit; 
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;               
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .theme-panel:hover .theme-btn {
     background-color: rgba(0, 0, 0, 0.70);
+    transform: scale(1.05);
     color:#000000;
 }
 
@@ -544,6 +546,7 @@ button.btn {
     color: #fefefe;
 }
 
+/* Narratives buttons: */
 .narratives-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */
@@ -569,8 +572,8 @@ button.btn {
 
 .narratives-container .narrative-panel {
     position: relative; 
-    background-color: rgb(24, 24, 24); 
-    border: 3px solid rgb(24, 24, 24); 
+    background-color: var(--background-dark-panel-color); 
+    border: 3px double var(--highlight-outline-border); 
     border-radius: 15px;     
     height: 150px;
     width: 100%;             /* Ensures panels stretch correctly in the grid */
