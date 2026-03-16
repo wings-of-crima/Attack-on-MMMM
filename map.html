@@ -22,38 +22,67 @@
 
                     <div class="col-lg-9 col-md-12">
                         <div class="map-container">
+
                             <!-- Deleted this: width="904" height="827" from svg (before viewBox) to fix map measures-->
                             <svg id="interactive-map" width="100%" height="100%" viewBox="0 0 904 827" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="map" clip-path="url(#clip0_2_24)">
                                 <rect width="904" height="827" fill="white"/>
                                 <rect id="map-img" width="904" height="972" fill="url(#pattern0_2_24)"/>
-                                <rect class="interactive-shape" 
-                                    id="wall-maria" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Wall Maria: the third and outermost wall."
-                                    x="736" y="586" width="68" height="89" fill="url(#pattern1_2_24)"/>
-                                <rect class="interactive-shape" 
-                                    id="wall-rose"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Wall Rose: the second, middle wall."
-                                    x="629" y="497" width="68" height="89" fill="url(#pattern2_2_24)"/>
-                                <rect class="interactive-shape" 
-                                    id="wall-sina" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Wall Sina: the first and most central wall. The King resides here." 
-                                    x="526" y="399" width="66" height="87" fill="url(#pattern3_2_24)"/>
-                                <circle class="interactive-shape" 
-                                    id="map-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="This is the map of the city that inspired the Walls."
-                                    cx="712.5" cy="664.5" r="17.5" fill="white"/>
-                                <circle class="interactive-shape" 
-                                    id="baptistery-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Stohess District. Here is located the Baptistery destroyed by Eren and Annie in a fight."
-                                    cx="615" cy="360" r="10" fill="white"/>
-                                <circle class="interactive-shape" 
-                                    id="shiganshina-items" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Shiganshina District. Where everything started. Many key items are located here."
-                                    cx="456" cy="774" r="13" fill="white"/>
-                                <circle class="interactive-shape" 
-                                    id="outside-items" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="The outside. A dream. A goal. Freedom or another cage?"
-                                    cx="85.5" cy="789.5" r="19.5" fill="white"/>
-                                <circle class="interactive-shape" 
-                                    id="cannon-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Sitting atop the walls are the cannons with which the insiders have been fighting Titans for decades."
-                                    cx="482.5" cy="641.5" r="10.5" fill="white"/>
-                                <circle class="interactive-shape" 
-                                    id="flying-machine-item" 
-                                    cx="694" cy="805" r="13" fill="white"/>
+
+                                <a href="#info-offcanvas-wall-maria" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-wall-maria">
+                                    <rect class="interactive-shape" 
+                                        id="wall-maria" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Wall Maria: the third and outermost wall."
+                                        x="736" y="586" width="68" height="89" fill="url(#pattern1_2_24)"/>
+                                </a>
+
+                                <a href="#info-offcanvas-wall-rose" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-wall-rose">
+                                    <rect class="interactive-shape" 
+                                        id="wall-rose"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Wall Rose: the second, middle wall."
+                                        x="629" y="497" width="68" height="89" fill="url(#pattern2_2_24)"/>
+                                </a>
+
+                                <a href="#info-offcanvas-wall-sina" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-wall-sina">
+                                    <rect class="interactive-shape" 
+                                        id="wall-sina" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Wall Sina: the first and most central wall. The King resides here." 
+                                        x="526" y="399" width="66" height="87" fill="url(#pattern3_2_24)"/>
+                                </a>
+
+                                <a href="#info-offcanvas-map-item" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-map-item">
+                                    <circle class="interactive-shape" 
+                                        id="map-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="This is the map of the city that inspired the Walls."
+                                        cx="712.5" cy="664.5" r="17.5" fill="white"/>
+                                </a>
+
+                                <a href="#info-offcanvas-baptistery-item" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-baptistery-item">
+                                    <circle class="interactive-shape" 
+                                        id="baptistery-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Stohess District. Here is located the Baptistery destroyed by Eren and Annie in a fight."
+                                        cx="615" cy="360" r="10" fill="white"/>
+                                </a>
+
+                                <a href="#info-offcanvas-shiganshina-items" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-shiganshina-items">
+                                    <circle class="interactive-shape" 
+                                        id="shiganshina-items" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Shiganshina District. Where everything started. Many key items are located here."
+                                        cx="456" cy="774" r="13" fill="white"/>
+                                </a>
+
+                                <a href="#info-offcanvas-outside-items" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-outside-items">
+                                    <circle class="interactive-shape" 
+                                        id="outside-items" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="The outside. A dream. A goal. Freedom or another cage?"
+                                        cx="85.5" cy="789.5" r="19.5" fill="white"/>
+                                </a>
+
+                                <a href="#info-offcanvas-cannon-item" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-cannon-item">
+                                    <circle class="interactive-shape" 
+                                        id="cannon-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="Sitting atop the walls are the cannons with which the insiders have been fighting Titans for decades."
+                                        cx="482.5" cy="641.5" r="10.5" fill="white"/>
+                                </a>
+
+                                <a href="#info-offcanvas-flying-machine-item" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-flying-machine-item">
+                                    <circle class="interactive-shape" 
+                                        id="flying-machine-item" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="The ODM Gear (Omni-Directional Mobility Gear) shown at the very beginning. Mostly used outside the walls for the lingest time, until..."
+                                        cx="694" cy="805" r="13" fill="white"/>
+                                </a>
+
                                 </g>
                                 <defs>
                                 <pattern id="pattern0_2_24" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -89,6 +118,98 @@
                     </div>
                     </div>
                 </div> 
+
+                <!-- Offcanvas divs for the items -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-wall-maria" aria-labelledby="info-offcanvas-label-wall-maria">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-Label">Location Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about Wall Maria.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-wall-rose" aria-labelledby="info-offcanvas-label-wall-rose">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-Label">Location Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about Wall Rose.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-wall-sina" aria-labelledby="info-offcanvas-label-wall-sina">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-wall-sina">Location Details: Wall Sina</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about Wall Sina. The King resides here.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-map-item" aria-labelledby="info-offcanvas-label-map-item">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-map-item">Location Details: Map</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about the map of the city that inspired the Walls.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-baptistery-item" aria-labelledby="info-offcanvas-label-baptistery-item">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-baptistery-item">Location Details: Baptistery</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about the Stohess District Baptistery.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-shiganshina-items" aria-labelledby="info-offcanvas-label-shiganshina-items">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-shiganshina-items">Location Details: Shiganshina</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about the Shiganshina District.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-outside-items" aria-labelledby="info-offcanvas-label-outside-items">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-outside-items">Location Details: The Outside</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about the outside world.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-cannon-item" aria-labelledby="info-offcanvas-label-cannon-item">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-cannon-item">Location Details: Cannons</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about the cannons sitting atop the walls.
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="info-offcanvas-flying-machine-item" aria-labelledby="info-offcanvas-label-flying-machine-item">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="info-offcanvas-label-flying-machine-item">Location Details: Flying Machine</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        More information about the flying machine.
+                    </div>
+                </div>
+                
             </section>
         </main>
 
