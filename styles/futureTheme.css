@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Orbitron:wght@400..900&family=WDXL+Lubrifont+JP+N&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 /* Resets the box model for every single element */
 *, *::before, *::after {
@@ -527,8 +528,9 @@ button.btn {
 }
 
 .themes #first-nine-hundred {
-    font-family: 'Comic Relief', sans-serif;
-    color: #490e04;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
 }
 
 .themes #second-nine-hundred {
