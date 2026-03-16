@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Orbitron:wght@400..900&family=WDXL+Lubrifont+JP+N&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 /* Resets the box model for every single element */
 *, *::before, *::after {
@@ -234,6 +235,12 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     font-size: 1.4em;
     color: rgb(214, 161, 75);
     padding: 0 auto;
+}
+
+.dropdown-item#first-nine-hundred {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
 }
 
 .dropdown-item#second-nine-hundred {
@@ -527,8 +534,9 @@ button.btn {
 }
 
 .themes #first-nine-hundred {
-    font-family: 'Comic Relief', sans-serif;
-    color: #490e04;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
 }
 
 .themes #second-nine-hundred {
@@ -905,6 +913,13 @@ button.btn {
     .manga-panel .card-img {
         object-fit: contain; /* Keep cover for medium screens */
     }
+    /* OVERRIDE PADDINGS FOR TINY SCREENS */
+    .card-img-overlay,
+    .card-img-overlay#trenches, 
+    .card-img-overlay#ymir, 
+    .card-img-overlay#syringe {
+        padding: 0.5rem !important; 
+    }
     .card-title {
         font-size: 1.1em; 
     }
@@ -945,13 +960,6 @@ button.btn {
     }
     .manga-panel .card-img {
         object-fit: contain; 
-    }
-    /* OVERRIDE PADDINGS FOR TINY SCREENS */
-    .card-img-overlay,
-    .card-img-overlay#trenches, 
-    .card-img-overlay#ymir, 
-    .card-img-overlay#syringe {
-        padding: 1rem !important; 
     }
     .note u {
         text-underline-offset: 0.1rem;

@@ -476,8 +476,9 @@ button.btn {
 }
 
 .themes #first-nine-hundred {
-    font-family: 'Comic Relief', sans-serif;
-    color: #490e04;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
 }
 
 .themes #second-nine-hundred {
@@ -824,11 +825,18 @@ button.btn {
     .manga-panel .card-img {
         object-fit: contain; /* Keep cover for medium screens */
     }
+    /* OVERRIDE PADDINGS FOR TINY SCREENS */
+    .card-img-overlay,
+    .card-img-overlay#trenches, 
+    .card-img-overlay#ymir, 
+    .card-img-overlay#syringe {
+        padding: 0.5rem !important; 
+    }
     .card-title {
         font-size: 1.1em; 
     }
     .card-text {
-        font-size: 0.6em; 
+        font-size: 0.5em; 
         text-align: justify;
     }
     .card-img-overlay#trenches .card-title { /* Why isn't this working? */
