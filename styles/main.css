@@ -1039,8 +1039,10 @@ blockquote {
 section.map {
     background-image: linear-gradient(
         to bottom,
-        rgba(230, 230, 230, 0.6) 0%,
-        rgba(230, 230, 230, 0.6) 100%
+        rgba(230, 230, 230, 0.2) 0%,
+        rgba(230, 230, 230, 0.8) 20%,
+        rgba(230, 230, 230, 0.8) 80%,
+        rgba(230, 230, 230, 0.2) 100%
         ),
 
         url('../images/walls-img.png');   
