@@ -349,7 +349,6 @@ section {
     justify-content: center;
     gap: 5px;
     color:var(--graffiti-color-light);
-    background-color: var(--wall-bg-color);
     padding: 0.3em 1em;
     margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
     border: 3px solid rgb(77, 40, 18);
@@ -359,6 +358,23 @@ section {
     text-align: center;
     width: fit-content;
     max-width: 90%;
+    isolation:isolate;
+    position:relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background-color: var(--wall-bg-color);
+}
+
+.intro-quotes::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/themes_imgs/wall-texture.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    border-radius: inherit;
+    z-index: -1;
 }
 
 #motto-title-en {
@@ -456,6 +472,7 @@ button.btn {
     height: 150px;
     padding: 0;              /* Strip padding so the button text can center properly */
     cursor: pointer;         /* Makes the whole block feel clickable */
+    filter: drop-shadow(5px 6px 1px rgba(207, 234, 244, 0.2));
 }
 
 .theme-img {
@@ -559,7 +576,8 @@ button.btn {
     width: 100%;             /* Ensures panels stretch correctly in the grid */
     overflow: hidden;
     padding: 0;              
-    cursor: pointer;         
+    cursor: pointer;      
+    filter: drop-shadow(5px 6px 1px rgba(207, 234, 244, 0.2));   
 }
 
 .narrative-img {
@@ -755,7 +773,6 @@ button.btn {
     transition: transform 0.3s ease;
 }
 
-
 .card-img#ymir {
     object-fit: scale-down;
 }
@@ -785,15 +802,18 @@ button.btn {
 
 .card-title {
     font-family: 'Amarillo USAF', sans-serif;
-    font-size: 1.7em;
-    font-weight: 800;
+    color: var(--section-title); 
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.8);
+    font-size: 1.6em;
+    font-weight: 600;
     text-align: left;
     text-wrap: nowrap;
 }
 
 .card-text {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8em;
+    font-family: 'Futurest Cosmo', sans-serif;
+    color: rgb(216, 216, 216);
+    font-size: 0.9em;
     text-align: justify;
 }
 
@@ -820,19 +840,7 @@ button.btn {
     animation-play-state: paused;
 }
 
-@media (max-width: 1440px) {
-    .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
-        /* for title animation: */
-        display: inline-block;
-        width: max-content;
-        padding-right: 1.5rem;
-        animation: card-title-auto-scroll 8s linear infinite;
-        animation-delay: 0.4s;
-        animation-fill-mode: backwards;
-    }
-    .card-img-overlay .card-title#med-title:hover {
-        animation-play-state: paused;
-    }
+@media (max-width:1600px) {
     .card-title#med-er-title { 
         /* specificaly to add the animation to Flying Machine as well; 
         had to add this separate rule because of Old Theme specific settings for the animation */
@@ -845,6 +853,21 @@ button.btn {
         animation-fill-mode: backwards;
     }
     .card-img-overlay .card-title#med-er-title:hover { 
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 1440px) {
+    .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay .card-title#med-title:hover {
         animation-play-state: paused;
     }
 }
@@ -1033,28 +1056,45 @@ button.btn {
 }
 
 footer {
-    background-color: #252525eb;
+    isolation:isolate;
+    position:relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background-color: var(--wall-bg-color);
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 0.5em;
     padding-bottom: 0.2em;
     margin-bottom: -20px;
-    border-top: 2px solid black;
+    border-top: 3px solid rgb(77, 40, 18);
+
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/themes_imgs/wall-texture.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2;
+    border-radius: inherit;
+    z-index: -1;
 }
 
 blockquote {
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
     font-style: italic;
     font-size: 1.2em;
 }
 
 .blockquote-footer {
     color:rgb(196, 196, 196);
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 200;
+    font-family: 'Orbitron', sans-serif;
     font-style: normal;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 
