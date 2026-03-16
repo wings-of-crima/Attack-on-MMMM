@@ -62,6 +62,11 @@
     src: url('fonts/snakehead-graffiti.regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Mono Seahorse Graffiti Regular';
+    src: url('fonts/mono-seahorse-graffiti.regular.ttf') format('truetype');
+}
+
 :root {
     --navbar-overlap: 58px;
     --navbar-height: 60px;
@@ -70,6 +75,11 @@
     --text-neon-color: rgb(111, 209, 196); /* text neon color */
     --background-dark-panel-color: rgba(4, 33, 47, 0.9); /* background dark panel color */
     --highlight-outline-border: rgba(207, 234, 244, 0.8); /* highlight outline panel color */
+    --section-title: rgb(9, 183, 241);
+    /* graffiti / bladerunner 2049 warm palette: */
+    --wall-bg-color: rgb(163, 88, 27);
+    --graffiti-color-dark: rgb(100, 46, 14);
+    --graffiti-color-light: rgb(234, 153, 40);
 }
 
 html {
@@ -80,7 +90,7 @@ html {
     scrollbar-width: none;  
     /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
     -ms-overflow-style: none; 
-    cursor: url('widgets/aot-gear-sword-sweezy-cursor.png'), auto; /* TODO: change style */
+    cursor: url('widgets/futuristic-cursor.png'), auto; /* TODO: change style */
 }
 
 body {
@@ -283,7 +293,7 @@ main {
     left: 0;
     background-size: 100% 100%, auto;
     background-repeat: no-repeat, repeat;
-    background-position: center;
+    background-position: top;
     
     /* Ensure the body is at least as tall as the screen */
     min-height: 100vh;
@@ -303,7 +313,7 @@ section {
     align-items: center;
     justify-content: center;
     /* here I prefer filter instead of the box-shadow (see inspo from panels of psycho pass: */
-    filter: drop-shadow(7px 10px 1px rgba(207, 234, 244, 0.2)); /* sono una grande è letteralmente UGUALE */
+    filter: drop-shadow(6px 8px 1px rgba(207, 234, 244, 0.2)); /* sono una grande è letteralmente UGUALE */
 }
 
 .section-title {
@@ -312,15 +322,15 @@ section {
     padding-top: 0.2em;
     padding-left: 0.8em;
     margin-bottom: 0.5rem;
-    color: rgb(9, 183, 241); 
+    color: var(--section-title); 
     text-shadow: 0 0 10px rgba(17, 156, 202, 0.8);
     letter-spacing: 0.09rem;
 }
 
 .section-text {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     text-align: justify;
-    font-size: 1.1em;
+    font-size: 1.2em;
     padding: 0 1em;
     color: var(--text-neon-color);
 }
@@ -331,48 +341,61 @@ section {
     border: 0;
 }
 
-.intro-quotes {
+.intro-quotes { /* wall with graffiti style */
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
-    color:var(--text-neon-color);
-    background-color: var(--background-dark-panel-color);
-    padding: 0.8em 1em;
+    gap: 5px;
+    color:var(--graffiti-color-light);
+    background-color: var(--wall-bg-color);
+    padding: 0.3em 1em;
     margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
-    border: thick double var(--highlight-outline-border);
+    border: 3px solid rgb(77, 40, 18);
     border-radius: 15px;
-    box-shadow: 
-        0 0 5px rgba(0, 242, 255, 0.3),         /* Tight inner glow */
-        0 0 10px rgb(0, 242, 255, 0.3),        /* Medium glow */
-        0 0 20px rgb(0, 242, 255, 0.3),        /* Wide spread */
-        0 0 40px rgba(0, 204, 255, 0.2) !important; /* Faded outer bleed */
+    box-shadow: 0 0 15px rgb(77, 40, 18);
+    filter: none;
     text-align: center;
     width: fit-content;
     max-width: 90%;
 }
 
 #motto-title-en {
-    font-family: 'Who Dares', sans-serif;
-    font-size: 2.2em;
-    font-weight: 700;
+    font-family: 'Mono Seahorse Graffiti Regular', sans-serif;
+    font-size: 2.8em;
+    letter-spacing: 0.02rem;
+    line-height: 1.6;
+    font-weight: 200;
     text-wrap: nowrap;
+    -webkit-text-stroke: 1.5px rgb(244, 198, 134);
+    paint-order: fill;
 }
 
 #motto-title-jp {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 2em;
+    font-family: 'WDXL Lubrifont JP N', sans-serif;
+    font-size: 2.5em;
+    line-height: 1.2;
+    color: rgb(255, 0, 0);
+    -webkit-text-stroke: 1px rgb(255, 234, 208);
+    paint-order: fill;
+    text-shadow: 0 0 30px rgb(255, 0, 0, 1);
 }
 
 #intro-text {
     background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color);
     padding: 1.2em 2.1em;
     margin: 2em 7em 0.5em;
-    border: 1.5px solid black;
-    font-size: 0.9em;
-    color: white;
+    border: 2px solid var(--highlight-outline-border);
+    font-size: 1em;
+    color: rgb(216, 216, 216);
     text-align: center;
+    border: thick double var(--highlight-outline-border);
+    box-shadow: 
+        0 0 5px rgba(0, 242, 255, 0.3),         /* Tight inner glow */
+        0 0 10px rgb(0, 242, 255, 0.3),        /* Medium glow */
+        0 0 20px rgb(0, 242, 255, 0.3),        /* Wide spread */
+        0 0 40px rgba(0, 204, 255, 0.2) !important; /* Faded outer bleed */
 }
 
 @media (max-width: 768px) {
@@ -386,8 +409,9 @@ section {
 }
 
 #intro-text a {
-    color: #a11e15;
+    color: var(--section-title);
     text-decoration: none;
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.8);
 }
 
 #intro-text a:hover {
@@ -397,7 +421,8 @@ section {
 #intro-text em {
     font-size: 1.1em;
     padding: 0 0.2rem 0;
-    color: #a11e15;
+    color: var(--section-title);
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.8); 
 }
 
 .bigger-cap {
@@ -609,7 +634,6 @@ button.btn {
 /* ============================================================
    SMALL COLLECTION SPECIFICS:                                  */
 .collection {
-    background-color: rgb(13, 13, 13);
     padding: 1rem;
 }
 
@@ -630,16 +654,15 @@ button.btn {
 }
 
 #collection-intro {
-    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
-    paint-order: stroke fill;
+    color: rgb(216, 216, 216);
 }
 
 .note {
     text-align: right;
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.65em;
-    -webkit-text-stroke: 2.4px rgba(255, 255, 255, 0.9);
-    paint-order: stroke fill;
+    font-family: 'Futurest Cosmo', sans-serif;
+    font-size: 0.9em;
+    color: var(--section-title); 
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.8);
     margin-bottom: 0;
     padding: 0 1.5rem;
 }
@@ -649,12 +672,11 @@ button.btn {
 }
 
 #remainder {
-    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
-    paint-order: stroke fill;
+    color: var(--text-neon-color); 
 }
 
 #remainder a {
-    color: #a11e15;
+    color: var(--section-title);
     text-underline-offset: 0.25rem;
 }
 
@@ -664,12 +686,31 @@ button.btn {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Three equal columns */
     grid-template-rows: 250px 300px 300px;
-    gap: 30px;
-    padding: 1.5rem;
+    gap: 25px;
+    margin: 1.5em;
+    padding: 2em;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    isolation: isolate;
+    position: relative;
+    background-color: var(--wall-bg-color);
+    border: thick double var(--highlight-outline-border);
+    border-radius: 2px;
+}
+
+.collection-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/themes_imgs/wall-texture.png');
+    background-size: 100% 100%;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .manga-panel {
-    background-color: #f4f4f4;
+    background-color: var(--wall-bg-color);
+    border: thick double var(--highlight-outline-border);
+    border-radius: 2px;
     overflow: hidden;
     position: relative;
     grid-column: span 2;
@@ -696,7 +737,7 @@ button.btn {
     height: 100%;
     width: auto;
     border: none;
-    background: white;
+    background: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
 }
@@ -727,8 +768,9 @@ button.btn {
     display: none;
     width: 100%;
     height: 100%;
-    background-color: #000000ba;
-    color:#ffffff;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color);
+    background-color: var(--background-dark-panel-color);
+    color:var(--text-neon-color);
     border-radius: 0%;
     /* to operate the animation of the title */
     overflow-y: scroll;
@@ -742,7 +784,7 @@ button.btn {
 }
 
 .card-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
     font-weight: 800;
     text-align: left;

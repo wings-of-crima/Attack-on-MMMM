@@ -153,14 +153,16 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-family: 'Baskervville', serif;
     font-style: italic;
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9em;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: var(--nav-bg-color);
     position: relative;
     width: fit-content;
     margin: -35px auto 10px;
     padding: 0.1em 1em;
-    border-radius: 3px;
+    border: 1px solid black;
+    border-bottom: 2px double black;
+    border-radius: 2px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
 }
 
@@ -572,7 +574,7 @@ button.btn {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
     font-size: 1.8em;
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.2s ease;
     background-color: var(--nav-bg-color);
     color: rgb(0, 0, 0);
 }
