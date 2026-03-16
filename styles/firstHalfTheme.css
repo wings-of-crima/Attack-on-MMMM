@@ -148,6 +148,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     margin-top: calc(var(--navbar-overlap) * -1); /* Pull the navbar up to overlap with the header */
     position: sticky;
     z-index: 1030; /* Ensures the navbar stays above the header */
+    border-bottom: 1px solid rgba(27, 46, 43, 0.9);
 }
 
 .nav-link {
