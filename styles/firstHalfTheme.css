@@ -169,8 +169,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .nav-link.active {
-    color:#d13d29 !important;
-    border-bottom: 2px solid #d13d29;
+    color:#c61815 !important;
+    border-bottom: 2px solid #c61815;
 }
 
 .dropdown-menu {
@@ -993,7 +993,7 @@ button.btn {
 }
 
 footer {
-    background-color: #252525eb;
+    background-color: rgb(27, 46, 43, 0.9);
     color: rgb(255, 255, 255);
     text-align: center;
     padding-top: 0.5em;
@@ -1003,18 +1003,18 @@ footer {
 }
 
 blockquote {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 300;
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .blockquote-footer {
     color:rgb(196, 196, 196);
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 
@@ -1132,7 +1132,7 @@ section.map img:hover {
 
 /* --- Section wrapper --- */
 .full-collection {
-    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
+    background-color: #162724; /* same as .collection in main.css */
     padding: 1rem;
 }
 
@@ -1251,15 +1251,15 @@ section.map img:hover {
 }
 
 .item-title {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.82em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
     color: rgb(20, 20, 20);
     line-height: 1.3;
     margin: 0;
 }
 
 .item-complete-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'Playfair', serif;
     font-size: 0.90em;
     color: #a11e15;
     font-style: italic;
@@ -1321,8 +1321,8 @@ section.map img:hover {
 }
 
 .qr-label {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.55em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7em;
     color: #666;
     text-align: center;
     text-transform: uppercase;
@@ -1401,4 +1401,70 @@ section.map img:hover {
     color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
     margin-bottom: 25px !important;                 /* Spazio dal testo */
     display: block !important;
+}
+
+/*Rules for Narratives page*/
+
+/* Stile per la riga delle narrative */
+.narratives-display-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: nowrap; /* Forza la riga singola su PC */
+}
+
+/* Stile per ogni singola box (cliccabile) */
+.narrative-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important; /* Rimuove la sottolineatura dei link */
+    color: inherit;
+    border: 3px solid #181818;
+    border-radius: 0px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.narrative-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Immagine interna alla box */
+.narrative-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #181818;
+}
+
+/* Contenitore del testo */
+.narrative-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.narrative-text h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.narrative-text p {
+    font-family: 'Noto Sans'g, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .narratives-display-row {
+        flex-wrap: wrap; /* Una sotto l'altra su schermi piccoli */
+    }
+    .narrative-box {
+        flex: 1 1 100%;
+    }
 }
