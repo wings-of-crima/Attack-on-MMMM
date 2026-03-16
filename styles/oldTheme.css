@@ -593,8 +593,6 @@ button.btn {
     font-size: 1.8em;
     display: inline-block;
     transition: transform 0.3s ease, color 0.2s ease;
-    background-color: var(--nav-bg-color);
-    color: rgb(0, 0, 0);
 }
 
 .narrative-panel #historical-tl:hover {
@@ -700,12 +698,13 @@ button.btn {
     position: relative;
     grid-column: span 2;
     padding: 1.3em;
+    isolation: isolate;
 }
 
 .manga-panel::after {
     content: "";
     position: absolute;
-    inset: -1%;
+    inset: -2.5%;
     background-image: url('../images/themes_imgs/painting-frame.png');
     background-position: center;
     background-size: 100% 100%;
@@ -848,8 +847,8 @@ button.btn {
 
 @media (max-width: 768px) {
     .collection .section-title {
-        padding-left: 0.6em;
-        font-size: 2.5em;
+        padding-left: 0.2em;
+        font-size: 1em;
     }
     .collection-container {
         grid-template-columns: fit-content(100%);
@@ -858,7 +857,7 @@ button.btn {
         padding: 1rem;
     }
     .manga-panel {
-        padding: 0; /* TODO: Understand why this is not doing anything */
+        padding: 0.1rem; /* TODO: Understand why this is not doing anything */
     }
     .manga-panel .card {
         padding: 0;
@@ -868,17 +867,51 @@ button.btn {
         padding: 0;
         width: 100%;
         height: 100%;
+        inset: 15px !important;
     }
+    /* OVERRIDE PADDINGS FOR TINY SCREENS */
     .card-img-overlay {
-        padding: 0.1em 0.5em;
+        padding: 0.8rem 1rem !important; 
+    }
+    .card-img-overlay#trenches {
+        padding: 1rem 1.2rem !important;
+    }
+    .card-img-overlay#ymir {
+        padding: 1.5rem 1.3rem !important;
+    } 
+    .card-img-overlay#syringe {
+        padding: 2.1rem 1.3rem !important;
     }
     .card-title {
         font-size: 0.8em; 
     }
     .card-text {
-        font-size: 0.2em; 
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        font-size: 0.5em; 
     }
-    
+    .card-img-overlay #med-title {
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay#trenches .card-title { /* Why isn't this working? */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay#trenches .card-title:hover, .card-img-overlay #med-title:hover { 
+        animation-play-state: paused;
+    }
+
 }
 
 @media (max-width: 576px) {

@@ -913,6 +913,13 @@ button.btn {
     .manga-panel .card-img {
         object-fit: contain; /* Keep cover for medium screens */
     }
+    /* OVERRIDE PADDINGS FOR TINY SCREENS */
+    .card-img-overlay,
+    .card-img-overlay#trenches, 
+    .card-img-overlay#ymir, 
+    .card-img-overlay#syringe {
+        padding: 0.5rem !important; 
+    }
     .card-title {
         font-size: 1.1em; 
     }
@@ -953,13 +960,6 @@ button.btn {
     }
     .manga-panel .card-img {
         object-fit: contain; 
-    }
-    /* OVERRIDE PADDINGS FOR TINY SCREENS */
-    .card-img-overlay,
-    .card-img-overlay#trenches, 
-    .card-img-overlay#ymir, 
-    .card-img-overlay#syringe {
-        padding: 1rem !important; 
     }
     .note u {
         text-underline-offset: 0.1rem;
