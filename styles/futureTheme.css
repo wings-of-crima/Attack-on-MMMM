@@ -551,10 +551,16 @@ button.btn {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */
     gap: 10%;             /* Space between the panels */
-    margin: 1em auto;  
-    padding-bottom: 1.5em;  
+    margin: 1em auto 1em;  
+    padding-bottom: 1.5em; 
     justify-content: center;
     max-width: 900px;      /* Keeps them from stretching awkwardly wide */
+}
+
+@media (max-width: 1200px) {
+    .narratives-container {
+        margin: 0 0.5em 0.5em;
+    }
 }
 
 /* Force all buttons to fill their grid spaces uniformly */
@@ -621,6 +627,7 @@ button.btn {
 
 .narratives-container .narrative-panel:hover .narrative-btn {
     background-color: rgba(0, 0, 0, 0.70);
+    transform: scale(1.05);
     color: #000000;
 }
 
@@ -650,6 +657,20 @@ button.btn {
     letter-spacing: 0.05rem;
     font-size: 1.3em;
     color: rgb(217, 192, 192);
+   transition: transform 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .narrative-panel #historical-tl {
+        font-size: 1.5em;
+    }
+    .narrative-panel #legendary-tl {
+        font-size: 1.3em;
+    }
+    .narrative-panel #technological-tl {
+        font-size: 1.1em;
+        text-wrap: wrap;
+    }
 }
 
 /* ============================================================
