@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 
 /* second-half fonts: */
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=IM+Fell+DW+Pica:ital@0;1&display=swap');
@@ -205,6 +207,12 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     background-color: rgba(255, 255, 255, 0.371);
 }
 
+.dropdown-item#first-nine-hundred {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+    color: #000000;
+}
+
 .dropdown-item#old-hundred {
     font-family: 'Son of Time', serif;
     font-size: 1.4em;
@@ -394,7 +402,8 @@ button.btn {
 }
 
 .themes #first-nine-hundred {
-    font-family: 'Comic Relief', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
     color: #490e04;
 }
 
@@ -440,26 +449,25 @@ button.btn {
     position: relative; 
     background-color: rgb(24, 24, 24); 
     border: 3px solid rgb(24, 24, 24); 
-    border-radius: 15px;     
-    height: 150px;
-    width: 100%;             /* Ensures panels stretch correctly in the grid */
-    overflow: hidden;
-    padding: 0;              
-    cursor: pointer;         
+    border-radius: 15px;      
+    overflow: hidden !important;
+    padding: 0;               
+    cursor: pointer;
+
+    /* Questo assicura che il riquadro mantenga la forma e si ridimensioni con la pagina */
+    width: 100%; 
+    aspect-ratio: 16 / 9; 
+    height: auto; 
 }
 
 .narrative-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center;
-    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-    transition: transform 0.3s ease; 
-    transform: translateZ(0); 
-    border-radius: inherit;
+    z-index: 1; /* Sta dietro al bottone/testo */
 }
 
 .narratives-container .narrative-btn {
@@ -467,7 +475,7 @@ button.btn {
     z-index: 10; 
     width: 100%;             
     height: 100%;            
-    background-color: rgba(0, 0, 0, 0.382); 
+    background-color: transparent; 
     color: #ffffff;          
     font-size: 1.5em;
     border: none;            
@@ -482,11 +490,6 @@ button.btn {
 .narratives-container .narrative-panel:hover .narrative-img {
     transform: scale(1.05);
     border-radius: inherit;
-}
-
-.narratives-container .narrative-panel:hover .narrative-btn {
-    background-color: rgba(0, 0, 0, 0.70);
-    color: #000000;
 }
 
 .narrative-panel #legendary-tl, .narrative-panel #technological-tl {
@@ -1135,7 +1138,7 @@ section.map img:hover {
 
 /* --- Section wrapper --- */
 .full-collection {
-    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
+    background-color: #21bffe; /* same as .collection in main.css */
     padding: 1rem;
 }
 
@@ -1163,18 +1166,33 @@ section.map img:hover {
 
 /* --- Item card --- */
 .item-card {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    /* 1. Bordo Ink spesso */
+    border: 4px solid #000000 !important;
+    
+    /* 2. Bordi irregolari (stile ritaglio a mano) */
+    /* I valori creano angoli leggermente diversi tra loro */
+    border-radius: 15px 4px 12px 6px / 4px 15px 6px 12px !important;
+    
+    /* 3. Ombra netta Pop Art */
+    box-shadow: 8px 8px 0px 0px #000000 !important;
+    
+    /* 4. Una leggera rotazione casuale la rende meno "digitale" */
+    transform: rotate(-0.5deg);
+    
+    transition: all 0.2s ease;
 }
 
 .item-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
+    /* Si sposta leggermente verso l'alto e a sinistra */
+    transform: translate(-5px, -5px) !important;
+    /* L'ombra diventa più profonda e cambia colore in un rosso vibrante */
+    box-shadow: 6px 6px 0px 0px #b71b10 !important;
 }
 
 
