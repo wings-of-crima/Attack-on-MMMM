@@ -1079,7 +1079,7 @@ section.map img:hover {
         text-wrap: nowrap;
     }
     #intro-text {
-    background-color: rgb(226, 226, 226);
+    background-image: rgb(226, 226, 226);
     padding: 1.2em 2.1em;
     margin: 2em 7em 0.5em;
     border: 1.5px solid black;
