@@ -12,7 +12,6 @@ const gateSfx = document.getElementById("gate-sfx");
 const enterButton = document.getElementById("enter-button");
 const loadScreen = document.getElementById("loader-screen");
 
-
 enterButton.addEventListener("click", () => {
     loadScreen.classList.add("fade-out");
 
@@ -58,6 +57,7 @@ document.addEventListener("click", (event) => {
     .querySelectorAll(".manga-panel .card.overlay-open")
     .forEach((c) => c.classList.remove("overlay-open"));
 });
+
 
 // function updateNavbarHeight() {
     // 1. Grab the navbar element
