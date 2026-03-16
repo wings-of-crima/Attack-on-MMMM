@@ -1181,9 +1181,7 @@ section.map img:hover {
     
     /* 3. Ombra netta Pop Art */
     box-shadow: 8px 8px 0px 0px #000000 !important;
-    
-    /* 4. Una leggera rotazione casuale la rende meno "digitale" */
-    transform: rotate(-0.5deg);
+   
     
     transition: all 0.2s ease;
 }
