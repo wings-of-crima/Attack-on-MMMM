@@ -1,0 +1,1399 @@
+@import url('https://db.onlinewebfonts.com/c/3ba5f774e7fd55929fc1bfa6205986a4?family=Copperplate+Gothic+LT+W01+29BC');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Relief:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+
+
+/*first-half*/ 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+/* Resets the box model for every single element */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Anime Ace';
+    src: url('fonts/animeace.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Who Dares';
+    src: url('fonts/Who\ Dares!.otf') format('truetype');
+}
+
+@font-face { /* NOT USED YET */
+    font-family: 'Comica Regular';
+    src: url('fonts/ComicaRegular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Son of Time';
+    src: url('fonts/SonOfTmU.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ditty';
+    src: url('fonts/Ditty.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Amarillo USAF';
+    src: url('fonts/amarurgt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gothicfed';
+    src: url('fonts/gothicfed.regular.ttf') format('truetype');
+}
+
+:root {
+    --navbar-overlap: 58px;
+    --navbar-height: 60px;
+}
+
+html {
+    /* 1. FIX THE WHITE SPACE ON THE RIGHT */
+    /* This cuts off anything that sticks out horizontally */
+    overflow-x: hidden; 
+    /* 2. HIDE THE SCROLLBAR (Firefox) */
+    scrollbar-width: none;  
+    /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
+    -ms-overflow-style: none; 
+    cursor: url('widgets/aot-gear-sword-sweezy-cursor.png'), auto; /* TODO: understand if keeping cursor or pointer */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. HIDE THE SCROLLBAR (Chrome, Safari, Opera) */
+html::-webkit-scrollbar, body::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+/* TODO: make header bg overlpa in bg with navbar and make repsonsive */
+.header {
+    /* background-color: #e22012; temporary set */
+    width: 100%;
+    margin: 0;
+    height: calc(26vh + var(--navbar-overlap)) !important; /* Adjust height to account for navbar overlap */
+    overflow-x: hidden; 
+    /* border-bottom: 2px solid black; */
+}
+
+.header a {
+    display: block;      /* Removes inline spacing weirdness */
+    line-height: 0;      /* Kills any text-height gaps inside the link */
+    margin-bottom: 0;    /* Ensure no extra push from the link itself */
+}
+
+#header-bg {
+    width: 100%;
+    height: calc(26vh + var(--navbar-overlap));
+    /* properties in case of using background-image: here:width:
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    object-position: center 5%;
+    position: absolute;
+    z-index: 0; 
+}
+
+#header-logo, #header-subtitle {
+    z-index: 5;
+    /*align-self: center;
+    justify-self: center;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#header-logo {
+    max-width: 370px;
+    margin: -25px auto 1px;
+    filter: drop-shadow(1px 1px 1px rgb(73, 73, 73));
+}
+
+#header-subtitle {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.92);
+    position: relative;
+    width: fit-content;
+    margin: -35px auto 10px;
+    padding: 0.1em 1em;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.412);
+}
+
+.navbar {
+    background-color: rgba(27, 46, 43, 0.9) !important;
+
+    width:100%;
+    margin-top: calc(var(--navbar-overlap) * -1); /* Pull the navbar up to overlap with the header */
+    position: sticky;
+    z-index: 1030; /* Ensures the navbar stays above the header */
+}
+
+.nav-link {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #b3a078 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3 ease;
+}
+
+.nav-link:hover {
+    color:#f1e4c1 !important;
+    background-color: rgba(179, 160, 120, 0.2);
+    border-radius: 0;
+}
+
+.nav-link.active {
+    color:#d13d29 !important;
+    border-bottom: 2px solid #d13d29;
+}
+
+.dropdown-menu {
+    background-color: #1b2e2b;
+    border: 2px solid b3a078;
+    border-radius: 0px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.dropdown-item {
+    color: #f1e4c1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*
+This is in case you want to change back to a JS logic to highlight the dropdown menu as well: 
+
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+    color: #fffffff1 !important;
+    background-color: transparent !important;
+}
+*/
+
+.dropdown-item#default {
+    /* Adding the background so when the theme is selected this stays highlighted: */
+    background-color: rgba(255, 255, 255, 0.371);
+}
+
+.dropdown-item#old-hundred {
+    font-family: 'Son of Time', serif;
+    font-size: 1.4em;
+    color: rgb(214, 161, 75);
+    padding: 0 auto;
+}
+
+.dropdown-item#second-nine-hundred {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.4em;
+    color: #b0671d;
+}
+
+.dropdown-item#future {
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.7em;
+    color: rgb(29, 162, 183);
+    padding: 0 auto;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.371);
+    color:#fffffff1 !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav.mx-auto {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #dropdown-themes {
+        text-align: right;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    justify-content: center;
+    
+    /* Set a backup color in case the image fails to load */
+    background-color: #b7923a;
+
+    /* WE ARE DEFINING TWO LAYERS HERE */
+    background-image: url('../images/themes_imgs/war-bg.png');
+    
+
+    /* SIZING THE LAYERS */
+    /* 1. The Gradient: Stretches to cover the full width/height (100% 100%) */
+    /* 2. The Image: Keeps its original pixel size (auto) so it stays crisp */
+    background-size: 100% 100%, auto;
+
+    /* REPEATING THE LAYERS */
+    /* 1. Gradient: NO repeat (we want it to stretch) */
+    /* 2. Image: REPEAT (we want it to tile infinitely) */
+    background-repeat: no-repeat, repeat;
+
+    /* SCROLLING BEHAVIOR */
+    /* 'scroll' = The texture moves up when you scroll (Normal) */
+    /* 'fixed' = The texture stays still while text slides over it (Parallax) */
+    background-attachment: scroll, scroll; 
+    
+    /* Ensure the body is at least as tall as the screen */
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+section {
+    /* Sfondo crema/carta invecchiata invece del grigio */
+    background-color: #a5ae6e; 
+    
+    margin: 2em 3em;
+    padding: 1.5em; /* Più respiro per il testo */
+    
+    /* Doppia cornice: il bordo è l'oro, l'outline è il nero */
+    border: 12px solid #c4af83; 
+    outline: 4px solid #1a1a1a;
+    outline-offset: -12px; /* Spinge la linea nera dentro l'oro */
+    
+    /* Ombra netta e piatta, tipica della stampa litografica */
+    box-shadow: 11px 11px 11px rgba(0,0,0,0.15);
+    
+    /* Per dare l'idea che sia stampato male, incliniamolo di pochissimo */
+    transform: rotate(-0.5deg);
+}
+
+.section-title {
+    font-family: 'Oswald', serif;
+    font-size: 2.8em;
+    font-weight:300;
+    padding-top: 0.2em;
+    padding-left: 0.8em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+        
+    /* 1. Set the inside color */
+    color: rgb(249, 249, 169); 
+
+    /* 2. Create the true vector border */
+    -webkit-text-stroke: 7px rgb(0, 0, 0); 
+    
+    /* 3. CRITICAL: This ensures the border sits BEHIND the letter.
+       Without this, the white border will bleed inside and make 
+       your black text look too thin. */
+    paint-order: stroke fill;
+    
+    /* 4. Remove the old hack */
+    text-shadow: none;
+    letter-spacing: 0.09rem;
+}
+
+.section-text {
+    font-family: 'Oswald', sans-serif;
+    text-transform:  uppercase;
+    text-align: justify;
+    font-size: 1.1em;
+    padding: 0 1em;
+    color: black;
+}
+
+button.btn {
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    border: 2px solid rgb(20, 20, 20);
+    border-radius: 10px;
+}
+
+.themes-container {
+    margin: 1em; 
+    padding: 0.5em;
+    display: flex;           /* Switch back to flex */
+    flex-wrap: wrap;         /* Allows buttons to wrap on smaller screens */
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.theme-panel {
+    position: relative; 
+    background-color: rgb(24, 24, 24); 
+    border: 3px solid rgb(24, 24, 24); 
+    border-radius: 10px;     /* Gives it a nice button feel */
+    overflow: hidden;
+    flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 180px */
+    height: 150px;
+    padding: 0;              /* Strip padding so the button text can center properly */
+    cursor: pointer;         /* Makes the whole block feel clickable */
+}
+
+.theme-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease; /* Smooth reset when you stop hovering */
+    transform: translateZ(0); /* Fixes some weird blurring issues in Chrome when using transform */
+    border-radius: inherit;
+}
+
+.theme-panel:hover .theme-img {
+    transform: scale(1.05);
+    border-radius: inherit;
+}
+
+.theme-btn {
+    position: relative; 
+    z-index: 10; 
+    width: 100%;             /* Stretch to fill the panel */
+    height: 100%;            /* Stretch to fill the panel */
+    background-color: rgba(0, 0, 0, 0.45); /* Dark overlay for readability */
+    color: #000000;          /* White text */
+    font-size: 1.4em;
+    border: none;            /* Remove bootstrap's default button borders */
+    border-radius: inherit; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;               
+    transition: background-color 0.3s ease;
+}
+
+.theme-panel:hover .theme-btn {
+    background-color: rgba(0, 0, 0, 0.70);
+    color:#000000;
+}
+
+.themes #old-hundred {
+    font-family: 'Son of Time', sans-serif;
+    font-size: 1.5em;
+    -webkit-text-stroke: 1px #dba26a;
+    paint-order: stroke fill;
+    color: #7d4712;
+}
+
+.themes #first-nine-hundred {
+    font-family: 'Comic Relief', sans-serif;
+    color: #490e04;
+}
+
+.themes #second-nine-hundred {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.6em;
+    color: #b0671d;
+    -webkit-text-stroke: 1.2px #fab876;
+}
+
+.themes #future {
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.8em;
+    -webkit-text-stroke: 1.2px #53f2f5;
+    paint-order: stroke fill;
+    color: #fefefe;
+}
+
+.narratives-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */
+    gap: 10%;             /* Space between the panels */
+    margin: 1em auto;  
+    padding-bottom: 1.5em;  
+    justify-content: center;
+    max-width: 900px;      /* Keeps them from stretching awkwardly wide */
+}
+
+/* Force all buttons to fill their grid spaces uniformly */
+.narratives-container button {
+    width: 100%;           
+    margin: 0;           
+}
+
+/* Target the top button specifically to center it */
+.narrative-panel#historical-panel {
+    grid-column: 1 / -1;     /* Tells it to span across all columns */
+    justify-self: center;    /* Keeps it in the middle */
+    width: calc(50% - 10%); /* Calculates exactly half the container (minus the gap) so it matches the size of the buttons below it! */
+}
+
+.narratives-container .narrative-panel {
+    position: relative; 
+    background-color: rgb(24, 24, 24); 
+    border: 3px solid rgb(24, 24, 24); 
+    border-radius: 15px;     
+    height: 150px;
+    width: 100%;             /* Ensures panels stretch correctly in the grid */
+    overflow: hidden;
+    padding: 0;              
+    cursor: pointer;         
+}
+
+.narrative-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.3s ease; 
+    transform: translateZ(0); 
+    border-radius: inherit;
+}
+
+.narratives-container .narrative-btn {
+    position: relative; 
+    z-index: 10; 
+    width: 100%;             
+    height: 100%;            
+    background-color: rgba(0, 0, 0, 0.382); 
+    color: #ffffff;          
+    font-size: 1.5em;
+    border: none;            
+    border-radius: inherit; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;               
+    transition: background-color 0.3s ease;
+}
+
+.narratives-container .narrative-panel:hover .narrative-img {
+    transform: scale(1.05);
+    border-radius: inherit;
+}
+
+.narratives-container .narrative-panel:hover .narrative-btn {
+    background-color: rgba(0, 0, 0, 0.70);
+    color: #000000;
+}
+
+.narrative-panel #historical-tl {
+    font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
+    font-size: 1.7em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.narrative-panel #historical-tl:hover {
+    color: white;
+    transform: scale(1.10);
+}
+
+.narrative-panel #legendary-tl  {
+    font-family: 'Gothicfed', serif;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    font-size: 1.5em;
+    color: rgb(172, 225, 252);
+}
+
+.narrative-panel #technological-tl {
+    font-family: 'Ditty', serif;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    font-size: 1.3em;
+    color: rgb(217, 192, 192);
+}
+
+.intro {
+    background-color: transparent;
+    border: 0;
+}
+
+.intro-quotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color:#b71b10;
+    background-color: rgb(226, 226, 226);
+    padding: 0.8em 1em;
+    margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 18px;
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    width: fit-content;
+    max-width: 90%;
+}
+
+#motto-title-en {
+    font-family: 'Playfair Display Bold', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-wrap: nowrap;
+    letter-spacing: 1px;
+
+    text-shadow: 
+        1px 1px 0px #000,
+        2px 2px 0px #000,
+        3px 3px 0px rgba(0,0,0,0.5);
+}
+
+#motto-title-jp {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 2em;
+}
+
+#intro-text {
+    background-color: rgb(226, 226, 226);
+    padding: 1.2em 2.1em;
+    margin: 2em 7em 0.5em;
+    border: 1.5px solid black;
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+    #intro-text { /* to fix width when shrinking screen size */
+        margin: 2em auto 0.5em;
+        padding: 1em 1.5em;
+    }
+}
+
+#intro-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+#intro-text a:hover {
+    text-decoration: underline;
+}
+
+#intro-text em {
+    font-size: 1.1em;
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
+.bigger-cap {
+    font-size: 1.3em;
+    display: inline-block;
+}
+
+/* ============================================================
+   SMALL COLLECTION SPECIFICS:                                  */
+.collection {
+    background-color: #162724;
+    padding: 1rem;
+
+    border: 15px solid #97a471; /* Cornice color oro/ottone spento */
+    
+}
+
+.collection .section-title {
+    margin-top: 0;
+    padding-top: 0.3em !important;
+    -webkit-text-stroke: 6.5px white;
+    paint-order: stroke fill;
+}
+
+#collection-intro {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+.note {
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.65em;
+    -webkit-text-stroke: 2.4px #b3a078;
+    paint-order: stroke fill;
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+}
+
+.note u {
+    text-underline-offset: 0.25rem;
+}
+
+#remainder {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+#remainder a {
+    color: #a11e15;
+    text-underline-offset: 0.25rem;
+}
+
+/* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
+.collection-container {
+    /* Approach with CSS grid: */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Three equal columns */
+    grid-template-rows: 250px 300px 300px;
+    gap: 30px;
+    padding: 1.5rem;
+}
+
+.manga-panel {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+    grid-column: span 2;
+}
+
+.wide-panel {
+    grid-column: 4 / span 3; /* This makes the panel take up two columns */
+    grid-row: 2 / span 2; /* This makes the panel take up two rows */
+}
+
+.panel-left-top {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    margin-left: 0;
+}
+
+.panel-left-bottom {
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 1;
+    margin-right: 0;
+}
+
+.manga-panel .card {
+    height: 100%;
+    width: auto;
+    border: none;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.manga-panel .card-img {
+    height: 100%; /* Adjust image height within the panel */
+    width: auto;
+    object-fit: cover; /* Ensure image covers area without distorting */
+    object-position: center;
+    border-radius: 0%;
+}
+
+.manga-panel:hover .card-img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+.card-img#ymir {
+    object-fit: scale-down;
+}
+
+.manga-panel .card-img-overlay::-webkit-scrollbar {
+    display: none;
+}
+
+.card-img-overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #000000ba;
+    color:#ffffff;
+    border-radius: 0%;
+    /* to operate the animation of the title */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.card:hover .card-img-overlay {
+    display: block;
+}
+
+.card-title {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 1.7em;
+    font-weight: 800;
+    text-align: left;
+    text-wrap: nowrap;
+}
+
+.card-text {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+.card-title#long-title {
+    /* for title animation: */
+    display: inline-block;
+    width: max-content;
+    padding-right: 1.5rem;
+    animation: card-title-auto-scroll 13s linear infinite;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes card-title-auto-scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+    
+.card-img-overlay .card-title#long-title:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 1440px) {
+    .card-title#med-title { /* specificaly to add the animation to the Map of Nördlingen as well */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay .card-title#med-title:hover {
+        animation-play-state: paused;
+    }
+    .card-title#med-er-title { 
+        /* specificaly to add the animation to Flying Machine as well; 
+        had to add this separate rule because of Old Theme specific settings for the animation */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay .card-title#med-er-title:hover { 
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 768px) {
+    .collection-container {
+        grid-template-rows: 150px 200px 200px;
+        gap: 10px;
+        padding: 1rem;
+    }
+    .manga-panel .card-img {
+        object-fit: contain; /* Keep cover for medium screens */
+    }
+    .card-title {
+        font-size: 1.1em; 
+    }
+    .card-text {
+        font-size: 0.6em; 
+        text-align: justify;
+    }
+    .card-img-overlay#trenches .card-title { /* Why isn't this working? */
+        /* for title animation: */
+        display: inline-block;
+        width: max-content;
+        padding-right: 1.5rem;
+        animation: card-title-auto-scroll 8s linear infinite;
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+    }
+    .card-img-overlay#trenches .card-title:hover { 
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 576px) {
+    .collection {
+        padding: 0.5rem;
+    }
+    .collection-container {
+        /* Shrink the rows even further for small phones */
+        grid-template-rows: 130px 150px 150px; 
+        gap: 8px;
+        padding: 0.5rem;
+    }
+    /* Ensure the frame and content align perfectly on tiny screens */
+    .manga-panel {
+        padding: 0.1em;
+    }
+    .manga-panel .card {
+        padding: 0.1em;
+    }
+    .manga-panel .card-img {
+        object-fit: contain; 
+    }
+    /* OVERRIDE PADDINGS FOR TINY SCREENS */
+    .card-img-overlay,
+    .card-img-overlay#trenches, 
+    .card-img-overlay#ymir, 
+    .card-img-overlay#syringe {
+        padding: 1rem !important; 
+    }
+    .note u {
+        text-underline-offset: 0.1rem;
+    }
+    #remainder a {
+        text-underline-offset: 0.15rem;
+    }
+    .card-img-overlay .card-title {
+        font-size: 0.7rem; 
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        letter-spacing: auto;
+    }
+    .card-img-overlay .card-text {
+        font-size: 0.4rem; 
+        line-height: 1.1;
+    }
+}
+
+/* For mobile devices that don't have hover, we can use a click to toggle the overlay (+ JS) */
+@media (hover: none) {
+  .card-img-overlay {
+    display: none;
+  }
+
+  .card.overlay-open .card-img-overlay {
+    display: block;
+  }
+}
+
+.team {
+    padding: 0.5em;
+}
+
+/* removed specific title styling here, not necessary */
+
+.team .section-text {
+    font-size: 1em;
+    padding: 0 1.2em;
+}
+
+.team .row {
+    padding: 0 2rem 1rem;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.team .card {
+    width: 50%;       /* Fill the column completely */
+    height: fit-content;
+    margin: 0 auto;    /* Center them just in case */
+    margin-bottom: 0.5rem;
+    /* Optional: Add a shadow to make them pop like the header subtitle */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+    background-color:rgba(156, 156, 156, 0.92)
+}
+
+.team .card-img-top {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: 20%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.team .section-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+.team .section-text a:hover {
+    text-decoration: underline;
+}
+
+.team .card-body {
+    padding-bottom: 0.5em;
+}
+
+.team .card-title {
+    font-family: 'Ditty', serif;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-wrap: nowrap;
+    letter-spacing: 0.08rem;
+    text-align: center;
+}
+
+.team .card-subtitle {
+    font-family: 'Ditty', serif;
+    font-size: 1em;
+    letter-spacing: 0.04rem;
+    text-align: center;
+}
+
+/* TODO: style git button and hover effect? */
+
+@media (max-width: 992px) {
+    .team .card {
+        width: 80%;
+        height: fit-content;
+    }
+    .team .card-title {
+        font-size: 1.4em;
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+    }
+    .team .card-subtitle {
+        font-size: 0.9em;
+        letter-spacing: 0.03rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team .card-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 0.06rem;
+    }
+}
+
+.team .card .btn {
+    background-color: #2d2d2deb;
+    color: rgb(241, 241, 241);
+    border: 2px solid rgb(22, 22, 22);
+}
+
+footer {
+    background-color: #252525eb;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    margin-bottom: -20px;
+    border-top: 2px solid black;
+}
+
+blockquote {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.blockquote-footer {
+    color:rgb(196, 196, 196);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+
+/* MAP PAGE SPECIFIC STYLES: */
+section.map img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding: 0.5rem;
+}
+
+section.map img:hover {
+    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
+    cursor: pointer;
+
+}
+
+.map em {
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
+/* MOBILE-SPECIFIC STYLES: */
+@media (max-width: 576px) {
+    .navbar {
+        text-align: center;
+        font-size: 0.9em;
+    }
+    #header-logo  {
+        max-width: 280px;
+        margin: -5px auto 0;
+    }
+    #header-subtitle {
+        margin: -15px auto 8px;
+        font-size: 0.85em;
+        padding: 0.1em 0.7em;
+    }
+    section {
+        margin: 1em 0.5em; /* Much smaller side margins on mobile */
+        padding: 0.3em 0.5em;        
+        align-items: center;
+        justify-content: center;
+    }
+    .section-title {
+        font-size: 1.8em;
+        padding-left: 0.8em;
+        letter-spacing: 0.06rem;
+    }
+    .section-text {
+        font-size: 0.8em; /* Slightly smaller text for mobile */
+    }
+    .intro-quotes {
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 1em auto; /* Adjusted margins for mobile */
+        padding: 0.8em;
+        font-size: 0.8em; /* Slightly smaller font size for mobile */
+        text-wrap: nowrap;
+    }
+    #intro-text {
+        margin: 1em auto 1.5em;
+        align-items: center;
+        padding: 0.9em auto 1em;
+        justify-content: center;
+        font-size: 0.8em;
+    }
+    button.btn {
+        font-size: 0.8em;
+        padding: 0.5em;
+    }
+    /* 2x2 layout for themes on mobile using Flexbox */
+    .theme-panel {
+        flex: 1 1 40%; /* Forces panels to wrap into 2 columns */
+        height: 140px; /* Shrink height slightly for smaller screens */
+    }
+    .theme-btn {
+        font-size: 1.1em; /* Scale text down a bit to fit */
+    }
+    .narratives-button {
+        grid-template-columns: 1fr; /* Drops it down to a single column */
+        padding: 0 1rem;            /* Adds a little breathing room on the sides */
+    }
+    #historical-tl {
+        grid-column: 1; /* Removes the multi-column span */
+        width: 100%;    /* Makes it fill the column just like the other two */
+    }
+    .narratives-button .btn {
+        font-size: 1.2em; /* Optional: Adjust font size for mobile readability */
+    }
+    .team .row {
+        padding: 0 1.5rem;
+    }
+    .team .card {
+        width: fit-content;
+        height: fit-content;
+    }
+    footer {
+        padding: 0.3em auto;
+    }
+    blockquote {
+      font-size: 0.9em;  
+    }
+    .blockquote-footer {
+        font-size: 0.7em;
+    }
+}
+
+/* ============================================================
+   COLLECTION PAGE SPECIFIC STYLES
+   Linked only from collection.html
+   Depends on: main.css (section, section-title, section-text, etc.)
+   ============================================================ */
+
+
+/* --- Section wrapper --- */
+.full-collection {
+    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
+    padding: 1rem;
+}
+
+.full-collection .section-title {
+    margin-top: 0;
+    padding-top: 0.3em !important;
+    -webkit-text-stroke: 6.5px white;
+    paint-order: stroke fill;
+}
+
+#collection-page-intro {
+    -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
+    paint-order: stroke fill;
+}
+
+
+/* --- Grid of item cards --- */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 1.5rem;
+}
+
+
+/* --- Item card --- */
+.item-card {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
+}
+
+
+/* --- Item number badge (top-left corner) --- */
+.item-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a11e15;
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 1em;
+    letter-spacing: 0.05rem;
+    padding: 0.1em 0.55em;
+    z-index: 2;
+    border-bottom-right-radius: 3px;
+}
+
+
+/* --- Item photo --- */
+.item-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 2px solid rgb(20, 20, 20);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover .item-photo {
+    transform: scale(1.03);
+}
+
+/* Special case: paintings where full composition matters more than fill */
+#ymir-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#liberty-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#mask-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#yggdrasil-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+#codex-full {
+    object-fit: scale-down;
+    background-color: #e8e4db;
+}
+
+/* --- Card bottom: info + QR side by side --- */
+.item-card-body {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+
+/* --- Text info (left side) --- */
+.item-info {
+    flex: 1;
+    padding: 0.7em 0.9em 0.8em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    border-right: 2px solid rgb(20, 20, 20);
+}
+
+.item-title {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.82em;
+    color: rgb(20, 20, 20);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.item-complete-title {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-size: 0.90em;
+    color: #a11e15;
+    font-style: italic;
+    margin: 0;
+    letter-spacing: 0.02rem;
+}
+
+.item-desc {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.72em;
+    color: #3a3a3a;
+    line-height: 1.45;
+    margin: 0;
+    text-align: justify;
+    flex: 1;
+}
+
+.item-readmore {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.65em;
+    color: #a11e15;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.item-readmore:hover {
+    text-decoration: underline;
+}
+
+/* --- QR code area (right side) --- */
+.item-qr {
+    width: 86px;
+    min-width: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+    padding: 0.6em 0.5em;
+    background-color: #e8e4db;
+}
+
+.qr-box {
+    width: 66px;
+    height: 66px;
+    border: 2px dashed #888;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* When a real QR image is dropped in, make it fill the box */
+.qr-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-label {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.55em;
+    color: #666;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+    margin: 0;
+}
+
+
+/* --- Responsive: 2 columns on medium screens --- */
+@media (max-width: 992px) {
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 1rem;
+    }
+}
+
+
+/* --- Responsive: single column on mobile --- */
+@media (max-width: 600px) {
+    .items-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0.8rem;
+    }
+
+    .full-collection .section-title {
+        font-size: 1.8em;
+        -webkit-text-stroke: 5px white;
+    }
+
+    .item-qr {
+        width: 72px;
+        min-width: 72px;
+    }
+
+    .qr-box {
+        width: 54px;
+        height: 54px;
+    }
+
+    .item-title {
+        font-size: 0.78em;
+    }
+
+    .item-desc {
+        font-size: 0.68em;
+    }
+}
+
+
+/* --- Disclaimer Specific Style --- */
+
+/* Applichiamo il font a tutto ciò che sta dentro readable-text (incluso h3, p, li) */
+.readable-text, 
+.readable-text .section-title, 
+.readable-text p, 
+.readable-text li {
+    font-family: 'Noto Sans', sans-serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1.5 !important;
+    font-size: 0.85rem !important; 
+    text-align: left !important;
+    -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
+    color: black !important; /* Assicura che il testo sia nero leggibile */
+}
+
+/* rule for Disclaimer title */
+.readable-text .section-title {
+    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
+    font-size: 2rem !important;                     /* Molto più grande */
+    font-weight: 800 !important;                    /* Grassetto extra */
+    text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
+    -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
+    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
+    margin-bottom: 25px !important;                 /* Spazio dal testo */
+    display: block !important;
+}

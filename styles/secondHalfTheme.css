@@ -165,12 +165,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .dropdown-menu {
-    background-color: #565656fb;
+    background-color: #ff7ae2;
     border: 1.5px solid black;
     border-radius: 5px;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Bangers', sans-serif;
     font-weight: 600;
-    font-size: 0.8em;
+    font-size: 1.1em;
 }
 
 .dropdown-item {
@@ -192,6 +192,13 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     background-color: transparent !important;
 }
 */
+.dropdown-item#second-nine-hundred {
+    font-family: 'Bangers', serif;
+    font-size: 1.2em;
+    color: rgb(255, 123, 0);
+    padding: 0 auto;
+    -webkit-text-stroke: 0.5px black;
+    }
 
 .dropdown-item#default {
     /* Adding the background so when the theme is selected this stays highlighted: */
@@ -201,7 +208,7 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
 .dropdown-item#old-hundred {
     font-family: 'Son of Time', serif;
     font-size: 1.4em;
-    color: rgb(214, 161, 75);
+    color: rgb(208, 141, 31);
     padding: 0 auto;
 }
 
@@ -300,7 +307,7 @@ section {
 .section-text {
     font-family: 'Comic Neue', sans-serif;
     text-align: justify;
-    font-size: 1.1em;
+    font-size: 1.4em;
     padding: 0 1em;
     color: black;
 }
@@ -411,7 +418,7 @@ button.btn {
     grid-template-columns: 1fr 1fr; /* Creates 2 equal columns for the bottom panels */
     gap: 10%;             /* Space between the panels */
     margin: 1em auto;  
-    padding-bottom: 1.5em;  
+    padding-bottom: 1.5em;
     justify-content: center;
     max-width: 900px;      /* Keeps them from stretching awkwardly wide */
 }
@@ -517,11 +524,15 @@ button.btn {
     /* 5. Rotazione per l'effetto "ritaglio incollato" */
     transform: rotate(-1.5deg);
 
-    padding: 1.2em 2em;
-    margin: 2em auto; /* Il margine auto ora funzionerà meglio con la rotazione */
+    padding: 2.5em 3.5em;
+    margin: 3em auto; /* Il margine auto ora funzionerà meglio con la rotazione */
+    width: 80%;
+    max-width: 1000%;
     text-align: center;
     width: fit-content;
-    max-width: 85%;
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
 }
 
 #motto-title-en {
@@ -870,13 +881,14 @@ button.btn {
 }
 
 .team .section-title {
-    font-size: 2em;
+    font-size: 2.5em;
     -webkit-text-stroke: 5px white;
     paint-order: stroke fill;
 }
 
 .team .section-text {
-    font-size: 0.9em;
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 .team .row {
@@ -1064,12 +1076,14 @@ section.map img:hover {
         text-wrap: nowrap;
     }
     #intro-text {
-        margin: 1em auto 1.5em;
-        align-items: center;
-        padding: 0.9em auto 1em;
-        justify-content: center;
-        font-size: 0.8em;
-    }
+    background-color: rgb(226, 226, 226);
+    padding: 1.2em 2.1em;
+    margin: 2em 7em 0.5em;
+    border: 1.5px solid black;
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+}
 
     button.btn {
         font-size: 0.8em;
@@ -1370,7 +1384,8 @@ section.map img:hover {
     text-transform: none !important;
     letter-spacing: normal !important;
     line-height: 1.5 !important;
-    font-size: 0.85rem !important; 
+    font-size: 1rem !important; 
+    font-weight: 500;
     text-align: left !important;
     -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
     color: black !important; /* Assicura che il testo sia nero leggibile */
@@ -1379,11 +1394,32 @@ section.map img:hover {
 /* rule for Disclaimer title */
 .readable-text .section-title {
     font-family: 'Bangers', sans-serif !important; /* Font leggibile */
-    font-size: 2rem !important;                     /* Molto più grande */
+    font-size: 2.4rem !important;                     /* Molto più grande */
     font-weight: 800 !important;                    /* Grassetto extra */
     text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
-    -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
     color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
+    -webkit-text-stroke: 5px white !important;
+    paint-order: stroke fill;
     margin-bottom: 25px !important;                 /* Spazio dal testo */
     display: block !important;
+}
+
+/* Regola per i link dentro il Disclaimer */
+.readable-text a {
+    color: #a11e15 !important; /* Rosso deciso */
+    font-weight: 800 !important; /* Molto evidente */
+    text-decoration: none !important; /* Togliamo la sottolineatura standard sottile */
+    
+    /* Creiamo una sottolineatura spessa stile fumetto */
+    border-bottom: 3px solid #a11e15 !important; 
+    padding-bottom: 1px;
+    transition: all 0.2s ease;
+}
+
+.readable-text a:hover {
+    color: black !important; /* Cambia colore al passaggio */
+    border-bottom-color: black !important;
+    /* Leggero spostamento per dare feedback al click */
+    position: relative;
+    top: 1px;
 }
