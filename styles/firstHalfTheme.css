@@ -1393,8 +1393,8 @@ section.map img:hover {
 
 /* rule for Disclaimer title */
 .readable-text .section-title {
-    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
-    font-size: 2rem !important;                     /* Molto più grande */
+    font-family: 'Oswald', sans-serif !important; /* Font leggibile */
+    font-size: 2.5rem !important;                     /* Molto più grande */
     font-weight: 800 !important;                    /* Grassetto extra */
     text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
     -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
