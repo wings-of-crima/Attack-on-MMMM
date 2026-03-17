@@ -1616,9 +1616,10 @@ section.map img:hover {
 
 /*Style for buttons single narrative*/
 
-/* Stile base per tutti i bottoni della mostra */
+/* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    color: #ffffff;            /* Testo bianco di base */
+    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
+    color: #ffffff;
     border: 2px solid rgb(0, 0, 0); 
     background-color: transparent;
     transition: all 0.3s ease;
@@ -1626,16 +1627,185 @@ section.map img:hover {
     font-weight: 500;
 }
 
-/* Effetto Hover Universale: Inverte i colori */
+/* 2. Effetto Hover: solo per i bottoni NON attivi */
 .btn-exhibit:hover {
-    background-color: #ffffff !important; /* Cella diventa bianca */
-    color: #000000 !important;            /* Testo diventa nero */
+    background-color: #ffffff !important;
+    color: #000000 !important;
     border-color: #ffffff;
 }
 
-/* Stile per il bottone quando è selezionato (attivo) */
+/* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
 .btn-check:checked + .btn-exhibit {
     background-color: #6c757d;
     color: #ffffff;
     border-color: #6c757d;
+    
+    /* BLOCCA IL MOUSE: */
+    pointer-events: none; 
+    
+    /* OPZIONALE: Cambia il cursore per far capire che è bloccato */
+    cursor: default; 
+}
+
+/*Rules for images in exhibition*/
+
+/* Contenitore stile tavola manga */
+.manga-frame-container {
+    position: relative;
+    padding: 10px;
+    background-color: var(--bg-color, #fff); /* Si adatta al tema */
+    transition: all 0.3s ease;
+}
+
+/* Etichetta stile "baloon" o didascalia */
+/* Contenitore stile tavola manga senza movimento */
+.manga-frame-static {
+    position: relative;
+    padding: 10px;
+}
+
+/* Etichetta stile didascalia manga */
+.manga-label {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8rem;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    margin-bottom: -1px; 
+    border: 3px solid #000;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+/* La cornice definita e fissa */
+.manga-img-wrapper {
+    border: 5px solid #000; /* Bordo nero spesso */
+    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    aspect-ratio: 16 / 10; 
+    overflow: hidden;
+    background-color: #000;
+}
+
+.manga-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Rimosse tutte le transizioni di movimento */
+}
+
+/* Opzionale: se vuoi che al passaggio del mouse 
+   l'immagine diventi solo più nitida senza muoversi */
+.manga-frame-static:hover img {
+    filter: brightness(1.1); /* Leggero aumento di luminosità invece del movimento */
+}
+
+/*lightbox exhibition*/
+
+/* --- COMPONENTI EXHIBIT: LIGHTBOX --- */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Anime Ace', sans-serif;
+}
+
+/* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
+.btn-manga-nav {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+    background: #000;
+    padding: 10px 25px;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px #6c757d;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-manga-nav:hover {
+    color: #fff;
+    background: #333;
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #000;
+}
+
+.nav-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* --- COMPONENTI EXHIBIT: CORNICI MANGA --- */
+.manga-frame-container {
+    position: relative;
+    padding: 10px;
+}
+
+.manga-label {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8rem;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    margin-bottom: -1px; 
+    border: 3px solid #000;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.manga-img-wrapper {
+    border: 5px solid #000;
+    box-shadow: 12px 12px 0px #000;
+    aspect-ratio: 16 / 10; 
+    overflow: hidden;
+    background-color: #000;
+    cursor: zoom-in;
+}
+
+.manga-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s;
+}
+
+.manga-img-wrapper:hover img {
+    filter: brightness(1.1);
 }
