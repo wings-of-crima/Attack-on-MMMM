@@ -1073,8 +1073,6 @@ section.map img:hover {
     cursor: pointer;
 } */
 
-
-
 /* styling the SVG: */
 /*
 .map-container {
@@ -1138,6 +1136,50 @@ section.map img:hover {
     --bs-tooltip-color: var(--text-tooltip);
     font-family: 'Anime Ace', sans-serif;
     font-size: 0.8em;
+}
+
+.offcanvas {
+    background-color: rgba(19, 19, 19, 0.9);
+    scrollbar-width: none !important;  /* TODO: understand why I can still see the scrollbar */
+    -ms-overflow-style: none !important; 
+}
+
+.offcanvas-header {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    color:rgb(0, 0, 0);
+    font-size: 1.2em !important;
+    background-color:rgb(205, 205, 205, 0.7);
+}
+
+.offcanvas-body {
+    padding: 1.5em;
+    font-family: 'Anime Ace', sans-serif;
+    color:rgb(255,255,255);
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.offcanvas-img-panel {
+    margin: 1em auto;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.offcanvas-img {
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.offcanvas-img-panel .offcanvas-img:hover {
+    transform: scale(1.05);
+    border: 2px dotted rgb(246, 237, 237);
+    border-radius: 3px;
+}
+
+.offcanvas::-webkit-scrollbar {
+    display: none !important;
 }
 
 /* MOBILE-SPECIFIC STYLES: */
