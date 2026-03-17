@@ -1571,3 +1571,29 @@ section.map img:hover {
         flex: 1 1 100%;
     }
 }
+
+/*Style for buttons single narrative*/
+
+/* Stile base per tutti i bottoni della mostra */
+.btn-exhibit {
+    color: #ffffff;            /* Testo bianco di base */
+    border: 2px solid rgb(0, 0, 0); 
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Effetto Hover Universale: Inverte i colori */
+.btn-exhibit:hover {
+    background-color: #ffffff !important; /* Cella diventa bianca */
+    color: #000000 !important;            /* Testo diventa nero */
+    border-color: #ffffff;
+}
+
+/* Stile per il bottone quando è selezionato (attivo) */
+.btn-check:checked + .btn-exhibit {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+}

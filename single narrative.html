@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dettaglio Oggetto | Attack on MMMM</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link id="theme-stylesheet" type="text/css" rel="stylesheet" href="styles/main.css" />
+    </head>
+
+    <body>
+        <div id="headerNav-placeholder" style="display: contents;"></div>
+
+        <main class="container-fluid" id="main-content">
+            <section class="item-detail py-5">
+                <div class="container">
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="image-box p-2 border border-secondary">
+                                <img src="assets/images/real/watch.jpg" id="main-img-real" class="img-fluid w-100" alt="Real Object">
+                                <p class="text-center mt-2 small text-uppercase text-secondary">Historical Artifact</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="image-box p-2 border border-secondary">
+                                <img src="assets/images/anime/watch_warrior.jpg" id="main-img-anime" class="img-fluid w-100" alt="Anime Version">
+                                <p class="text-center mt-2 small text-uppercase text-secondary">Anime Reference</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5 justify-content-center">
+                        <div class="col-auto d-flex flex-column flex-md-row gap-4 align-items-center">
+                            
+                            <div class="d-flex gap-3">
+                                <input type="radio" class="btn-check" name="difficulty" id="btn-simple" checked onclick="setDifficulty('simple')">
+                                <label class="btn btn-exhibit px-4" for="btn-simple">Simple</label>
+
+                                <input type="radio" class="btn-check" name="difficulty" id="btn-advanced" onclick="setDifficulty('advanced')">
+                                <label class="btn btn-exhibit px-4" for="btn-advanced">Advanced</label>
+                            </div>
+
+                            <div class="d-flex gap-3">
+                                <input type="radio" class="btn-check" name="length" id="btn-short" checked onclick="setLength('short')">
+                                <label class="btn btn-exhibit px-3" for="btn-short">Show Less</label>
+
+                                <input type="radio" class="btn-check" name="length" id="btn-long" onclick="setLength('long')">
+                                <label class="btn btn-exhibit px-3" for="btn-long">Show More</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        
+                        <div class="col-8">
+                            <div class="description-container p-4 border-start border-3 border-secondary h-100">
+                                <h3 class="section-title mb-4" id="item-title">Trench Watch</h3>
+                                <p id="dynamic-text" class="section-text" style="font-size: 1.1rem; line-height: 1.6;">
+                                    </p>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="metadata-box p-4 bg-dark border border-secondary rounded h-100">
+                                <h5 class="text-secondary text-uppercase mb-4 small">Object Metadata</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-3">
+                                        <strong class="text-uppercase small text-secondary">Title:</strong> 
+                                        <span id="meta-title" class="d-block text-light text-opacity-75"></span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong class="text-uppercase small text-secondary">Type:</strong> 
+                                        <span id="meta-type" class="d-block text-light text-opacity-75"></span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <strong class="text-uppercase small text-secondary">Year:</strong> 
+                                        <span id="meta-year" class="d-block text-light text-opacity-75"></span>
+                                    </li>
+                                    <li>
+                                        <strong class="text-uppercase small text-secondary">Institution:</strong> 
+                                        <span id="meta-institution" class="d-block text-light text-opacity-75"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="scripts/themes.js"></script>
+        <script src="scripts/comps.js"></script>
+        <script src="scripts/main.js"></script>
+        
+        <script>
+            // Mappa l'oggetto 'items[0]' del tuo JSON
+            const itemData = {
+              "metadata": {
+                "period": "1914-1918",
+                "origin": "Switzerland / Europe",
+                "material": "Steel and Leather"
+              },
+              "texts": {
+                "simple": {
+                  "short": "A simple watch used by soldiers to check the time during battles.",
+                  "long": "Soldiers needed to be perfectly synchronized for attacks. This watch was practical and easy to read, just like the ones used by the Marleyan army in the series."
+                },
+                "advanced": {
+                  "short": "A transitionary 'trench watch' featuring a shrapnel guard and luminous dial.",
+                  "long": "This artifact represents the evolution from pocket watches to wristwatches, necessitated by the tactical demands of modern warfare. Its design mirrors the rugged aesthetic of military equipment seen in the final season's technological leap."
+                }
+              }
+            };
+
+            let currentDifficulty = 'simple';
+            let currentLength = 'short';
+
+            function setDifficulty(level) {
+                currentDifficulty = level;
+                updateDisplay();
+            }
+
+            function setLength(len) {
+                currentLength = len;
+                updateDisplay();
+            }
+
+            function updateDisplay() {
+                document.getElementById('dynamic-text').innerText = itemData.texts[currentDifficulty][currentLength];
+            }
+
+            window.onload = () => {
+                document.getElementById('meta-period').innerText = itemData.metadata.period;
+                document.getElementById('meta-origin').innerText = itemData.metadata.origin;
+                document.getElementById('meta-material').innerText = itemData.metadata.material;
+                updateDisplay();
+            };
+        </script>
+    </body>
+</html>
