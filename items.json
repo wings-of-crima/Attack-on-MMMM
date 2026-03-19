@@ -15,44 +15,452 @@
       },
       "texts": {
         "simple": {
-          "short": "A simple watch used by soldiers to check the time during battles.",
-          "long": "Soldiers needed to be perfectly synchronized for attacks. This watch was practical and easy to read, just like the ones used by the Marleyan army in the series."
+          "short": "This building is the Baptistery of San Giovanni in Pisa, Italy. It is a giant, round hall built for baptisms. It is famous because it took a very long time to finish (about 200 years), so the bottom part is built in a simple Romanesque style with round arches, while the top part has the pointy decorations of the Gothic style. In the Anime the building si shown in the Stohess District during the famous fight between Eren and Annie (the Female Titan). In the show, it is the main church for the Order of the Walls (the religion that worships the Walls). Seeing this beautiful marble building get destroyed makes the battle feel much more serious and dangerous.",
+          "long": "This building is the Baptistery of San Giovanni in Pisa, Italy. It is a giant, round hall built for baptisms. It is famous because it took a very long time to finish (about 200 years), so the bottom part is built in a simple Romanesque style with round arches, while the top part has the pointy decorations of the Gothic style. In the Anime the building si shown in the Stohess District during the famous fight between Eren and Annie (the Female Titan). In the show, it is the main church for the Order of the Walls (the religion that worships the Walls). Seeing this beautiful marble building get destroyed makes the battle feel much more serious and dangerous. \n\nThe Baptistery is full of surprises that you can only notice if you look closely. For example, its roof is actually \"bicolor\": if you look at it from above, half is covered in red tiles and the other half in lead plates. This wasn't a fashion choice, but probably due to a lack of money or matching materials during old repairs! Inside, the building acts like a giant musical instrument. Because of its marble walls and double-dome structure, it has an incredible echo: if a person sings a single note, the sound bounces around so much that it feels like a whole choir is singing back. During the battle, you can see the Survey Corps soldiers using the rows of arches as perfect \"hooks\" for their ODM gear to swing around."
         },
         "advanced": {
-          "short": "A transitionary 'trench watch' featuring a shrapnel guard and luminous dial.",
-          "long": "This artifact represents the evolution from pocket watches to wristwatches, necessitated by the tactical demands of modern warfare. Its design mirrors the rugged aesthetic of military equipment seen in the final season's technological leap."
+          "short": "Initiated in 1152 by Diotisalvi, the Baptistery of Pisa represents a primary specimen of Pisan Romanesque syncretism. Clad in Carrara marble, its elevation reveals a stratified cantiere: the ground-level blind arcades reflect 12th-century sobriety, while the upper loggias, completed by Nicola and Giovanni Pisano, mark a transition toward Gothic plasticism. \n\nIn the Anime: Within the Stohess District, the building is recontextualized as the cathedral of the Order of the Walls. The production design leverages this centralized geometry to establish a \"theocratic aesthetic.\"",
+          "long": "Initiated in 1152 by Diotisalvi, the Baptistery of Pisa represents a primary specimen of Pisan Romanesque syncretism. Clad in Carrara marble, its elevation reveals a stratified cantiere: the ground-level blind arcades reflect 12th-century sobriety, while the upper loggias, completed by Nicola and Giovanni Pisano, mark a transition toward Gothic plasticism. \n\nIn the Anime: Within the Stohess District, the building is recontextualized as the cathedral of the Order of the Walls. The production design leverages this centralized geometry to establish a \"theocratic aesthetic.\"\n\nThe monument’s engineering is defined by a double-shell vaulting system, featuring an internal truncated conical vault nested within an external hemispherical dome. This creates a specific acoustic resonance chamber. Notably, the exterior roof exhibits a material asymmetry—red pantiles on the west and lead plates on the east—reflecting disparate historical maintenance phases. Tactical & Narrative Depth: In the anime, the building's tiered galleries and high-relief sculptures function as necessary structural anchors for the Survey Corps' vertical maneuvering. The failure of this \"architectural barrier\" during the battle serves as a narrative turning point, signaling that the administrative and religious sanctity of Wall Rose has been irrevocably compromised by the breach of the inner districts."
         }
       }
     },
     {
-      "id": "trench-watch-01",
-      "displayTitle": "Ciao",
+      "id": "key",
+      "displayTitle": "Key",
+      "images": {
+        "real": "images/items/real_key.jpg",
+        "anime": "images/items/key.png"
+      },
+      "metadata": {
+        "title": "Key",
+        "type": "Metalwork-Iron",
+        "year": "13th century",
+        "institution": "THE MET"
+      },
+      "texts": {
+        "simple": {
+          "short": "The object from the Met Museum is an ornate 16th-century French key, crafted with incredible detail. In history, keys like this were more than just tools to open doors; they were symbols of trust and high status. Because they were hand-made by master locksmiths, they were expensive and meant to protect a person's most valuable secrets. In Attack on Titan, Eren Jaeger carries a very similar key throughout his journey. Given to him by his father, Grisha, it is the only object that can unlock the mystery hidden in their family basement. Both in the real world and in the anime, a key can represent the hope of finding answers to a great mystery or keeping secrets.",
+          "long": "The object from the Met Museum is an ornate 16th-century French key, crafted with incredible detail. In history, keys like this were more than just tools to open doors; they were symbols of trust and high status. Because they were hand-made by master locksmiths, they were expensive and meant to protect a person's most valuable secrets. In Attack on Titan, Eren Jaeger carries a very similar key throughout his journey. Given to him by his father, Grisha, it is the only object that can unlock the mystery hidden in their family basement. Both in the real world and in the anime, a key can represent the hope of finding answers to a great mystery or keeping secrets.\n\nHistorically, keys consist of three main parts: the \"bow\" (the decorated handle), the \"shank\" (the long body), and the \"bit\" (the teeth that move the lock). The bit on a Renaissance key was often cut into complex patterns called \"wards\", which acted like a puzzle to ensure only the right key could turn. In the anime, Eren is shocked to find that his key doesn't fit the front door of the basement, but rather a hidden drawer in his father's desk. This demonstrates that keys are often meant for specific, private layers of security. This item shows how a small piece of iron can hold the weight of an entire world's history."
+        },
+        "advanced": {
+          "short": "This 16th-century French key is a masterpiece of Renaissance metalwork, reflecting a period where locksmithing was considered a high art. Beyond its mechanical function, the key served as a physical manifestation of authority and the \"right to know\". In Attack on Titan, Grisha Jaeger’s key functions as the ultimate narrative \"MacGuffin\", representing the transition from a world of myth to a world of documented history. The key is the literal and figurative tool used to dismantle the \"false peace\" of the Walls. By unlocking the basement, it reveals the industrial reality of the outside world, shifting the series from a medieval survival horror into a complex geopolitical drama.",
+          "long": "This 16th-century French key is a masterpiece of Renaissance metalwork, reflecting a period where locksmithing was considered a high art. Beyond its mechanical function, the key served as a physical manifestation of authority and the \"right to know\". In Attack on Titan, Grisha Jaeger’s key functions as the ultimate narrative \"MacGuffin\", representing the transition from a world of myth to a world of documented history. The key is the literal and figurative tool used to dismantle the \"false peace\" of the Walls. By unlocking the basement, it reveals the industrial reality of the outside world, shifting the series from a medieval survival horror into a complex geopolitical drama.\n\nTechnically, the Met’s key utilizes a \"bit\" with intricate incisions that correspond to \"wards\" within the lock, a design that remained the standard for security for centuries. In the anime, the key’s failure to open the basement door, and its subsequent success in opening a hidden desk drawer, highlights the concept of \"nested secrets\". Historically, important documents—much like Grisha’s photographs and journals—were kept in locked chests within locked rooms to provide multiple layers of security. This parallel emphasizes the importance of the written record; the key does not just unlock a room, it unlocks a forbidden archive. This specific locksmithing technique highlights the theme of \"gatekeeping\" information, where the physical key acts as the bridge between a state-sponsored lie and the forbidden biological truth of the Eldian race."
+        }
+      }
+    },
+    {
+      "id": "codex",
+      "displayTitle": "Codex Regius - Edda Poems",
+      "images": {
+        "real": "images/items/Edda.jpg",
+        "anime": ""
+    },
+      "metadata": {
+        "title": "GKS 2365 4to",
+        "type": "Manuscript",
+        "year": "1260-1280",
+        "institution": "The Árni Magnússon Institute for Icelandic Studies"
+      },
+      "texts": {
+        "simple": {
+          "short": "This digital manuscript is a page from the Codex Regius, the most important book of Norse mythology ever found. It contains the \"Edda\" poems, which tell the story of Ymir, the very first giant. According to the legend, Ymir was born from ice and fire, and the entire world was created from his body after he was defeated. In Attack on Titan, the history of the Titans begins with a girl named Ymir who gained a mysterious power. Just like the ancient Norse myths, the story of the Titans is a legend about how one giant changed the world forever and became the ancestor of an entire race.",
+          "long": "This digital manuscript is a page from the Codex Regius, the most important book of Norse mythology ever found. It contains the \"Edda\" poems, which tell the story of Ymir, the very first giant. According to the legend, Ymir was born from ice and fire, and the entire world was created from his body after he was defeated. In Attack on Titan, the history of the Titans begins with a girl named Ymir who gained a mysterious power. Just like the ancient Norse myths, the story of the Titans is a legend about how one giant changed the world forever and became the ancestor of an entire race.\n\nTechnically, this manuscript is made of vellum (dried animal skin) and was written by hand over 700 years ago. The ink and the specific style of the letters helped historians rediscover lost stories about giants and gods. In the anime, the story of Ymir Fritz is also treated like an ancient, crumbling book of history. While the real Edda describes Ymir as a frost giant whose blood became the sea, the anime describes Ymir Fritz as a girl whose power was split into nine different Titans. Both stories use the idea of a \"Founding\" ancestor to explain why the world looks the way it does and where powerful, giant-sized creatures come from."
+        },
+        "advanced": {
+          "short": "The Codex Regius is the primary source for the Völuspá and Vafþrúðnismál, poems that detail the cosmogony of the Norse world through the figure of Ymir. Historically, Ymir represents the \"primeval chaos\" from which order is carved; his dismemberment by Odin and his brothers is a foundational act of world-building. In Attack on Titan, Hajime Isayama utilizes this mythic framework by naming the progenitor \"Ymir Fritz\". Both the historical manuscript and the anime's lore explore the concept of the \"divided ancestor\". Just as the Norse world is built from Ymir’s physical remains, the Eldian empire and the \"Paths\" are built from the spiritual and biological legacy of the original Titan.",
+          "long": "The Codex Regius is the primary source for the Völuspá and Vafþrúðnismál, poems that detail the cosmogony of the Norse world through the figure of Ymir. Historically, Ymir represents the \"primeval chaos\" from which order is carved; his dismemberment by Odin and his brothers is a foundational act of world-building. In Attack on Titan, Hajime Isayama utilizes this mythic framework by naming the progenitor \"Ymir Fritz\". Both the historical manuscript and the anime's lore explore the concept of the \"divided ancestor\". Just as the Norse world is built from Ymir’s physical remains, the Eldian empire and the \"Paths\" are built from the spiritual and biological legacy of the original Titan.\n\nFrom a technical perspective, the Codex Regius is an artifact of information survival. Its compact Carolingian minuscule script allowed for the preservation of expansive skaldic verse on limited vellum. However, the manuscript we see today is a 13th-century copy of much older oral traditions, meaning the \"truth\" of the original myths has already been filtered through medieval Christian scholarship. This mirrors the \"unstable archive\" within the anime: the history of Ymir Fritz is not a neutral fact, but a contested narrative. Depending on who tells the story—the Marleyan state or the Eldian restorationists—she is either a \"miracle of God\" or a \"deal with the Devil\". This parallel emphasizes that in both history and fiction, the written word does not just record the past; it constructs it, often serving the political needs of the present."
+        }
+      }
+    },
+    {
+      "id": "map",
+      "displayTitle": "Nordlingen Map",
+      "images": {
+        "real": "images/items/nordlingen-map.jpg",
+        "anime": "images/items/key.png"
+      },
+      "metadata": {
+        "title": "128. Nordlingen",
+        "type": "Atlas Map",
+        "year": "1725",
+        "institution": "David Rumsey Map Collection (Stanford University- Library)"
+      },
+      "texts": {
+        "simple": {
+          "short": "The city of Shiganshina, where the story of Attack on Titan begins, is based on a real place called Nördlingen in Bavaria, Germany. In real life, Nördlingen is famous for its unique circular shape. The city is surrounded by a perfectly preserved medieval wall that people can still walk on today. In the anime, these walls protect humans from Titans, but in history, the walls of Nördlingen were built for defense during Middle Age wars. The orange rooftops and timber-framed houses seen in the series are identical to the real buildings you can find in this German town.",
+          "long": "The city of Shiganshina, where the story of Attack on Titan begins, is based on a real place called Nördlingen in Bavaria, Germany. In real life, Nördlingen is famous for its unique circular shape. The city is surrounded by a perfectly preserved medieval wall that people can still walk on today. In the anime, these walls protect humans from Titans, but in history, the walls of Nördlingen were built for defense during Middle Age wars. The orange rooftops and timber-framed houses seen in the series are identical to the real buildings you can find in this German town.\n\nThe layout of Shiganshina perfectly copies the street pattern of Nördlingen, where all roads lead to the center. However, the anime adds unique defensive features like the \"Great Cannons\" mounted on top of the walls to fight off Titans. Because the walls are so large, the military uses a complex system of elevators and tracks to move supplies. Another key difference is the depth: the walls of Paradis extend deep underground to prevent Titans from digging underneath them. While Nördlingen was built to protect humans from other soldiers, the Walls of Paradis were designed as a total cage to keep humanity safe—but also trapped—away from the monsters outside."
+        },
+        "advanced": {
+          "short": "The urban layout of Shiganshina can be seen as a reproduction to Nördlingen, a German town whose circular form was dictated by its location inside a meteorite crater. While Nördlingen provides the visual archetype of a perfectly preserved medieval Stadtmauer (city wall), Attack on Titan reinterprets this morphology through a lens of extreme defensive engineering. The city is reimagined as an \"outlier district\", a protruding semi-circular bastion attached to the main perimeter of Wall Maria. This design is strategically engineered to serve as a \"bottleneck\": by concentrating Titan attraction toward a single, reinforced gateway, the military can manage threats more efficiently without patrolling the entire 3,200-kilometer circumference of the outer wall.",
+          "long": "The urban layout of Shiganshina can be seen as a reproduction to Nördlingen, a German town whose circular form was dictated by its location inside a meteorite crater. While Nördlingen provides the visual archetype of a perfectly preserved medieval Stadtmauer (city wall), Attack on Titan reinterprets this morphology through a lens of extreme defensive engineering. The city is reimagined as an \"outlier district\", a protruding semi-circular bastion attached to the main perimeter of Wall Maria. This design is strategically engineered to serve as a \"bottleneck\": by concentrating Titan attraction toward a single, reinforced gateway, the military can manage threats more efficiently without patrolling the entire 3,200-kilometer circumference of the outer wall.n\nTechnical analysis of Nördlingen reveals that its circularity is not merely aesthetic but a result of the Nördlinger Ries impact event; the town is built on suevite rock, a rare breccia containing millions of microscopic diamonds. This geological foundation influenced the construction of the St. Georgskirche, whose 90-meter tower, the \"Daniel\", served as a proto-panopticon for military surveillance. In Shiganshina, this central lookout logic is replicated, but the walls are upgraded to a biological-mineral hybrid composed of \"Hardened Titan\" material. These structures extend deep into the bedrock to negate subterranean infiltration and are equipped with rail-mounted artillery and steam-powered elevators. This configuration transforms the urban space into a system of weaponized isolationism, where architecture functions as the primary tool for social control. The concentric layout enforces a rigid socio-economic hierarchy, where the level of biological security and political privilege is strictly determined by a citizen's proximity to the central administrative core of Wall Sina."
+        }
+      }
+    },
+    {
+      "id": "ymir",
+      "displayTitle": "Ymir",
+      "images": {
+        "real": "images/items/realymir.jpg",
+        "anime": "images/items/ymir.png"
+      },
+      "metadata": {
+        "title": "Ymir Suckling the Cow Audhumla",
+        "type": "Painting",
+        "year": "1777",
+        "institution": "Wikimedia Commons"
+      },
+      "texts": {
+        "simple": {
+          "short": "In this famous painting by Nicolai Abildgaard, we are witness to the very first moment of the universe according to Norse mythology. The giant you see is Ymir, a being formed from the meeting of fire and ice in a great empty void. To survive and grow strong, he drinks the milk of a giant primordial cow named Audhumbla. This artwork captures the \"raw\" power of nature before humans, gods, or cities existed. In Attack on Titan, the history of the world starts in a very similar way with a girl also named Ymir. She was a young slave who stumbled into a hidden cave and touched a mysterious \"source\" of life, which transformed her into the first Titan. Both stories explore the fascinating idea that a single, powerful giant stands at the very beginning of everything. By looking at this painting, we can see that power isn't just something people \"have\"—it is often a terrifying force of nature that can either build a world or tear it apart.",
+          "long": "In this famous painting by Nicolai Abildgaard, we are witness to the very first moment of the universe according to Norse mythology. The giant you see is Ymir, a being formed from the meeting of fire and ice in a great empty void. To survive and grow strong, he drinks the milk of a giant primordial cow named Audhumbla. This artwork captures the \"raw\" power of nature before humans, gods, or cities existed. In Attack on Titan, the history of the world starts in a very similar way with a girl also named Ymir. She was a young slave who stumbled into a hidden cave and touched a mysterious \"source\" of life, which transformed her into the first Titan. Both stories explore the fascinating idea that a single, powerful giant stands at the very beginning of everything. By looking at this painting, we can see that power isn't just something people \"have\"—it is often a terrifying force of nature that can either build a world or tear it apart.\n\nHistorically, artists like Abildgaard used large, muscular figures to show how dangerous and untamed the world was before civilization began. In the Norse myth, Ymir wasn't exactly a \"person\"; he was more like a living piece of the earth. Eventually, his body was used to create the sky, the mountains, and the oceans. This is almost exactly what happens in the anime with Ymir Fritz. After she gained her powers, she was forced to use them to build roads, bridges, and cultivate the land for the King. Even after she died, her power was split into nine different Titans, continuing to shape the world's history for 2,000 years. This digital display shows us that ancient legends and modern stories often use the same image: a giant \"ancestor\" who suffers or is sacrificed so that a new civilization can be born."
+        },
+        "advanced": {
+          "short": "Nicolai Abildgaard’s Neoclassical work captures the \"Ginnungagap\" phase of Norse cosmogony, where Ymir exists as the \"Aurgelmir\", a proto-biological entity representing raw, unformed matter. In mythic terms, Ymir is the architectural progenitor: his physical destruction is the prerequisite for the creation of the habitable world. In Attack on Titan, Ymir Fritz occupies an identical structural position as the \"Subject Zero\" of the Eldian race. This comparison highlights the \"Myth of the First One\"—the idea that all complex social or biological systems are rooted in a single, ancient act of transformation. The painting emphasizes the transition from a state of nature to a state of being, where the giant's life is inextricably linked to the elemental forces of the world. This connection suggests that the power of the Titans is not merely a weapon, but a fundamental, biological anomaly that blurs the line between the human and the divine.",
+          "long": "Nicolai Abildgaard’s Neoclassical work captures the \"Ginnungagap\" phase of Norse cosmogony, where Ymir exists as the \"Aurgelmir\", a proto-biological entity representing raw, unformed matter. In mythic terms, Ymir is the architectural progenitor: his physical destruction is the prerequisite for the creation of the habitable world. In Attack on Titan, Ymir Fritz occupies an identical structural position as the \"Subject Zero\" of the Eldian race. This comparison highlights the \"Myth of the First One\"—the idea that all complex social or biological systems are rooted in a single, ancient act of transformation. The painting emphasizes the transition from a state of nature to a state of being, where the giant's life is inextricably linked to the elemental forces of the world. This connection suggests that the power of the Titans is not merely a weapon, but a fundamental, biological anomaly that blurs the line between the human and the divine.\n\nFrom a technical standpoint, Abildgaard utilizes the exaggerated musculature of the giant to symbolize a state of \"primitive chaos\" before the intervention of divine or social order. The giant is depicted as a self-sustaining being, nourished by the primordial cow Audhumbla, representing a stage of biological autonomy that must be ended for history to begin. This mirrors the tragic arc of Ymir Fritz, who is reduced from a human being to a biological \"source\" or asset. While the Norse Ymir is \"divided\" by Odin and his brothers to construct the physical cosmos, Ymir Fritz is \"divided\" into the Nine Titans to expand the reach of her descendants. This parallel explores the concept of Translatio Imperii—the transfer of power through the fragmentation of an ancestor’s body. The painting serves as a visual record of how humanity conceptualizes its origins: not as a peaceful beginning, but as a transition from a singular, monstrous strength into a structured and divided society. Both the Edda and Isayama’s narrative suggest that the \"order\" of our world is inextricably linked to the primordial trauma of its founder. This dynamic underscores the tension between the individual and the legacy they leave behind, where the progenitor’s existence is preserved only through the continued life of their successors."
+        }
+      }
+    },
+    {
+      "id": "liberty",
+      "displayTitle": "Liberty Leading the People",
+      "images": {
+        "real": "images/items/real_libertà_popolo.png",
+        "anime": ""
+      },
+      "metadata": {
+        "title": "July 28, 1830. Liberty Leading the People.",
+        "type": "Painting",
+        "year": "1830",
+        "institution": "Louvre Museum"
+      },
+      "texts": {
+        "simple": {
+          "short": "This famous painting, created by Eugène Delacroix in 1830, shows a powerful woman holding a flag and leading people forward during a revolution in France. She is known as \"Liberty\", and she represents the idea that people will fight and overcome any obstacle to be free. In the painting, she is walking over barricades, showing that freedom often comes with a great cost. In Attack on Titan, the main character, Eren Yeager, has this same unstoppable drive. From the time he was a young boy, he dreamed of seeing the ocean because he believed that reaching the water would mean he was finally free from the walls. Both the painting and the story show us that freedom is not just a dream, but a powerful force that can make people do incredible things, even when the path forward is dangerous or difficult.",
+          "long": "This famous painting, created by Eugène Delacroix in 1830, shows a powerful woman holding a flag and leading people forward during a revolution in France. She is known as \"Liberty\", and she represents the idea that people will fight and overcome any obstacle to be free. In the painting, she is walking over barricades, showing that freedom often comes with a great cost. In Attack on Titan, the main character, Eren Yeager, has this same unstoppable drive. From the time he was a young boy, he dreamed of seeing the ocean because he believed that reaching the water would mean he was finally free from the walls. Both the painting and the story show us that freedom is not just a dream, but a powerful force that can make people do incredible things, even when the path forward is dangerous or difficult.\n\nIf you look closely at the painting, you can see people from all walks of life—rich and poor—following Liberty through the smoke of battle. This shows that the desire for freedom is something everyone shares. In the anime, when Eren and his friends finally reach the sea, it is a very emotional moment. While his friends are happy to see the water, Eren looks at the horizon and realizes that having \"freedom\" might mean fighting even more battles. Delacroix’s painting captures that same feeling: Liberty is moving forward, but the ground beneath her is covered in the remains of the struggle. These two works of art remind us that freedom is a journey that never truly ends. It is a constant choice to keep moving toward the horizon, no matter how many walls or oceans stand in the way."
+        },
+        "advanced": {
+          "short": "Eugène Delacroix’s Liberty Leading the People (1830) is a seminal work of Romanticism that transmutes a political event into a timeless allegory. Liberty is depicted as a \"Marianne\" figure—a gritty, realistic embodiment of an ideal that leads a fragmented society toward a collective goal. In Attack on Titan, the concept of \"Freedom\" (Jiyū) is the central metaphysical and psychological driver for Eren Yeager. This comparison explores the paradox of the revolutionary figure: both Marianne and Eren represent a force that is simultaneously inspiring and destructive. While Delacroix’s canvas celebrates the triumph of the will over oppression, the anime deconstructs this ideal, showing that the pursuit of absolute freedom can lead to a cycle of violence.",
+          "long": "Eugène Delacroix’s Liberty Leading the People (1830) is a seminal work of Romanticism that transmutes a political event into a timeless allegory. Liberty is depicted as a \"Marianne\" figure—a gritty, realistic embodiment of an ideal that leads a fragmented society toward a collective goal. In Attack on Titan, the concept of \"Freedom\" (Jiyū) is the central metaphysical and psychological driver for Eren Yeager. This comparison explores the paradox of the revolutionary figure: both Marianne and Eren represent a force that is simultaneously inspiring and destructive. While Delacroix’s canvas celebrates the triumph of the will over oppression, the anime deconstructs this ideal, showing that the pursuit of absolute freedom can lead to a cycle of violence.\n\nTechnically, Delacroix uses a pyramidal composition to draw the viewer’s eye upward toward the Tricolore flag, creating a sense of inevitable momentum. However, the base of this pyramid is composed of the fallen, grounding the idealistic height of the work in a brutal reality. This structural tension mirrors Eren Yeager’s realization at the shoreline: the sea, once a symbol of pure liberation, becomes a barrier that necessitates further conflict. The \"Freedom\" Eren seeks is an absolute, almost nihilistic autonomy that mirrors the uncompromising stance of Delacroix’s Liberty. In both instances, the icon of freedom stands atop the ruins of the old world. This parallel invites an investigation into the \"Cost of the Horizon\"—the idea that once the immediate wall (or barricade) is breached, the revolutionary must confront the infinite and often terrifying responsibility of what lies beyond."
+        }
+      }
+    },
+    {
+      "id": "yggdrasil",
+      "displayTitle": "Yggdrasil",
+      "images": {
+        "real": "images/items/real_yggdrasil.png",
+        "anime": "images/items/coordinata.png"
+      },
+      "metadata": {
+        "title": "Yggdrasill, the mundane tree",
+        "type": "Illustration",
+        "year": "1859",
+        "institution": "Normal B. Leventhal Map & Education Center and partners"
+      },
+      "texts": {
+        "simple": {
+          "short": "This picture from 1594 shows Yggdrasil, the giant \"World Tree\" from ancient Norse legends. In these stories, Yggdrasil wasn't just a normal tree; its branches and roots held together nine different worlds, including the homes of humans, giants, and gods. It was the backbone of the entire universe, connecting everyone and everything through its wood and sap. In Attack on Titan, we see a very similar image called \"The Coordinate\". It looks like a massive, glowing tree made of light that exists in a mysterious desert. Just like Yggdrasil, the Coordinate connects all Titans and their descendants together through invisible \"paths\". Both stories use the image of a great tree to show that even when people are far apart, they are all part of the same big family and are connected by a shared history that goes back thousands of years.",
+          "long": "This picture from 1594 shows Yggdrasil, the giant \"World Tree\" from ancient Norse legends. In these stories, Yggdrasil wasn't just a normal tree; its branches and roots held together nine different worlds, including the homes of humans, giants, and gods. It was the backbone of the entire universe, connecting everyone and everything through its wood and sap. In Attack on Titan, we see a very similar image called \"The Coordinate\". It looks like a massive, glowing tree made of light that exists in a mysterious desert. Just like Yggdrasil, the Coordinate connects all Titans and their descendants together through invisible \"paths\". Both stories use the image of a great tree to show that even when people are far apart, they are all part of the same big family and are connected by a shared history that goes back thousands of years.\n\n.In the old myths, Yggdrasil was constantly under attack—creatures bit its leaves and a dragon gnawed at its roots—but the tree remained strong, keeping the world in balance. This map helps us visualize how ancient people imagined the structure of the universe as something living and growing. In the anime, the Coordinate tree is where the spirit of Ymir Fritz lives, sending her power through the \"Paths\" to reach every single Titan. Whenever a Titan transformation happens, the energy travels through this tree-like structure. While the Norse tree is made of bark and leaves and the anime tree is made of light and sand, they both represent the same idea: a central point where all life is linked."
+        },
+        "advanced": {
+          "short": "Hans Resen’s 1594 map provides a visual synthesis of the Axis Mundi, depicting Yggdrasil as the structural framework of the Norse cosmos. This \"World Tree\" functions as a conduit for both physical and spiritual movement between disparate realms, from Asgard to Hel. In Attack on Titan, the \"Coordinate\" (the intersection of the Paths) serves an identical metaphysical function. It acts as a non-linear nexus where the memories, wills, and biological matter of an entire ethnicity converge. This comparison highlights the human tendency to conceptualize complex, intangible networks—whether they are mythological cosmologies or genetic lineages—through botanical metaphors. Both the Norse Yggdrasil and Isayama’s Coordinate represent a centralized point of origin that maintains the equilibrium of a vast, interconnected system across space and time.",
+          "long": "Hans Resen’s 1594 map provides a visual synthesis of the Axis Mundi, depicting Yggdrasil as the structural framework of the Norse cosmos. This \"World Tree\" functions as a conduit for both physical and spiritual movement between disparate realms, from Asgard to Hel. In Attack on Titan, the \"Coordinate\" (the intersection of the Paths) serves an identical metaphysical function. It acts as a non-linear nexus where the memories, wills, and biological matter of an entire ethnicity converge. This comparison highlights the human tendency to conceptualize complex, intangible networks—whether they are mythological cosmologies or genetic lineages—through botanical metaphors. Both the Norse Yggdrasil and Isayama’s Coordinate represent a centralized point of origin that maintains the equilibrium of a vast, interconnected system across space and time.\n\nTechnically, Resen’s map is an exercise in \"mythical geography\", attempting to apply the logic of 16th-century cartography to a spiritual landscape. Yggdrasil is shown not just as a plant, but as a biological infrastructure that sustains the Nine Realms. This mirrors the \"Paths\" in the series, which function as a metaphysical nervous system for the Eldian people. While Yggdrasil is rooted in the Well of Urd—where the Norns weave the fate of the world—the Coordinate is rooted in the \"Paths\", where Ymir Fritz endlessly molds the bodies of Titans from sand. Both structures suggest that time is not a straight line, but a cyclical or simultaneous experience centered around a single point. This parallel explores the concept of \"Ancestral Memory\", where the actions of the past are perpetually present within the structure of the tree. The tree becomes a living archive, holding the genetic and spiritual code of an entire civilization, ensuring that no individual is ever truly detached from the collective whole."
+        }
+      }
+    },
+    {
+      "id": "cannon",
+      "displayTitle": "Cannon",
+      "images": {
+        "real": "images/items/real_cannon-png",
+        "anime": "images/items/cannon.png"
+      },
+      "metadata": {
+        "title": "Cannon",
+        "type": "Photo",
+        "year": "1861-65",
+        "institution": "THE MET"
+      },
+      "texts": {
+        "simple": {
+          "short": "The bronze \"swivel gun\" shown here is a real-world weapon from the 16th century. In history, these small cannons were mounted on ships or castle walls because they could \"swivel\" to follow a moving target. They are \"breech-loading\", which means the gunpowder and balls are put into the back of the gun instead of being pushed down the long front tube. This real-world design is exactly what you see on top of the 50-meter-high Walls in Attack on Titan. The Garrison Regiment uses much larger versions of these cannons to protect the city. Because they load from the back, soldiers can fire them much faster than old-fashioned cannons. For the people living inside the Walls, this technology was their most important defense against a Titan attack.",
+          "long": "The bronze \"swivel gun\" shown here is a real-world weapon from the 16th century. In history, these small cannons were mounted on ships or castle walls because they could \"swivel\" to follow a moving target. They are \"breech-loading\", which means the gunpowder and balls are put into the back of the gun instead of being pushed down the long front tube. This real-world design is exactly what you see on top of the 50-meter-high Walls in Attack on Titan. The Garrison Regiment uses much larger versions of these cannons to protect the city. Because they load from the back, soldiers can fire them much faster than old-fashioned cannons. For the people living inside the Walls, this technology was their most important defense against a Titan attack.\n\nHowever, these cannons have a major weakness: they are not very accurate. They lack \"rifling\", which are the spiral grooves inside modern guns that help a projectile spin and fly straight. Because of this, soldiers often used \"Grapeshot\"—a shell filled with many small iron balls—to hit multiple Titans at once like a giant shotgun. In the series, we see that the military even built special railroad tracks on top of the Walls so these heavy guns could be moved to wherever the Titans were attacking. This shows how humans had to use clever engineering to make up for the fact that their weapons were old and difficult to aim."
+        },
+        "advanced": {
+          "short": "This 16th-century bronze breech-loading swivel gun serves as the technical blueprint for the wall-mounted artillery in Attack on Titan. Historically, the swivel gun provided a solution for \"close-quarters\" heavy defense, allowing for rapid reloading via the rear breech. In the anime, this technology is scaled up to arm the parapets of Walls Maria, Rose, and Sina. The series highlights the anachronistic nature of the Garrison's weaponry; while the military utilizes advanced gas-powered movement gear, their heavy artillery remains stuck in a pre-industrial, smoothbore design. This reflects a society that has focused its engineering on static defense rather than offensive innovation.",
+          "long": "This 16th-century bronze breech-loading swivel gun serves as the technical blueprint for the wall-mounted artillery in Attack on Titan. Historically, the swivel gun provided a solution for \"close-quarters\" heavy defense, allowing for rapid reloading via the rear breech. In the anime, this technology is scaled up to arm the parapets of Walls Maria, Rose, and Sina. The series highlights the anachronistic nature of the Garrison's weaponry; while the military utilizes advanced gas-powered movement gear, their heavy artillery remains stuck in a pre-industrial, smoothbore design. This reflects a society that has focused its engineering on static defense rather than offensive innovation.\n\nThe real museum object demonstrates the mechanical limitations of the era, such as the heat-retention of bronze and the manual locking of the breech, both of which are mirrored in the anime’s depiction of the Garrison Regiment’s labor. In the series, this naval technology is adapted for vertical geography through a \"Rail-mounted\" system that allows for concentrated battery fire along the parapets. Because these smoothbore pieces lack rifling, they cannot achieve the precision required for a \"one-shot kill\" on a Titan’s nape. Instead, the military employs a \"volume of fire\" strategy, using overlapping fields of fire and specialized \"Grapeshot\" to compensate for poor accuracy. This reliance on 16th-century naval engineering to solve a land-based existential threat reveals how the physical constraints of the Walls limited human scientific progress."
+        }
+      }
+    },
+    {
+      "id": "planisphere",
+      "displayTitle": "Planisphere",
+      "images": {
+        "real": "images/items/real_planisphere.png",
+        "anime": ""
+      },
+      "metadata": {
+        "title": "Planisfero murale nella proiezione di Marcatore",
+        "type": "Wallchart",
+        "year": "1874",
+        "institution": "Phaidra/ Museo di Geografia (Università di Padova)"
+      },
+      "texts": {
+        "simple": {
+          "short": "",
+          "long": ""
+        },
+        "advanced": {
+          "short": "",
+          "long": ""
+        }
+      }
+    },
+    {
+      "id": "syringe",
+      "displayTitle": "Hypodermic Syringe",
+      "images": {
+        "real": "images/items/eal_syringe.jpg",
+        "anime": "images/items/syringe.png"
+      },
+      "metadata": {
+        "title": "Hypodermic syringe",
+        "type": "Hypodermic syringes",
+        "year": "1875-1910",
+        "institution": "Science Museum Group "
+      },
+      "texts": {
+        "simple": {
+          "short": "This is a glass and metal hypodermic syringe from the late 1800s. This invention allowed doctors to send medicine directly into a person's bloodstream for the first time, using a hollow needle. In Attack on Titan, syringes like this are the most feared tools in the world. They are used to inject Eldians with \"Titan spinal fluid\", which triggers an almost instant transformation into a Titan. Both in history and in the anime, the syringe represents a major scientific breakthrough that changed how we treat—or in the anime, how we change—the human body.",
+          "long": "This is a glass and metal hypodermic syringe from the late 1800s. This invention allowed doctors to send medicine directly into a person's bloodstream for the first time, using a hollow needle. In Attack on Titan, syringes like this are the most feared tools in the world. They are used to inject Eldians with \"Titan spinal fluid\", which triggers an almost instant transformation into a Titan. Both in history and in the anime, the syringe represents a major scientific breakthrough that changed how we treat—or in the anime, how we change—the human body.\n\nTechnically, a syringe works through \"positive pressure\" When the plunger is pushed down, it forces the liquid through the hollow needle and into the tissue. Historically, these needles had to be very strong to be reused, often requiring a metal hub. In the anime, Marleyan technology is even more specialized: their syringes feature a \"snap-on\" system for glass vials of spinal fluid. This allows soldiers to reload and inject many people quickly without wasting time filling the barrel by hand."
+        },
+        "advanced": {
+          "short": "This 19th-century hypodermic syringe is a seminal artifact of clinical medicine, marking the era when systemic drug delivery became a precise mechanical process. Historically, the transition from topical or oral medicine to intravenous injection revolutionized the speed and efficacy of chemical intervention. In Attack on Titan, the syringe functions as the primary delivery system for \"Titanization\", turning a supernatural biological process into a standardized military procedure. The Marleyan state has effectively weaponized medical modernity, using the syringe to manipulate the Eldian genetic code with the same cold efficiency that 19th-century doctors used to administer anesthesia.",
+          "long": "This 19th-century hypodermic syringe is a seminal artifact of clinical medicine, marking the era when systemic drug delivery became a precise mechanical process. Historically, the transition from topical or oral medicine to intravenous injection revolutionized the speed and efficacy of chemical intervention. In Attack on Titan, the syringe functions as the primary delivery system for \"Titanization\", turning a supernatural biological process into a standardized military procedure. The Marleyan state has effectively weaponized medical modernity, using the syringe to manipulate the Eldian genetic code with the same cold efficiency that 19th-century doctors used to administer anesthesia.\n\nTechnically, the efficacy of the syringe depends on the \"beveled\" tip of the needle—a diagonal cut that allows the steel to slice through skin with minimal resistance. This mechanical detail is vital in the anime, where Marleyan \"Gas Troopers\" or executioners at the \"Border\" require rapid, high-volume injections. Unlike the museum's glass-barreled artifact, the Marleyan injectors utilize an integrated vial-docking system to preserve the volatility of the spinal fluid, which evaporates upon exposure to air. This parallel illustrates a shift from \"ritualistic\" ingestion of spinal fluid to a calculated, industrial-grade dosage. The syringe thus stands as a symbol of Marleyan bio-political dominance, where the supernatural legacy of the Founder is controlled through the mechanical application of 19th-century medical hardware."
+        }
+      }
+    },
+    {
+      "id": "dirigible",
+      "displayTitle": "Dirigible",
+      "images": {
+        "real": "images/items/real-dirigibile.png",
+        "anime": "images/items/dirigibili2.png"
+      },
+      "metadata": {
+        "title": "Zeppelin, Dirigible, from the Airships series (E40) issued by the Philadelphia Caramel Company",
+        "type": "Print",
+        "year": "1910",
+        "institution": "THE MET"
+      },
+      "texts": {
+        "simple": {
+          "short": "This is a famous 1930s photograph by Paul Wolff called Dirigible Shadow on Water. It shows the shadow of a giant airship (also called a zeppelin) moving over the sea. In those years, airships were like \"flying hotels\"—massive balloons filled with gas that could carry people across the ocean. They were the kings of the sky before airplanes became popular. In the Anime: For most of the story, characters like Eren have never seen an airship. When a \"blimp\" finally appears, it changes everything! It represents the advanced technology of the world outside the walls. In the anime, airships are used by the Marleyan military to drop soldiers and even Titans into battle from the sky.",
+          "long": "This is a famous 1930s photograph by Paul Wolff called Dirigible Shadow on Water. It shows the shadow of a giant airship (also called a zeppelin) moving over the sea. In those years, airships were like \"flying hotels\"—massive balloons filled with gas that could carry people across the ocean. They were the kings of the sky before airplanes became popular. In the Anime: For most of the story, characters like Eren have never seen an airship. When a \"blimp\" finally appears, it changes everything! It represents the advanced technology of the world outside the walls. In the anime, airships are used by the Marleyan military to drop soldiers and even Titans into battle from the sky.\n\nReal airships like the one in the photo were filled with hydrogen, a gas that makes things float but is very dangerous because it catches fire easily. This is why the famous Hindenburg airship crashed in 1937. In the anime, Grisha Yeager and his sister Faye are mesmerized by an airship as children; that moment is the start of the whole story, as it leads them to leave their safe zone to follow its flight, discovering the cruel reality of their world."
+        },
+        "advanced": {
+          "short": "The dirigible represents the pinnacle of rigid airship engineering from the early 20th century. Unlike blimps, these vessels featured a complex internal duralumin skeleton containing multiple gas cells. This structural rigidity allowed for unprecedented scale and payload capacity, enabling the first reliable transoceanic aerial routes. The technology was a precursor to modern aviation, bridging the gap between maritime transport and fixed-wing flight. In the Anime: The dirigible functions as a technological threshold that redefines the series' genre. For the inhabitants of Paradis, it is an \"impossible object\" that shatters their isolated, pre-industrial worldview. Within Marleyan military doctrine, these vessels act as strategic carriers, enabling the deployment of paratroopers and \"Titan-drops\", effectively neutralizing traditional ground fortifications and Wall-based defenses.",
+          "long": "The dirigible represents the pinnacle of rigid airship engineering from the early 20th century. Unlike blimps, these vessels featured a complex internal duralumin skeleton containing multiple gas cells. This structural rigidity allowed for unprecedented scale and payload capacity, enabling the first reliable transoceanic aerial routes. The technology was a precursor to modern aviation, bridging the gap between maritime transport and fixed-wing flight. In the Anime: The dirigible functions as a technological threshold that redefines the series' genre. For the inhabitants of Paradis, it is an \"impossible object\" that shatters their isolated, pre-industrial worldview. Within Marleyan military doctrine, these vessels act as strategic carriers, enabling the deployment of paratroopers and \"Titan-drops\", effectively neutralizing traditional ground fortifications and Wall-based defenses.\n\nThe vessels in the series closely emulate the Zeppelin LZ 127 class, utilizing a rigid framework covered in doped fabric. A critical technical detail is the use of volatile hydrogen as a lifting gas—a historical necessity before helium became widely available. This flammable nature creates a high-stakes vulnerability in combat, as seen in aerial engagements where a single incendiary round can trigger a catastrophic hull failure. Narratively, the airship is the primary catalyst for the Yeager family trajectory. The sighting of a dirigible by young Grisha and Faye functions as an \"inciting incident\" that exposes the technological and geopolitical disparity between the Eldian internment zones and the Marleyan superpower. Its presence signals the transition from a \"fantasy\" setting to a \"historical-industrial\" war drama, where aerial supremacy dictates the fate of nations."
+        }
+      }
+    },
+    {
+      "id": "letter",
+      "displayTitle": "Soldier letter",
+      "images": {
+        "real": "images/items/real_letter.png",
+        "anime": ""
+      },
+      "metadata": {
+        "title": "1915-12-15 lettera n. 1, p.1",
+        "type": "Letter",
+        "year": "1915-12-15",
+        "institution": "Europeana"
+      },
+      "texts": {
+        "simple": {
+          "short": "During World War I, soldiers had no cell phones or internet. The only way to talk to their families was by writing letters. This specific letter was written by a soldier named Fritz in 1914. For men living in cold, muddy trenches, writing a letter was a way to feel human again. They told their mothers and wives they were \"fine\", even when they were scared, just to make them worry less. In the anime, letters are used as a clever trick! When Eren is hiding in the land of Marley, he pretends to be a wounded soldier. He asks young Falco to mail letters for him. Falco thinks he is helping a friend reach his family, but Eren is actually sending secret messages to his comrades (the Survey Corps) to plan a surprise attack.",
+          "long": "During World War I, soldiers had no cell phones or internet. The only way to talk to their families was by writing letters. This specific letter was written by a soldier named Fritz in 1914. For men living in cold, muddy trenches, writing a letter was a way to feel human again. They told their mothers and wives they were \"fine\", even when they were scared, just to make them worry less. In the anime, letters are used as a clever trick! When Eren is hiding in the land of Marley, he pretends to be a wounded soldier. He asks young Falco to mail letters for him. Falco thinks he is helping a friend reach his family, but Eren is actually sending secret messages to his comrades (the Survey Corps) to plan a surprise attack.\n\nDuring the Great War to stop the enemy from finding out military secrets, officers used \"censorship\": they crossed out words with heavy black ink. This is exactly why Eren uses Falco in the anime! By using a child to drop letters in a public mailbox outside the military base, Eren avoids the Marleyan guards and their checks. Another famous letter is the one from Ymir to Historia; even after Ymir is gone, her written words remain the only link between the two friends separated by the ocean. It shows that a simple piece of paper can be more powerful than a Titan."
+        },
+        "advanced": {
+          "short": "Correspondence from the Great War (1914–1918) serves as a vital ego-document, offering a counter-narrative to official military reports. This letter by Fritz Kellermann (1914) exemplifies the psychological necessity of maintaining a civilian identity amidst industrial warfare. These letters were the primary link between the Frontschwein (front-line soldier) and the Heimat (home front), acting as a tool for emotional survival. In the anime the letter is utilized in a different way: as a tactical instrument of subversion. During the Marley Arc, Eren Jaeger adopts the persona of a traumatized veteran to manipulate Falco Grice into bypassing military surveillance. This \"epistolary bridge\" allows Eren to coordinate with the Survey Corps, transforming a symbol of domestic affection into a weapon of asymmetric warfare.",
+          "long": "Correspondence from the Great War (1914–1918) serves as a vital ego-document, offering a counter-narrative to official military reports. This letter by Fritz Kellermann (1914) exemplifies the psychological necessity of maintaining a civilian identity amidst industrial warfare. These letters were the primary link between the Frontschwein (front-line soldier) and the Heimat (home front), acting as a tool for emotional survival. In the anime the letter is utilized in a different way: as a tactical instrument of subversion. During the Marley Arc, Eren Jaeger adopts the persona of a traumatized veteran to manipulate Falco Grice into bypassing military surveillance. This \"epistolary bridge\" allows Eren to coordinate with the Survey Corps, transforming a symbol of domestic affection into a weapon of asymmetric warfare.\n\nBeyond personal sentiment, these documents reveal the rigid framework of the Postprüfstelle (military censorship), where black ink served as a tool of state control to maintain \"national hygiene\" and suppress tactical leaks. Scholars analyze these letters through the lens of Self-Narrative, where soldiers often engaged in \"self-censorship\" to protect their families from the Fronttrauma. In the anime, Eren’s subversion of this system highlights a shift in Information Warfare: by utilizing an external civilian channel (Falco), he disrupts the state’s monopoly on communication. Furthermore, the inclusion of Ymir’s letter to Historia acts as a \"Physical Path\". It provides a semiotic link between the two continents that the biological Paths cannot fulfill—offering a permanent, tactile record of Eldian history that survives even the destruction of the writer. This underscores the medium’s role as the final vestige of individual sovereignty in a world defined by collective biological control."
+        }
+      }
+    },
+    {
+      "id": "trench",
+      "displayTitle": "Trench",
+      "images": {
+        "real": "images/items/real_trincea.png",
+        "anime": "images/items/trincea.png"
+      },
+      "metadata": {
+        "title": "In trincea sul Piave.",
+        "type": "Still image",
+        "year": "1917",
+        "institution": "Europeana"
+      },
+      "texts": {
+        "simple": {
+          "short": "The photograph shows a real trench from World War I, a deep ditch dug into the ground to protect soldiers from gunfire. In the real world, millions of soldiers lived in these narrow, muddy passages for months at a time. In the anime Attack on Titan, we see almost the exact same scene at the beginning of the final season. Gabi, Falco, and other young soldiers are crouched in these dirt walls during the battle for Fort Slava. These trenches were used as a shield against enemy bullets, showing how war changed from open fields to hiding underground for safety.",
+          "long": "The photograph shows a real trench from World War I, a deep ditch dug into the ground to protect soldiers from gunfire. In the real world, millions of soldiers lived in these narrow, muddy passages for months at a time. In the anime Attack on Titan, we see almost the exact same scene at the beginning of the final season. Gabi, Falco, and other young soldiers are crouched in these dirt walls during the battle for Fort Slava. These trenches were used as a shield against enemy bullets, showing how war changed from open fields to hiding underground for safety.\n\nIn history, trenches were usually reinforced with wood and sandbags to prevent the walls from collapsing during rain or explosions. In the anime, the trenches at Fort Slava look very dry and dusty, but they serve a similar purpose: providing a \"firing step\" for soldiers to peek over the edge and shoot. A major difference is that real trenches had \"dugouts\"—deep underground rooms where soldiers could hide from heavy bombs. In the anime, the soldiers are more exposed, making them easy targets for the Mid-East Allied Forces' \"Anti-Titan\" artillery shells that can explode right over their heads."
+        },
+        "advanced": {
+          "short": "This historical photograph illustrates the \"static warfare\" of the 1910s, where the trench functioned as an earthen fortress designed to nullify the lethality of modern ballistics. Structurally, these real-world defenses relied on sandbagged parapets and reinforced dugouts to sustain soldiers during prolonged artillery bombardments. In Attack on Titan, the trenches at Fort Slava serve a parallel narrative purpose, marking the transition from the \"Titan-centrist\" era to an age of industrial machinery. As the Mid-East Allied Forces deploy anti-Titan cannons, the Marleyan military—including Shifters and Eldian recruits like Gabi and Falco—is forced to seek refuge in the earth. The trench thus symbolizes the physical and symbolic leveling of the battlefield, where biological supremacy is finally checked by mechanical innovation.",
+          "long": "This historical photograph illustrates the \"static warfare\" of the 1910s, where the trench functioned as an earthen fortress designed to nullify the lethality of modern ballistics. Structurally, these real-world defenses relied on sandbagged parapets and reinforced dugouts to sustain soldiers during prolonged artillery bombardments. In Attack on Titan, the trenches at Fort Slava serve a parallel narrative purpose, marking the transition from the \"Titan-centrist\" era to an age of industrial machinery. As the Mid-East Allied Forces deploy anti-Titan cannons, the Marleyan military—including Shifters and Eldian recruits like Gabi and Falco—is forced to seek refuge in the earth. The trench thus symbolizes the physical and symbolic leveling of the battlefield, where biological supremacy is finally checked by mechanical innovation.\n\nA comparative analysis reveals that while historical trenches utilized \"traverses\" (zigzag bends) to contain enfilade fire, the anime depicts straight-line excavations to emphasize the speed of Titan Shifters. The real trench was an answer to the machine gun, but the anime trench is a desperate reaction to the obsolescence of the Titan. While WWI soldiers utilized \"trench-raiding\" tactics to break the stalemate, Marley uses the Jaw Titan as a biological \"tank\" to bypass the defensive lines."
+        }
+      }
+    },
+    {
+      "id": "seaplane",
+      "displayTitle": "Seaplane",
+      "images": {
+        "real": "images/items/real_seaplane.jpg",
+        "anime": "images/items/seaplane.png"
+      },
+      "metadata": {
+        "title": "Rohrbach Ro IIIa Rodra flying boat",
+        "type": "Photo",
+        "year": "1927",
+        "institution": "Bundesarchiv"
+      },
+      "texts": {
+        "simple": {
+          "short": "This is a seaplane, a special airplane that uses the water as a runway. Instead of wheels, it has a belly shaped like a boat called a \"hull\". In the early 1900s, these planes were very famous because they could land in any calm bay or lake, so they didn't need expensive airports. They were used to carry mail and passengers across the big oceans for the first time. In the Anime: This plane is the secret weapon of the Azumabito family. It is much faster than a slow airship and is the only way for our heroes to catch up with the Rumbling. In a world of giant monsters, this small mechanical bird represents the power of human intelligence and the hope of saving what remains of the world.",
+          "long": "This is a seaplane, a special airplane that uses the water as a runway. Instead of wheels, it has a belly shaped like a boat called a \"hull\". In the early 1900s, these planes were very famous because they could land in any calm bay or lake, so they didn't need expensive airports. They were used to carry mail and passengers across the big oceans for the first time. In the Anime: This plane is the secret weapon of the Azumabito family. It is much faster than a slow airship and is the only way for our heroes to catch up with the Rumbling. In a world of giant monsters, this small mechanical bird represents the power of human intelligence and the hope of saving what remains of the world.\n\nIf you look closely at the photo, the engines are placed high above the wings. This isn't for style! It’s to protect the propellers from the salty water splashes that could break the engine during takeoff. Also, the bottom of the plane has a small \"step\". This \"step\" helps the plane break the suction of the water so it can lift off into the sky more easily. In the anime, to fly this plane, the mechanics use a legendary fuel called Iceburst Stone. This glowing mineral is much more powerful than normal coal or oil. Without this special energy found only in the caves of Paradis, the plane would be too heavy to take off from the sea and reach the final battle."
+        },
+        "advanced": {
+          "short": "The seaplanes of the 1920s–30s, such as the Dornier Wal, represent a definitive branch of amphibious aviation. Clad in duralumin, these \"flying boats\" utilize a fuselage designed as a buoyant hull to achieve hydrodynamic lift during takeoff. This eliminated the need for terrestrial infrastructure, making them essential for oceanic reconnaissance in regions lacking established airfields. In the Anime: The Azumabito seaplane marks the transition from Marley’s lighter-than-air dominance (dirigibles) to fixed-wing aerodynamics. It serves as a narrative \"deus ex machina\" and a symbol of industrial cooperation between Hizuru and Paradis. Its arrival signifies the obsolescence of the Titan era, as mechanical speed begins to outpace biological movement.",
+          "long": "The seaplanes of the 1920s–30s, such as the Dornier Wal, represent a definitive branch of amphibious aviation. Clad in duralumin, these \"flying boats\" utilize a fuselage designed as a buoyant hull to achieve hydrodynamic lift during takeoff. This eliminated the need for terrestrial infrastructure, making them essential for oceanic reconnaissance in regions lacking established airfields. In the Anime: The Azumabito seaplane marks the transition from Marley’s lighter-than-air dominance (dirigibles) to fixed-wing aerodynamics. It serves as a narrative \"deus ex machina\" and a symbol of industrial cooperation between Hizuru and Paradis. Its arrival signifies the obsolescence of the Titan era, as mechanical speed begins to outpace biological movement.\n\nThe aircraft’s design mirrors the Dornier \"Superwal\" series, characterized by a parasol wing configuration with engines mounted in tandem nacelles. This layout raises the propulsion system to protect the propellers from corrosive salt spray and water ingestion. A key engineering feature is the stepped hull, which breaks suction with the water surface, allowing the plane to \"plane\" and reach takeoff velocity. Within the endgame, the seaplane becomes the ultimate tactical asset, shifting the Survey Corps' logistical priority from vertical maneuvering to long-range aerial deployment. Its reliance on \"Iceburst Stone\" fuel mirrors historical challenges in power-to-weight ratios for heavy amphibious takeoffs. The tension surrounding its maintenance under fire highlights the vulnerability of high-tech industrial assets compared to the self-sustaining nature of the Titans."
+        }
+      }
+    },
+    {
+      "id": "flight",
+      "displayTitle": "Flyiht Machine",
+      "images": {
+        "real": "images/items/real_macchina-volante.jpg",
+        "anime": ""
+      },
+      "metadata": {
+        "title": "Macchina volante",
+        "type": "Model",
+        "year": "1929",
+        "institution": "Museo Leonardiano"
+      },
+      "texts": {
+        "simple": {
+          "short": "Leonardo da Vinci was a genius who spent years studying birds to understand how humans could one day fly. His \"flying machine\" design, which you can see in his ancient notebooks, used a system of pulleys and levers to mimic the flapping of wings. He wanted to give people the power to move through the air like creatures of nature. In Attack on Titan, humans use a clever invention called \"Vertical Maneuvering Equipment\" to do something very similar. Instead of wings, they use grappling hooks and gas-powered cables to swing through the air and climb giant walls. Both inventions show how human beings use their imagination and science to move in ways that our bodies normally cannot.",
+          "long": "Leonardo da Vinci was a genius who spent years studying birds to understand how humans could one day fly. His \"flying machine\" design, which you can see in his ancient notebooks, used a system of pulleys and levers to mimic the flapping of wings. He wanted to give people the power to move through the air like creatures of nature. In Attack on Titan, humans use a clever invention called \"Vertical Maneuvering Equipment\" to do something very similar. Instead of wings, they use grappling hooks and gas-powered cables to swing through the air and climb giant walls. Both inventions show how human beings use their imagination and science to move in ways that our bodies normally cannot.\n\nLeonardo’s design was based on the \"ornithopter\", a machine where the pilot would lie down and use their arms and legs to flap the mechanical wings. Even though he never successfully flew it, his drawings proved that he understood the physics of movement. Similarly, the soldiers in the anime have to train for years to master the ODM gear, which requires incredible balance and strength. Just as Leonardo’s machine used mechanical joints and wooden frames, the ODM gear uses fan turbines and steel wires to create high-speed movement. These two inventions represent the moment when clever machines allow humans to challenge the laws of gravity. They remind us that before we had planes or helicopters, inventors were already dreaming of how to turn the sky into a new frontier for mankind."
+        },
+        "advanced": {
+          "short": "Leonardo da Vinci’s flying machine, specifically as documented in Manuscript B of the Institut de France, represents an early pinnacle of biomimetic engineering. By deconstructing the anatomy of avian flight, Leonardo attempted to translate organic kinetics into a mechanical apparatus of pulleys and cranks. In Attack on Titan, the Vertical Maneuvering Equipment serves as a narrative evolution of this principle. It is a technological response to a biological threat, allowing humans to occupy a \"vertical\" space that was previously the sole domain of the Titans. This comparison highlights the shift from observing nature (as Leonardo did with birds) to competing with it. Both technologies demonstrate the \"technological extension of the body\", where the machine is not merely a vehicle, but a prosthetic device designed to grant the user a predatory or defensive advantage in a three-dimensional environment.",
+          "long": "Leonardo da Vinci’s flying machine, specifically as documented in Manuscript B of the Institut de France, represents an early pinnacle of biomimetic engineering. By deconstructing the anatomy of avian flight, Leonardo attempted to translate organic kinetics into a mechanical apparatus of pulleys and cranks. In Attack on Titan, the Vertical Maneuvering Equipment serves as a narrative evolution of this principle. It is a technological response to a biological threat, allowing humans to occupy a \"vertical\" space that was previously the sole domain of the Titans. This comparison highlights the shift from observing nature (as Leonardo did with birds) to competing with it. Both technologies demonstrate the \"technological extension of the body\", where the machine is not merely a vehicle, but a prosthetic device designed to grant the user a predatory or defensive advantage in a three-dimensional environment.\n\nFrom a technical perspective, Leonardo’s sketches reveal a sophisticated understanding of mechanical leverage and weight distribution. His use of a \"scale-like\" framework for the wings intended to maximize lift while maintaining structural integrity. The ODM gear in the anime mirrors this complexity through its use of pressurized gas and a centrifugal fan system to reel in high-tensile steel wires. While Leonardo looked to the bird, the creators of the ODM gear looked to the physics of tension and recoil. Both devices represent a \"rebellion against the horizontal\"—a refusal to be confined to the earth's surface. This parallel explores the \"Ingenuity of Survival\", where the development of complex machinery is driven by a desire to master a hostile environment. Whether it is a Renaissance scholar seeking to unlock the secrets of the sky or a soldier seeking to survive a Titan attack, the goal is the same: the transformation of human frailty into mechanical power through the precise application of engineering and geometry."
+        }
+      }
+    },
+    {
+      "id": "mask",
+      "displayTitle": "Gas mask",
+      "images": {
+        "real": "images/items/real_maschera.png",
+        "anime": "images/items/mask.png"
+      },
+      "metadata": {
+        "title": "Non-regulaition gas mask",
+        "type": "Gas mask",
+        "year": "1939",
+        "institution": "Royal Museum Greenwich"
+      },
+      "texts": {
+        "simple": {
+          "short": "This is a British Small Box Respirator from World War I. In the real world, it was designed to protect soldiers from poisonous gases that stayed low to the ground in trenches. It works by using a hose connected to a tin box filled with charcoal, which filters the air before it reaches the person’s lungs. In Attack on Titan, we see Marleyan soldiers wearing very similar masks when they use chemical weapons. Since the \"Titan gas\" used to transform Eldians is a deadly mist, these masks are the only thing keeping the soldiers safe from their own weapons. Both in history and in the anime, these masks changed the way people fought by turning the very air into a danger zone.",
+          "long": "This is a British Small Box Respirator from World War I. In the real world, it was designed to protect soldiers from poisonous gases that stayed low to the ground in trenches. It works by using a hose connected to a tin box filled with charcoal, which filters the air before it reaches the person’s lungs. In Attack on Titan, we see Marleyan soldiers wearing very similar masks when they use chemical weapons. Since the \"Titan gas\" used to transform Eldians is a deadly mist, these masks are the only thing keeping the soldiers safe from their own weapons. Both in history and in the anime, these masks changed the way people fought by turning the very air into a danger zone.\n\nThe technical design of this mask includes a nose clip and a mouthpiece that the soldier had to grip with their teeth to make sure they only breathed filtered air. This made it very uncomfortable and difficult to talk or shout orders. In the anime, the Marleyan soldiers use these masks to stay protected while Zeke Jaeger’s spinal fluid is spread as a gas. Without this gear, the soldiers would be caught in the same transformation as their enemies. The goggles on the mask were also vital, as many historical gases would burn a person's eyes on contact. This piece of equipment shows how warfare moved from simple swords and shields to a world where even breathing became a struggle for survival."
+        },
+        "advanced": {
+          "short": "The Small Box Respirator (SBR) represents a peak in early 20th-century defensive engineering, moving away from simple chemically-treated hoods to a mechanical filtration system. Its primary component, a chest-mounted canister containing activated charcoal and cotton pads, was designed to neutralize chlorine and phosgene gases. In Attack on Titan, the presence of these masks signals the industrialization of the Titan threat. Marley no longer relies solely on the Shifters' physical power; they have weaponized the Titan biology into a gas. The mask serves as the essential barrier that allows human infantry to operate within the \"kill zone\" of a Titan transformation, effectively turning a supernatural event into a controlled chemical operation.",
+          "long": "The Small Box Respirator (SBR) represents a peak in early 20th-century defensive engineering, moving away from simple chemically-treated hoods to a mechanical filtration system. Its primary component, a chest-mounted canister containing activated charcoal and cotton pads, was designed to neutralize chlorine and phosgene gases. In Attack on Titan, the presence of these masks signals the industrialization of the Titan threat. Marley no longer relies solely on the Shifters' physical power; they have weaponized the Titan biology into a gas. The mask serves as the essential barrier that allows human infantry to operate within the \"kill zone\" of a Titan transformation, effectively turning a supernatural event into a controlled chemical operation.\n\nTechnically, the SBR was a \"divided\" system; the facepiece was connected by a corrugated rubber tube to the filter, which prevented the weight of the canister from breaking the airtight seal during movement. In the anime, this mechanical detail is mirrored in the Marleyan \"Gas Trooper\" units, whose mobility is restricted by the bulky gear. This parallel illustrates the transition of the Marleyan military into a \"total war\" doctrine, where the environment itself is rendered toxic to achieve tactical objectives. The mask represents the dehumanization of the soldier, as the individual face is replaced by a glass-eyed, rubberized visor. This object highlights a world where the boundary between \"human\" and \"Titan\" is increasingly mediated by industrial filters and pressurized canisters, shifting the power dynamic from the battlefield to the laboratory."
+        }
+      }
+    },
+    {
+      "id": "armband",
+      "displayTitle": "Armband",
       "images": {
         "real": "images/items/real_armband.png",
         "anime": "images/items/armband_red.png"
       },
       "metadata": {
-        "title": "Trench Watch",
-        "type": "Switzerland / Europe",
-        "year": "Steel and Leather",
-        "institution": "MET"
+        "title": "Armbaand with star of David",
+        "type": "Armband",
+        "year": "1940's",
+        "institution": "National Holocaust Museum"
       },
       "texts": {
         "simple": {
-          "short": "A simple watch used by soldiers to check the time during battles.",
-          "long": "Soldiers needed to be perfectly synchronized for attacks. This watch was practical and easy to read, just like the ones used by the Marleyan army in the series."
+          "short": "Between 1939 and 1945, the Nazi regime forced Jewish citizens to wear fabric armbands or \"yellow stars\" on their clothes. These objects were used to visually mark people in public, separating them from everyone else and making them easy targets for government control. In Attack on Titan, this system is copied exactly: the armband is an accessory that Eldians must wear in the Liberio district. Here too, the object is used by the authorities of Marley to identify who belongs to that ethnic group, limiting their movements and their rights. There are different colors: yellow is for ordinary civilians, while red is reserved for elite or \"honorary\" soldiers.",
+          "long": "Between 1939 and 1945, the Nazi regime forced Jewish citizens to wear fabric armbands or \"yellow stars\" on their clothes. These objects were used to visually mark people in public, separating them from everyone else and making them easy targets for government control. In Attack on Titan, this system is copied exactly: the armband is an accessory that Eldians must wear in the Liberio district. Here too, the object is used by the authorities of Marley to identify who belongs to that ethnic group, limiting their movements and their rights. There are different colors: yellow is for ordinary civilians, while red is reserved for elite or \"honorary\" soldiers.\n\nBeyond just identifying people, the armband shows how a simple piece of cloth can become a powerful tool for division. Wearing this mark means accepting a life of submission based on mistakes made in the past. Seeing this object in person at an exhibition helps us understand the difference between a normal piece of clothing and a symbol of exclusion. While we read about laws that discriminated against people in books, seeing the simple materials used to make these armbands helps us understand how easy it was to isolate groups of citizens from daily life."
         },
         "advanced": {
-          "short": "A transitionary 'trench watch' featuring a shrapnel guard and luminous dial.",
-          "long": "This artifact represents the evolution from pocket watches to wristwatches, necessitated by the tactical demands of modern warfare. Its design mirrors the rugged aesthetic of military equipment seen in the final season's technological leap."
+          "short": "Historically, between 1939 and 1945, the National Socialist regime implemented a visual marking system (Kennzeichnung) by mandating the use of armbands or yellow stars for Jewish citizens. These artifacts were not merely symbols but biopolitical control devices designed to segregate subjects within public spaces and facilitate state administrative monitoring. In Attack on Titan, this surveillance apparatus is transposed to the Liberio district, where the Eldian armband serves as the primary indicator of legal and social status. Through precise chromatic coding—where yellow identifies the segregated civilian and red the \"honorary\" soldier—the State of Marley hierarchizes the oppressed ethnicity, turning a garment into a tool of bureaucratic exclusion.",
+          "long": "Historically, between 1939 and 1945, the National Socialist regime implemented a visual marking system (Kennzeichnung) by mandating the use of armbands or yellow stars for Jewish citizens. These artifacts were not merely symbols but biopolitical control devices designed to segregate subjects within public spaces and facilitate state administrative monitoring. In Attack on Titan, this surveillance apparatus is transposed to the Liberio district, where the Eldian armband serves as the primary indicator of legal and social status. Through precise chromatic coding—where yellow identifies the segregated civilian and red the \"honorary\" soldier—the State of Marley hierarchizes the oppressed ethnicity, turning a garment into a tool of bureaucratic exclusion.\n\nThe technical categorization of the armbands reflects a \"meritocratic\" segregation: the transition from yellow to red (for Warriors) or green (for medical personnel) functions as a mechanism of psychological reward within a repressive system. This mirrors the Nazi Klassifizierung (classification) used in concentration camps, where a complex code of colored triangles (Winkel) defined the \"reason\" for imprisonment and the prisoner's rank in the camp's social hierarchy. By analyzing the graphic design of the Eldian crest—a nine-pointed star—one can observe the intersection between religious symbolism and administrative branding. This specific iconography is designed for maximum high-contrast visibility, a technical requirement for effective police surveillance and the immediate enforcement of spatial restrictions in urban environments."
+        }
+      }
+    },
+    {
+      "id": "bomb",
+      "displayTitle": "Hand Grenade",
+      "images": {
+        "real": "images/items/real_granata.png",
+        "anime": ""
+      },
+      "metadata": {
+        "title": "bomba a mano",
+        "type": "Hand grenade",
+        "year": "1943-45",
+        "institution": "Museo della Repubblica di Montefiorino e della Resistenza italiana"
+      },
+      "texts": {
+        "simple": {
+          "short": "This historical object is a German Stielhandgranate 24, nicknamed the \"potato masher\" because of its unusual shape. Unlike round grenades that you might see in movies, this one has a long wooden handle that helps a soldier throw it much further and with better aim. In the first episode of Attack on Titan Season 4, Gabi Braun uses a bundle of these exact grenades to pull off a daring mission. By tying several of them together, she creates enough explosive power to blow up an armored train. This real-world weapon shows how soldiers used clever designs to turn a small explosive into a long-distance tool for taking down heavy targets.",
+          "long": "This historical object is a German Stielhandgranate 24, nicknamed the \"potato masher\" because of its unusual shape. Unlike round grenades that you might see in movies, this one has a long wooden handle that helps a soldier throw it much further and with better aim. In the first episode of Attack on Titan Season 4, Gabi Braun uses a bundle of these exact grenades to pull off a daring mission. By tying several of them together, she creates enough explosive power to blow up an armored train. This real-world weapon shows how soldiers used clever designs to turn a small explosive into a long-distance tool for taking down heavy targets.\n\nTo use this grenade, a soldier had to unscrew the cap at the bottom of the handle and pull a porcelain bead attached to a string. This started a 4-to-5-second timer before it exploded. In the anime, Gabi uses a \"bundle charge\"—a real historical tactic where six grenade heads were tied around a central one to create a massive blast. While a single grenade was meant for clearing trenches, Gabi’s bundle was powerful enough to destroy the Mid-East Allied Forces’ armored tracks."
+        },
+        "advanced": {
+          "short": "The Stielhandgranate 24 represents a significant development in infantry equipment, utilizing a hollow wooden handle to provide leverage for longer throws and prevent the device from rolling on uneven terrain. This \"stick grenade\" was designed for concussion rather than fragmentation, using a high-explosive filler to incapacitate targets through blast pressure. In the opening of Attack on Titan’s final season, Gabi Braun’s use of this weapon highlights the series' transition into a 20th-century \"total war\" setting. This digital artifact signifies the shift where small, portable explosives began to overcome the dominance of massive, stationary military assets like armored trains. It illustrates a historical turning point where the clever application of mass-produced munitions allowed a single soldier to neutralize heavy industrial machinery.",
+          "long": "The Stielhandgranate 24 represents a significant development in infantry equipment, utilizing a hollow wooden handle to provide leverage for longer throws and prevent the device from rolling on uneven terrain. This \"stick grenade\" was designed for concussion rather than fragmentation, using a high-explosive filler to incapacitate targets through blast pressure. In the opening of Attack on Titan’s final season, Gabi Braun’s use of this weapon highlights the series' transition into a 20th-century \"total war\" setting. This digital artifact signifies the shift where small, portable explosives began to overcome the dominance of massive, stationary military assets like armored trains. It illustrates a historical turning point where the clever application of mass-produced munitions allowed a single soldier to neutralize heavy industrial machinery.\n\nTechnically, the \"stick\" design was an engineering solution to the \"roll-back\" hazard inherent in spherical grenades used on uneven terrain. In the anime, Gabi utilizes the weapon's modularity to create a Geballte Ladung, an improvised demolition charge made by strapping multiple warheads together. This configuration was historically used to disable the tracks of early tanks, just as Gabi uses it to neutralize the Mid-East Allied Forces' armored train. The reliance on the friction-pull fuse system meant that the weapon could be ignited quickly in the heat of an assault, making it the perfect tool for the high-risk, \"trench-raiding\" style mission Gabi performs."
+        }
+      }
+    },
+    {
+      "id": "",
+      "displayTitle": "",
+      "images": {
+        "real": "images/items/real_key.jpg",
+        "anime": "images/items/key.png"
+      },
+      "metadata": {
+        "title": "",
+        "type": "",
+        "year": "",
+        "institution": ""
+      },
+      "texts": {
+        "simple": {
+          "short": "",
+          "long": ""
+        },
+        "advanced": {
+          "short": "",
+          "long": ""
         }
       }
     }
   ],  
 
   "narratives": {
-    "historical": ["trench-watch-01", "compass"],
-    "technological": ["compass", "medikit", "trench-watch-01"],
-    "legend": ["medikit", "trench-watch-01"]
+    "historical": ["key", "codex", "map", "ymir", "liberty", "baptistery", "yggdrasil", "cannon","planisphere", "syringe", "dirigible", "letter", "trench", "seaplane", "flight", "mask", "armband", "bomb"],
+    "technological": ["map", "liberty", "cannon", "syringe", "dirigible", "letter", "trench", "seaplane", "flight", "mask", "armband", "bomb"],
+    "legend": ["key", "codex", "map", "ymir", "yggdrasil", "syringe"]
   }
 }

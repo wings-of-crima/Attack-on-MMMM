@@ -51,6 +51,8 @@ function populatePage() {
     document.getElementById('meta-year').innerText = itemData.metadata.year;
     document.getElementById('meta-institution').innerText = itemData.metadata.institution;
 
+    updateNavigation();
+    
     updateDisplay();
 }
 
@@ -73,3 +75,30 @@ function updateDisplay() {
 }
 
 window.addEventListener("DOMContentLoaded", loadItemData);
+
+function updateNavigation() {
+    const prevBtn = document.getElementById('prev-item');
+    const nextBtn = document.getElementById('next-item');
+    
+    // Recuperiamo il nome della narrativa dall'URL attuale per mantenerla
+    const urlParams = new URLSearchParams(window.location.search);
+    const narrativeName = urlParams.get('narrative') || 'historical';
+
+    // Gestione tasto PREV
+    if (currentIndex > 0) {
+        const prevId = currentNarrativeList[currentIndex - 1];
+        prevBtn.href = `single narrative.html?id=${prevId}&narrative=${narrativeName}`;
+        prevBtn.classList.remove('nav-hidden');
+    } else {
+        prevBtn.classList.add('nav-hidden');
+    }
+
+    // Gestione tasto NEXT
+    if (currentIndex < currentNarrativeList.length - 1) {
+        const nextId = currentNarrativeList[currentIndex + 1];
+        nextBtn.href = `single narrative.html?id=${nextId}&narrative=${narrativeName}`;
+        nextBtn.classList.remove('nav-hidden');
+    } else {
+        nextBtn.classList.add('nav-hidden');
+    }
+}

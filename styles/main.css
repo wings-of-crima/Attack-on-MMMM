@@ -1806,6 +1806,34 @@ section.map img:hover {
     transition: filter 0.3s;
 }
 
-.manga-img-wrapper:hover img {
-    filter: brightness(1.1);
+
+/*metadata box exhibition*/
+
+/* 1. Assicuriamoci che il contenitore della riga permetta lo sticky */
+.item-detail .row {
+    align-items: flex-start; /* Fondamentale per far funzionare lo sticky */
+}
+
+/* 2. Regola specifica per la colonna che contiene la box */
+.col-md-4:has(.metadata-box) {
+    position: relative; 
+    height: 100%; /* La colonna deve estendersi per tutta la lunghezza della riga */
+}
+
+/* 3. La box dei metadati vera e propria */
+.metadata-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #6c757d;
+
+    /* BLOCCA LA BOX ALLO SCHERMO */
+    position: -webkit-sticky; /* Supporto per Safari */
+    position: sticky;
+    top: 20px; /* Distanza dal bordo superiore della finestra quando scivola */
+    
+    /* Impedisce alla box di deformarsi */
+    align-self: flex-start;
+    width: 100%; 
+    max-height: fit-content;
 }
