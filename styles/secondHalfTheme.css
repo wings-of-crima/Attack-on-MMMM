@@ -156,7 +156,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .nav-link:hover {
-    color:#f506ad !important;
+    color:#21bffe !important;
     background-color: transparent !important;;
     text-shadow: 3px 3px 0px #000000;
     transform: scale(1.1) rotate(-2deg);

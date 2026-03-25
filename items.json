@@ -172,7 +172,7 @@
       "id": "cannon",
       "displayTitle": "Cannon",
       "images": {
-        "real": "images/items/real_cannon-png",
+        "real": "images/items/real_cannon.png",
         "anime": "images/items/cannon.png"
       },
       "metadata": {
@@ -431,36 +431,12 @@
           "long": "The Stielhandgranate 24 represents a significant development in infantry equipment, utilizing a hollow wooden handle to provide leverage for longer throws and prevent the device from rolling on uneven terrain. This \"stick grenade\" was designed for concussion rather than fragmentation, using a high-explosive filler to incapacitate targets through blast pressure. In the opening of Attack on Titan’s final season, Gabi Braun’s use of this weapon highlights the series' transition into a 20th-century \"total war\" setting. This digital artifact signifies the shift where small, portable explosives began to overcome the dominance of massive, stationary military assets like armored trains. It illustrates a historical turning point where the clever application of mass-produced munitions allowed a single soldier to neutralize heavy industrial machinery.\n\nTechnically, the \"stick\" design was an engineering solution to the \"roll-back\" hazard inherent in spherical grenades used on uneven terrain. In the anime, Gabi utilizes the weapon's modularity to create a Geballte Ladung, an improvised demolition charge made by strapping multiple warheads together. This configuration was historically used to disable the tracks of early tanks, just as Gabi uses it to neutralize the Mid-East Allied Forces' armored train. The reliance on the friction-pull fuse system meant that the weapon could be ignited quickly in the heat of an assault, making it the perfect tool for the high-risk, \"trench-raiding\" style mission Gabi performs."
         }
       }
-    },
-    {
-      "id": "",
-      "displayTitle": "",
-      "images": {
-        "real": "images/items/real_key.jpg",
-        "anime": "images/items/key.png"
-      },
-      "metadata": {
-        "title": "",
-        "type": "",
-        "year": "",
-        "institution": ""
-      },
-      "texts": {
-        "simple": {
-          "short": "",
-          "long": ""
-        },
-        "advanced": {
-          "short": "",
-          "long": ""
-        }
-      }
     }
   ],  
 
   "narratives": {
     "historical": ["key", "codex", "map", "ymir", "liberty", "baptistery", "yggdrasil", "cannon","planisphere", "syringe", "dirigible", "letter", "trench", "seaplane", "flight", "mask", "armband", "bomb"],
     "technological": ["map", "liberty", "cannon", "syringe", "dirigible", "letter", "trench", "seaplane", "flight", "mask", "armband", "bomb"],
-    "legend": ["key", "codex", "map", "ymir", "yggdrasil", "syringe"]
+    "legendary": ["key", "codex", "map", "ymir", "yggdrasil", "syringe"]
   }
 }

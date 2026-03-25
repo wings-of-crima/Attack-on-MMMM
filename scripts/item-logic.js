@@ -9,23 +9,22 @@ async function loadItemData() {
         const response = await fetch('items.json');
         const data = await response.json();
         
-        // 1. Leggiamo i parametri dall'URL (es: item.html?id=watch&narrative=legend)
         const urlParams = new URLSearchParams(window.location.search);
-        const itemId = urlParams.get('id');
-        const narrativeName = urlParams.get('narrative') || 'historical'; // Default se manca
+        const narrativeName = urlParams.get('narrative') || 'historical'; 
+        let itemId = urlParams.get('id'); // Usiamo let perché potremmo sovrascriverlo
 
-        // 2. Recuperiamo la lista degli ID per la narrativa selezionata
-        currentNarrativeList = data.narratives[narrativeName];
+        // 1. Recuperiamo la lista degli ID per la narrativa selezionata
+        currentNarrativeList = data.narratives[narrativeName] || [];
 
-        // 3. Cerchiamo l'oggetto specifico nel database globale (items)
-        itemData = data.items.find(i => i.id === itemId);
-
-        // Backup: se l'ID non esiste, carichiamo il primo della narrativa
-        if (!itemData) {
-            itemData = data.items.find(i => i.id === currentNarrativeList[0]);
+        // 2. SE MANCA L'ID (caso della Home), prendiamo il primo della lista
+        if (!itemId && currentNarrativeList.length > 0) {
+            itemId = currentNarrativeList[0];
         }
 
-        // 4. Troviamo la posizione attuale per gestire la navigazione (Opzionale)
+        // 3. Cerchiamo l'oggetto specifico nel database globale
+        itemData = data.items.find(i => i.id === itemId);
+
+        // 4. Aggiorniamo l'indice attuale per la navigazione (fondamentale!)
         currentIndex = currentNarrativeList.indexOf(itemId);
 
         populatePage();
