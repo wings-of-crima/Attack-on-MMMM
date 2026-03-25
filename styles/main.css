@@ -1045,7 +1045,7 @@ section.map {
         rgba(230, 230, 230, 0.2) 100%
         ),
 
-        url('../images/walls-img.png');   
+        url('../images/map/walls-img.png');   
     background-position: top;
     background-size: 110% 130%;
     background-repeat: no-repeat;
@@ -1131,6 +1131,7 @@ section.map img:hover {
     stroke: rgb(0, 81, 255);
 }
 
+
 .custom-tooltip {
     --bs-tooltip-bg: var(--bg-tooltip);
     --bs-tooltip-color: var(--text-tooltip);
@@ -1147,7 +1148,6 @@ section.map img:hover {
 .offcanvas-header {
     font-family: 'Copperplate Gothic LT W01 29BC', serif;
     color:rgb(0, 0, 0);
-    font-size: 1.2em !important;
     background-color:rgb(205, 205, 205, 0.7);
 }
 
@@ -1181,6 +1181,20 @@ section.map img:hover {
 .offcanvas::-webkit-scrollbar {
     display: none !important;
 }
+
+.map-readmore {
+    font-size: 1em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.map-readmore a{
+    color: #a11e15;
+}
+
+.map-readmore a:hover{
+    color:#a11e15ac;
+}
+
 
 /* MOBILE-SPECIFIC STYLES: */
 @media (max-width: 576px) {
