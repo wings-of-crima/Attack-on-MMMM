@@ -1039,10 +1039,10 @@ blockquote {
 section.map {
     background-image: linear-gradient(
         to bottom,
-        rgba(230, 230, 230, 0.2) 0%,
-        rgba(230, 230, 230, 0.8) 20%,
-        rgba(230, 230, 230, 0.8) 80%,
-        rgba(230, 230, 230, 0.2) 100%
+        rgba(230, 230, 230, 0.35) 0%,
+        rgba(230, 230, 230, 0.9) 20%,
+        rgba(230, 230, 230, 0.9) 60%,
+        rgba(230, 230, 230, 0.3) 90%
         ),
 
         url('../images/map/walls-img.png');   
@@ -1219,8 +1219,11 @@ section.map img:hover {
     background-color: #a11e15;
 }
 
+.shiganshina-btn:active {
+    background-color: #6e150f !important;
+}
+
 .outside-btn {
-    padding: 0.5rem;
     font-size: 1.2em;
     background-color: transparent;
     color: rgb(255,255,255);
@@ -1231,6 +1234,41 @@ section.map img:hover {
 
 .outside-btn:hover {
     background-color: rgb(46, 154, 255);
+}
+
+.map-btn {
+    font-size: 1em;
+    font-family: 'Anime Ace', sans-serif;
+    border: 2px solid !important;
+}
+
+/* SHIGANSHINA MAP */
+
+.shiganshina-map-container {
+    width: 100%;
+    height: 80vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #bee7ff; 
+}
+
+.shiganshina-map-container:active {
+    cursor: grabbing;
+}
+
+.shiganshina-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#shiganshina-map-text {
+    text-align: justify !important;
 }
 
 /* MOBILE-SPECIFIC STYLES: */
