@@ -5,7 +5,9 @@
       "displayTitle": "Baptistery",
       "images": {
         "real": "images/items/real_baptistery.png",
-        "anime": "images/items/baptistery.png"
+        "altReal": "Image of the Baptistery of San Giovanni in Pisa",
+        "anime": "images/items/baptistery.png",
+        "altAnime": "Image of the battle scene that takes place near the Baptistery"
       },
       "metadata": {
         "title": "[N]. 1550. Battisterio. Duomo e Campanile di Pisa : [photographie] / Rive",
@@ -30,7 +32,9 @@
       "displayTitle": "Key",
       "images": {
         "real": "images/items/real_key.jpg",
-        "anime": "images/items/key.png"
+        "altReal": "Image of a key from the MET collection",
+        "anime": "images/items/key.png",
+        "altAnime": "Image of the key to Eren’s father’s basement"
       },
       "metadata": {
         "title": "Key",
@@ -55,7 +59,9 @@
       "displayTitle": "Codex Regius - Edda Poems",
       "images": {
         "real": "images/items/Edda.jpg",
-        "anime": ""
+        "altReal": "Image of Codex Regius, 13th-century Icelandic manuscript",
+        "anime": "images/items/book-historia-ymir.png",
+        "altAnime": "Image of the book illustrating the legend of Ymir"
     },
       "metadata": {
         "title": "GKS 2365 4to",
@@ -80,7 +86,9 @@
       "displayTitle": "Nordlingen Map",
       "images": {
         "real": "images/items/nordlingen-map.jpg",
-        "anime": "images/items/nordlingen.png"
+        "altReal": "Map drawing of Nördlingen",
+        "anime": "images/items/nordlingen.png",
+        "altAnime": "Aerial view of the Shiganshina district"
       },
       "metadata": {
         "title": "128. Nordlingen",
@@ -105,7 +113,9 @@
       "displayTitle": "Ymir",
       "images": {
         "real": "images/items/real_ymir.jpg",
-        "anime": "images/items/ymir.png"
+        "altReal": "Image of painting Ymir suckling the cow Audhumla by Nicolai Abildgaard",
+        "anime": "images/items/ymir.png",
+        "altAnime": "Image of Ymir"
       },
       "metadata": {
         "title": "Ymir Suckling the Cow Audhumla",
@@ -130,7 +140,9 @@
       "displayTitle": "Liberty Leading the People",
       "images": {
         "real": "images/items/real_libertà_popolo.png",
-        "anime": ""
+        "altReal": "Image of the painting 'Liberty Leading the People' by Eugène Delacroix",
+        "anime": "images/items/eren-jaegerists.jpg",
+        "altAnime": "Images of Eren leading the yaegerists"
       },
       "metadata": {
         "title": "July 28, 1830. Liberty Leading the People.",
@@ -155,7 +167,9 @@
       "displayTitle": "Yggdrasil",
       "images": {
         "real": "images/items/real_yggdrasil.png",
-        "anime": "images/items/coordinata.png"
+        "altReal": "1859 illustration of Yggdrasil, the world tree from Norse mythology",
+        "anime": "images/items/coordinata.png",
+        "altAnime": "Image of the Path"
       },
       "metadata": {
         "title": "Yggdrasill, the mundane tree",
@@ -180,7 +194,9 @@
       "displayTitle": "Cannon",
       "images": {
         "real": "images/items/real_cannon.png",
-        "anime": "images/items/cannon.png"
+        "altReal": "Image of 19th century cannons",
+        "anime": "images/items/cannon.png",
+        "altAnime": "Image of cannons on the walls"
       },
       "metadata": {
         "title": "Cannon",
@@ -205,7 +221,9 @@
       "displayTitle": "Planisphere",
       "images": {
         "real": "images/items/real_planisphere.png",
-        "anime": ""
+        "altReal": "Image of the planisphere in Mercator projection",
+        "anime": "images/items/world-map-manga.png",
+        "altAnime": "Image of the AOT world"
       },
       "metadata": {
         "title": "Planisfero murale nella proiezione di Marcatore",
@@ -230,7 +248,9 @@
       "displayTitle": "Hypodermic Syringe",
       "images": {
         "real": "images/items/ela_syringe.jpg",
-        "anime": "images/items/syringe.png"
+        "altReal": "Image of a syringe from the Science Museum Group",
+        "anime": "images/items/syringe.png",
+        "altAnime": "Image of the syringe containing Titans spinal fluid"
       },
       "metadata": {
         "title": "Hypodermic syringe",
@@ -255,7 +275,9 @@
       "displayTitle": "Dirigible",
       "images": {
         "real": "images/items/real_dirigibile.png",
-        "anime": "images/items/dirigibili2.png"
+        "altReal": "Print from 1861 depicting a airship",
+        "anime": "images/items/dirigibili2.png",
+        "altAnime": "Image of airships used during the war between Marley and Paradis"
       },
       "metadata": {
         "title": "Zeppelin, Dirigible, from the Airships series (E40) issued by the Philadelphia Caramel Company",
@@ -280,7 +302,9 @@
       "displayTitle": "Soldier letter",
       "images": {
         "real": "images/items/real_letter.png",
-        "anime": ""
+        "altReal": "Image of a letter written by a soldier during the war",
+        "anime": "images/items/letter_1.png",
+        "altAnime": "Images of Eren handing the letter to Falco"
       },
       "metadata": {
         "title": "1915-12-15 lettera n. 1, p.1",
@@ -305,7 +329,9 @@
       "displayTitle": "Trench",
       "images": {
         "real": "images/items/real_trincea.png",
-        "anime": "images/items/tincea.png"
+        "altReal": "Image of trenches from World War I from Europeana collection",
+        "anime": "images/items/tincea.png",
+        "altAnime": "Image of trenches used during the battle for Fort Slava in Attack on Titan"
       },
       "metadata": {
         "title": "In trincea sul Piave.",
@@ -330,7 +356,9 @@
       "displayTitle": "Seaplane",
       "images": {
         "real": "images/items/real_seaplane.jpg",
-        "anime": "images/items/seaplane.png"
+        "altReal": "Photograph of an early 20th-century seaplane",
+        "anime": "images/items/seaplane.png",
+        "altAnime": "Image of the Azumabito family's seaplane"
       },
       "metadata": {
         "title": "Rohrbach Ro IIIa Rodra flying boat",
@@ -352,10 +380,12 @@
     },
     {
       "id": "flight",
-      "displayTitle": "Flyiht Machine",
+      "displayTitle": "Flying Machine",
       "images": {
         "real": "images/items/real_macchina-volante.jpg",
-        "anime": ""
+        "altReal": "Image of flying machine designed by Leonardo Da Vinci",
+        "anime": "images/items/eren-mov-3d.png",
+        "altAnime": "Image of Eren using the Vertical Maneuvering Equipment"
       },
       "metadata": {
         "title": "Macchina volante",
@@ -380,7 +410,9 @@
       "displayTitle": "Gas mask",
       "images": {
         "real": "images/items/real_maschera.png",
-        "anime": "images/items/mask.png"
+        "altReal": "Image of military gas masks used for protection during the war",
+        "anime": "images/items/mask.png",
+        "altAnime": "Image of gas masks used by soldiers in Attack on Titan"
       },
       "metadata": {
         "title": "Non-regulaition gas mask",
@@ -405,7 +437,9 @@
       "displayTitle": "Armband",
       "images": {
         "real": "images/items/real_armband.png",
-        "anime": "images/items/armband_red.png"
+        "altReal": "Image of armband used for Jewish people during World War II",
+        "anime": "images/items/armband_red.png",
+        "altAnime": "Image of armband worn by Eldian people"
       },
       "metadata": {
         "title": "Armbaand with star of David",
@@ -430,7 +464,9 @@
       "displayTitle": "Hand Grenade",
       "images": {
         "real": "images/items/real_granata.png",
-        "anime": ""
+        "altReal": "Image of a German stick grenade used between 1943 and 1945",
+        "anime": "images/items/gabi-grenades.jpg",
+        "altAnime": "Image of hand grenades used by Gabi Braun"
       },
       "metadata": {
         "title": "bomba a mano",

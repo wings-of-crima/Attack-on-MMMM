@@ -44,6 +44,10 @@ function populatePage() {
     document.getElementById('main-img-real').src = itemData.images.real;
     document.getElementById('main-img-anime').src = itemData.images.anime;
 
+    // Alt for images
+    document.getElementById('main-img-real').alt = itemData.images.altReal;
+    document.getElementById('main-img-anime').alt = itemData.images.altAnime;
+
     // Metadati tecnici nel box
     document.getElementById('meta-title').innerText = itemData.metadata.title;
     document.getElementById('meta-type').innerText = itemData.metadata.type;
@@ -95,7 +99,7 @@ function updateNavigation() {
     // Gestione tasto PREV
     if (currentIndex > 0) {
         const prevId = currentNarrativeList[currentIndex - 1];
-        prevBtn.href = `single narrative.html?id=${prevId}&narrative=${narrativeName}`;
+        prevBtn.href = `single_narrative.html?id=${prevId}&narrative=${narrativeName}`;
         prevBtn.classList.remove('nav-hidden');
     } else {
         prevBtn.classList.add('nav-hidden');
@@ -104,7 +108,7 @@ function updateNavigation() {
     // Gestione tasto NEXT
     if (currentIndex < currentNarrativeList.length - 1) {
         const nextId = currentNarrativeList[currentIndex + 1];
-        nextBtn.href = `single narrative.html?id=${nextId}&narrative=${narrativeName}`;
+        nextBtn.href = `single_narrative.html?id=${nextId}&narrative=${narrativeName}`;
         nextBtn.classList.remove('nav-hidden');
     } else {
         nextBtn.classList.add('nav-hidden');
