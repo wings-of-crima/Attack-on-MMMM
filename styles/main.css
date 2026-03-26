@@ -1052,7 +1052,7 @@ section.map {
 }
 
 .map .section-text {
-    text-align: left;
+    text-align: center;
     font-size: 1em;
 }
 
@@ -1098,7 +1098,7 @@ section.map img:hover {
 /* 1. The Window (Now controlled by Bootstrap's Grid) */
 .map-container {
     width: 100%;
-    height: 80vh; /* How tall you want the map window to be */
+    height: 90vh; /* How tall you want the map window to be */
     border: thick solid rgb(0,0,0);
     border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
@@ -1242,7 +1242,12 @@ section.map img:hover {
     border: 2px solid !important;
 }
 
-/* SHIGANSHINA MAP */
+/* 
+
+==========================================================
+SHIGANSHINA MAP 
+
+*/
 
 .map#shiganshina {
     background-image: linear-gradient(
@@ -1253,7 +1258,7 @@ section.map img:hover {
         rgba(230, 230, 230, 0.3) 100%
         ),
 
-        url('../images/map/shiganshina.jpg');   
+        url('../images/map/destroyed-shiganshina.png');   
     background-position: top;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -1338,7 +1343,7 @@ section.map img:hover {
 }
 
 .accordion-body {
-    text-align: justify;
+    text-align: center;
 }
 
 .shiganshina-map-readmore {
@@ -1355,13 +1360,54 @@ section.map img:hover {
 }
 
 
-/* OUTSIDE MAP */
+/* 
+
+========================================================
+OUTSIDE MAP (accordion rules from shiganshina map)
+
+*/
 
 .map#outside{
     background-image: none;
 }
 
-/* MOBILE-SPECIFIC STYLES: */
+
+.outside-map-container {
+    width: 100%;
+    height: 80vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #724f33e0; 
+}
+
+.outside-map-container:active {
+    cursor: grabbing;
+}
+
+.outside-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#outside-map-text {
+    text-align: justify !important;
+}
+
+
+/* 
+=========================================================
+=========================================================
+
+MOBILE-SPECIFIC STYLES: 
+
+*/
+
 @media (max-width: 576px) {
     .navbar {
         text-align: center;
