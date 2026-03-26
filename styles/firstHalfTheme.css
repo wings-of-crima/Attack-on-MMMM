@@ -507,7 +507,12 @@ button.btn {
 .narrative-panel #historical-tl {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
     font-size: 1.7em;
-    display: inline-block;
+    display: flex !important;       /* Usa flex per centrare il contenuto */
+    justify-content: center;        /* Centra orizzontalmente */
+    align-items: center;            /* Centra verticalmente */
+    text-align: center;
+    width: 100%;
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
@@ -558,10 +563,23 @@ button.btn {
 #motto-title-en {
     font-family: 'Playfair Display Bold', sans-serif;
     text-transform: uppercase;
-    font-size: 2.2em;
     font-weight: 800;
-    text-wrap: nowrap;
     letter-spacing: 1px;
+
+    /* 1. FONT FLUIDO: Si rimpicciolisce millimetro per millimetro */
+    /* 4vw significa "4% della larghezza della finestra" */
+    font-size: clamp(1.1rem, 4vw, 2.2rem) !important; 
+
+    /* 2. ADDIO NOWRAP: Fondamentale per non farlo uscire dai bordi */
+    /* Permettiamo al testo di andare a capo, ma solo come "ultima spiaggia" */
+    white-space: normal !important; 
+    text-wrap: balance !important; 
+
+    /* 3. ALLINEAMENTO */
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 100%;
 
     text-shadow: 
         1px 1px 0px #000,

@@ -275,21 +275,21 @@
       "displayTitle": "Dirigible",
       "images": {
         "real": "images/items/real_dirigibile.png",
-        "altReal": "Print from 1861 depicting a airship",
+        "altReal": "Print from 1850 depicting a airship",
         "anime": "images/items/dirigibili2.png",
         "altAnime": "Image of airships used during the war between Marley and Paradis"
       },
       "metadata": {
-        "title": "Zeppelin, Dirigible, from the Airships series (E40) issued by the Philadelphia Caramel Company",
-        "type": "Print",
-        "period": "1910",
-        "institution": "THE MET",
-        "institutionUrl": "https://www.metmuseum.org/art/collection/search/432000"
+        "title": "German dirigible, Zeppelin type",
+        "type": "Still image",
+        "period": "1850",
+        "institution": "New York Public Library",
+        "institutionUrl": "https://digitalcollections.nypl.org/items/2d23dc50-c536-012f-eeff-58d385a7bc34"
       },
       "texts": {
         "simple": {
-          "short": "This is a famous 1930s photograph by Paul Wolff called Dirigible Shadow on Water. It shows the shadow of a giant airship (also called a zeppelin) moving over the sea. In those years, airships were like \"flying hotels\"—massive balloons filled with gas that could carry people across the ocean. They were the kings of the sky before airplanes became popular. In the Anime: For most of the story, characters like Eren have never seen an airship. When a \"blimp\" finally appears, it changes everything! It represents the advanced technology of the world outside the walls. In the anime, airships are used by the Marleyan military to drop soldiers and even Titans into battle from the sky.",
-          "long": "This is a famous 1930s photograph by Paul Wolff called Dirigible Shadow on Water. It shows the shadow of a giant airship (also called a zeppelin) moving over the sea. In those years, airships were like \"flying hotels\"—massive balloons filled with gas that could carry people across the ocean. They were the kings of the sky before airplanes became popular. In the Anime: For most of the story, characters like Eren have never seen an airship. When a \"blimp\" finally appears, it changes everything! It represents the advanced technology of the world outside the walls. In the anime, airships are used by the Marleyan military to drop soldiers and even Titans into battle from the sky.\n\nReal airships like the one in the photo were filled with hydrogen, a gas that makes things float but is very dangerous because it catches fire easily. This is why the famous Hindenburg airship crashed in 1937. In the anime, Grisha Yeager and his sister Faye are mesmerized by an airship as children; that moment is the start of the whole story, as it leads them to leave their safe zone to follow its flight, discovering the cruel reality of their world."
+          "short": "This is a print that shows a giant airship (also called a zeppelin) moving over the sea. In those years, airships were like \"flying hotels\"—massive balloons filled with gas that could carry people across the ocean. They were the kings of the sky before airplanes became popular. In the Anime: For most of the story, characters like Eren have never seen an airship. When a \"blimp\" finally appears, it changes everything! It represents the advanced technology of the world outside the walls. In the anime, airships are used by the Marleyan military to drop soldiers and even Titans into battle from the sky.",
+          "long": "This is a print that shows a giant airship (also called a zeppelin) moving over the sea. In those years, airships were like \"flying hotels\"—massive balloons filled with gas that could carry people across the ocean. They were the kings of the sky before airplanes became popular. In the Anime: For most of the story, characters like Eren have never seen an airship. When a \"blimp\" finally appears, it changes everything! It represents the advanced technology of the world outside the walls. In the anime, airships are used by the Marleyan military to drop soldiers and even Titans into battle from the sky.\n\nReal airships like the one in the photo were filled with hydrogen, a gas that makes things float but is very dangerous because it catches fire easily. This is why the famous Hindenburg airship crashed in 1937. In the anime, Grisha Yeager and his sister Faye are mesmerized by an airship as children; that moment is the start of the whole story, as it leads them to leave their safe zone to follow its flight, discovering the cruel reality of their world."
         },
         "advanced": {
           "short": "The dirigible represents the pinnacle of rigid airship engineering from the early 20th century. Unlike blimps, these vessels featured a complex internal duralumin skeleton containing multiple gas cells. This structural rigidity allowed for unprecedented scale and payload capacity, enabling the first reliable transoceanic aerial routes. The technology was a precursor to modern aviation, bridging the gap between maritime transport and fixed-wing flight. In the Anime: The dirigible functions as a technological threshold that redefines the series' genre. For the inhabitants of Paradis, it is an \"impossible object\" that shatters their isolated, pre-industrial worldview. Within Marleyan military doctrine, these vessels act as strategic carriers, enabling the deployment of paratroopers and \"Titan-drops\", effectively neutralizing traditional ground fortifications and Wall-based defenses.",
