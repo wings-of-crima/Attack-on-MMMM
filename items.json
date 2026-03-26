@@ -11,7 +11,8 @@
         "title": "[N]. 1550. Battisterio. Duomo e Campanile di Pisa : [photographie] / Rive",
         "type": "Photo",
         "year": "1870",
-        "institution": "Bibliothèque nationale de France"
+        "institution": "Bibliothèque nationale de France",
+        "institutionUrl": "https://gallica.bnf.fr/ark:/12148/btv1b532773728/f1.item"
       },
       "texts": {
         "simple": {
@@ -35,7 +36,8 @@
         "title": "Key",
         "type": "Metalwork-Iron",
         "year": "13th century",
-        "institution": "THE MET"
+        "institution": "THE MET",
+        "institutionUrl": "https://www.metmuseum.org/art/collection/search/468871"
       },
       "texts": {
         "simple": {
@@ -59,7 +61,8 @@
         "title": "GKS 2365 4to",
         "type": "Manuscript",
         "year": "1260-1280",
-        "institution": "The Árni Magnússon Institute for Icelandic Studies"
+        "institution": "The Árni Magnússon Institute for Icelandic Studies",
+        "institutionUrl": "https://handrit.is/manuscript/view/is/GKS04-2365/9#page/FF+4v/mode/2up"
       },
       "texts": {
         "simple": {
@@ -77,13 +80,14 @@
       "displayTitle": "Nordlingen Map",
       "images": {
         "real": "images/items/nordlingen-map.jpg",
-        "anime": ""
+        "anime": "images/items/nordlingen.png"
       },
       "metadata": {
         "title": "128. Nordlingen",
         "type": "Atlas Map",
         "year": "1725",
-        "institution": "David Rumsey Map Collection (Stanford University- Library)"
+        "institution": "David Rumsey Map Collection (Stanford University- Library)",
+        "institutionUrl": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~369503~90136990:128--Nordlingen"
       },
       "texts": {
         "simple": {
@@ -100,14 +104,15 @@
       "id": "ymir",
       "displayTitle": "Ymir",
       "images": {
-        "real": "images/items/realymir.jpg",
+        "real": "images/items/real_ymir.jpg",
         "anime": "images/items/ymir.png"
       },
       "metadata": {
         "title": "Ymir Suckling the Cow Audhumla",
         "type": "Painting",
         "year": "1777",
-        "institution": "Wikimedia Commons"
+        "institution": "Wikimedia Commons",
+        "institutionUrl": "https://commons.wikimedia.org/wiki/File:Nicolai_Abildgaard,_Ymer_dier_koen_%C3%98dhumbla,_,_KMS3397,_Statens_Museum_for_Kunst.jpg"
       },
       "texts": {
         "simple": {
@@ -131,7 +136,8 @@
         "title": "July 28, 1830. Liberty Leading the People.",
         "type": "Painting",
         "year": "1830",
-        "institution": "Louvre Museum"
+        "institution": "Louvre Museum",
+        "institutionUrl": "https://collections.louvre.fr/en/ark:/53355/cl010065872"
       },
       "texts": {
         "simple": {
@@ -155,7 +161,8 @@
         "title": "Yggdrasill, the mundane tree",
         "type": "Illustration",
         "year": "1859",
-        "institution": "Normal B. Leventhal Map & Education Center and partners"
+        "institution": "Normal B. Leventhal Map & Education Center and partners",
+        "institutionUrl": "https://collections.leventhalmap.org/search/commonwealth:3f4632871"
       },
       "texts": {
         "simple": {
@@ -179,16 +186,17 @@
         "title": "Cannon",
         "type": "Photo",
         "year": "1861-65",
-        "institution": "THE MET"
+        "institution": "THE MET",
+        "institutionUrl": "https://www.metmuseum.org/art/collection/search/267978"
       },
       "texts": {
         "simple": {
-          "short": "The bronze \"swivel gun\" shown here is a real-world weapon from the 16th century. In history, these small cannons were mounted on ships or castle walls because they could \"swivel\" to follow a moving target. They are \"breech-loading\", which means the gunpowder and balls are put into the back of the gun instead of being pushed down the long front tube. This real-world design is exactly what you see on top of the 50-meter-high Walls in Attack on Titan. The Garrison Regiment uses much larger versions of these cannons to protect the city. Because they load from the back, soldiers can fire them much faster than old-fashioned cannons. For the people living inside the Walls, this technology was their most important defense against a Titan attack.",
-          "long": "The bronze \"swivel gun\" shown here is a real-world weapon from the 16th century. In history, these small cannons were mounted on ships or castle walls because they could \"swivel\" to follow a moving target. They are \"breech-loading\", which means the gunpowder and balls are put into the back of the gun instead of being pushed down the long front tube. This real-world design is exactly what you see on top of the 50-meter-high Walls in Attack on Titan. The Garrison Regiment uses much larger versions of these cannons to protect the city. Because they load from the back, soldiers can fire them much faster than old-fashioned cannons. For the people living inside the Walls, this technology was their most important defense against a Titan attack.\n\nHowever, these cannons have a major weakness: they are not very accurate. They lack \"rifling\", which are the spiral grooves inside modern guns that help a projectile spin and fly straight. Because of this, soldiers often used \"Grapeshot\"—a shell filled with many small iron balls—to hit multiple Titans at once like a giant shotgun. In the series, we see that the military even built special railroad tracks on top of the Walls so these heavy guns could be moved to wherever the Titans were attacking. This shows how humans had to use clever engineering to make up for the fact that their weapons were old and difficult to aim."
+          "short": "The bronze \"swivel gun\" shown here is a real-world weapon from the 19th century. In history, these cannons were mounted on ships or castle walls because they could \"swivel\" to follow a moving target. They are \"breech-loading\", which means the gunpowder and balls are put into the back of the gun instead of being pushed down the long front tube. This real-world design is exactly what you see on top of the 50-meter-high Walls in Attack on Titan. The Garrison Regiment uses much larger versions of these cannons to protect the city. Because they load from the back, soldiers can fire them much faster than old-fashioned cannons. For the people living inside the Walls, this technology was their most important defense against a Titan attack.",
+          "long": "The bronze \"swivel gun\" shown here is a real-world weapon from the 19th century. In history, these cannons were mounted on ships or castle walls because they could \"swivel\" to follow a moving target. They are \"breech-loading\", which means the gunpowder and balls are put into the back of the gun instead of being pushed down the long front tube. This real-world design is exactly what you see on top of the 50-meter-high Walls in Attack on Titan. The Garrison Regiment uses much larger versions of these cannons to protect the city. Because they load from the back, soldiers can fire them much faster than old-fashioned cannons. For the people living inside the Walls, this technology was their most important defense against a Titan attack.\n\nHowever, these cannons have a major weakness: they are not very accurate. They lack \"rifling\", which are the spiral grooves inside modern guns that help a projectile spin and fly straight. Because of this, soldiers often used \"Grapeshot\"—a shell filled with many small iron balls—to hit multiple Titans at once like a giant shotgun. In the series, we see that the military even built special railroad tracks on top of the Walls so these heavy guns could be moved to wherever the Titans were attacking. This shows how humans had to use clever engineering to make up for the fact that their weapons were old and difficult to aim."
         },
         "advanced": {
-          "short": "This 16th-century bronze breech-loading swivel gun serves as the technical blueprint for the wall-mounted artillery in Attack on Titan. Historically, the swivel gun provided a solution for \"close-quarters\" heavy defense, allowing for rapid reloading via the rear breech. In the anime, this technology is scaled up to arm the parapets of Walls Maria, Rose, and Sina. The series highlights the anachronistic nature of the Garrison's weaponry; while the military utilizes advanced gas-powered movement gear, their heavy artillery remains stuck in a pre-industrial, smoothbore design. This reflects a society that has focused its engineering on static defense rather than offensive innovation.",
-          "long": "This 16th-century bronze breech-loading swivel gun serves as the technical blueprint for the wall-mounted artillery in Attack on Titan. Historically, the swivel gun provided a solution for \"close-quarters\" heavy defense, allowing for rapid reloading via the rear breech. In the anime, this technology is scaled up to arm the parapets of Walls Maria, Rose, and Sina. The series highlights the anachronistic nature of the Garrison's weaponry; while the military utilizes advanced gas-powered movement gear, their heavy artillery remains stuck in a pre-industrial, smoothbore design. This reflects a society that has focused its engineering on static defense rather than offensive innovation.\n\nThe real museum object demonstrates the mechanical limitations of the era, such as the heat-retention of bronze and the manual locking of the breech, both of which are mirrored in the anime’s depiction of the Garrison Regiment’s labor. In the series, this naval technology is adapted for vertical geography through a \"Rail-mounted\" system that allows for concentrated battery fire along the parapets. Because these smoothbore pieces lack rifling, they cannot achieve the precision required for a \"one-shot kill\" on a Titan’s nape. Instead, the military employs a \"volume of fire\" strategy, using overlapping fields of fire and specialized \"Grapeshot\" to compensate for poor accuracy. This reliance on 16th-century naval engineering to solve a land-based existential threat reveals how the physical constraints of the Walls limited human scientific progress."
+          "short": "This 19th-century bronze breech-loading swivel gun serves as the technical blueprint for the wall-mounted artillery in Attack on Titan. Historically, the swivel gun provided a solution for \"close-quarters\" heavy defense, allowing for rapid reloading via the rear breech. In the anime, this technology is scaled up to arm the parapets of Walls Maria, Rose, and Sina. The series highlights the anachronistic nature of the Garrison's weaponry; while the military utilizes advanced gas-powered movement gear, their heavy artillery remains stuck in a pre-industrial, smoothbore design. This reflects a society that has focused its engineering on static defense rather than offensive innovation.",
+          "long": "This 19th-century bronze breech-loading swivel gun serves as the technical blueprint for the wall-mounted artillery in Attack on Titan. Historically, the swivel gun provided a solution for \"close-quarters\" heavy defense, allowing for rapid reloading via the rear breech. In the anime, this technology is scaled up to arm the parapets of Walls Maria, Rose, and Sina. The series highlights the anachronistic nature of the Garrison's weaponry; while the military utilizes advanced gas-powered movement gear, their heavy artillery remains stuck in a pre-industrial, smoothbore design. This reflects a society that has focused its engineering on static defense rather than offensive innovation.\n\nThe real museum object demonstrates the mechanical limitations of the era, such as the heat-retention of bronze and the manual locking of the breech, both of which are mirrored in the anime’s depiction of the Garrison Regiment’s labor. In the series, this naval technology is adapted for vertical geography through a \"Rail-mounted\" system that allows for concentrated battery fire along the parapets. Because these smoothbore pieces lack rifling, they cannot achieve the precision required for a \"one-shot kill\" on a Titan’s nape. Instead, the military employs a \"volume of fire\" strategy, using overlapping fields of fire and specialized \"Grapeshot\" to compensate for poor accuracy. This reliance on 16th-century naval engineering to solve a land-based existential threat reveals how the physical constraints of the Walls limited human scientific progress."
         }
       }
     },
@@ -203,7 +211,8 @@
         "title": "Planisfero murale nella proiezione di Marcatore",
         "type": "Wallchart",
         "year": "1874",
-        "institution": "Phaidra/ Museo di Geografia (Università di Padova)"
+        "institution":"Phaidra - Università degli Studi di Padova",
+        "institutionUrl": "https://phaidra.cab.unipd.it/detail/o:472113"
       },
       "texts": {
         "simple": {
@@ -220,14 +229,15 @@
       "id": "syringe",
       "displayTitle": "Hypodermic Syringe",
       "images": {
-        "real": "images/items/eal_syringe.jpg",
+        "real": "images/items/ela_syringe.jpg",
         "anime": "images/items/syringe.png"
       },
       "metadata": {
         "title": "Hypodermic syringe",
         "type": "Hypodermic syringes",
         "year": "1875-1910",
-        "institution": "Science Museum Group "
+        "institution": "Science Museum Group ",
+        "institutionUrl": "https://collection.sciencemuseumgroup.org.uk/objects/co138158/hypodermic-syringe"
       },
       "texts": {
         "simple": {
@@ -244,14 +254,15 @@
       "id": "dirigible",
       "displayTitle": "Dirigible",
       "images": {
-        "real": "images/items/real-dirigibile.png",
+        "real": "images/items/real_dirigibile.png",
         "anime": "images/items/dirigibili2.png"
       },
       "metadata": {
         "title": "Zeppelin, Dirigible, from the Airships series (E40) issued by the Philadelphia Caramel Company",
         "type": "Print",
         "year": "1910",
-        "institution": "THE MET"
+        "institution": "THE MET",
+        "institutionUrl": "https://www.metmuseum.org/art/collection/search/432000"
       },
       "texts": {
         "simple": {
@@ -275,7 +286,8 @@
         "title": "1915-12-15 lettera n. 1, p.1",
         "type": "Letter",
         "year": "1915-12-15",
-        "institution": "Europeana"
+        "institution": "Europeana",
+        "institutionUrl": "https://www.europeana.eu/it/item/2020601/https___1914_1918_europeana_eu_contributions_5716_attachments_63745"
       },
       "texts": {
         "simple": {
@@ -293,13 +305,14 @@
       "displayTitle": "Trench",
       "images": {
         "real": "images/items/real_trincea.png",
-        "anime": "images/items/trincea.png"
+        "anime": "images/items/tincea.png"
       },
       "metadata": {
         "title": "In trincea sul Piave.",
         "type": "Still image",
         "year": "1917",
-        "institution": "Europeana"
+        "institution": "Europeana",
+        "institutionUrl": "https://www.europeana.eu/it/item/9200196/BibliographicResource_3000093811398_source"
       },
       "texts": {
         "simple": {
@@ -323,7 +336,8 @@
         "title": "Rohrbach Ro IIIa Rodra flying boat",
         "type": "Photo",
         "year": "1927",
-        "institution": "Bundesarchiv"
+        "institution": "Bundesarchiv",
+        "institutionUrl": "https://www.bild.bundesarchiv.de/dba/de/search/?topicid=dcx-thes_klassifikation_77550ub6sx31ana5a3wf&page=2"
       },
       "texts": {
         "simple": {
@@ -347,7 +361,8 @@
         "title": "Macchina volante",
         "type": "Model",
         "year": "1929",
-        "institution": "Museo Leonardiano"
+        "institution": "Museo Leonardiano",
+        "institutionUrl": "https://museoleonardiano.it/opera/macchina-volante/"
       },
       "texts": {
         "simple": {
@@ -371,7 +386,8 @@
         "title": "Non-regulaition gas mask",
         "type": "Gas mask",
         "year": "1939",
-        "institution": "Royal Museum Greenwich"
+        "institution": "Royal Museum Greenwich",
+        "institutionUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-72417"
       },
       "texts": {
         "simple": {
@@ -395,7 +411,8 @@
         "title": "Armbaand with star of David",
         "type": "Armband",
         "year": "1940's",
-        "institution": "National Holocaust Museum"
+        "institution": "National Holocaust Museum",
+        "institutionUrl": "https://www.holocaust.org.uk/star-of-david-armband"
       },
       "texts": {
         "simple": {
@@ -419,7 +436,8 @@
         "title": "bomba a mano",
         "type": "Hand grenade",
         "year": "1943-45",
-        "institution": "Museo della Repubblica di Montefiorino e della Resistenza italiana"
+        "institution": "Museo della Repubblica di Montefiorino e della Resistenza italiana",
+        "institutionUrl": "https://bbcc.regione.emilia-romagna.it/pater/loadcard.do?id_card=227402"
       },
       "texts": {
         "simple": {

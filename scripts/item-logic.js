@@ -48,8 +48,17 @@ function populatePage() {
     document.getElementById('meta-title').innerText = itemData.metadata.title;
     document.getElementById('meta-type').innerText = itemData.metadata.type;
     document.getElementById('meta-year').innerText = itemData.metadata.year;
-    document.getElementById('meta-institution').innerText = itemData.metadata.institution;
+    const instElement = document.getElementById('meta-institution');
+    const instName = itemData.metadata.institution;
+    const instUrl = itemData.metadata.institutionUrl; // Prende l'URL dal JSON
 
+    if (instUrl) {
+        // Se c'è un URL, il nome dell'istituzione diventa un link
+        instElement.innerHTML = `<a href="${instUrl}" target="_blank" style="color: inherit; text-decoration: underline;">${instName}</a>`;
+    } else {
+        // Se non c'è l'URL, resta testo normale
+        instElement.innerText = instName;
+    }
     updateNavigation();
     
     updateDisplay();
