@@ -1572,6 +1572,11 @@ section.map img:hover {
 
 /* --- Disclaimer Specific Style --- */
 
+/*AGGIUNGIAMO IL PADDING AL CONTENITORE PRINCIPALE */
+.readable-text {
+    padding: 20px 30px !important; /* 20px sopra/sotto, 30px ai lati */
+    box-sizing: border-box !important; /* Fondamentale: include il padding nella larghezza totale */
+}
 /* Applichiamo il font a tutto ciò che sta dentro readable-text (incluso h3, p, li) */
 .readable-text, 
 .readable-text .section-title, 

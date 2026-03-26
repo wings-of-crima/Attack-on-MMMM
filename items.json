@@ -12,7 +12,7 @@
       "metadata": {
         "title": "[N]. 1550. Battisterio. Duomo e Campanile di Pisa : [photographie] / Rive",
         "type": "Photo",
-        "year": "1870",
+        "period": "1870",
         "institution": "Bibliothèque nationale de France",
         "institutionUrl": "https://gallica.bnf.fr/ark:/12148/btv1b532773728/f1.item"
       },
@@ -39,7 +39,7 @@
       "metadata": {
         "title": "Key",
         "type": "Metalwork-Iron",
-        "year": "13th century",
+        "period": "13th century",
         "institution": "THE MET",
         "institutionUrl": "https://www.metmuseum.org/art/collection/search/468871"
       },
@@ -66,7 +66,7 @@
       "metadata": {
         "title": "GKS 2365 4to",
         "type": "Manuscript",
-        "year": "1260-1280",
+        "period": "1260-1280",
         "institution": "The Árni Magnússon Institute for Icelandic Studies",
         "institutionUrl": "https://handrit.is/manuscript/view/is/GKS04-2365/9#page/FF+4v/mode/2up"
       },
@@ -93,7 +93,7 @@
       "metadata": {
         "title": "128. Nordlingen",
         "type": "Atlas Map",
-        "year": "1725",
+        "period": "1725",
         "institution": "David Rumsey Map Collection (Stanford University- Library)",
         "institutionUrl": "https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~369503~90136990:128--Nordlingen"
       },
@@ -120,7 +120,7 @@
       "metadata": {
         "title": "Ymir Suckling the Cow Audhumla",
         "type": "Painting",
-        "year": "1777",
+        "period": "1777",
         "institution": "Wikimedia Commons",
         "institutionUrl": "https://commons.wikimedia.org/wiki/File:Nicolai_Abildgaard,_Ymer_dier_koen_%C3%98dhumbla,_,_KMS3397,_Statens_Museum_for_Kunst.jpg"
       },
@@ -147,7 +147,7 @@
       "metadata": {
         "title": "July 28, 1830. Liberty Leading the People.",
         "type": "Painting",
-        "year": "1830",
+        "period": "1830",
         "institution": "Louvre Museum",
         "institutionUrl": "https://collections.louvre.fr/en/ark:/53355/cl010065872"
       },
@@ -174,7 +174,7 @@
       "metadata": {
         "title": "Yggdrasill, the mundane tree",
         "type": "Illustration",
-        "year": "1859",
+        "period": "1859",
         "institution": "Normal B. Leventhal Map & Education Center and partners",
         "institutionUrl": "https://collections.leventhalmap.org/search/commonwealth:3f4632871"
       },
@@ -201,7 +201,7 @@
       "metadata": {
         "title": "Cannon",
         "type": "Photo",
-        "year": "1861-65",
+        "period": "1861-65",
         "institution": "THE MET",
         "institutionUrl": "https://www.metmuseum.org/art/collection/search/267978"
       },
@@ -228,7 +228,7 @@
       "metadata": {
         "title": "Planisfero murale nella proiezione di Marcatore",
         "type": "Wallchart",
-        "year": "1874",
+        "period": "1874",
         "institution":"Phaidra - Università degli Studi di Padova",
         "institutionUrl": "https://phaidra.cab.unipd.it/detail/o:472113"
       },
@@ -255,7 +255,7 @@
       "metadata": {
         "title": "Hypodermic syringe",
         "type": "Hypodermic syringes",
-        "year": "1875-1910",
+        "period": "1875-1910",
         "institution": "Science Museum Group ",
         "institutionUrl": "https://collection.sciencemuseumgroup.org.uk/objects/co138158/hypodermic-syringe"
       },
@@ -282,7 +282,7 @@
       "metadata": {
         "title": "Zeppelin, Dirigible, from the Airships series (E40) issued by the Philadelphia Caramel Company",
         "type": "Print",
-        "year": "1910",
+        "period": "1910",
         "institution": "THE MET",
         "institutionUrl": "https://www.metmuseum.org/art/collection/search/432000"
       },
@@ -309,7 +309,7 @@
       "metadata": {
         "title": "1915-12-15 lettera n. 1, p.1",
         "type": "Letter",
-        "year": "1915-12-15",
+        "period": "1915-12-15",
         "institution": "Europeana",
         "institutionUrl": "https://www.europeana.eu/it/item/2020601/https___1914_1918_europeana_eu_contributions_5716_attachments_63745"
       },
@@ -336,7 +336,7 @@
       "metadata": {
         "title": "In trincea sul Piave.",
         "type": "Still image",
-        "year": "1917",
+        "period": "1917",
         "institution": "Europeana",
         "institutionUrl": "https://www.europeana.eu/it/item/9200196/BibliographicResource_3000093811398_source"
       },
@@ -363,7 +363,7 @@
       "metadata": {
         "title": "Rohrbach Ro IIIa Rodra flying boat",
         "type": "Photo",
-        "year": "1927",
+        "period": "1927",
         "institution": "Bundesarchiv",
         "institutionUrl": "https://www.bild.bundesarchiv.de/dba/de/search/?topicid=dcx-thes_klassifikation_77550ub6sx31ana5a3wf&page=2"
       },
@@ -390,7 +390,7 @@
       "metadata": {
         "title": "Macchina volante",
         "type": "Model",
-        "year": "1929",
+        "period": "1929",
         "institution": "Museo Leonardiano",
         "institutionUrl": "https://museoleonardiano.it/opera/macchina-volante/"
       },
@@ -417,7 +417,7 @@
       "metadata": {
         "title": "Non-regulaition gas mask",
         "type": "Gas mask",
-        "year": "1939",
+        "period": "1939",
         "institution": "Royal Museum Greenwich",
         "institutionUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-72417"
       },
@@ -444,7 +444,7 @@
       "metadata": {
         "title": "Armbaand with star of David",
         "type": "Armband",
-        "year": "1940's",
+        "period": "1940's",
         "institution": "National Holocaust Museum",
         "institutionUrl": "https://www.holocaust.org.uk/star-of-david-armband"
       },
@@ -471,7 +471,7 @@
       "metadata": {
         "title": "bomba a mano",
         "type": "Hand grenade",
-        "year": "1943-45",
+        "period": "1943-45",
         "institution": "Museo della Repubblica di Montefiorino e della Resistenza italiana",
         "institutionUrl": "https://bbcc.regione.emilia-romagna.it/pater/loadcard.do?id_card=227402"
       },
