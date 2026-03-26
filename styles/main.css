@@ -1197,7 +1197,7 @@ section.map img:hover {
     font-family: 'Noto Sans', sans-serif;
 }
 
-.map-readmore a{
+.map-readmore a {
     color: #a11e15;
 }
 
@@ -1244,9 +1244,24 @@ section.map img:hover {
 
 /* SHIGANSHINA MAP */
 
+.map#shiganshina {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(230, 230, 230, 0.3) 0%,
+        rgba(230, 230, 230, 0.8) 20%,
+        rgba(230, 230, 230, 0.8) 80%,
+        rgba(230, 230, 230, 0.3) 100%
+        ),
+
+        url('../images/map/shiganshina.jpg');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 .shiganshina-map-container {
     width: 100%;
-    height: 80vh; /* How tall you want the map window to be */
+    height: 90vh; /* How tall you want the map window to be */
     border: thick solid rgb(0,0,0);
     border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
@@ -1269,6 +1284,81 @@ section.map img:hover {
 
 #shiganshina-map-text {
     text-align: justify !important;
+}
+
+.accordion {
+    /* Changes the background of the entire accordion item */
+    --bs-accordion-bg: rgb(108, 108, 108); 
+    
+    /* Changes the text color */
+    --bs-accordion-color: #000000; 
+    
+    /* Changes the background of the button when clicked/open */
+    --bs-accordion-active-bg: rgb(132, 132, 132); 
+    
+    /* Changes the text color of the button when clicked/open */
+    --bs-accordion-active-color: #ffffff; 
+    
+    /* Changes the border color between items */
+    --bs-accordion-border-color: rgb(0, 0, 0);
+    
+    /* Changes the focus ring color when clicking */
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.7);
+}
+
+.accordion-item {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    font-family: 'Anime Ace', sans-serif;
+    color: white;
+    border: 2px solid black;
+    font-size: .8em;
+}
+
+.accordion-img-panel {
+    margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+    
+    /* Optional: Added a subtle shadow so the white border pops against the accordion background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.accordion-img {
+    width: 100%;
+    height: auto; /* Ensures the image scales correctly without distorting proportions */
+    display: block; /* Removes the tiny invisible gap that sometimes appears under images */
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.accordion-img-panel:hover .accordion-img {
+    transform: scale(1.05);
+}
+
+.accordion-body {
+    text-align: justify;
+}
+
+.shiganshina-map-readmore {
+    font-size: .9em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.shiganshina-map-readmore a {
+    color: #a11e15;
+}
+
+.shiganshina-map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+
+/* OUTSIDE MAP */
+
+.map#outside{
+    background-image: none;
 }
 
 /* MOBILE-SPECIFIC STYLES: */
