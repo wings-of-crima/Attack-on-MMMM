@@ -1145,6 +1145,10 @@ section.map img:hover {
     -ms-overflow-style: none !important; 
 }
 
+.offcanvas-wide {
+    --bs-offcanvas-width: 500px;
+}
+
 .offcanvas-header {
     font-family: 'Copperplate Gothic LT W01 29BC', serif;
     color:rgb(0, 0, 0);
@@ -1160,22 +1164,28 @@ section.map img:hover {
 }
 
 .offcanvas-img-panel {
-    margin: 1em auto;
+    margin: 1em 1em;
     border: 5px solid rgb(255, 255, 255);
     border-radius: 4px;
+    overflow: hidden;
 }
 
 .offcanvas-img {
     width: 100%;
     height: auto;
     border-radius: inherit;
-    transition: transform 0.3s ease, border 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.map-img-figcaption {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: -10px;
 }
 
 .offcanvas-img-panel .offcanvas-img:hover {
     transform: scale(1.05);
-    border: 2px dotted rgb(246, 237, 237);
-    border-radius: 3px;
 }
 
 .offcanvas::-webkit-scrollbar {
@@ -1195,6 +1205,33 @@ section.map img:hover {
     color:#a11e15ac;
 }
 
+.shiganshina-btn {
+    padding: 0.5rem;
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: #a11e15 !important;
+    transition: background-color 0.2s ease;
+}
+
+.shiganshina-btn:hover {
+    background-color: #a11e15;
+}
+
+.outside-btn {
+    padding: 0.5rem;
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: rgb(46, 154, 255) !important;
+    transition: background-color 0.2s ease;
+}
+
+.outside-btn:hover {
+    background-color: rgb(46, 154, 255);
+}
 
 /* MOBILE-SPECIFIC STYLES: */
 @media (max-width: 576px) {
