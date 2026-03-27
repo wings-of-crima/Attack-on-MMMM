@@ -35,19 +35,26 @@
                                         cx="493" cy="150.5" rx="17" ry="16.5" fill="white"/>
                                 </a>
 
-                                <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="The approximate dynamic position during transportation of the Seaplane."
-                                    cx="732" cy="337.5" rx="17" ry="16.5" fill="white"/>
+                                <a href="#info-offcanvas-seaplane" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-seaplane">
+                                    <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="The approximate dynamic position during transportation of the Seaplane."
+                                        cx="732" cy="337.5" rx="17" ry="16.5" fill="white"/>
+                                </a>
 
-                                <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="(For reference). This is Paradis Island and the concentric circle in the middle of the land represent the three Walls where Paradis Eldians are enclosed."
-                                    cx="685.5" cy="134" rx="11.5" ry="11" fill="white"/>
+                                <a href="#info-offcanvas-paradisIsland" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-paradisIsland">
+                                    <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="(For reference). This is Paradis Island and the concentric circle in the middle of the land represent the three Walls where Paradis Eldians are enclosed."
+                                        cx="685.5" cy="134" rx="11.5" ry="11" fill="white"/>
+                                </a>
 
                                 <a href="#info-offcanvas-fortSlava" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-fortSlava">
                                     <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="This is approximately, again, the position of Fort Slava. Under the influence of the Mid-East Allied Forces, where season 4 begins showing us Marley fighting to conquer this strategic place. Here, we can find other items for the first time."
                                         cx="627" cy="579.5" rx="17" ry="16.5" fill="white"/>
                                 </a>   
 
-                                <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="For induction through many the analysis of many representation, the (known) world map of Attack on Titan resembles the map of our real world."
-                                    cx="73.5" cy="66" rx="30.5" ry="29" fill="white"/>
+                                <a href="#info-offcanvas-planisphere" data-bs-toggle="offcanvas" role="button" aria-controls="info-offcanvas-planishpere">
+                                    <ellipse class="interactive-shape"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="For induction through many the analysis of many representation, the (known) world map of Attack on Titan resembles the map of our real world."
+                                        cx="73.5" cy="66" rx="30.5" ry="29" fill="white"/>
+                                </a>
+
                                 <defs>
                                 <pattern id="pattern0_0_1" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image0_0_1" transform="scale(0.000801282 0.0014245)"/>
@@ -64,10 +71,73 @@
                         </p>
                         <!-- TODO: add ANCHOR to the circle shape so that when intercating with them it opens the accordions!!! -->
 
-                        <!-- accordion for Planisphere -->
-                        <!-- accordion for Seaplane -->
-                        <!-- accordion for Fort Slava items (3) -->
-                        <!-- parent accordion for Liberio items (2): -->
+                        <!-- offcanvas for Paradis Island -->
+                        <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-paradisIsland" aria-labelledby="info-offcanvas-label-paradisIsland">
+                            <div class="offcanvas-header">
+                                <h4 class="offcanvas-title" id="info-offcanvas-label-paradisIsland">Location Details: Paradis Island</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body d-flex flex-column">
+
+                                Isolated from the rest of the world by a vast ocean, this massive island serves as the final, fortified refuge for the Subjects of Ymir. Encircled by three colossal, concentric walls, its inhabitants live in ignorance of the world beyond, believing humanity outside has perished while a dark, hidden truth slumbers within the walls themselves.
+
+                                <div class="offcanvas-img-panel">
+                                    <img src="images/map/paradis-map.jpeg" class="offcanvas-img" alt="Map view of Paradis Island and its three concentric walls">
+                                </div>
+                                                                
+                                <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Paradis_Island_(Anime)">Paradis Island</a>.</p>
+
+                                <a type="button" class="btn btn-primary walls-btn mt-auto mx-auto" href="map.html">Enter the Walls again</a>
+                            </div>
+                        </div>
+
+                        <!-- offcanvas for Seaplane -->
+                         <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-seaplane" aria-labelledby="info-offcanvas-label-seaplane">
+                            <div class="offcanvas-header">
+                                <h4 class="offcanvas-title" id="info-offcanvas-label-seaplane">Item Details: The "Flying Boat", the Seaplane </h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+
+                                A revolutionary marvel of engineering tethered to a desperate gamble. Powered by a rare, glowing ore, this aquatic aircraft represents a fragile alliance's last hope to soar above an earth-shattering apocalypse and reach the architect of the world's end.
+
+                                <div class="offcanvas-img-panel">
+                                    <img src="images/map/flying-boat.png" class="offcanvas-img" alt="The Azumabito's flying boat docked at the port">
+                                </div>
+                                
+                                Its design heavily draws from early 20th-century aviation, mirroring the bulky but functional aesthetics of vintage real-world seaplanes engineered for perilous oceanic crossings.
+
+                                <div class="offcanvas-img-panel">
+                                    <img src="images/items/real_seaplane.png" class="offcanvas-img" alt="Vintage photography of an early 20th-century real-world flying boat">
+                                </div>
+
+                                <p class="map-readmore"> Learn more about the <a href="https://attackontitan.fandom.com/wiki/Flying_boat_(Anime)">Flying Boat</a>.</p>
+                            </div>
+                        </div>
+
+                        <!-- offcanvas for Planisphere -->
+                         <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-planisphere" aria-labelledby="info-offcanvas-label-planisphere">
+                            <div class="offcanvas-header">
+                                <h4 class="offcanvas-title" id="info-offcanvas-label-planisphere">Location Details: The world map, the Planisphere</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+
+                                A chilling revelation painted on parchment, shattering a century of isolated ignorance. This expansive map unveils a world far larger and more advanced than the islanders ever conceived—a sprawling civilization unified only by its shared hatred for those living within the walls.
+
+                                <div class="offcanvas-img-panel">
+                                    <img src="images/map/marley-small.jpg" class="offcanvas-img" alt="The world map revealed by Marleyan outsiders">
+                                </div>
+                                
+                                A closer inspection reveals a striking, deliberate design choice: the geopolitical boundaries and landmasses are a direct, upside-down, and horizontally flipped mirror of our own Earth's geography. The island's geography and its position in relation to the Marleyan mainland strongly mirror an inverted map of real-world Madagascar and the African coast. This deliberate geographic parallel grounds the isolated, otherworldly setting in a tangible reality.
+
+                                <div class="offcanvas-img-panel">
+                                    <img src="images/items/real_planisphere.png" class="offcanvas-img" alt="An inverted map of the real-world Earth for comparison">
+                                </div>
+
+                                <p class="map-readmore"> Learn more about the <a href="https://attackontitan.fandom.com/wiki/Mid-East_Allied_Forces#Trivia">Outside World</a> and <a href="https://attackontitan.fandom.com/wiki/Marley_(Anime)">Marley</a>.</p>
+                            </div>
+                        </div>
 
                         <!-- Offcanvas Liberio + accordion -->
                         <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-liberio" aria-labelledby="info-offcanvas-label-liberio">
@@ -130,22 +200,22 @@
                                                 <div class="row mb-2">
                                                     <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
                                                         <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/map/key.jpg" alt="Image of the key to Grisha Jaeger, father of Eren's basement">
+                                                            <img class="accordion-img" src="images/map/letter-handing.png" alt="Image of the key to Grisha Jaeger, father of Eren's basement">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 col-lg-5">
-                                                        <p>This is the <em>key</em> to Eren's father's basement inside Shiganshina. In the very beginning, after Eren's father leaves, we're left with a question: <i>What did Grisha Jaeger want to show his son that was so <em>secret</em> inside of this basement?</i> This basement holds many mysteries and is the driving force for a big part of the plot, at least for the first part.</p>
+                                                        <p>This is another crucial item that holds surprise and betrayal. In the confusion of being thrown inside another world and among other people but for a few familiar faces, we are wondering where our main character has disappeared until, in the middle of holding our breaths and after various uncatched hints, we are greeted with a more rugged and older version of Eren, enchanting the child-soldier Falco with words of sweetness and compassion-inducing. At last, he convinces him to send this letter to his "far beloved ones" which will turn the wheel of fate for Marley.</p>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="row">
                                                     <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
                                                         <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/items/real_key.jpg" alt="Image of 13th century key">
+                                                            <img class="accordion-img" src="images/items/real_letter.png" alt="Image of letter from a soldier of WW1">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 col-lg-5">
-                                                        <p>We found a lookalike key from Germany that was forged in 13th century and is now witheld by the MET Museum.</p>
+                                                        <p>Many letters were sent from soldiers from the front, most of them to loved ones for a cherished notice of being alive or missing the other person. Surely, some letters from the front must have been less neutral, but this one starts with a sweet "Dearest parents".</p>
                                                     </div>
                                                 </div>
                                             </div>
