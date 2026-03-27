@@ -16,6 +16,16 @@
 }
 
 @font-face {
+    font-family: 'Anime Ace Italic';
+    src: url('fonts/animeace_i.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Anime Ace Bold';
+    src: url('fonts/animeace_b.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Who Dares';
     src: url('fonts/Who\ Dares!.otf') format('truetype');
 }
@@ -390,6 +400,7 @@ section {
 
 #intro-text em {
     font-size: 1.1em;
+    font-family: 'Anime Ace Italic', sans-serif;
     padding: 0 0.2rem 0;
     color: #a11e15;
 }
@@ -1058,6 +1069,7 @@ section.map {
 
 .map em {
     color: #a11e15;
+    font-family: 'Anime Ace Italic', sans-serif;
 } 
 
 /*
@@ -1127,11 +1139,9 @@ section.map img:hover {
     transition: stroke 0.2s ease;
 }
 
-
 .interactive-shape:hover {
     stroke: rgb(0, 81, 255);
 }
-
 
 .custom-tooltip {
     --bs-tooltip-bg: var(--bg-tooltip);
@@ -1162,6 +1172,11 @@ section.map img:hover {
     color:rgb(255,255,255);
     font-size: 0.8em;
     text-align: center;
+}
+
+.offcanvas-body em {
+    font-family: 'Anime Ace Italic', sans-serif;
+    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
 }
 
 .offcanvas-img-panel {
@@ -1369,9 +1384,19 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 */
 
 .map#outside{
-    background-image: none;
-}
+    background-image: linear-gradient(
+        to bottom,
+        rgba(190, 190, 190, 0.6) 0%,
+        rgba(221, 221, 221, 0.9) 20%,
+        rgba(221, 221, 221, 0.9) 80%,
+        rgba(190, 190, 190, 0.6) 100%
+        ),
 
+        url('../images/map/world-map-manga-right-pos.png');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
 
 .outside-map-container {
     width: 100%;
@@ -1412,6 +1437,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .walls-btn:hover {
     background-color: rgb(29, 75, 48);
 }
+
 
 /* 
 =========================================================
