@@ -1096,6 +1096,33 @@ blockquote {
 
 
 /* MAP PAGE SPECIFIC STYLES: */
+
+section.map {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(230, 230, 230, 0.35) 0%,
+        rgba(230, 230, 230, 0.9) 20%,
+        rgba(230, 230, 230, 0.9) 60%,
+        rgba(230, 230, 230, 0.3) 90%
+        ),
+
+        url('../images/map/walls-img.png');   
+    background-position: top;
+    background-size: 110% 130%;
+    background-repeat: no-repeat;
+}
+
+.map .section-text {
+    text-align: center;
+    font-size: 1em;
+}
+
+.map em {
+    color: #a11e15;
+    font-family: 'Anime Ace Italic', sans-serif;
+} 
+
+/* IN PIU': 
 section.map img {
     width: 100%;
     height: auto;
@@ -1106,13 +1133,362 @@ section.map img {
 section.map img:hover {
     filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
     cursor: pointer;
+} */
+
+/* styling the SVG: */
+/*
+.map-container {
+    width: 100%;
+    max-width: 1400px; 
+    margin: 2rem auto; 
+    padding: 0.5em 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-container svg {
+    width: 100%;         
+    max-height: 110vh;     
+    height: auto;
+} */
+
+.row {
+    margin: 0.5em;
+    margin-top: 1em;
+}
+
+/* 1. The Window (Now controlled by Bootstrap's Grid) */
+.map-container {
+    width: 100%;
+    height: 90vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #e8e4db; 
+}
+
+.map-container:active {
+    cursor: grabbing;
+}
+
+.map-container svg {
+    width: 100%;
+    height: 100%;
 
 }
 
-.map em {
-    padding: 0 0.2rem 0;
+.interactive-shape {
+    cursor: pointer;
+    stroke: transparent; /* Hides the outline by default */
+    stroke-width: 4px; /* Sets how thick the highlight will be */
+    transition: stroke 0.2s ease;
+}
+
+.interactive-shape:hover {
+    stroke: rgb(0, 81, 255);
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bg-tooltip);
+    --bs-tooltip-color: var(--text-tooltip);
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8em;
+}
+
+.offcanvas {
+    background-color: rgba(19, 19, 19, 0.9);
+    scrollbar-width: none !important;  /* TODO: understand why I can still see the scrollbar */
+    -ms-overflow-style: none !important; 
+}
+
+.offcanvas-wide {
+    --bs-offcanvas-width: 500px;
+}
+
+.offcanvas-header {
+    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    color:rgb(0, 0, 0);
+    background-color:rgb(205, 205, 205, 0.7);
+}
+
+.offcanvas-body {
+    padding: 1.5em;
+    font-family: 'Anime Ace', sans-serif;
+    color:rgb(255,255,255);
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.offcanvas-body em {
+    font-family: 'Anime Ace Italic', sans-serif;
+    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+}
+
+.offcanvas-img-panel {
+    flex-shrink: 0; /* This stops Flexbox from squishing the container! */
+    margin: 1em 1em;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.offcanvas-img {
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
+}
+
+.map-img-figcaption {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.offcanvas-img-panel .offcanvas-img:hover {
+    transform: scale(1.05);
+}
+
+.offcanvas::-webkit-scrollbar {
+    display: none !important;
+}
+
+.map-readmore {
+    font-size: 1em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.map-readmore a {
     color: #a11e15;
 }
+
+.map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+.shiganshina-btn {
+    padding: 0.5rem;
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: #a11e15 !important;
+    transition: background-color 0.2s ease;
+}
+
+.shiganshina-btn:hover {
+    background-color: #a11e15;
+}
+
+.shiganshina-btn:active {
+    background-color: #6e150f !important;
+}
+
+.outside-btn {
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: rgb(46, 154, 255) !important;
+    transition: background-color 0.2s ease;
+}
+
+.outside-btn:hover {
+    background-color: rgb(46, 154, 255);
+}
+
+.map-btn {
+    font-size: 1em;
+    font-family: 'Anime Ace', sans-serif;
+    border: 2px solid !important;
+}
+
+/* 
+
+==========================================================
+SHIGANSHINA MAP 
+
+*/
+
+.map#shiganshina {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(230, 230, 230, 0.3) 0%,
+        rgba(230, 230, 230, 0.8) 20%,
+        rgba(230, 230, 230, 0.8) 80%,
+        rgba(230, 230, 230, 0.3) 100%
+        ),
+
+        url('../images/map/destroyed-shiganshina.png');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.shiganshina-map-container {
+    width: 100%;
+    height: 90vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #bee7ff; 
+}
+
+.shiganshina-map-container:active {
+    cursor: grabbing;
+}
+
+.shiganshina-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#shiganshina-map-text {
+    text-align: justify !important;
+}
+
+.accordion {
+    /* Changes the background of the entire accordion item */
+    --bs-accordion-bg: rgb(108, 108, 108); 
+    
+    /* Changes the text color */
+    --bs-accordion-color: #000000; 
+    
+    /* Changes the background of the button when clicked/open */
+    --bs-accordion-active-bg: rgb(132, 132, 132); 
+    
+    /* Changes the text color of the button when clicked/open */
+    --bs-accordion-active-color: #ffffff; 
+    
+    /* Changes the border color between items */
+    --bs-accordion-border-color: rgb(0, 0, 0);
+    
+    /* Changes the focus ring color when clicking */
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.7);
+}
+
+.accordion-item {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    font-family: 'Anime Ace', sans-serif;
+    color: white;
+    border: 2px solid black;
+    font-size: .8em;
+}
+
+.accordion-img-panel {
+    margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+    
+    /* Optional: Added a subtle shadow so the white border pops against the accordion background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.accordion-img {
+    width: 100%;
+    height: auto; /* Ensures the image scales correctly without distorting proportions */
+    display: block; /* Removes the tiny invisible gap that sometimes appears under images */
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.accordion-img-panel:hover .accordion-img {
+    transform: scale(1.05);
+}
+
+.accordion-body {
+    text-align: center;
+}
+
+.shiganshina-map-readmore {
+    font-size: .9em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.shiganshina-map-readmore a {
+    color: #a11e15;
+}
+
+.shiganshina-map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+
+/* 
+
+========================================================
+OUTSIDE MAP (accordion rules from shiganshina map)
+
+*/
+
+.map#outside{
+    background-image: linear-gradient(
+        to bottom,
+        rgba(190, 190, 190, 0.6) 0%,
+        rgba(221, 221, 221, 0.9) 20%,
+        rgba(221, 221, 221, 0.9) 80%,
+        rgba(190, 190, 190, 0.6) 100%
+        ),
+
+        url('../images/map/world-map-manga-right-pos.png');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.outside-map-container {
+    width: 100%;
+    height: 80vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #724f33e0; 
+}
+
+.outside-map-container:active {
+    cursor: grabbing;
+}
+
+.outside-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#outside-map-text {
+    text-align: justify !important;
+}
+
+.walls-btn {
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: rgb(33, 86, 54) !important;
+    transition: background-color 0.2s ease;
+}
+
+.walls-btn:hover {
+    background-color: rgb(29, 75, 48);
+}
+
 
 /* MOBILE-SPECIFIC STYLES: */
 @media (max-width: 576px) {
@@ -1489,4 +1865,353 @@ section.map img:hover {
 
 .readable-text-links a:hover {
     text-decoration: underline;
+}
+
+
+/*
+
+Rules for Narratives page
+
+*/
+
+/* Stile per la riga delle narrative */
+.narratives-display-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: nowrap; /* Forza la riga singola su PC */
+}
+
+/* Stile per ogni singola box (cliccabile) */
+.narrative-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important; /* Rimuove la sottolineatura dei link */
+    color: inherit;
+    border: 3px solid #181818;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.narrative-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Immagine interna alla box */
+.narrative-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #181818;
+}
+
+/* Contenitore del testo */
+.narrative-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.narrative-text h3 {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.narrative-text p {
+    font-family: 'Noto Sans'g, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .narratives-display-row {
+        flex-wrap: wrap; /* Una sotto l'altra su schermi piccoli */
+    }
+    .narrative-box {
+        flex: 1 1 100%;
+    }
+}
+
+/*Style for buttons single_narrative*/
+
+/* 1. Stile base per tutti i bottoni */
+.btn-exhibit {
+    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
+    color: #ffffff;
+    border: 2px solid rgb(0, 0, 0); 
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* 2. Effetto Hover: solo per i bottoni NON attivi */
+.btn-exhibit:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff;
+}
+
+/* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
+.btn-check:checked + .btn-exhibit {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+    
+    /* BLOCCA IL MOUSE: */
+    pointer-events: none; 
+    
+    /* OPZIONALE: Cambia il cursore per far capire che è bloccato */
+    cursor: default; 
+}
+
+/*Rules for images in exhibition*/
+
+/* Contenitore stile tavola manga */
+.manga-frame-container {
+    /* Rimuoviamo eventuali sfondi bianchi ereditati */
+    background: transparent !important; 
+    padding: 0;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Etichetta stile "baloon" o didascalia */
+/* Contenitore stile tavola manga senza movimento */
+.manga-frame-static {
+    position: relative;
+    padding: 10px;
+}
+
+/* Etichetta stile didascalia manga */
+.manga-label {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8rem;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    margin-bottom: -1px; 
+    border: 3px solid #000;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+/* La cornice definita e fissa */
+.manga-img-wrapper {
+    border: 5px solid #000; /* Bordo nero spesso */
+    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    aspect-ratio: 16 / 10; 
+    overflow: hidden;
+    background-color: #000;
+}
+
+.manga-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Rimosse tutte le transizioni di movimento */
+}
+
+/* Opzionale: se vuoi che al passaggio del mouse 
+   l'immagine diventi solo più nitida senza muoversi */
+.manga-frame-static:hover img {
+    filter: brightness(1.1); /* Leggero aumento di luminosità invece del movimento */
+}
+
+/*lightbox exhibition*/
+
+/* --- COMPONENTI EXHIBIT: LIGHTBOX --- */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Anime Ace', sans-serif;
+}
+
+/* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
+.btn-manga-nav {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+    background: #000;
+    padding: 10px 25px;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px #6c757d;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-manga-nav:hover {
+    color: #fff;
+    background: #333;
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #000;
+}
+
+.nav-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* --- COMPONENTI EXHIBIT: CORNICI MANGA --- */
+.manga-frame-container {
+    position: relative;
+    padding: 10px;
+}
+
+.manga-label {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 0.8rem;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    margin-bottom: -1px; 
+    border: 3px solid #000;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.manga-img-wrapper {
+    border: 5px solid #000;
+    box-shadow: 12px 12px 0px #000;
+    
+    aspect-ratio: 1 / 1; 
+    width: 100%;
+    
+    overflow: hidden;
+    /* Aggiungiamo un colore neutro (grigio chiaro o bianco) 
+       per riempire gli spazi vuoti che si creano ai lati */
+    background-color: #f5f5f5; 
+    
+    cursor: zoom-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Un minimo di padding evita che l'immagine tocchi i bordi neri, 
+       dando un effetto "cornice da museo" */
+    padding: 10px; 
+}
+
+.manga-img-wrapper img {
+    /* Fondamentale: l'immagine si adatta alla box senza mai essere tagliata */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    
+    display: block;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
+}
+
+.manga-img-wrapper:hover img {
+    /* Lo zoom ora è più contenuto per non far uscire l'immagine dai bordi */
+    transform: scale(1.03);
+}
+
+
+/*metadata box exhibition*/
+
+/* 1. Assicuriamoci che il contenitore della riga permetta lo sticky */
+.item-detail .row {
+    align-items: flex-start; /* Fondamentale per far funzionare lo sticky */
+}
+
+/* 2. Regola specifica per la colonna che contiene la box */
+.col-md-4:has(.metadata-box) {
+    position: relative; 
+    height: 100%; /* La colonna deve estendersi per tutta la lunghezza della riga */
+}
+
+/* 3. La box dei metadati vera e propria */
+.metadata-box {
+    background-color: #000;
+    color: #fff !important;
+    padding: 20px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #6c757d;
+
+    /* BLOCCA LA BOX ALLO SCHERMO */
+    position: -webkit-sticky; /* Supporto per Safari */
+    position: sticky;
+    top: 20px; /* Distanza dal bordo superiore della finestra quando scivola */
+    
+    /* Impedisce alla box di deformarsi */
+    align-self: flex-start;
+    width: 100%; 
+    max-height: fit-content;
+}
+
+.metadata-box h5 {
+    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
+    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    text-transform: uppercase;
+    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.metadata-box strong {
+    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+/* Colore del link dell'istituzione */
+#meta-institution a {
+    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    text-decoration: none !important; /* Rimuove la sottolineatura */
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+/* Effetto al passaggio del mouse (opzionale ma consigliato) */
+#meta-institution a:hover {
+    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
+    text-decoration: none !important; /* Si assicura che non torni la linea */
+    background-color: transparent !important; /* Nessun evidenziatore */
 }
