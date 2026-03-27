@@ -1037,6 +1037,32 @@ blockquote {
 
 
 /* MAP PAGE SPECIFIC STYLES: */
+section.map {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(230, 230, 230, 0.35) 0%,
+        rgba(230, 230, 230, 0.9) 20%,
+        rgba(230, 230, 230, 0.9) 60%,
+        rgba(230, 230, 230, 0.3) 90%
+        ),
+
+        url('../images/map/walls-img.png');   
+    background-position: top;
+    background-size: 110% 130%;
+    background-repeat: no-repeat;
+}
+
+.map .section-text {
+    text-align: center;
+    font-size: 1em;
+}
+
+.map em {
+    color: #a11e15;
+    font-family: 'Oswald', sans-serif;
+} 
+
+/*
 section.map img {
     width: 100%;
     height: auto;
@@ -1047,13 +1073,460 @@ section.map img {
 section.map img:hover {
     filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
     cursor: pointer;
+} */
+
+/* styling the SVG: */
+/*
+.map-container {
+    width: 100%;
+    max-width: 1400px; 
+    margin: 2rem auto; 
+    padding: 0.5em 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-container svg {
+    width: 100%;         
+    max-height: 110vh;     
+    height: auto;
+} */
+
+.row {
+    margin: 0.5em;
+    margin-top: 1em;
+}
+
+/* 1. The Window (Now controlled by Bootstrap's Grid) */
+.map-container {
+    width: 100%;
+    height: 90vh;
+    /* Bordo spesso e scuro come una cornice di metallo industriale */
+    border: 6px solid #670404; 
+    border-radius: 0; 
+    background-color: #e8e4db;
+    
+    /* Ombra esterna netta (stampa litografica) */
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2); 
+    
+    /* Effetto "fogli sovrapposti" usando uno pseudo-elemento o gradienti */
+    position: relative;
+    overflow: hidden;
+}
+
+.map-container:active {
+    cursor: grabbing;
+}
+
+.map-container svg {
+    width: 100%;
+    height: 100%;
 
 }
 
-.map em {
-    padding: 0 0.2rem 0;
+.interactive-shape {
+    cursor: pointer;
+    stroke: transparent; /* Hides the outline by default */
+    stroke-width: 4px; /* Sets how thick the highlight will be */
+    transition: stroke 0.2s ease;
+}
+
+.interactive-shape:hover {
+    stroke: rgb(0, 81, 255);
+}
+
+.custom-tooltip .tooltip-inner {
+    /* 1. Colori e Font */
+    background-color: #f2eee5 !important; /* Colore carta invecchiata */
+    color: #1a1a1a !important;           /* Nero inchiostro */
+    font-family: 'Oswald', sans-serif;   /* Font stile testata giornalistica */
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    
+    /* 2. Reset bordi standard */
+    border: none;
+    border-radius: 0 !important;
+    position: relative;
+
+    /* 3. Barra rossa laterale (Stile 'Top Secret') */
+    border-left: 5px solid #670404 !important;
+
+    /* 4. Effetto Angolo Ripiegato (In alto a destra) */
+    /* Il primo gradient crea la linea della piega, il secondo lo sfondo che si ferma al taglio */
+    background: 
+        linear-gradient(225deg, transparent 12px, #d4cfc1 12px, #d4cfc1 13px, transparent 13px),
+        linear-gradient(225deg, transparent 12px, #f2eee5 12px);
+    
+    /* 5. Effetto Angolo Tagliato (In basso a sinistra) */
+    /* Taglia via l'angolo opposto per un look più grezzo e strappato */
+    clip-path: polygon(
+        0% 0%, 
+        calc(100% - 15px) 0%, 
+        100% 15px, 
+        100% 100%, 
+        15px 100%, 
+        0% calc(100% - 15px)
+    );
+    
+    /* 6. Ombra netta (Stampa litografica) */
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.25));
+}
+
+.custom-tooltip .tooltip-arrow::before {
+    border-top-color: #f2eee5 !important; /* Deve coincidere con lo sfondo carta */
+}
+
+/* Il corpo interno del tooltip */
+.tooltip-inner {
+    padding: 8px 12px;
+    border: 1px solid #d4cfc1; /* Un bordo leggero per dare profondità alla carta */
+    border-radius: 0px !important; /* Rimuove l'arrotondamento moderno */
+    
+    /* Allineamento testo tipico da colonna di giornale */
+    text-align: center;
+    font-weight: 700;
+}
+
+.offcanvas {
+    background-color: #1b2e2b !important; /* Verde militare profondo dal tema */
+    border-left: 5px solid #a11e15; /* Linea rossa di "urgenza/pericolo" sul bordo */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.offcanvas-wide {
+    --bs-offcanvas-width: 500px;
+}
+
+.offcanvas-header {
+    /* Colore carta avorio/ottone per sembrare l'etichetta del fascicolo */
+    background-color: #c4af83 !important; 
+    font-family: 'Oswald', serif;
+    color: #1a1a1a !important;
+    border-bottom: 3px solid #1a1a1a;
+    text-transform: uppercase;
+}
+
+.offcanvas-body {
+    padding: 1.5em;
+    font-family: 'Oswald', sans-serif; /* Più leggibile e militare */
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    color: #e8e4db; /* Testo color carta chiara per contrasto */
+    text-align: justify; /* Look da rapporto ufficiale */
+    line-height: 1.6;
+}
+
+.offcanvas-body em {
+    font-family: 'Oswald', sans-serif;
+    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+}
+
+.offcanvas-img-panel {
+    flex-shrink: 0;
+    margin: 1em 1em;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.offcanvas-img {
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
+}
+
+.map-img-figcaption {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.offcanvas-img-panel .offcanvas-img:hover {
+    transform: scale(1.05);
+}
+
+.offcanvas::-webkit-scrollbar {
+    display: none !important;
+}
+
+.map-readmore {
+    font-size: 1em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.map-readmore a {
     color: #a11e15;
 }
+
+.map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+.shiganshina-btn {
+    background-color: #a11e15;
+    color: #ffffff !important;
+    font-size: 1.1em;
+    border: 3px solid #000000 !important;
+    /* Ombra piatta che simula lo spessore di un timbro */
+    box-shadow: 4px 4px 0px #000000;
+    padding: 0.8rem 1.8rem;
+    border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
+    border-radius: 0px !important;
+}
+
+.shiganshina-btn:hover {
+    background-color: #e8e4db; /* Colore carta */
+    color: #a11e15 !important;
+    font-size:1.1em;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.shiganshina-btn:active {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
+.outside-btn {
+    background-color: #a11e15;
+    color: #ffffff !important;
+    font-size: 1.1em;
+    border: 3px solid #000000 !important;
+    /* Ombra piatta che simula lo spessore di un timbro */
+    box-shadow: 4px 4px 0px #000000;
+    padding: 0.8rem 1.8rem;
+    border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
+    border-radius: 0px !important;
+}
+
+.outside-btn:hover {
+    background-color: #e8e4db; /* Colore carta */
+    color: #a11e15 !important;
+    font-size: 1.1em;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.outside-btn:active {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
+.map-btn {
+    background-color: #a11e15;
+    color: #ffffff !important;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 3px solid #000000 !important;
+    /* Ombra piatta che simula lo spessore di un timbro */
+    box-shadow: 4px 4px 0px #000000;
+    padding: 0.8rem 1.8rem;
+    border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
+    border-radius: 0px !important;
+}
+
+.map-btn:hover {
+    background-color: #e8e4db; /* Colore carta */
+    color: #a11e15 !important;
+    font-size: 1.1em;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+/* 
+
+==========================================================
+SHIGANSHINA MAP 
+
+*/
+
+.map#shiganshina {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(230, 230, 230, 0.3) 0%,
+        rgba(230, 230, 230, 0.8) 20%,
+        rgba(230, 230, 230, 0.8) 80%,
+        rgba(230, 230, 230, 0.3) 100%
+        ),
+
+        url('../images/map/destroyed-shiganshina.png');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.shiganshina-map-container {
+    width: 100%;
+    height: 90vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #bee7ff; 
+}
+
+.shiganshina-map-container:active {
+    cursor: grabbing;
+}
+
+.shiganshina-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#shiganshina-map-text {
+    text-align: justify !important;
+}
+
+.accordion {
+    /* Changes the background of the entire accordion item */
+    --bs-accordion-bg: #d4cfc1;
+    
+    /* Changes the text color */
+    --bs-accordion-color: #e8e4db; 
+    
+    /* Changes the background of the button when clicked/open */
+    --bs-accordion-active-bg: #a11e15; 
+    
+    /* Changes the text color of the button when clicked/open */
+    --bs-accordion-active-color: #ffffff; 
+    
+    /* Changes the border color between items */
+    --bs-accordion-border-color: rgb(0, 0, 0);
+    
+    /* Changes the focus ring color when clicking */
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(161, 30, 21, 0.4);
+}
+
+.accordion-item {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    border: 2px solid black;
+    font-size: .8em;
+}
+
+.accordion-img-panel {
+    margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+    
+    /* Optional: Added a subtle shadow so the white border pops against the accordion background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.accordion-img {
+    width: 100%;
+    height: auto; /* Ensures the image scales correctly without distorting proportions */
+    display: block; /* Removes the tiny invisible gap that sometimes appears under images */
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.accordion-img-panel:hover .accordion-img {
+    transform: scale(1.05);
+}
+
+.accordion-body {
+    text-align: center;
+}
+
+.shiganshina-map-readmore {
+    font-size: .9em;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.shiganshina-map-readmore a {
+    color: #a11e15;
+}
+
+.shiganshina-map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+
+/* 
+
+========================================================
+OUTSIDE MAP (accordion rules from shiganshina map)
+
+*/
+
+.map#outside{
+    background-image: linear-gradient(
+        to bottom,
+        rgba(190, 190, 190, 0.6) 0%,
+        rgba(221, 221, 221, 0.9) 20%,
+        rgba(221, 221, 221, 0.9) 80%,
+        rgba(190, 190, 190, 0.6) 100%
+        ),
+
+        url('../images/map/world-map-manga-right-pos.png');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.outside-map-container {
+    width: 100%;
+    height: 80vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #724f33e0; 
+}
+
+.outside-map-container:active {
+    cursor: grabbing;
+}
+
+.outside-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#outside-map-text {
+    text-align: justify !important;
+}
+
+.walls-btn {
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: rgb(33, 86, 54) !important;
+    transition: background-color 0.2s ease;
+}
+
+.walls-btn:hover {
+    background-color: rgb(29, 75, 48);
+}
+
+
+/* 
+=========================================================
+=========================================================
 
 /* MOBILE-SPECIFIC STYLES: */
 @media (max-width: 576px) {
