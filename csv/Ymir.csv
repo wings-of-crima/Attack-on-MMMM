@@ -1,3 +1,2 @@
-Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
-Ymir,11649983,Nicolai Abildgaard,Painting,1777,Ymir Suckling the Cow Audhumla,"https://commons.wikimedia.org/wiki/File:Nicolai_Abildgaard,_Ymer_dier_koen_%C3%98dhumbla,_,_KMS3397,_Statens_Museum_for_Kunst.jpg",Oil on canvas,"height: 37 cm, width: 45.5 cm",Wikimedia Commons
-,,,,,,,,,
+accession Number,titleText,creatorIdentity,objectWorkType,creationDate,repositoryName,recordSource,materialsName,dimensionsStatement
+11649983,Ymir Suckling the Cow Audhumla,Nicolai Abildgaard,Painting,1777,Wikimedia Commons,"https://commons.wikimedia.org/wiki/File:Nicolai_Abildgaard,_Ymer_dier_koen_%C3%98dhumbla,_,_KMS3397,_Statens_Museum_for_Kunst.jpg",Oil on canvas,"height: 37 cm, width: 45.5 cm"

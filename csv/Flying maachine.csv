@@ -1,3 +1,2 @@
-Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
-Flying machine,OA: 00000005,Scuola di Cotruzioni ed Esperienze Aeronautiche di Guidonia,Model,1929,Macchina volante,https://museoleonardiano.it/opera/macchina-volante/,"Carved/partially painted walnut wood, leather, cotton rope, iron","Height 35 cm, lenght 87 cm",Museo Leonardiano
-,,,,,,,,,
+accession Number,titleText,creatorIdentity,objectWorkType,creationDate,repositoryName,recordSource,materialsName,dimensionsStatement
+OA: 00000005,Flying machine,Scuola di Cotruzioni ed Esperienze Aeronautiche di Guidonia,Model,1929,Museo Leonardiano,https://museoleonardiano.it/opera/macchina-volante/,"Carved/partially painted walnut wood, leather, cotton rope, iron","Height 35 cm, lenght 87 cm"

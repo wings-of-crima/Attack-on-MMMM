@@ -113,4 +113,5 @@ function updateNavigation() {
     } else {
         nextBtn.classList.add('nav-hidden');
     }
+    
 }

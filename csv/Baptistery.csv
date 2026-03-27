@@ -1,3 +1,2 @@
-Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
-Baptistery,ark:/12148/btv1b532773728,Rive Julius,Photo,1870,[N]. 1550. Battisterio. Duomo e Campanile di Pisa : [photographie] / Rive,https://gallica.bnf.fr/ark:/12148/btv1b532773728/f1.item,"albumen paper, from a negative on a collodion glass plate","20,2 x 25,2 cm",Bibliotheque nationale de France
-,,,,,,,,,
+identifier,title,namePart,typeOfResource,dateCreated,physicalLocation,url,form,extent
+ark:/12148/btv1b532773728,[N]. 1550. Battisterio. Duomo e Campanile di Pisa : [photographie] / Rive,Rive Julius,Photo,1870,Bibliotheque nationale de France,https://gallica.bnf.fr/ark:/12148/btv1b532773728/f1.item,"albumen paper, from a negative on a collodion glass plate","20,2 x 25,2 cm"
