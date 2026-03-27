@@ -141,7 +141,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     margin-top: calc(var(--navbar-overlap) * -1); /* Pull the navbar up to overlap with the header */
     position: sticky;
     top: 0;
-    z-index: 1030; /* Ensures the navbar stays above the header */
     border-top: 3px solid black;
     border-bottom: 7px solid black;
 }
@@ -582,6 +581,7 @@ button.btn {
 }
 
 #intro-text em {
+    font-family: 'Comic Neue', sans-serif;
     font-size: 1.1em;
     padding: 0 0.2rem 0;
     color: #a11e15;
@@ -1024,40 +1024,545 @@ blockquote {
 
 
 /* MAP PAGE SPECIFIC STYLES: */
+section.map {
+    background-color:#21bffe;   
+}
+
+.map .section-text {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.map em {
+    color: #a11e15;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.1em;
+} 
+
+/*
 section.map img {
-    /* Manteniamo le dimensioni */
     width: 100%;
     height: auto;
     object-fit: contain;
     padding: 0.5rem;
-    
-    /* 1. RISOLUZIONE PROBLEMA SPAZIO: */
-    /* Aggiungiamo margine sopra e sotto per dare spazio alla rotazione e all'ombra */
-    display: block;
-    margin: 1.5rem auto; 
-
-    /* Stile Intro-Quotes */
-    background-color: #fdfcf0; 
-    border: 3px solid #000000; 
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-    box-shadow: 6px 6px 0px 0px #000000;
-    transform: rotate(-1.5deg);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 section.map img:hover {
-    /* 2. HOVER COERENTE: */
-    /* Invece di drop-shadow, raddrizziamo e aumentiamo l'ombra Pop Art */
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: 12px 12px 0px 0px #a11e15; /* Ombra rossa che si allunga */
+    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
     cursor: pointer;
+} */
+
+/* styling the SVG: */
+/*
+.map-container {
+    width: 100%;
+    max-width: 1400px; 
+    margin: 2rem auto; 
+    padding: 0.5em 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-container svg {
+    width: 100%;         
+    max-height: 110vh;     
+    height: auto;
+} */
+
+.row {
+    margin: 0.5em;
+    margin-top: 1em;
+}
+
+/* 1. The Window (Now controlled by Bootstrap's Grid) */
+.map-container {
+    width: 100%;
+    height: 90vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #e8e4db; 
+}
+
+.map-container:active {
+    cursor: grabbing;
+}
+
+.map-container svg {
+    width: 100%;
+    height: 100%;
 
 }
 
-.map em {
-    padding: 0 0.2rem 0;
+.interactive-shape {
+    cursor: pointer;
+    stroke: transparent; /* Hides the outline by default */
+    stroke-width: 4px; /* Sets how thick the highlight will be */
+    transition: stroke 0.2s ease;
+}
+
+.interactive-shape:hover {
+    stroke: rgb(0, 81, 255);
+}
+
+/* --- NUOVO STILE POP ART PER IL TOOLTIP --- */
+
+/* Applichiamo lo stile alla scatola interna del tooltip */
+.custom-tooltip .tooltip-inner {
+    /* Sfondo e Testo */
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    
+    /* Font: usiamo Anime Ace per coerenza col tuo progetto */
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.1em;
+    font-weight: 900 !important; /* Testo molto spesso stile fumetto */
+    text-transform: uppercase;
+    
+    /* Bordo Nero Netto */
+    border: 3px solid #000000 !important;
+    border-radius: 0px !important; /* Angoli vivi per stile grafico */
+    
+    /* Ombra "Hard Shadow" (Spostata e senza sfocatura) */
+    /* Il primo colore (#FFD700) è il giallo pop, il secondo (#000) è l'ombra nera */
+    box-shadow: 5px 5px 0px #FFD700 !important;
+    
+    padding: 8px 12px;
+    opacity: 1 !important;
+}
+
+/* Rimuoviamo la freccetta standard (stona con lo stile pop art squadrato) */
+.custom-tooltip .tooltip-arrow {
+    display: none !important;
+}
+
+.offcanvas {
+    z-index: 3000 !important; /* Valore altissimo per coprire la navbar sticky */
+    background-color: #fbff09 !important; /* Giallo Pop Art */
+    border-left: 6px solid #000 !important;
+    
+    /* Risoluzione scrollbar */
+    scrollbar-width: none !important; 
+    -ms-overflow-style: none !important; 
+
+    border-left: 5px solid black !important;
+    box-shadow: -10px 0px 0px 0px rgba(0,0,0,0.5);
+}
+
+/* Nasconde scrollbar per Chrome, Safari e nuovi Edge */
+.offcanvas::-webkit-scrollbar {
+    display: none !important;
+}
+
+.offcanvas-backdrop {
+    /* Deve essere più alto della navbar (1030) ma più basso dell'offcanvas (3000) */
+    z-index: 2500 !important; 
+    background-color: rgba(0, 0, 0, 0.7); /* Rende lo sfondo più scuro e coprente */
+}
+
+.offcanvas-wide {
+    --bs-offcanvas-width: 500px;
+}
+
+.offcanvas-header {
+    font-family: 'Bangers', serif;
+    color:rgb(0, 0, 0);
+    background-color:rgb(250, 0, 220);
+}
+
+.offcanvas-body {
+    padding: 1.5em;
+    font-family: 'Comic Neue', sans-serif;
+    color:rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+    background-color:#fbff09;
+}
+
+.offcanvas-body em {
+    font-family: 'Comic Neue', sans-serif;
+    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+}
+
+.offcanvas-img-panel {
+    /* 1. Margini e Layout */
+    flex-shrink: 0;
+    margin: 2em auto;
+    width: fit-content;
+    max-width: 90%;
+    
+    /* 2. Colori e Sfondo (effetto carta) */
+    background-color: #fdfcf0; 
+    padding: 10px; /* Crea un piccolo bordo bianco intorno all'immagine */
+    
+    /* 3. Bordo da Fumetto Spesso */
+    border: 4px solid #000000; 
+    
+    /* 4. Angoli Imperfetti (Copia esatta del tuo stile intro-quotes) */
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    
+    /* 5. Ombra Solida Pop Art */
+    box-shadow: 10px 10px 0px 0px #a11e15;
+    
+    /* 6. Rotazione "Incollato Storto" */
+    transform: rotate(2deg); /* Rotazione opposta alle quotes per varietà */
+    
+    /* 7. Gestione overflow per mantenere i bordi irregolari */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offcanvas-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Rimuoviamo il border-radius standard dell'immagine per seguire il pannello */
+    border-radius: inherit; 
+}
+
+.map-img-figcaption {
+    font-family: 'Comic Neue', sans-serif; /* Coerenza con il resto */
+    font-size: 1em;
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.offcanvas-img-panel:hover {
+    /* 1. Si ingrandisce (Pop out) */
+    /* 2. Si raddrizza (opzionale, togli rotate(0deg) se vuoi che resti storto) */
+    transform: scale(1.08) rotate(0deg); 
+    
+    cursor: pointer;
+}
+
+.offcanvas::-webkit-scrollbar {
+    display: none !important;
+}
+
+.map-readmore {
+    font-size: 1em;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.map-readmore a {
     color: #a11e15;
+}
+
+.map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+.shiganshina-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2em;
+    font-family: 'Bangers', sans-serif; /* Usiamo il font manga che hai caricato */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* Colori Pop Art */
+    background-color: #f7ff1c; /* Giallo acceso (contrasto perfetto col rosso) */
+    color: #000000; /* Testo nero per massima leggibilità */
+    
+    /* Bordi e Ombre */
+    border: 3px solid #000000 !important; /* Bordo nero spesso tipico dei fumetti */
+    border-radius: 0; /* Taglio netto, non arrotondato */
+    
+    /* Ombra netta (Hard Shadow) */
+    box-shadow: 5px 5px 0px 0px #a11e15; 
+    
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.shiganshina-btn:hover {
+    /* Al passaggio del mouse i colori si invertono o cambiano */
+    background-color: #a11e15;
+    color: #ffffff;
+    border-color: #000000 !important;
+    
+    /* L'ombra diventa nera e più profonda */
+    box-shadow: 8px 8px 0px 0px #000000;
+    
+    /* Si sposta leggermente per l'effetto "pop" */
+    transform: scale(1.15) translate(-5px, -5px);
+}
+
+.shiganshina-btn:active {
+    /* Effetto pressione: il bottone si schiaccia sull'ombra */
+    background-color: #6e150f !important;
+    color: #ffffff;
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.outside-btn {
+    padding: 0.4rem 1.2rem;
+    font-size: 1.1em;
+    font-family: 'Bangers', sans-serif; /* Usiamo il font manga che hai caricato */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* Colori Pop Art */
+    background-color: #f7ff1c; /* Giallo acceso (contrasto perfetto col rosso) */
+    color: #000000; /* Testo nero per massima leggibilità */
+    
+    /* Bordi e Ombre */
+    border: 3px solid #000000 !important; /* Bordo nero spesso tipico dei fumetti */
+    border-radius: 0; /* Taglio netto, non arrotondato */
+    margin-top: 50px;
+    margin-bottom: 15px;
+    
+    /* Ombra netta (Hard Shadow) */
+    box-shadow: 5px 5px 0px 0px #a11e15; 
+    
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.outside-btn:hover {
+    /* Al passaggio del mouse i colori si invertono o cambiano */
+    background-color: #a11e15;
+    color: #ffffff;
+    border-color: #000000 !important;
+    
+    /* L'ombra diventa nera e più profonda */
+    box-shadow: 8px 8px 0px 0px #000000;
+    
+    /* Si sposta leggermente per l'effetto "pop" */
+    transform: scale(1) translateY(10px);
+}
+
+.map-btn {
+    /* 1. LAYOUT E DIMENSIONI (Uniformato agli altri) */
+    display: inline-block;
+    padding: 0.4rem 1.2rem; 
+    margin-top: 35px; 
+    margin-bottom: 15px;
+    cursor: pointer;
+    
+    /* 2. TESTO E FONT */
+    font-size: 1.4em; /* Come richiesto */
+    font-family: 'Bangers', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+
+    /* 3. COLORI RICHIESTI */
+    background-color: #ffffff; /* Sfondo Bianco */
+    color: #dc0000;           /* Testo Rosso */
+
+    /* 4. STRUTTURA POP ART (Bordo e Ombra) */
+    /* Usiamo il rosso per il bordo e l'ombra per richiamare il testo */
+    border: 3px solid #000000 !important; /* Bordo nero sempre, per stile fumetto */
+    border-radius: 0;
+    box-shadow: 5px 5px 0px 0px #dc0000; /* Ombra rossa solida */
+
+    /* 5. ANIMAZIONE */
+    transition: all 0.2s ease;
+}
+
+/* --- HOVER: EFFETTO POP IN BASSO --- */
+.map-btn:hover {
+    /* Invertiamo i colori al passaggio del mouse */
+    background-color: #dc0000;
+    color: #ffffff;
+    
+    /* Ingrandimento e spinta in basso (così non copre il testo sopra) */
+    transform: scale(1.1) translateY(12px); 
+    
+    /* L'ombra diventa nera per staccare di più */
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2), 10px 10px 0px 0px #000000;
+}
+
+/* --- ACTIVE: CLICK --- */
+.map-btn:active {
+    transform: scale(1) translateY(0);
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+
+/* 
+
+==========================================================
+SHIGANSHINA MAP 
+
+*/
+
+.map#shiganshina {
+    background-color:#21bffe;
+}
+
+.shiganshina-map-container {
+    width: 100%;
+    height: 90vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #bee7ff; 
+}
+
+.shiganshina-map-container:active {
+    cursor: grabbing;
+}
+
+.shiganshina-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#shiganshina-map-text {
+    text-align: justify !important;
+}
+
+.accordion {
+    /* Changes the background of the entire accordion item */
+    --bs-accordion-bg: rgb(247, 255, 28); 
+    
+    /* Changes the text color */
+    --bs-accordion-color: #000000; 
+    
+    /* Changes the background of the button when clicked/open */
+    --bs-accordion-active-bg: rgb(250, 0, 196); 
+    
+    /* Changes the text color of the button when clicked/open */
+    --bs-accordion-active-color: #000000; 
+    
+    /* Changes the border color between items */
+    --bs-accordion-border-color: rgb(0, 0, 0);
+    
+    /* Changes the focus ring color when clicking */
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgb(255, 255, 255);
+}
+
+.accordion-item {
+    background-color: rgb(0, 0, 0, 0.8) !important;
+    font-family: 'Bangers', sans-serif;
+    letter-spacing: 1.5px;
+    color: white;
+    border: 2px solid black;
+    font-size: 1em;
+}
+
+.accordion-img-panel {
+    margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    overflow: hidden;
+    
+    /* Optional: Added a subtle shadow so the white border pops against the accordion background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.accordion-img {
+    width: 100%;
+    height: auto; /* Ensures the image scales correctly without distorting proportions */
+    display: block; /* Removes the tiny invisible gap that sometimes appears under images */
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.accordion-img-panel:hover .accordion-img {
+    transform: scale(1.05);
+}
+
+.accordion-body {
+    text-align: center;
+}
+
+.shiganshina-map-readmore {
+    font-size: .9em;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.shiganshina-map-readmore a {
+    color: #a11e15;
+}
+
+.shiganshina-map-readmore a:hover{
+    color:#a11e15ac;
+}
+
+
+/* 
+
+========================================================
+OUTSIDE MAP (accordion rules from shiganshina map)
+
+*/
+
+.map#outside{
+    background-image: linear-gradient(
+        to bottom,
+        rgba(190, 190, 190, 0.6) 0%,
+        rgba(221, 221, 221, 0.9) 20%,
+        rgba(221, 221, 221, 0.9) 80%,
+        rgba(190, 190, 190, 0.6) 100%
+        ),
+
+        url('../images/map/world-map-manga-right-pos.png');   
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.outside-map-container {
+    width: 100%;
+    height: 80vh; /* How tall you want the map window to be */
+    border: thick solid rgb(0,0,0);
+    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
+    
+    /* CRITICAL for Panzoom */
+    overflow: hidden; 
+    cursor: grab; 
+    
+    /* Optional: A background color just in case they zoom out too far */
+    background-color: #724f33e0; 
+}
+
+.outside-map-container:active {
+    cursor: grabbing;
+}
+
+.outside-map-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+#outside-map-text {
+    text-align: justify !important;
+}
+
+.walls-btn {
+    font-size: 1.2em;
+    background-color: transparent;
+    color: rgb(255,255,255);
+    border: 1px solid !important;
+    border-color: rgb(33, 86, 54) !important;
+    transition: background-color 0.2s ease;
+}
+
+.walls-btn:hover {
+    background-color: rgb(29, 75, 48);
 }
 
 /* MOBILE-SPECIFIC STYLES: */

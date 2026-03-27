@@ -1181,7 +1181,7 @@ section.map img:hover {
 }
 
 .offcanvas-img-panel {
-    flex-shrink: 0; /* This stops Flexbox from squishing the container! */
+    flex-shrink: 0;
     margin: 1em 1em;
     border: 5px solid rgb(255, 255, 255);
     border-radius: 4px;
