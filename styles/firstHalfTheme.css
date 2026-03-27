@@ -198,11 +198,6 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
 }
 */
 
-.dropdown-item#default {
-    /* Adding the background so when the theme is selected this stays highlighted: */
-    background-color: rgba(255, 255, 255, 0.371);
-}
-
 .dropdown-item#old-hundred {
     font-family: 'Son of Time', serif;
     font-size: 1.4em;
@@ -214,6 +209,7 @@ This is in case you want to change back to a JS logic to highlight the dropdown 
     font-family: 'Oswald', sans-serif;
     font-size: 1.4em;
     color: #000000;
+    background-color: rgba(255, 255, 255, 0.371);
 }
 
 .dropdown-item#second-nine-hundred {
