@@ -1,3 +1,2 @@
-Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
-Armband,NEKHC:2011.71,,Armband,1940's,Armband with star of David,https://www.holocaust.org.uk/star-of-david-armband,Cotton,"width 10,16 cm",National Holocaust Museum
-,,,,,,,,,
+accession Number,titleText,creatorIdentity,objectWorkType,creationDate,repositoryName,recordSource,materialsName,dimensionsStatement
+NEKHC:2011.71,Armband with star of David,Unknown,Armband,1940's,National Holocaust Museum,https://www.holocaust.org.uk/star-of-david-armband,Cotton,"width 10,16 cm"

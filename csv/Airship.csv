@@ -1,2 +1,2 @@
-Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
-Airship,2d23dc50-c536-012f-eeff-58d385a7bc34,Unknown,Still image,1850,"German dirigible, Zeppelin type",https://digitalcollections.nypl.org/items/2d23dc50-c536-012f-eeff-58d385a7bc34,,,New York Public Library
+identifier,titleInfo,name,typeOfResource,dateIssued,placeTerm,url,form,extent,InstitutionphysicalLocation,topic,topic,genre,genre
+2d23dc50-c536-012f-eeff-58d385a7bc34,"German dirigible, Zeppelin type",Unknown,Still image,1850,UK,https://digitalcollections.nypl.org/items/2d23dc50-c536-012f-eeff-58d385a7bc34,,,New York Public Library,aircraft,Labert & Butler,Litographs,Offset litographs

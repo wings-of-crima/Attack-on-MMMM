@@ -1,3 +1,2 @@
-Item,"ID",Creator,Object type,Date,Title,Image source,Materials,Dimensions,Institution
-Gas mask,UNI1203,Unknown,Gas mask,1939,Non-regulation gas mask,https://www.rmg.co.uk/collections/objects/rmgc-object-72417,,,Royal Museum Greenwich
-,,,,,,,,,
+accession Number,titleText,creatorIdentity,objectWorkType,creationDate,repositoryName,recordSource,materialsName,dimensionsStatement
+UNI1203,Non-regulation gas mask,Unknown,Gas mask,1939,Royal Museum Greenwich,https://www.rmg.co.uk/collections/objects/rmgc-object-72417,,

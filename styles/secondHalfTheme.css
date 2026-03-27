@@ -555,10 +555,11 @@ button.btn {
     background-color: #21bffe;
     padding: 1.2em 2.1em;
     margin: 2em 7em 0.5em;
-    border: 1.5px solid black;
+    border: 2.5px solid black;
     font-size: 0.9em;
     color: black;
     text-align: center;
+    font-weight: 00;
 }
 
 @media (max-width: 768px) {
@@ -619,7 +620,7 @@ button.btn {
 .note {
     text-align: right;
     font-family: 'Comic Neue', sans-serif;
-    font-size: 0.8em;
+    font-size: 1em;
     -webkit-text-stroke: 2.4px rgba(255, 255, 255, 0.9);
     paint-order: stroke fill;
     margin-bottom: 0;
@@ -1024,14 +1025,32 @@ blockquote {
 
 /* MAP PAGE SPECIFIC STYLES: */
 section.map img {
+    /* Manteniamo le dimensioni */
     width: 100%;
     height: auto;
     object-fit: contain;
     padding: 0.5rem;
+    
+    /* 1. RISOLUZIONE PROBLEMA SPAZIO: */
+    /* Aggiungiamo margine sopra e sotto per dare spazio alla rotazione e all'ombra */
+    display: block;
+    margin: 1.5rem auto; 
+
+    /* Stile Intro-Quotes */
+    background-color: #fdfcf0; 
+    border: 3px solid #000000; 
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    box-shadow: 6px 6px 0px 0px #000000;
+    transform: rotate(-1.5deg);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 section.map img:hover {
-    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
+    /* 2. HOVER COERENTE: */
+    /* Invece di drop-shadow, raddrizziamo e aumentiamo l'ombra Pop Art */
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 12px 12px 0px 0px #a11e15; /* Ombra rossa che si allunga */
     cursor: pointer;
 
 }
@@ -1406,6 +1425,7 @@ section.map img:hover {
     text-align: left !important;
     -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
     color: black !important; /* Assicura che il testo sia nero leggibile */
+    font-weight:600;
 }
 
 /* rule for Disclaimer title */
@@ -1521,6 +1541,7 @@ section.map img:hover {
     font-size: 1rem;
     line-height: 1.5;
     color: #000000;
+    font-weight:600;
 }
 
 /* Mobile Responsive */
@@ -1536,45 +1557,51 @@ section.map img:hover {
 /*Style for buttons single_narrative*/
 
 /* 1. Stile base per tutti i bottoni */
+/* 1. Stile base: Pulito e leggibile sullo sfondo azzurro */
 .btn-exhibit {
-    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
-    color: #ffffff;
-    border: 2px solid rgb(0, 0, 0); 
-    background-color: transparent;
-    transition: all 0.3s ease;
+    font-family: 'Bangers', sans-serif;
+    background-color: #ffffff;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0px #000;
+    padding: 10px 20px;
+    font-weight: 900;
     text-transform: uppercase;
-    font-weight: 500;
+    transition: all 0.2s ease;
+    
+    /* Testo rosso pieno */
+    color: #a11e15 !important;
+    letter-spacing: 1px;
+    
+    display: inline-block;
+    cursor: pointer;
 }
 
-/* 2. Effetto Hover: solo per i bottoni NON attivi */
+/* 2. Effetto Hover: Ombra rossa coerente con le altre pagine */
 .btn-exhibit:hover {
     background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff;
+    transform: translate(-2px, -2px);
+    /* L'ombra diventa rossa al passaggio */
+    box-shadow: 7px 7px 0px #a11e15; 
 }
 
-/* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
+/* 3. Stile per il bottone ATTIVO (Selezionato) */
 .btn-check:checked + .btn-exhibit {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
-    
-    /* BLOCCA IL MOUSE: */
-    pointer-events: none; 
-    
-    /* OPZIONALE: Cambia il cursore per far capire che è bloccato */
-    cursor: default; 
+    background-color: #a11e15 !important; /* Inverte: fondo rosso */
+    color: #ffffff !important;           /* Testo bianco */
+    box-shadow: none;                    /* Rimuove l'ombra per l'effetto "premuto" */
+    transform: translate(5px, 5px);      /* Si sposta dove c'era l'ombra */
+    pointer-events: none;                /* Disabilita click ulteriori */
 }
+
+
 
 /*Rules for images in exhibition*/
 
 /* Contenitore stile tavola manga */
 .manga-frame-container {
-    /* Rimuoviamo eventuali sfondi bianchi ereditati */
-    background: transparent !important; 
-    padding: 0;
-    margin-bottom: 30px;
     position: relative;
+    padding: 10px;
+    background: transparent !important;
 }
 
 /* Etichetta stile "baloon" o didascalia */
@@ -1587,33 +1614,52 @@ section.map img:hover {
 /* Etichetta stile didascalia manga */
 .manga-label {
     font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    font-size: 0.75rem;
+    background: #fff9c4; /* Giallo come la box */
+    color: #a11e15;      /* Rosso */
     display: inline-block;
     padding: 5px 15px;
-    margin-bottom: -1px; 
-    border: 3px solid #000;
+    margin-bottom: -5px; 
+    border: 3px solid #a11e15; /* Bordo rosso */
     position: relative;
     z-index: 2;
     text-transform: uppercase;
+    font-weight: 900;
+    transform: rotate(-2deg); /* Leggermente storta */
 }
 
 /* La cornice definita e fissa */
 .manga-img-wrapper {
-    border: 5px solid #000; /* Bordo nero spesso */
-    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
-    aspect-ratio: 16 / 10; 
+    /* 1. Stile Foglio Incollato */
+    background-color: #fff9c4; 
+    border: 5px solid #a11e15; /* Bordo Rosso */
+    box-shadow: 10px 10px 0px #a11e15; /* Ombra Rossa */
+    
+    /* 2. Angoli Imperfetti coordinati */
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    
+    aspect-ratio: 1 / 1; 
+    width: 100%;
     overflow: hidden;
-    background-color: #000;
+    cursor: zoom-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; 
+    transition: all 0.3s ease;
+}
+
+.manga-img-wrapper:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 15px 15px 0px #000; /* L'ombra diventa nera al passaggio per contrasto */
 }
 
 .manga-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
     display: block;
-    /* Rimosse tutte le transizioni di movimento */
+    transition: transform 0.3s ease;
 }
 
 /* Opzionale: se vuoi che al passaggio del mouse 
@@ -1663,25 +1709,28 @@ section.map img:hover {
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.9rem;
-    color: #fff;
-    background: #000;
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    color: #a11e15 !important; /* Rosso pieno come gli altri */
+    background-color: #ffffff;
     padding: 10px 25px;
     border: 3px solid #000;
-    box-shadow: 6px 6px 0px #6c757d;
+    box-shadow: 6px 6px 0px #000; /* Ombra nera base */
     text-decoration: none;
-    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 
 .btn-manga-nav:hover {
-    color: #fff;
-    background: #333;
+    color: #a11e15 !important;
+    background-color: #ffffff;
     transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px #000;
+    box-shadow: 8px 8px 0px #a11e15; /* Ombra rossa coerente */
 }
 
 .nav-hidden {
@@ -1761,21 +1810,105 @@ section.map img:hover {
     height: 100%; /* The column must extend across the entire length of the row */
 }
 
-/*  Metadata box */
+/* --- METADATA BOX STILE FOGLIETTO INCOLLATO --- */
 .metadata-box {
-    background-color: #000;
-    color: #fff !important;
-    padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px #6c757d;
-
-    /* stick the box */
-    position: -webkit-sticky; /* Safari support */
-    position: sticky;
-    top: 20px; /* Distance from the top edge of the window when it slides */
+    /* 1. Base: lo stesso "bianco carta di giornale" */
+    background-color: #fff9c4 !important;
+    color: #000 !important;
+    padding: 30px;
     
-    /* Prevents the box from warping */
+    /* 2. Bordo da Fumetto spesso */
+    border: 4px solid #000000;
+    
+    /* 3. Angoli imperfetti (presi dal tuo stile intro-quotes) */
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    
+    /* 4. Ombra netta e solida (Pop Art classica) */
+    /* Ho aggiunto un tocco di rosso nell'ombra per richiamare i bottoni, 
+       ma se la vuoi nera pura come le quotes, basta cambiare il colore in #000000 */
+    box-shadow: 7px 7px 0px 0px #a11e15; 
+
+
+    /* 6. Layout (mantenuto per la funzionalità sticky) */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
     align-self: flex-start;
-    width: 100%; 
+    width: 100%;
     max-height: fit-content;
+    
+    /* Font e spaziatura */
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+/* Effetto Hover: si raddrizza leggermente */
+.metadata-box:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 12px 12px 0px 0px #000000;
+}
+
+/* --- DETTAGLI INTERNI --- */
+
+.metadata-box strong {
+    /* Il tuo rosso per le etichette */
+    color: #a11e15 !important; 
+    text-transform: uppercase;
+    font-family: 'Bangers', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-bottom: 2px solid #000;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.metadata-box span {
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: 600;
+    display: block; /* Mette il valore sotto l'etichetta per più ordine */
+    margin-bottom: 10px;
+}
+
+.metadata-box h5 {
+    /* 1. Font Manga/Pop */
+    font-family: 'Bangers', sans-serif; 
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    
+    /* 2. Colore: Bianco con contorno Rosso (effetto sticker) */
+    color: #ffffff !important;
+    -webkit-text-stroke: 1.5px #a11e15; /* Contorno rosso */
+    
+    /* 3. Ombra netta nera per farlo "saltare fuori" */
+    text-shadow: 3px 3px 0px #000000;
+    
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+    /* 4. Sfondo stile etichetta (opzionale) */
+    background: #a11e15;
+    display: block;
+    padding: 5px;
+    transform: rotate(-2deg); /* Leggermente inclinato rispetto alla box */
+    border: 2px solid #000;
+}
+
+/* Colore del link dell'istituzione */
+#meta-institution a {
+    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    text-decoration: none !important; /* Rimuove la sottolineatura */
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+/* Effetto al passaggio del mouse (opzionale ma consigliato) */
+#meta-institution a:hover {
+    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
+    text-decoration: none !important; /* Si assicura che non torni la linea */
+    background-color: transparent !important; /* Nessun evidenziatore */
 }
