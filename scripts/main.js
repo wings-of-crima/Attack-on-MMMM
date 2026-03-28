@@ -31,18 +31,20 @@ window.addEventListener("load", () => {
                 textSpan.innerHTML += typeText.charAt(i);
                 i++;
                 setTimeout(typeWriter, speed);
+            } else {
+                // 3. TYPING IS DONE! Show the button immediately.
+                // + delay to let the last character settle before showing the button
+                setTimeout(() => {
+                    if (enterButton) {
+                        enterButton.classList.add("show-button");
+                    }
+                }, 200); 
             }
         }
         
         // 3. Start typing after a short delay
         setTimeout(typeWriter, 800); 
     }
-
-    setTimeout(() => {
-            if (enterButton) {
-                enterButton.classList.add("show-button");
-            }
-        }, 10000);
 
     if (enterButton) {
         enterButton.addEventListener("click", () => {
@@ -72,7 +74,7 @@ window.addEventListener("load", () => {
             
             setTimeout(() => {
                 if (loadScreen) loadScreen.remove();
-            }, 5900);
+            }, 2000);
         });
     }
 });
