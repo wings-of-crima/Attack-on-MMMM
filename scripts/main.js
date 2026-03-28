@@ -13,6 +13,30 @@ window.addEventListener("load", () => {
     const gateSfx = document.getElementById("gate-sfx");
     const enterButton = document.getElementById("enter-button");
     const loadScreen = document.getElementById("loader-screen");
+    const textContainer = document.getElementById("loader-screen-text");
+
+    if (textContainer) {
+        // 1. Set up the text and the cursor
+        const typeText = 'Year 845. "That day, the human race remembered... the terror of being dominated by them... and the shame of being held captive in a birdcage."';
+        
+        textContainer.innerHTML = '<span id="typewriter-text"></span><span class="typewriter-cursor">&#8203;</span>';
+        const textSpan = document.getElementById("typewriter-text");
+        
+        // 2. The typing function
+        let i = 0;
+        const speed = 65; // Speed in milliseconds (lower is faster)
+
+        function typeWriter() {
+            if (i < typeText.length) {
+                textSpan.innerHTML += typeText.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        
+        // 3. Start typing after a short delay
+        setTimeout(typeWriter, 800); 
+    }
 
     setTimeout(() => {
             if (enterButton) {
@@ -27,9 +51,23 @@ window.addEventListener("load", () => {
             if (gateSfx) {
                 gateSfx.currentTime = 0.5; 
                 gateSfx.play();
-                gateSfx.volume = 0.3;
+                gateSfx.volume = 0.5;
             }
             
+            // 3. NUKE THE VIDEO FROM MEMORY
+            if (bgVideo) {
+                bgVideo.pause(); // Stop playback
+                bgVideo.removeAttribute('src'); // Strip the source file
+                
+                // If you used <source> tags inside the video, remove them too
+                while (bgVideo.firstChild) {
+                    bgVideo.removeChild(bgVideo.firstChild);
+                }
+                
+                bgVideo.load(); // Force the browser to register that the source is gone
+                bgVideo.remove(); // Delete the actual <video> tag from the HTML
+            }
+
             console.log("Welcome to Shiganshina, where everything started...");
             
             setTimeout(() => {

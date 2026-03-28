@@ -20,19 +20,26 @@
         
         
         <div class="loader-screen" id="loader-screen"> <!-- this is a pre-loader that the user is obliged to go through -->
-            <!-- <video src="images/loader-screen-bg.gif" alt="Colossal Titan appearing over the wall gif"> -->
-            
-            <p id="loader-screen-text"> 
-                "That day, the human race remembered... the terror of being dominated by <b>them</b>... and the shame of being held captive in a birdcage." 
-            </p>
+            <video autoplay loop muted playsinline id="bg-video">
+                <source src="assets/video/no-audio-ep1-cut1-compressed.mp4" type="video/mp4">
+            </video>
 
-            <audio id="narration" src="audio/armin-narration.mp3"></audio>
-            <button type="button" id="toggleAudio" class="btn btn-outline-light"> Listen to Armin's narration of <i>that day</i></button>
-            
-            <audio id="gate-sfx">
-                <source src="audio/iron-gate-opening.mp3" type="audio/mpeg">
-            </audio>
-            <a type="button" class="btn btn-outline-light" href="#main-content" id="enter-button"> Enter the Walls </a>
+            <div class="loader-content">
+
+                <p id="loader-screen-text"></p>
+
+                <audio id="narration">
+                    <source src="assets/audio/armin-narration.mp3" type="audio/mpeg">
+                </audio>
+                <audio id="gate-sfx">
+                    <source src="assets/audio/iron-gate-opening.mp3" type="audio/mpeg">
+                </audio>
+
+                <div class="d-flex flex-column mx-auto">
+                    <button type="button" id="toggleAudio" class="btn btn-outline-light"> Listen to Armin's narration of <i>that day</i></button>
+                    <a type="button" class="btn btn-outline-light" href="#main-content" id="enter-button"> Enter the Walls </a>
+                </div>
+            </div>
         </div>
 
         <!-- actual website: -->
@@ -149,7 +156,7 @@
                 <div class="narratives-container">
                     
                     <div class="narrative-panel" id="historical-panel">
-                        <img src='images/themes_imgs/historical-tl-bg.jpg' class="narrative-img" alt="Historical Timeline Image">
+                        <img src='images/themes_imgs/historical-tl-bg.jpg' class="narrative-img" alt="Metaphorical image of time with clocks">
                         <a href="single_narrative.html?narrative=historical" class="btn btn-outline-dark narrative-btn" id="historical-tl">
                             Historical Timeline
                         </a>
@@ -158,12 +165,12 @@
                     <div class="narrative-panel">
                         <img src="images/spine.png" class="narrative-img" alt="Image of the spine related to the Titan's power">
                         <a href="single_narrative.html?narrative=legendary" class="btn btn-outline-dark narrative-btn" id="legendary-tl">
-                            "To You, 2000 years from now"
+                            "To You, in 2000 Years"
                         </a>
                     </div>
 
                     <div class="narrative-panel">
-                        <img src="images/season4-war.png" class="narrative-img" alt="Technological Timeline Image">
+                        <img src="images/season4-war.png" class="narrative-img" alt="Image of Marleyan soldiers marching">
                         <a href="single_narrative.html?narrative=technological" class="btn btn-outline-dark narrative-btn" id="technological-tl">
                             Currently Publicly Available Information
                         </a>
