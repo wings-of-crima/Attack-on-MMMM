@@ -129,7 +129,7 @@ PRE-LOADER AND LOADER STYLING:
 }
 
 #pre-loader-text {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 1.5em;
     transition: opacity 0.8s ease-in;
 }
@@ -207,12 +207,12 @@ PRE-LOADER AND LOADER STYLING:
 }
 
 #toggleAudio {
-    font-family: 'Futurest Cosmo', sans-serif;
+    font-family: 'Anime Ace', sans-serif;
     margin-bottom: 1em;
 }
 
 #enter-button {
-    font-family: 'Futurest Cosmo', sans-serif;
+    font-family: 'Anime Ace', sans-serif;
     font-size: 1.4em;
     margin: auto;
     border: 2px solid;
