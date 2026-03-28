@@ -1,27 +1,81 @@
-window.addEventListener("load", ()  =>{
+// ==========================================
+// Pre-loader and loader JS:
+// ==========================================
+window.addEventListener("load", () => {
     const preLoader = document.getElementById("pre-loader");
+    if (preLoader) {
+        preLoader.classList.add("fade-out");
+        setTimeout(() => {
+            preLoader.remove();
+        }, 1000);
+    }
 
-    preLoader.classList.add("fade-out");
+    const gateSfx = document.getElementById("gate-sfx");
+    const enterButton = document.getElementById("enter-button");
+    const loadScreen = document.getElementById("loader-screen");
 
     setTimeout(() => {
-        preLoader.remove();
-    }, 1000);
+            if (enterButton) {
+                enterButton.classList.add("show-button");
+            }
+        }, 10000);
+
+    if (enterButton) {
+        enterButton.addEventListener("click", () => {
+            if (loadScreen) loadScreen.classList.add("fade-out");
+
+            if (gateSfx) {
+                gateSfx.currentTime = 0.5; 
+                gateSfx.play();
+                gateSfx.volume = 0.3;
+            }
+            
+            console.log("Welcome to Shiganshina, where everything started...");
+            
+            setTimeout(() => {
+                if (loadScreen) loadScreen.remove();
+            }, 5900);
+        });
+    }
 });
 
-const gateSfx = document.getElementById("gate-sfx");
-const enterButton = document.getElementById("enter-button");
-const loadScreen = document.getElementById("loader-screen");
+// ==========================================
+// Audio Toggle Logic
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the audio element and the button by their HTML IDs
+    const audio = document.getElementById("narration");
+    const toggleBtn = document.getElementById("toggleAudio");
 
-enterButton.addEventListener("click", () => {
-    loadScreen.classList.add("fade-out");
+    // Only run this if the elements actually exist on the page
+    if (audio && toggleBtn) {
+        toggleBtn.addEventListener("click", function() {
+            if (audio.paused) {
+                // If paused, play the audio
+                audio.play();
+                toggleBtn.textContent = "Pause Audio";
+                
+                // Optional: Change button color (Bootstrap classes)
+                toggleBtn.classList.remove("btn-primary");
+                toggleBtn.classList.add("btn-danger"); 
+            } else {
+                // If playing, pause the audio
+                audio.pause();
+                toggleBtn.textContent = "Play Audio";
+                
+                // Optional: Revert button color
+                toggleBtn.classList.remove("btn-danger");
+                toggleBtn.classList.add("btn-primary");
+            }
+        });
 
-    gateSfx.currentTime = 0.5; 
-    gateSfx.play()
-    gateSfx.volume = 0.3;
-    console.log("Welcome to Trost, the Shiganshina District where everything started...");
-    setTimeout(() => {
-        loadScreen.remove();
-    }, 5900);
+        // Reset the button when the audio finishes playing naturally
+        audio.addEventListener("ended", function() {
+            toggleBtn.textContent = "Play Audio";
+            toggleBtn.classList.remove("btn-danger");
+            toggleBtn.classList.add("btn-primary");
+        });
+    }
 });
 
 // Example: tap card to toggle overlay on touch/mobile

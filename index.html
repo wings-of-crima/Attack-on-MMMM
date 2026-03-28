@@ -12,6 +12,30 @@
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         
+        <!-- Pre-loader and loader:-->
+        <div class="d-flex align-items-center" id="pre-loader"> <!-- this is a pre-loader spinner in case things need to load -->
+            <p role="status" id="pre-loader-text"> What is freedom for you? </p>
+            <div class="spinner-border text-light mx-auto" aria-hidden="true"></div>
+        </div>
+        
+        
+        <div class="loader-screen" id="loader-screen"> <!-- this is a pre-loader that the user is obliged to go through -->
+            <!-- <video src="images/loader-screen-bg.gif" alt="Colossal Titan appearing over the wall gif"> -->
+            
+            <p id="loader-screen-text"> 
+                "That day, the human race remembered... the terror of being dominated by <b>them</b>... and the shame of being held captive in a birdcage." 
+            </p>
+
+            <audio id="narration" src="audio/armin-narration.mp3"></audio>
+            <button type="button" id="toggleAudio" class="btn btn-outline-light"> Listen to Armin's narration of <i>that day</i></button>
+            
+            <audio id="gate-sfx">
+                <source src="audio/iron-gate-opening.mp3" type="audio/mpeg">
+            </audio>
+            <a type="button" class="btn btn-outline-light" href="#main-content" id="enter-button"> Enter the Walls </a>
+        </div>
+
+        <!-- actual website: -->
         <div id="headerNav-placeholder" style="display: contents;"></div> <!-- display:contents; possibly to fix the stickiness not happening -->
 
         <main class="container-fluid" id="main-content">
