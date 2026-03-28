@@ -1034,23 +1034,46 @@ blockquote {
 
 /* MAP PAGE SPECIFIC STYLES: */
 section.map {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.35) 0%,
-        rgba(230, 230, 230, 0.9) 20%,
-        rgba(230, 230, 230, 0.9) 60%,
-        rgba(230, 230, 230, 0.3) 90%
-        ),
+    position: relative; /* Necessario per posizionare lo sfondo correttamente */
+    background-color: #1a1a1a; /* Colore di fondo che si vede sotto la trasparenza */
+    overflow: hidden; /* Evita che lo sfondo esca dai bordi */
+    
+    /* Cornice stile manifesto */
+    border: 10px solid #838250;
+    outline: 9px solid #1a1a1a;
+    outline-offset: -15px;
+    padding: 60px 0;
+}
 
-        url('../images/map/walls-img.png');   
-    background-position: top;
-    background-size: 110% 130%;
+section.map::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    
+    background-image: url('../images/fire.png');
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
+    
+    /* REGOLA QUI LA TRASPARENZA: 0.1 (quasi invisibile) - 1.0 (piena) */
+    opacity: 0.6; 
+    
+    /* Manteniamo i tuoi filtri per lo stile d'epoca */
+    filter: brightness(0.8) contrast(1.2);
+    
+    z-index: 1; /* Sta dietro al contenuto */
 }
 
 .map .section-text {
     text-align: center;
     font-size: 1em;
+    position: relative;
+    z-index: 2; /* Sta sopra l'immagine trasparente */
+    color: #ffffff; /* Testo bianco per contrasto col fondo scuro */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Ombra per leggere meglio */
 }
 
 .map em {
@@ -1098,15 +1121,19 @@ section.map img:hover {
     width: 100%;
     height: 90vh;
     /* Bordo spesso e scuro come una cornice di metallo industriale */
-    border: 6px solid #670404; 
+    /*border: 3px solid #000000;*/
     border-radius: 0; 
-    background-color: #e8e4db;
+    background-color: transparent;
     
     /* Ombra esterna netta (stampa litografica) */
-    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2); 
+    /*box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);*/
     
     /* Effetto "fogli sovrapposti" usando uno pseudo-elemento o gradienti */
     position: relative;
+    position: relative;
+    z-index: 2; /* Sta sopra l'immagine trasparente */
+    color: #ffffff; /* Testo bianco per contrasto col fondo scuro */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Ombra per leggere meglio */
     overflow: hidden;
 }
 
@@ -1329,6 +1356,10 @@ section.map img:hover {
     padding: 0.8rem 1.8rem;
     border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
     border-radius: 0px !important;
+
+    position: relative; 
+    z-index: 10; /* Un valore molto alto per stare sopra a tutto */
+    cursor: pointer;
 }
 
 .map-btn:hover {
@@ -1465,18 +1496,31 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 */
 
 .map#outside{
-    background-image: linear-gradient(
-        to bottom,
-        rgba(190, 190, 190, 0.6) 0%,
-        rgba(221, 221, 221, 0.9) 20%,
-        rgba(221, 221, 221, 0.9) 80%,
-        rgba(190, 190, 190, 0.6) 100%
-        ),
+    position: relative; /* Necessario per posizionare lo sfondo correttamente */
+    background-color: #1a1a1a; /* Colore di fondo che si vede sotto la trasparenza */
+    overflow: hidden; /* Evita che lo sfondo esca dai bordi */
+    
+    /* Cornice stile manifesto */
+    border: 10px solid #838250;
+    outline: 9px solid #1a1a1a;
+    outline-offset: -15px;
+    padding: 60px 0;
+}
 
-        url('../images/map/world-map-manga-right-pos.png');   
-    background-position: top;
-    background-size: 100% 100%;
+/* Modifica qui lo sfondo */
+#outside.map::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../images/fire.png');
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
+    opacity: 0.6; 
+    filter: brightness(0.8) contrast(1.2);
+    
+    z-index: 0; /* Portalo a zero */
+    pointer-events: none; /* FONDAMENTALE: il mouse "passa attraverso" il fumo */
 }
 
 .outside-map-container {
@@ -1488,6 +1532,9 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
+
+    position: relative;
+    z-index: 10;
     
     /* Optional: A background color just in case they zoom out too far */
     background-color: #724f33e0; 
@@ -1960,34 +2007,56 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
-    color: #ffffff;
-    border: 2px solid rgb(0, 0, 0); 
-    background-color: transparent;
-    transition: all 0.3s ease;
+    font-family: 'Oswald', sans-serif; /* Font stretto e alto, tipico dei manifesti bellici */
+    color: #1a1a1a; 
+    background-color: #7b7e5e; /* Verde militare slavato / Oliva */
+    
+    border: 3px solid #1a1a1a;
+    outline: 2px solid #7b7e5e;
+    outline-offset: -6px; /* Crea l'effetto cornice interna */
+    
+    border-radius: 0; /* Rigorosamente squadrato */
+    padding: 12px 24px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: 2px;
+    
+    /* Niente ombra rossa: solo un leggero stacco nero piatto */
+    box-shadow: 4px 4px 0px #1a1a1a;
+    
+    transition: all 0.1s steps(2); /* Scatto secco, non fluido */
+    position: relative;
+    cursor: pointer;
 }
 
-/* 2. Effetto Hover: solo per i bottoni NON attivi */
+/* 2. Effetto Hover: Il bottone sembra "premuto" */
 .btn-exhibit:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff;
+    background-color: #5b5e43 !important; /* Verde più scuro */
+    color: #e8e4db !important; /* Testo color carta */
+    border-color: #1a1a1a;
+    outline-color: #e8e4db;
+    
+    /* Il bottone si schiaccia */
+    box-shadow: 1px 1px 0px #1a1a1a;
+    transform: translate(3px, 3px);
 }
 
-/* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
+/* 3. Stile per il bottone ATTIVO (Selezionato) */
+/* Immaginiamo che sia il bottone che rappresenta l'ordine impartito */
 .btn-check:checked + .btn-exhibit {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
+    background-color: #1a1a1a !important; /* Diventa nero inchiostro */
+    color: #aaaf81 !important; /* Testo verde militare */
+    border-color: #1a1a1a;
+    outline: 2px solid #7b7e5e;
+    outline-offset: -6px;
+
+    /* Rimuove movimento e ombra per simulare la pressione totale */
+    box-shadow: none;
+    transform: translate(4px, 4px);
     
-    /* BLOCCA IL MOUSE: */
     pointer-events: none; 
-    
-    /* OPZIONALE: Cambia il cursore per far capire che è bloccato */
-    cursor: default; 
 }
+
 
 /*Rules for images in exhibition*/
 
@@ -2086,8 +2155,8 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.9rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
     color: #fff;
     background: #000;
     padding: 10px 25px;
@@ -2185,43 +2254,90 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 /* 3. La box dei metadati vera e propria */
+/* L'Orecchia del foglio: ALTO DESTRA */
 .metadata-box {
-    background-color: #000;
-    color: #fff !important;
-    padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px #6c757d;
-
-    /* BLOCCA LA BOX ALLO SCHERMO */
-    position: -webkit-sticky; /* Supporto per Safari */
-    position: sticky;
-    top: 20px; /* Distanza dal bordo superiore della finestra quando scivola */
+    background-color: #212529; /* O il tuo colore scuro */
+    padding: 2rem;
+    position: relative;
+    border: 6px solid #a11e15;
     
-    /* Impedisce alla box di deformarsi */
+    /* CLIP-PATH: Taglia via i triangoli agli angoli */
+    /* Crea un poligono che salta gli angoli Alto-DX e Basso-SX */
+    clip-path: polygon(
+        0% 0%,                 /* Top-Left */
+        calc(100% - 30px) 0%,  /* Inizio taglio Alto-DX */
+        100% 30px,             /* Fine taglio Alto-DX */
+        100% 100%,             /* Bottom-Right */
+        30px 100%,             /* Inizio taglio Basso-SX */
+        0% calc(100% - 30px)   /* Fine taglio Basso-SX */
+    );
+
+    /* Sticky logic */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
     align-self: flex-start;
-    width: 100%; 
-    max-height: fit-content;
+    width: 100%;
 }
 
+/* L'Orecchia del foglio: ALTO DESTRA */
+.metadata-box::before {
+    content: "";
+    position: absolute;
+    top: -2px;    /* Leggermente all'interno per coprire bene */
+    right: -2px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(225deg, #f8f5f0 45%, #bab5a9 50%, #8a857a 55%);
+    /* Ombra che dà profondità alla piega */
+    box-shadow: -2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 5;
+}
+
+/* L'Orecchia del foglio: BASSO SINISTRA */
+.metadata-box::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(45deg, #f8f5f0 45%, #bab5a9 50%, #8a857a 55%);
+    box-shadow: 2px -2px 4px rgba(0,0,0,0.5);
+    z-index: 5;
+}
 .metadata-box h5 {
-    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    /* Utilizza 'Oswald', il font principale delle tue testate e nav-link */
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    color: #fce38b !important;
+    font-weight: 700;
     text-transform: uppercase;
-    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    text-align: center;
+    /* Sostituisce la linea rossa sotto il titolo con una più spessa in stile manifesto */
+    border-bottom: 4px solid #a11e15;
     padding-bottom: 10px;
     margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.metadata-box li {
+    list-style: none;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 8px 0;
+    border-bottom: 1px dashed #c4af83;
+    color: #ffffff;
 }
 
 .metadata-box strong {
-    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-right: 5px;
+    color: #a11e15 !important; /* Il tuo rosso d'accento */
 }
 
 /* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    color: #76b43c !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
     text-decoration: none !important; /* Rimuove la sottolineatura */
     font-weight: 700;
     transition: all 0.2s ease;
