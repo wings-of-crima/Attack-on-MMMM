@@ -2027,7 +2027,7 @@ MOBILE-SPECIFIC STYLES:
 }
 
 .narrative-text p {
-    font-family: 'Noto Sans'g, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
     color: #333;

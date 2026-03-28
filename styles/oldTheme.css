@@ -1614,16 +1614,22 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .walls-btn {
+    padding: 0.5rem;
     font-size: 1.2em;
     background-color: transparent;
-    color: rgb(255,255,255);
-    border: 1px solid !important;
-    border-color: rgb(33, 86, 54) !important;
+    color: rgb(0,0,0);
+    border: 3px solid !important;
+    border-radius: 0;
+    border-color: rgb(75, 85, 41) !important;
     transition: background-color 0.2s ease;
 }
 
 .walls-btn:hover {
-    background-color: rgb(29, 75, 48);
+    background-color: rgb(75, 85, 41);
+}
+
+.walls-btn:active {
+    background-color: rgb(59, 67, 33) !important;
 }
 
 
@@ -1772,9 +1778,10 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #a11e15;
-    color: white;
-    font-family: 'Bangers', cursive;
+    background-color: var(--section-bg-color);
+    color: rgb(0, 0, 0);
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
     font-size: 1em;
     letter-spacing: 0.05rem;
     padding: 0.1em 0.55em;
@@ -1861,7 +1868,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-desc {
-    font-family: 'Baskervvile', serif;
+    font-family: 'Baskervville', serif;
     font-size: 0.75em;
     font-weight: 500;
     color: #000000;
@@ -2027,10 +2034,10 @@ Rules for Narratives page
     flex-direction: column;
     text-decoration: none !important; /* Rimuove la sottolineatura dei link */
     color: inherit;
-    border: 3px solid #181818;
-    border-radius: 15px;
+    border: 3px solid var(--text-borders);
+    border-radius: 0;
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--collection-bg-color);
     transition: transform 0.3s ease;
 }
 
@@ -2043,7 +2050,7 @@ Rules for Narratives page
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-bottom: 2px solid #181818;
+    border-bottom: 2px solid var(--tooltip-border);
 }
 
 /* Contenitore del testo */
@@ -2053,16 +2060,18 @@ Rules for Narratives page
 }
 
 .narrative-text h3 {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Rebelink', serif;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
 .narrative-text p {
-    font-family: 'Noto Sans'g, sans-serif;
-    font-size: 0.95rem;
+    font-family: 'Baskervville', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.5;
-    color: #333;
+    color: rgb(0, 0, 0);
+    text-align: justify;
 }
 
 /* Mobile Responsive */
@@ -2077,29 +2086,33 @@ Rules for Narratives page
 
 /*Style for buttons single_narrative*/
 
+.section-title#item-title {
+    font-size: 2.5em;
+}
+
 /* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
-    color: #ffffff;
-    border: 2px solid rgb(0, 0, 0); 
+    font-family: 'EB Garamond', serif; /* Aggiunto il font manga */
+    color: rgb(0, 0, 0);
+    border: 2px solid var(--text-borders) !important; 
     background-color: transparent;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* 2. Effetto Hover: solo per i bottoni NON attivi */
 .btn-exhibit:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff;
+    background-color: var(--section-bg-color) !important;
+    color: rgb(0, 0, 0) !important;
+    border-color: var(--text-borders);
 }
 
 /* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
 .btn-check:checked + .btn-exhibit {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
+    background-color: var(--section-bg-color);
+    color: rgb(102, 102, 102);
+    border-color: var(--text-borders);
     
     /* BLOCCA IL MOUSE: */
     pointer-events: none; 
@@ -2108,7 +2121,7 @@ Rules for Narratives page
     cursor: default; 
 }
 
-/*Rules for images in exhibition*/
+/*Rules for images in exhibition*/ /* Todo: understanding if conflicting with collection page rules */
 
 /* Contenitore stile tavola manga */
 .manga-frame-container {
@@ -2128,14 +2141,15 @@ Rules for Narratives page
 
 /* Etichetta stile didascalia manga */
 .manga-label {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    font-family: 'EB Garamond', serif !important;
+    font-size: 0.9em !important;
+    font-weight: 600 !important;
+    background: var(--section-bg-color) !important;
+    color: rgb(0, 0, 0) !important;
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: -1px; 
-    border: 3px solid #000;
+    border: 2px solid var(--text-borders) !important;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -2143,11 +2157,11 @@ Rules for Narratives page
 
 /* La cornice definita e fissa */
 .manga-img-wrapper {
-    border: 5px solid #000; /* Bordo nero spesso */
-    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    border: 2px solid var(--text-borders) !important; /* Bordo nero spesso */
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.4) !important; /* Ombra netta e solida che non cambia */
     aspect-ratio: 16 / 10; 
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--collection-bg-color) !important; /* Colore di sfondo neutro per evitare spazi vuoti neri */
 }
 
 .manga-img-wrapper img {
@@ -2175,7 +2189,7 @@ Rules for Narratives page
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     cursor: zoom-out;
 }
 
@@ -2205,13 +2219,14 @@ Rules for Narratives page
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-weight: 600 !important;
     font-size: 0.9rem;
-    color: #fff;
-    background: #000;
+    color: rgb(0, 0, 0) !important;
+    background: var(--section-bg-color) !important;
     padding: 10px 25px;
-    border: 3px solid #000;
-    box-shadow: 6px 6px 0px #6c757d;
+    border: 2px solid var(--text-borders) !important;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.4) !important;
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -2231,7 +2246,7 @@ Rules for Narratives page
     pointer-events: none;
 }
 
-/* --- COMPONENTI EXHIBIT: CORNICI MANGA --- */
+/* --- COMPONENTI EXHIBIT: CORNICI MANGA --- */ /* Todo: understanding if conflicting */
 .manga-frame-container {
     position: relative;
     padding: 10px;
@@ -2305,11 +2320,11 @@ Rules for Narratives page
 
 /* 3. La box dei metadati vera e propria */
 .metadata-box {
-    background-color: #000;
-    color: #fff !important;
+    background-color: var(--section-bg-color) !important;
+    color: rgb(0, 0, 0) !important;
     padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px #6c757d;
+    border: 2px solid var(--text-borders) !important;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4) !important;
 
     /* BLOCCA LA BOX ALLO SCHERMO */
     position: -webkit-sticky; /* Supporto per Safari */
@@ -2323,16 +2338,26 @@ Rules for Narratives page
 }
 
 .metadata-box h5 {
-    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    color: rgb(0, 0, 0) !important; /* Qui metti il rosso o il colore che preferisci */
+    font-family: 'EB Garamond', serif; /* Opzionale: per dare lo stile manga */
+    font-weight: 700;
+    font-size: 1em;
     text-transform: uppercase;
-    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    border-bottom: 3px solid var(--text-borders); /* Aggiunge una linea sotto il titolo */
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
+.metadata-box li {
+    color: rgb(0, 0, 0) !important; /* Cambia questo con il colore che vuoi */
+    font-family: 'Baskervville', serif; /* Opzionale: per dare lo stile manga */
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
 .metadata-box strong {
-    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
+    color: rgb(0, 0, 0) !important; /* Cambia questo con il colore che vuoi */
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 5px;
@@ -2340,15 +2365,14 @@ Rules for Narratives page
 
 /* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
-    text-decoration: none !important; /* Rimuove la sottolineatura */
-    font-weight: 700;
+    text-decoration: none !important;
+    font-weight: 800;
     transition: all 0.2s ease;
 }
 
 /* Effetto al passaggio del mouse (opzionale ma consigliato) */
 #meta-institution a:hover {
-    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
+    color: rgb(123, 123, 123) !important; /* Diventa bianco al passaggio */
     text-decoration: none !important; /* Si assicura che non torni la linea */
     background-color: transparent !important; /* Nessun evidenziatore */
 }
