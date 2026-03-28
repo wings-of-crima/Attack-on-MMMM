@@ -12,7 +12,7 @@
 }
 
 @font-face {
-    font-family: 'Anime Ace';
+    font-family: 'Futurest Cosmo';
     src: url('fonts/animeace.ttf') format('truetype');
 }
 
@@ -81,6 +81,14 @@
     --wall-bg-color: rgb(163, 88, 27);
     --graffiti-color-dark: rgb(100, 46, 14);
     --graffiti-color-light: rgb(234, 153, 40);
+
+    --neon-cyan: rgb(0, 221, 255); 
+    --hover-cyan: rgb(0, 194, 223);
+    --background-light-panel-color: rgba(120, 152, 161, 0.85);
+    --dark-cyan: rgb(0, 87, 116);
+    --dark-cyan-transparent: rgba(0, 87, 116, 0.6);
+    --bg-tooltip: rgb(255, 255, 255);
+    --text-tooltip: rgb(0,0,0);
 }
 
 html {
@@ -121,7 +129,7 @@ PRE-LOADER AND LOADER STYLING:
 }
 
 #pre-loader-text {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
     transition: opacity 0.8s ease-in;
 }
@@ -199,12 +207,12 @@ PRE-LOADER AND LOADER STYLING:
 }
 
 #toggleAudio {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     margin-bottom: 1em;
 }
 
 #enter-button {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 1.4em;
     margin: auto;
     border: 2px solid;
@@ -459,15 +467,15 @@ section {
     background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color);
     margin: 2em 3em 2em;
     padding: 0.2em;
+    align-items: center;
+    justify-content: center;
+    /* here I prefer filter instead of the box-shadow (see inspo from panels of psycho pass: */
     border-top: 2px solid var(--highlight-outline-border);
     border-right: 2px solid var(--highlight-outline-border);
     border-left: thick solid var(--highlight-outline-border);
     border-bottom: thick solid var(--highlight-outline-border);
     border-radius: 1px;
-    align-items: center;
-    justify-content: center;
-    /* here I prefer filter instead of the box-shadow (see inspo from panels of psycho pass: */
-    filter: drop-shadow(6px 8px 1px rgba(207, 234, 244, 0.2)); /* sono una grande è letteralmente UGUALE */
+    filter: drop-shadow(0 0 2px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
 }
 
 .section-title {
@@ -787,7 +795,7 @@ button.btn {
 }
 
 .narrative-panel #historical-tl {
-    font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
+    font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
     display: inline-block;
     transition: transform 0.3s ease;
@@ -1279,60 +1287,14 @@ blockquote {
 
 /* MAP PAGE SPECIFIC STYLES: */
 
-section.map {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.35) 0%,
-        rgba(230, 230, 230, 0.9) 20%,
-        rgba(230, 230, 230, 0.9) 60%,
-        rgba(230, 230, 230, 0.3) 90%
-        ),
-
-        url('../images/map/walls-img.png');   
-    background-position: top;
-    background-size: 110% 130%;
-    background-repeat: no-repeat;
-}
-
 .map .section-text {
     text-align: center;
     font-size: 1em;
 }
 
 .map em {
-    color: #a11e15;
-    font-family: 'Anime Ace Italic', sans-serif;
+    color: var(--section-title);
 } 
-
-/* IN PIU': 
-section.map img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    padding: 0.5rem;
-}
-
-section.map img:hover {
-    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
-    cursor: pointer;
-} */
-
-/* styling the SVG: */
-/*
-.map-container {
-    width: 100%;
-    max-width: 1400px; 
-    margin: 2rem auto; 
-    padding: 0.5em 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.map-container svg {
-    width: 100%;         
-    max-height: 110vh;     
-    height: auto;
-} */
 
 .row {
     margin: 0.5em;
@@ -1343,15 +1305,20 @@ section.map img:hover {
 .map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
-    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
-    
+
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
     
     /* Optional: A background color just in case they zoom out too far */
-    background-color: #e8e4db; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+
+    border-top: thick solid var(--highlight-outline-border);
+    border-right: thick solid var(--highlight-outline-border);
+    border-left: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
+    border-radius: 1px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
 }
 
 .map-container:active {
@@ -1361,7 +1328,7 @@ section.map img:hover {
 .map-container svg {
     width: 100%;
     height: 100%;
-
+    padding: 1rem 0;
 }
 
 .interactive-shape {
@@ -1376,16 +1343,20 @@ section.map img:hover {
 }
 
 .custom-tooltip {
-    --bs-tooltip-bg: var(--bg-tooltip);
-    --bs-tooltip-color: var(--text-tooltip);
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8em;
+    --bs-tooltip-bg: var(--background-dark-panel-color);
+    --bs-tooltip-color: var(--text-neon-color);
+    font-family: 'Futurest Cosmo', sans-serif;
+    border: 3px double var(--highlight-outline-border);
+    border-radius: 10px;
+    font-size: 1em;
 }
 
 .offcanvas {
-    background-color: rgba(19, 19, 19, 0.9);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
     scrollbar-width: none !important;  /* TODO: understand why I can still see the scrollbar */
-    -ms-overflow-style: none !important; 
+    -ms-overflow-style: none !important;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+    border-left: thick double var(--highlight-outline-border) !important;
 }
 
 .offcanvas-wide {
@@ -1393,29 +1364,33 @@ section.map img:hover {
 }
 
 .offcanvas-header {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    color:rgb(0, 0, 0);
-    background-color:rgb(205, 205, 205, 0.7);
+    font-family: 'Amarillo USAF', sans-serif;
+    color: var(--section-title);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 80%, rgba(0,0,0, 0.3) 100%), var(--dark-cyan-transparent);
+    border-bottom: thick solid var(--highlight-outline-border);
+    filter: drop-shadow(0 2px 5px var(--neon-cyan)) drop-shadow(0 3px 3px rgba(207, 234, 244, 0.2));
+
 }
 
 .offcanvas-body {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 80%, rgba(0,0,0, 0.3) 100%), var(--dark-cyan-transparent);
     padding: 1.5em;
-    font-family: 'Anime Ace', sans-serif;
-    color:rgb(255,255,255);
+    font-family: 'Futurest Cosmo', sans-serif;    
+    color:rgb(255, 255, 255);
     font-size: 0.8em;
     text-align: center;
 }
 
 .offcanvas-body em {
-    font-family: 'Anime Ace Italic', sans-serif;
-    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+    font-family: 'Futurest Cosmo', sans-serif;
+    color: var(--section-title);
 }
 
 .offcanvas-img-panel {
     flex-shrink: 0; /* This stops Flexbox from squishing the container! */
     margin: 1em 1em;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 4px;
+    border: 5px double var(--highlight-outline-border);
+    border-radius: 3px;
     overflow: hidden;
 }
 
@@ -1427,7 +1402,7 @@ section.map img:hover {
 }
 
 .map-img-figcaption {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.9em;
     font-style: italic;
     margin-top: -10px;
@@ -1443,15 +1418,15 @@ section.map img:hover {
 
 .map-readmore {
     font-size: 1em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .map-readmore a {
-    color: #a11e15;
+    color: var(--neon-cyan);
 }
 
 .map-readmore a:hover{
-    color:#a11e15ac;
+    color: var(--hover-cyan);;
 }
 
 .shiganshina-btn {
@@ -1460,16 +1435,16 @@ section.map img:hover {
     background-color: transparent;
     color: rgb(255,255,255);
     border: 1px solid !important;
-    border-color: #a11e15 !important;
+    border-color: var(--highlight-outline-border) !important;
     transition: background-color 0.2s ease;
 }
 
 .shiganshina-btn:hover {
-    background-color: #a11e15;
+    background-color: var(--background-light-panel-color);
 }
 
 .shiganshina-btn:active {
-    background-color: #6e150f !important;
+    background-color: var(--hover-cyan); !important;
 }
 
 .outside-btn {
@@ -1477,18 +1452,30 @@ section.map img:hover {
     background-color: transparent;
     color: rgb(255,255,255);
     border: 1px solid !important;
-    border-color: rgb(46, 154, 255) !important;
+    border-color: var(--highlight-outline-border) !important;
     transition: background-color 0.2s ease;
 }
 
 .outside-btn:hover {
-    background-color: rgb(46, 154, 255);
+    background-color: var(--background-light-panel-color);
+}
+
+.outside-btn:active {
+    background-color: var(--hover-cyan); !important;
 }
 
 .map-btn {
     font-size: 1em;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     border: 2px solid !important;
+    text-wrap:nowrap;
+    border-color: var(--highlight-outline-border) !important;
+    color:var(--neon-cyan);
+    transition: color 0.2s ease;
+}
+
+.map-btn:active {
+    background-color: var(--background-light-panel-color)!important;
 }
 
 /* 
@@ -1498,33 +1485,22 @@ SHIGANSHINA MAP
 
 */
 
-.map#shiganshina {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.3) 0%,
-        rgba(230, 230, 230, 0.8) 20%,
-        rgba(230, 230, 230, 0.8) 80%,
-        rgba(230, 230, 230, 0.3) 100%
-        ),
-
-        url('../images/map/destroyed-shiganshina.png');   
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 .shiganshina-map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
-    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
-    
-    /* Optional: A background color just in case they zoom out too far */
-    background-color: #bee7ff; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+
+    border-top: thick solid var(--highlight-outline-border);
+    border-right: thick solid var(--highlight-outline-border);
+    border-left: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
+    border-radius: 1px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+
 }
 
 .shiganshina-map-container:active {
@@ -1537,32 +1513,36 @@ SHIGANSHINA MAP
 }
 
 #shiganshina-map-text {
-    text-align: justify !important;
+    text-align: center !important;
 }
 
 .accordion {
     /* Changes the background of the entire accordion item */
-    --bs-accordion-bg: rgb(108, 108, 108); 
+    --bs-accordion-bg: var(--background-dark-panel-color); 
     
     /* Changes the text color */
-    --bs-accordion-color: #000000; 
+    --bs-accordion-color: var(--text-neon-color) !important; /* TODO: understand why it's not working */
     
     /* Changes the background of the button when clicked/open */
-    --bs-accordion-active-bg: rgb(132, 132, 132); 
+    --bs-accordion-active-bg: var(--background-light-panel-color); 
     
     /* Changes the text color of the button when clicked/open */
-    --bs-accordion-active-color: #ffffff; 
+    --bs-accordion-active-color: var(--neon-cyan); 
     
     /* Changes the border color between items */
-    --bs-accordion-border-color: rgb(0, 0, 0);
+    --bs-accordion-border-color: var(--highlight-outline-border);
     
     /* Changes the focus ring color when clicking */
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.7);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 234, 255, 0.4);
+}
+
+.accordion-header .accordion-button {
+    color: var(--section-title) !important;
+    border-bottom: 3px solid var(--highlight-outline-border);
 }
 
 .accordion-item {
-    background-color: rgb(0, 0, 0, 0.8) !important;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     color: white;
     border: 2px solid black;
     font-size: .8em;
@@ -1570,12 +1550,12 @@ SHIGANSHINA MAP
 
 .accordion-img-panel {
     margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
-    border: 3px solid rgb(255, 255, 255);
+    border: 5px double var(--highlight-outline-border);
     border-radius: 4px;
     overflow: hidden;
     
     /* Optional: Added a subtle shadow so the white border pops against the accordion background */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(3px 4px 1px rgba(207, 234, 244, 0.2)); 
 }
 
 .accordion-img {
@@ -1593,19 +1573,23 @@ SHIGANSHINA MAP
 
 .accordion-body {
     text-align: center;
+    font-size: 1.1em !important;
+    font-weight: 100;
+    padding: 1em 0;
 }
 
 .shiganshina-map-readmore {
     font-size: .9em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-neon-color);
 }
 
 .shiganshina-map-readmore a {
-    color: #a11e15;
+    color: var(--neon-cyan);
 }
 
 .shiganshina-map-readmore a:hover{
-    color:#a11e15ac;
+    color: var(--hover-cyan);
 }
 
 
@@ -1616,33 +1600,23 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 */
 
-.map#outside{
-    background-image: linear-gradient(
-        to bottom,
-        rgba(190, 190, 190, 0.6) 0%,
-        rgba(221, 221, 221, 0.9) 20%,
-        rgba(221, 221, 221, 0.9) 80%,
-        rgba(190, 190, 190, 0.6) 100%
-        ),
-
-        url('../images/map/world-map-manga-right-pos.png');   
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 .outside-map-container {
     width: 100%;
     height: 80vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
-    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
     
-    /* Optional: A background color just in case they zoom out too far */
-    background-color: #724f33e0; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+
+    border-top: thick solid var(--highlight-outline-border);
+    border-right: thick solid var(--highlight-outline-border);
+    border-left: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
+    border-radius: 1px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+
 }
 
 .outside-map-container:active {
@@ -1886,7 +1860,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-title {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.82em;
     color: rgb(20, 20, 20);
     line-height: 1.3;
@@ -1894,7 +1868,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-complete-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'Amarillo USAF', serif;
     font-size: 0.90em;
     color: #a11e15;
     font-style: italic;
@@ -1903,7 +1877,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-desc {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.72em;
     color: #3a3a3a;
     line-height: 1.45;
@@ -1913,7 +1887,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-readmore {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.65em;
     color: #a11e15;
     text-decoration: none;
@@ -1956,7 +1930,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .qr-label {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.55em;
     color: #666;
     text-align: center;
@@ -2016,7 +1990,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .readable-text .section-title, 
 .readable-text p, 
 .readable-text li {
-    font-family: 'Noto Sans', sans-serif !important;
+    font-family: 'Orbitron', sans-serif !important;
     text-transform: none !important;
     letter-spacing: normal !important;
     line-height: 1.5 !important;
@@ -2028,7 +2002,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* rule for Disclaimer title */
 .readable-text .section-title {
-    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
+    font-family: 'Orbitron', sans-serif !important; /* Font leggibile */
     font-size: 2rem !important;                     /* Molto più grande */
     font-weight: 800 !important;                    /* Grassetto extra */
     text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
@@ -2087,13 +2061,13 @@ Rules for Narratives page
 }
 
 .narrative-text h3 {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
 
 .narrative-text p {
-    font-family: 'Noto Sans'g, sans-serif;
+    font-family: 'Orbitron'g, sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
     color: #333;
@@ -2113,7 +2087,7 @@ Rules for Narratives page
 
 /* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
+    font-family: 'Futurest Cosmo', sans-serif; /* Aggiunto il font manga */
     color: #ffffff;
     border: 2px solid rgb(0, 0, 0); 
     background-color: transparent;
@@ -2162,7 +2136,7 @@ Rules for Narratives page
 
 /* Etichetta stile didascalia manga */
 .manga-label {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.8rem;
     background: #000;
     color: #fff;
@@ -2234,12 +2208,12 @@ Rules for Narratives page
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
 }
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.9rem;
     color: #fff;
     background: #000;
@@ -2272,7 +2246,7 @@ Rules for Narratives page
 }
 
 .manga-label {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.8rem;
     background: #000;
     color: #fff;
@@ -2358,7 +2332,7 @@ Rules for Narratives page
 
 .metadata-box h5 {
     color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    font-family: 'Futurest Cosmo', sans-serif; /* Opzionale: per dare lo stile manga */
     text-transform: uppercase;
     border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
     padding-bottom: 10px;

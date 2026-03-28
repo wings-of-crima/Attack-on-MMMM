@@ -85,7 +85,7 @@
     --accordion-bg-color:rgb(120, 100, 75); 
     --accordion-color: rgb(0, 0, 0);
     --accordion-active-bg: rgba(155, 132, 104, 0.8);
-    --accoridon-active-color: rgb(0, 0, 0);
+    --accordion-active-color: rgb(0, 0, 0);
 }
 
 html {
@@ -1547,6 +1547,7 @@ SHIGANSHINA MAP
     font-weight: 500 !important;
     color: rgb(0, 0, 0);
     text-align: justify;
+    padding: 1em 0;
 }
 
 .shiganshina-map-readmore {
