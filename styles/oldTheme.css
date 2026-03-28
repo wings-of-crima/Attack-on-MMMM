@@ -78,6 +78,14 @@
 
     --bg-tooltip: rgb(178, 157, 107);
     --text-tooltip: rgb(0,0,0);
+    --tooltip-border: rgb(80, 50, 6);
+    --offcanvas-bg-color: rgb(196, 166, 106, 0.9);
+    --offcanvas-head-color: rgba(124, 97, 62, 0.9);
+
+    --accordion-bg-color:rgb(120, 100, 75); 
+    --accordion-color: rgb(0, 0, 0);
+    --accordion-active-bg: rgba(155, 132, 104, 0.8);
+    --accoridon-active-color: rgb(0, 0, 0);
 }
 
 html {
@@ -1245,10 +1253,10 @@ blockquote {
 }
 
 
-/* MAP PAGE SPECIFIC STYLES: */
+/* MAP PAGE SPECIFIC STYLES: inspired by geographical ancient globes */
 
 .map .section-title {
-    font-size: 2em !important;
+    font-size: 2.5em !important;
 }
 
 .map .section-text {
@@ -1269,7 +1277,7 @@ blockquote {
 .map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
+    border: thick solid var(--text-borders);
     border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
@@ -1304,14 +1312,20 @@ blockquote {
 .custom-tooltip {
     --bs-tooltip-bg: var(--bg-tooltip);
     --bs-tooltip-color: var(--text-tooltip);
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
     font-size: 0.8em;
+    border: 5px double var(--tooltip-border); /* slightly darker than text-borders */
+    --bs-tooltip-border-radius: 0;
 }
 
 .offcanvas {
-    background-color: rgba(19, 19, 19, 0.9);
+    background-color: var(--offcanvas-bg-color);
     scrollbar-width: none !important;  /* TODO: understand why I can still see the scrollbar */
     -ms-overflow-style: none !important; 
+
+    border-left: 5px double var(--tooltip-border) !important;
 }
 
 .offcanvas-wide {
@@ -1319,41 +1333,44 @@ blockquote {
 }
 
 .offcanvas-header {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'EB Garamond', serif;
+    font-weight: 900 !important;
     color:rgb(0, 0, 0);
-    background-color:rgb(205, 205, 205, 0.7);
+    background-color:var(--offcanvas-head-color);
 }
 
 .offcanvas-body {
     padding: 1.5em;
-    font-family: 'Anime Ace', sans-serif;
-    color:rgb(255,255,255);
+    font-family: 'Baskervville', sans-serif;
+    font-size: 1em !important;
+    font-weight: 500;
+    color:rgb(0, 0, 0);
     font-size: 0.8em;
     text-align: center;
 }
 
 .offcanvas-body em {
-    font-family: 'Anime Ace Italic', sans-serif;
-    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+    font-family: 'Baskervville', sans-serif;
+    font-weight: 800 !important;
 }
 
 .offcanvas-img-panel {
     flex-shrink: 0; /* This stops Flexbox from squishing the container! */
     margin: 1em 1em;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 4px;
+    border: 5px solid var(--tooltip-border);
+    border-radius: 2px;
     overflow: hidden;
 }
 
 .offcanvas-img {
     width: 100%;
     height: auto;
-    border-radius: inherit;
+    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
 .map-img-figcaption {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
     font-size: 0.9em;
     font-style: italic;
     margin-top: -10px;
@@ -1369,52 +1386,69 @@ blockquote {
 
 .map-readmore {
     font-size: 1em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'EB Garamond', serif;
 }
 
 .map-readmore a {
-    color: #a11e15;
+    color: rgb(0, 0, 0);
+    font-weight:800;
 }
 
 .map-readmore a:hover{
-    color:#a11e15ac;
+    color:rgb(55, 55, 55);
 }
 
 .shiganshina-btn {
     padding: 0.5rem;
     font-size: 1.2em;
     background-color: transparent;
-    color: rgb(255,255,255);
-    border: 1px solid !important;
-    border-color: #a11e15 !important;
+    color: rgb(0,0,0);
+    border: 3px solid !important;
+    border-radius: 0;
+    border-color: rgb(75, 85, 41) !important;
     transition: background-color 0.2s ease;
 }
 
 .shiganshina-btn:hover {
-    background-color: #a11e15;
+    background-color: rgb(75, 85, 41);
 }
 
 .shiganshina-btn:active {
-    background-color: #6e150f !important;
+    background-color: rgb(59, 67, 33) !important;
 }
 
 .outside-btn {
     font-size: 1.2em;
     background-color: transparent;
-    color: rgb(255,255,255);
-    border: 1px solid !important;
-    border-color: rgb(46, 154, 255) !important;
+    color: rgb(0, 0, 0);
+    border: 3px solid !important;
+    border-radius: 0;
+    border-color: rgb(60, 88, 115) !important;
     transition: background-color 0.2s ease;
 }
 
 .outside-btn:hover {
-    background-color: rgb(46, 154, 255);
+    background-color: rgb(60, 88, 115);
 }
 
+.outside-btn:active {
+    background-color: rgb(45, 66, 86) !important;
+}   
+
 .map-btn {
-    font-size: 1em;
-    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.2em;
+    font-family: 'EB Garamond', sans-serif;
+    text-wrap:nowrap;
+    font-weight: 600;
     border: 2px solid !important;
+    border-radius: 0;
+    border-color: var(--text-borders);
+}
+
+.map-btn:hover {
+    background-color: var(--section-bg-color);
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0) !important;
 }
 
 /* 
@@ -1424,25 +1458,15 @@ SHIGANSHINA MAP
 
 */
 
-.map#shiganshina {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.3) 0%,
-        rgba(230, 230, 230, 0.8) 20%,
-        rgba(230, 230, 230, 0.8) 80%,
-        rgba(230, 230, 230, 0.3) 100%
-        ),
-
-        url('../images/map/destroyed-shiganshina.png');   
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+#shiganshina .section-title {
+    text-wrap: wrap;
+    margin-right: 1em;
 }
 
 .shiganshina-map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
+    border: thick solid var(--text-borders);
     border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
@@ -1468,40 +1492,40 @@ SHIGANSHINA MAP
 
 .accordion {
     /* Changes the background of the entire accordion item */
-    --bs-accordion-bg: rgb(108, 108, 108); 
+    --bs-accordion-bg: var(--accordion-bg-color); 
     
     /* Changes the text color */
-    --bs-accordion-color: #000000; 
+    --bs-accordion-color: var(--accordion-text-color); 
     
     /* Changes the background of the button when clicked/open */
-    --bs-accordion-active-bg: rgb(132, 132, 132); 
+    --bs-accordion-active-bg: var(--accordion-active-bg); 
     
     /* Changes the text color of the button when clicked/open */
-    --bs-accordion-active-color: #ffffff; 
+    --bs-accordion-active-color: var(--accordion-active-color); 
     
     /* Changes the border color between items */
-    --bs-accordion-border-color: rgb(0, 0, 0);
+    --bs-accordion-border-color: var(--tooltip-border);
     
     /* Changes the focus ring color when clicking */
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.7);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.accordion-header .accordion-button {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.6em !important;
+    font-weight: 600 !important;
 }
 
 .accordion-item {
-    background-color: rgb(0, 0, 0, 0.8) !important;
-    font-family: 'Anime Ace', sans-serif;
-    color: white;
+    background-color: rgb(120, 100, 75, 0.8) !important;
     border: 2px solid black;
-    font-size: .8em;
 }
 
 .accordion-img-panel {
     margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 4px;
+    border: 5px solid var(--tooltip-border);
+    border-radius: 2px;
     overflow: hidden;
-    
-    /* Optional: Added a subtle shadow so the white border pops against the accordion background */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
 .accordion-img {
@@ -1518,20 +1542,25 @@ SHIGANSHINA MAP
 }
 
 .accordion-body {
-    text-align: center;
+    font-family: 'Baskervville', sans-serif;
+    font-size: 1em;
+    font-weight: 500 !important;
+    color: rgb(0, 0, 0);
+    text-align: justify;
 }
 
 .shiganshina-map-readmore {
-    font-size: .9em;
-    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    font-family: 'EB Garamond', sans-serif;
 }
 
 .shiganshina-map-readmore a {
-    color: #a11e15;
+    color: rgb(0, 0, 0);
+    font-weight:800;
 }
 
 .shiganshina-map-readmore a:hover{
-    color:#a11e15ac;
+    color:rgb(55, 55, 55);
 }
 
 

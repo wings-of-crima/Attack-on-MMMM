@@ -1422,7 +1422,7 @@ section.map img:hover {
 .offcanvas-img {
     width: 100%;
     height: auto;
-    border-radius: inherit;
+    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
