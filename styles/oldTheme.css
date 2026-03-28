@@ -749,7 +749,6 @@ button.btn {
 .narrative-panel #historical-tl {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
     font-size: 1.8em;
-    display: inline-block;
     transition: transform 0.3s ease, color 0.2s ease;
 }
 

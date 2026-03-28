@@ -797,7 +797,6 @@ button.btn {
 .narrative-panel #historical-tl {
     font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
-    display: inline-block;
     transition: transform 0.3s ease;
 }
 
@@ -1375,15 +1374,15 @@ blockquote {
 .offcanvas-body {
     background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 80%, rgba(0,0,0, 0.3) 100%), var(--dark-cyan-transparent);
     padding: 1.5em;
-    font-family: 'Futurest Cosmo', sans-serif;    
+    font-family: 'Orbitron', sans-serif;    
     color:rgb(255, 255, 255);
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: 100;
     text-align: center;
 }
 
 .offcanvas-body em {
-    font-family: 'Futurest Cosmo', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     color: var(--section-title);
 }
 
@@ -1742,15 +1741,32 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* --- Section wrapper --- */
 .full-collection {
-    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
     padding: 1rem;
+    isolation: isolate;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background-color: var(--wall-bg-color);
+}
+
+.full-collection::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/themes_imgs/wall-texture.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .full-collection .section-title {
     margin-top: 0;
+    margin-bottom: 0.5em;
     padding-top: 0.3em !important;
-    -webkit-text-stroke: 6.5px white;
-    paint-order: stroke fill;
+    color: var(--graffiti-color-light);
+    font-family: 'Mono Seahorse Graffiti Regular', sans-serif;
+    text-shadow: 0 0 5px var(--graffiti-color-dark), 0 0 10px rgba(244, 198, 134, 0.65);
 }
 
 #collection-page-intro {
@@ -1770,18 +1786,19 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* --- Item card --- */
 .item-card {
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.08) 100%), var(--background-dark-panel-color);
+    border: thick double var(--highlight-outline-border);
+    color: var(--text-neon-color);
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+    filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(3px 4px 1px rgba(207, 234, 244, 0.2));
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item-card:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
 }
 
 
@@ -1790,14 +1807,16 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #a11e15;
-    color: white;
-    font-family: 'Bangers', cursive;
+    background-color: var(--wall-bg-color);
+    color: var(--graffiti-color-light);
+    font-family: 'Mono Seahorse Graffiti Regular', sans-serif;
     font-size: 1em;
     letter-spacing: 0.05rem;
-    padding: 0.1em 0.55em;
+    padding: 0.1em 0.55em 0.25em;
     z-index: 2;
     border-bottom-right-radius: 3px;
+    border-right: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
 }
 
 
@@ -1807,7 +1826,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
-    border-bottom: 2px solid rgb(20, 20, 20);
+    border-bottom: 2px solid var(--highlight-outline-border);
     display: block;
     transition: transform 0.3s ease;
 }
@@ -1819,27 +1838,27 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 /* Special case: paintings where full composition matters more than fill */
 #ymir-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #liberty-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #mask-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #yggdrasil-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #codex-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 /* --- Card bottom: info + QR side by side --- */
@@ -1857,13 +1876,13 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     display: flex;
     flex-direction: column;
     gap: 0.25em;
-    border-right: 2px solid rgb(20, 20, 20);
+    border-right: 2px solid var(--highlight-outline-border);
 }
 
 .item-title {
     font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.82em;
-    color: rgb(20, 20, 20);
+    color: var(--graffiti-color-light);
     line-height: 1.3;
     margin: 0;
 }
@@ -1871,7 +1890,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .item-complete-title {
     font-family: 'Amarillo USAF', serif;
     font-size: 0.90em;
-    color: #a11e15;
+    color: var(--section-title);
     font-style: italic;
     margin: 0;
     letter-spacing: 0.02rem;
@@ -1880,7 +1899,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .item-desc {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.72em;
-    color: #3a3a3a;
+    color: var(--text-neon-color);
     line-height: 1.45;
     margin: 0;
     text-align: justify;
@@ -1890,12 +1909,13 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .item-readmore {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.65em;
-    color: #a11e15;
+    color: var(--section-title);
     text-decoration: none;
     margin-top: auto;
 }
 
 .item-readmore:hover {
+    color: rgb(255, 255, 255);
     text-decoration: underline;
 }
 
@@ -1909,14 +1929,14 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     justify-content: center;
     gap: 0.35em;
     padding: 0.6em 0.5em;
-    background-color: #e8e4db;
+    background-color: var(--dark-cyan-transparent);
 }
 
 .qr-box {
     width: 66px;
     height: 66px;
-    border: 2px dashed #888;
-    background-color: white;
+    border: 2px dashed var(--highlight-outline-border);
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1933,7 +1953,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .qr-label {
     font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.55em;
-    color: #666;
+    color: var(--section-title);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.04rem;
@@ -2035,11 +2055,12 @@ Rules for Narratives page
     display: flex;
     flex-direction: column;
     text-decoration: none !important; /* Rimuove la sottolineatura dei link */
-    color: inherit;
-    border: 3px solid #181818;
-    border-radius: 15px;
+    color: var(--text-neon-color);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color);
+    border: thick double var(--highlight-outline-border);
+    border-radius: 2px;
     overflow: hidden;
-    background-color: #fff;
+    filter: drop-shadow(0 0 2px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
     transition: transform 0.3s ease;
 }
 
@@ -2052,7 +2073,7 @@ Rules for Narratives page
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-bottom: 2px solid #181818;
+    border-bottom: 2px solid var(--highlight-outline-border);
 }
 
 /* Contenitore del testo */
@@ -2062,16 +2083,18 @@ Rules for Narratives page
 }
 
 .narrative-text h3 {
-    font-family: 'Futurest Cosmo', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--section-title);
 }
 
 .narrative-text p {
-    font-family: 'Orbitron'g, sans-serif;
-    font-size: 0.95rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
     line-height: 1.5;
-    color: #333;
+    color: var(--text-neon-color);
 }
 
 /* Mobile Responsive */
@@ -2089,26 +2112,27 @@ Rules for Narratives page
 /* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
     font-family: 'Futurest Cosmo', sans-serif; /* Aggiunto il font manga */
-    color: #ffffff;
-    border: 2px solid rgb(0, 0, 0); 
-    background-color: transparent;
+    font-size: 1.1em;
+    color: var(--neon-cyan);
+    border: 2px solid var(--highlight-outline-border); 
+    background-color: var(--background-dark-panel-color);
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.15);
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-weight: 500;
 }
 
 /* 2. Effetto Hover: solo per i bottoni NON attivi */
 .btn-exhibit:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff;
+    background-color: var(--section-title) !important;
+    color: rgb(255, 255, 255) !important;
+    border-color: var(--highlight-outline-border);
 }
 
 /* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
 .btn-check:checked + .btn-exhibit {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
+    background-color: var(--dark-cyan);
+    color: rgb(255, 255, 255);
+    border-color: var(--highlight-outline-border);
     
     /* BLOCCA IL MOUSE: */
     pointer-events: none; 
@@ -2138,13 +2162,13 @@ Rules for Narratives page
 /* Etichetta stile didascalia manga */
 .manga-label {
     font-family: 'Futurest Cosmo', sans-serif;
-    font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    font-size: 1em !important;
+    background: var(--background-dark-panel-color) !important;
+    color: var(--text-neon-color) !important;
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: -1px; 
-    border: 3px solid #000;
+    border: 3px solid var(--highlight-outline-border) !important;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -2152,11 +2176,12 @@ Rules for Narratives page
 
 /* La cornice definita e fissa */
 .manga-img-wrapper {
-    border: 5px solid #000; /* Bordo nero spesso */
-    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    border: thick double var(--highlight-outline-border) !important;
+    border-radius: 5px;
     aspect-ratio: 16 / 10; 
     overflow: hidden;
-    background-color: #000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%, rgba(255,255,255,0.08) 100%), var(--background-dark-panel-color);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
 }
 
 .manga-img-wrapper img {
@@ -2173,6 +2198,10 @@ Rules for Narratives page
     filter: brightness(1.1); /* Leggero aumento di luminosità invece del movimento */
 }
 
+.manga-frame-static:hover img {
+    filter: brightness(1.08) drop-shadow(0 0 8px rgba(0, 221, 255, 0.15));
+}
+
 /*lightbox exhibition*/
 
 /* --- COMPONENTI EXHIBIT: LIGHTBOX --- */
@@ -2184,7 +2213,7 @@ Rules for Narratives page
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(4, 33, 47, 0.94);
     cursor: zoom-out;
 }
 
@@ -2197,30 +2226,32 @@ Rules for Narratives page
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid #fff;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border: 3px double var(--highlight-outline-border);
+    background-color: var(--background-dark-panel-color);
+    box-shadow: 0 0 24px rgba(0, 221, 255, 0.25), 0 0 30px rgba(0,0,0,0.5);
 }
 
 .close-lightbox {
     position: absolute;
     top: 20px;
     right: 40px;
-    color: #fff;
+    color: var(--section-title);
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
     font-family: 'Futurest Cosmo', sans-serif;
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.8);
 }
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
     font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.9rem;
-    color: #fff;
-    background: #000;
+    color: var(--text-neon-color);
+    background: var(--background-dark-panel-color);
     padding: 10px 25px;
-    border: 3px solid #000;
-    box-shadow: 6px 6px 0px #6c757d;
+    border: 3px double var(--highlight-outline-border);
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.18), 6px 6px 0px rgba(0, 0, 0, 0.65);
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -2229,10 +2260,10 @@ Rules for Narratives page
 }
 
 .btn-manga-nav:hover {
-    color: #fff;
-    background: #333;
+    color: rgb(255, 255, 255);
+    background: var(--dark-cyan);
     transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px #000;
+    box-shadow: 0 0 14px rgba(0, 221, 255, 0.28), 8px 8px 0px rgba(0, 0, 0, 0.8);
 }
 
 .nav-hidden {
@@ -2249,20 +2280,21 @@ Rules for Narratives page
 .manga-label {
     font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    background: var(--wall-bg-color);
+    color: var(--graffiti-color-light);
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: -1px; 
-    border: 3px solid #000;
+    border: 3px solid var(--graffiti-color-dark);
+    box-shadow: 0 0 12px rgba(100, 46, 14, 0.35);
     position: relative;
     z-index: 2;
     text-transform: uppercase;
 }
 
 .manga-img-wrapper {
-    border: 5px solid #000;
-    box-shadow: 12px 12px 0px #000;
+    border: 3px double var(--highlight-outline-border);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
     
     aspect-ratio: 1 / 1; 
     width: 100%;
@@ -2270,7 +2302,7 @@ Rules for Narratives page
     overflow: hidden;
     /* Aggiungiamo un colore neutro (grigio chiaro o bianco) 
        per riempire gli spazi vuoti che si creano ai lati */
-    background-color: #f5f5f5; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%, rgba(255,255,255,0.08) 100%), var(--background-dark-panel-color); 
     
     cursor: zoom-in;
     display: flex;
@@ -2290,7 +2322,7 @@ Rules for Narratives page
     
     display: block;
     transition: transform 0.3s ease;
-    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.35));
 }
 
 .manga-img-wrapper:hover img {
@@ -2314,12 +2346,14 @@ Rules for Narratives page
 
 /* 3. La box dei metadati vera e propria */
 .metadata-box {
-    background-color: #000;
-    color: #fff !important;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color) !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 0.9em;
+    line-height: 1.65;
     padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px #6c757d;
-
+    border: 3px solid var(--highlight-outline-border);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+    border-radius: 4px;
     /* BLOCCA LA BOX ALLO SCHERMO */
     position: -webkit-sticky; /* Supporto per Safari */
     position: sticky;
@@ -2329,27 +2363,37 @@ Rules for Narratives page
     align-self: flex-start;
     width: 100%; 
     max-height: fit-content;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .metadata-box h5 {
-    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Futurest Cosmo', sans-serif; /* Opzionale: per dare lo stile manga */
+    color: var(--section-title) !important; /* Qui metti il rosso o il colore che preferisci */
+    font-family: 'Amarillo USAF', sans-serif; /* Opzionale: per dare lo stile manga */
+    font-size: 1.5em;
     text-transform: uppercase;
-    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    border-bottom: 3px solid var(--highlight-outline-border); /* Aggiunge una linea sotto il titolo */
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
 .metadata-box strong {
-    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
+    color: var(--text-neon-color) !important; 
+    font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 5px;
 }
 
+.metadata-box p,
+.metadata-box li,
+.metadata-box span {
+    font-size: 1em;
+}
+
 /* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    color: var(--neon-cyan) !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    font-size: 1.05em;
     text-decoration: none !important; /* Rimuove la sottolineatura */
     font-weight: 700;
     transition: all 0.2s ease;
@@ -2357,7 +2401,7 @@ Rules for Narratives page
 
 /* Effetto al passaggio del mouse (opzionale ma consigliato) */
 #meta-institution a:hover {
-    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
+    color: var(--section-title) !important; /* Diventa bianco al passaggio */
     text-decoration: none !important; /* Si assicura che non torni la linea */
     background-color: transparent !important; /* Nessun evidenziatore */
 }
