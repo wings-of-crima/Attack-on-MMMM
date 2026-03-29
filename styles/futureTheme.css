@@ -12,7 +12,7 @@
 }
 
 @font-face {
-    font-family: 'Futurest Cosmo';
+    font-family: 'Anime Ace';
     src: url('fonts/animeace.ttf') format('truetype');
 }
 
@@ -134,7 +134,7 @@ PRE-LOADER AND LOADER STYLING:
 }
 
 #pre-loader-text {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Anime Ace', sans-serif !important;
     font-size: 1.5em;
     transition: opacity 0.8s ease-in;
 }
@@ -212,12 +212,12 @@ PRE-LOADER AND LOADER STYLING:
 }
 
 #toggleAudio {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Anime Ace', sans-serif !important;
     margin-bottom: 1em;
 }
 
 #enter-button {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Anime Ace', sans-serif !important;
     font-size: 1.4em;
     margin: auto;
     border: 2px solid;
