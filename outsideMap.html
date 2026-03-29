@@ -17,7 +17,7 @@
         <main class="container-fluid" id="main-content">
             
             <section class="map py-4" id="outside"> 
-                <div class="d-flex justify-content-between align-items-center me-3">
+                <div class="d-flex justify-content-between align-items-center me-4">
                     <h3 class="section-title"> Presentation of the World: The Outside </h3>
                     <a type="button" class="btn btn-outline-dark map-btn" href="map.html">Go back to the Map</a>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="row align-items-start"> 
 
                     <div class="col-lg-8 col-md-12">
-                        <div class="outside-map-container">
+                        <div class="outside-map-container my-2">
                             <!-- import Outside SVG-->
                             <svg id="interactive-map" width="100%" height="100%" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <rect id="map-img" width="1200" height="675" fill="url(#pattern0_0_1)"/>
@@ -65,304 +65,301 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-12 mt-0"> 
+                    <div class="col-lg-4 col-md-12 my-2"> 
                         <p class="section-text" id="outside-map-text">
                             This is the Outside - or better yet, the <em>rest of the world</em> and firstly, the people of <em>Marley</em>. It was deemed completely destroyed by the presence of Titans and no one inside the Walls knew anything of. Far bigger the picture becomes when one comes to discover everything you've known is a lie and what awaits our protagonist is far more complex and painful than just Titans outside the walls. But is this really the full picture? <em>Explore the map</em> to find some details.
                         </p>
-                        <!-- TODO: add ANCHOR to the circle shape so that when intercating with them it opens the accordions!!! -->
-
-                        <!-- offcanvas for Paradis Island -->
-                        <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-paradisIsland" aria-labelledby="info-offcanvas-label-paradisIsland">
-                            <div class="offcanvas-header">
-                                <h4 class="offcanvas-title" id="info-offcanvas-label-paradisIsland">Location Details: Paradis Island</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body d-flex flex-column">
-                                <p>
-                                    Isolated from the rest of the world by a vast ocean, this massive island is where <em>King Karl Fritz</em> lead his people, the Subjects of Ymir, after deliberately losing against Marleyan people. Encircled by <em>three colossal</em>, <em>concentric walls</em>, its inhabitants live in ignorance of the world beyond the Walls, believing humanity outside has perished, but a complex, hidden truth slumbers within the Walls themselves.
-                                </p>
-
-                                <div class="offcanvas-img-panel">
-                                    <img src="images/map/paradis-map.jpeg" class="offcanvas-img" alt="Map view of Paradis Island and its three concentric walls">
-                                </div>
-                                                                
-                                <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Paradis_Island_(Anime)">Paradis Island</a>.</p>
-
-                                <a type="button" class="btn btn-primary walls-btn mt-auto mx-auto" href="map.html">Enter the Walls again</a>
-                            </div>
-                        </div>
-
-                        <!-- offcanvas for Seaplane -->
-                         <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-seaplane" aria-labelledby="info-offcanvas-label-seaplane">
-                            <div class="offcanvas-header">
-                                <h4 class="offcanvas-title" id="info-offcanvas-label-seaplane">Item Details: The "Flying Boat", the Seaplane </h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-
-                                A revolutionary marvel of engineering crafted by the Azumabito family tethered to a desperate gamble. This aquatic aircraft represents a fragile alliance's last hope to soar in the sky and reach the architect of the world's end after the start of the <em>Rumbling</em>.
-
-                                <div class="offcanvas-img-panel">
-                                    <img src="images/map/flying-boat.png" class="offcanvas-img" alt="The Azumabito's flying boat docked at the port">
-                                </div>
-                                
-                                Its design heavily draws from early 20th-century aviation, mirroring the bulky but functional aesthetics of vintage real-world seaplanes engineered for perilous oceanic crossings.
-
-                                <div class="offcanvas-img-panel">
-                                    <a href="single_narrative.html?id=seaplane&narrative=historical">
-                                        <img src="images/items/real_seaplane.jpg" class="offcanvas-img" alt="Vintage photography of an early 20th-century real-world flying boat">
-                                    </a>
-                                </div>
-
-                                <p class="map-readmore"> Learn more about the <a href="https://attackontitan.fandom.com/wiki/Flying_boat_(Anime)">Flying Boat</a>.</p>
-                            </div>
-                        </div>
-
-                        <!-- offcanvas for Planisphere -->
-                         <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-planisphere" aria-labelledby="info-offcanvas-label-planisphere">
-                            <div class="offcanvas-header">
-                                <h4 class="offcanvas-title" id="info-offcanvas-label-planisphere">Location Details: The world map, the Planisphere</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-
-                                A chilling revelation painted on parchment, shattering a century of isolated ignorance. This expansive map unveils a world far larger and more advanced than the islanders ever conceived—a sprawling civilization unified only by its shared hatred for those living within the walls.
-
-                                <div class="offcanvas-img-panel">
-                                    <img src="images/map/marley-small.jpg" class="offcanvas-img" alt="The world map revealed by Marleyan outsiders">
-                                </div>
-                                
-                                A closer inspection reveals a striking, deliberate design choice: the geopolitical boundaries and landmasses are a direct, upside-down, and horizontally flipped mirror of our own Earth's geography. The island's geography and its position in relation to the Marleyan mainland strongly mirror an inverted map of real-world Madagascar and the African coast. This deliberate geographic parallel grounds the isolated, otherworldly setting in a tangible reality.
-
-                                <div class="offcanvas-img-panel">
-                                    <a href="single_narrative.html?id=planisphere&narrative=historical">
-                                        <img src="images/items/real_planisphere.png" class="offcanvas-img" alt="An inverted map of the real-world Earth for comparison">
-                                    </a>
-                                </div>
-
-                                <p class="map-readmore"> Learn more about the <a href="https://attackontitan.fandom.com/wiki/Mid-East_Allied_Forces#Trivia">Outside World</a> and <a href="https://attackontitan.fandom.com/wiki/Marley_(Anime)">Marley</a>.</p>
-                            </div>
-                        </div>
-
-                        <!-- Offcanvas Liberio + accordion -->
-                        <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-liberio" aria-labelledby="info-offcanvas-label-liberio">
-                            <div class="offcanvas-header">
-                                <h4 class="offcanvas-title" id="info-offcanvas-Label">Location Details: Liberio, Marleyan city.</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                Liberio is a Marleyan city located on the northeastern part of the mainland that contains an <em>internment</em> zone, a designated area of land for Eldians on the mainland to live in.
-                                
-                                <div class="offcanvas-img-panel">
-                                    <img class="offcanvas-img" src="images/map/liberio.png" alt="Image of Liberio city from the anime">
-                                </div>
-                                
-                                <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Liberio_(Anime)">Liberio</a>.</p>
-
-                               <!-- accordion for Liberio items -->
-                                <div class="accordion accordion-flush" id="accordionLiberio">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#liberio-collapseOne" aria-expanded="false" aria-controls="liberio-collapseOne">
-                                                Identifying Armbands
-                                            </button>
-                                        </h2>
-                                        <div id="liberio-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionLiberio">
-                                            <div class="accordion-body">
-                                                <div class="row mb-2">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/map/gray-armband.png" alt="Image of an Eldian citizen wearing a gray recognition armband outside">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>We are inside the main city of Marley's influence strolling peacefully around its streets. What would we see? Colors, specifically of three kinds: white/gray, yeallow and red. Differentiating their statuses, people of Eldia are obliged to wear these armbadns at any given moment when outside. Even if the outside for them was most often still within the confinement of the internment zones. </p>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <a href="single_narrative.html?id=armband&narrative=historical">
-                                                                <img class="accordion-img" src="images/items/real_armband.png" alt="Image of Jewish recognition armband from WW2">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>When looking at Eldian's recognition armbands it's hard not to be reminded of Jewish identifying armbands, that Jewish people were forced to wear during World War 2. The differences in the design are not many as well and we are brought to wonder and reflect more and more on how much of this narrative is cutting through paper and/or screens to our own reality.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#liberio-collapseTwo" aria-expanded="false" aria-controls="liberio-collapseTwo">
-                                                Letter from the "front"
-                                            </button>
-                                        </h2>
-                                        <div id="liberio-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionLiberio">
-                                            <div class="accordion-body">
-                                                <div class="row mb-2">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/map/letter-handing.png" alt="Image of the key to Grisha Jaeger, father of Eren's basement">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>This is another crucial item that holds surprise and betrayal. In the confusion of being thrown inside another world and among other people but for a few familiar faces, we are wondering where our main character has disappeared until, in the middle of holding our breaths and after various uncatched hints, we are greeted with a more rugged and older version of Eren, enchanting the child-soldier Falco with words of sweetness and compassion-inducing. At last, he convinces him to send this letter to his "far beloved ones" which will turn the wheel of fate for Marley.</p>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <a href="single_narrative.html?id=letter&narrative=historical">
-                                                                <img class="accordion-img" src="images/items/real_letter.png" alt="Image of letter from a soldier of WW1">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>Many letters were sent from soldiers from the front, most of them to loved ones for a cherished notice of being alive or missing the other person. Surely, some letters from the front must have been less neutral, but this one starts with a sweet "Dearest parents".</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Offcanvas Fort Slava + accordion -->
-                         <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-fortSlava" aria-labelledby="info-offcanvas-label-fortSlava">
-                            <div class="offcanvas-header">
-                                <h4 class="offcanvas-title" id="info-offcanvas-Label">Location Details: Fort Slava, military fortress under the Mid-East Allied Forces.</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                Fort Slava is a fortress under the control of the Mid-East Allied Forces which acts as a strategic defense for the naval station. This is the first time we see a different <em>"enemy"</em> after we left the walls and our protagonists with a question and disenchantment of freedom.
-                                
-                                <div class="offcanvas-img-panel">
-                                    <img class="offcanvas-img" src="images/map/Fort_Slava.png" alt="Image from above of Fot Slava in the anime">
-                                </div>
-
-                                <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Fort_Slava_(Anime)">Fort Slava</a>.</p>
-
-                                <div class="accordion accordion-flush" id="accordionFortSlava">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#slava-collapseOne" aria-expanded="false" aria-controls="slava-collapseOne">
-                                                The trenches: Marley vs. Mid-East and WW1
-                                            </button>
-                                        </h2>
-                                        <div id="slava-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFortSlava">
-                                            <div class="accordion-body">
-                                                <div class="row mb-2">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/map/soldiers-trenches.png" alt="Image of season 4 Eldian soldiers fighting for Marley inside the trenches">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>After a temporal jump in the plot, we're suddenly watching soldiers fight in a war that looks much more realistic to what we're used from documentation pictures of real-world wars. We can soon see though, that children act as soldiers and Eldians are forced to sacrifice themselves in the name of the Marleyan nation in this battle against the Mid-East to conquer Fort Slava.</p>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <a href="single_narrative.html?id=trench&narrative=historical">
-                                                                <img class="accordion-img" src="images/items/real_trincea.png" alt="Image of a photograph from WW1 trenches">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>Much of the dynamics, artillery and feeling we can see come up on screen from the scenes are reminiscing of World War 1 documentation photography. Where time and lives were disrupted inside tunnels dug deep in the ground and long waiting times were spent to understand the next move of the enemy.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#slava-collapseTwo" aria-expanded="false" aria-controls="slava-collapseTwo">
-                                                Hand grenade
-                                            </button>
-                                        </h2>
-                                        <div id="slava-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFortSlava">
-                                            <div class="accordion-body">
-                                                <div class="row mb-2">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/map/gabi-throwing-grenades.jpg" alt="Image of Gabi, an Eldian child soldier acting as bait and throwing a hand-made bomb out of grenades towards the enemies">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>As anticipated before, new kinds of figures and tools emerge here. A combo of these two categories is the child-soldier, particularly in this case we see Gabi, one of the eligible child-soldiers who are selected to compete and win for the chance to inherit one of the <em>Nine Titans</em>, swinging a cluster of hand grenades made by herself while she stages a diversion acting like an escaping child victim.</p>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <a href="single_narrative.html?id=bomb&narrative=historical">
-                                                                <img class="accordion-img" src="images/items/real_granata.png" alt="Image of historic armored trains">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>Hand grenades were a very <em>common hand artillery</em> for soldiers to carry around. This one for example was a habitual piece in the military kit of german soldiers of Third Reich. This specific kind was often used as a "bunch" kept together by metal wires or ropes.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#slava-collapseThree" aria-expanded="false" aria-controls="slava-collapseThree">
-                                                The dirigible: a war from the sky
-                                            </button>
-                                        </h2>
-                                        <div id="slava-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFortSlava">
-                                            <div class="accordion-body">
-                                                <div class="row mb-2">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <img class="accordion-img" src="images/map/airship.jpg" alt="Image of airship flying above Fort Slava">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>Another first we have here, we are witnessing new kinds of technologies and weaponized transportation methods. We see the kind of evolution the Outside world has followed and airships are one of the best examples. Soon after, Eldians soldiers will be sacrificed and turned into Titans to destroy the fortress helping other special Titans.</p>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="row">
-                                                    <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
-                                                        <div class="accordion-img-panel">
-                                                            <a href="single_narrative.html?id=dirigible&narrative=historical">
-                                                                <img class="accordion-img" src="images/items/real_dirigibile.png" alt="Concept art of the Jaw Titan">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-5">
-                                                        <p>This is a very close example of airship from real life. These are part of the collection of the <em>Zeppelin Series</em> of airships (E40) started by <em>Count Ferdinand von Zeppelin</em> from Germany.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
                     </div>
                 </div> 
-                
-
             </section>
+            
+            <!-- offcanvas for Paradis Island -->
+            <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-paradisIsland" aria-labelledby="info-offcanvas-label-paradisIsland">
+                <div class="offcanvas-header">
+                    <h4 class="offcanvas-title" id="info-offcanvas-label-paradisIsland">Location Details: Paradis Island</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <p>
+                        Isolated from the rest of the world by a vast ocean, this massive island is where <em>King Karl Fritz</em> lead his people, the Subjects of Ymir, after deliberately losing against Marleyan people. Encircled by <em>three colossal</em>, <em>concentric walls</em>, its inhabitants live in ignorance of the world beyond the Walls, believing humanity outside has perished, but a complex, hidden truth slumbers within the Walls themselves.
+                    </p>
+
+                    <div class="offcanvas-img-panel">
+                        <img src="images/map/paradis-map.jpeg" class="offcanvas-img" alt="Map view of Paradis Island and its three concentric walls">
+                    </div>
+                    
+                    <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Paradis_Island_(Anime)">Paradis Island</a>.</p>
+
+                    <a type="button" class="btn btn-primary walls-btn mt-auto mx-auto" href="map.html">Enter the Walls again</a>
+                </div>
+            </div>
+
+            <!-- offcanvas for Seaplane -->
+                <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-seaplane" aria-labelledby="info-offcanvas-label-seaplane">
+                <div class="offcanvas-header">
+                    <h4 class="offcanvas-title" id="info-offcanvas-label-seaplane">Item Details: The "Flying Boat", the Seaplane </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+
+                    A revolutionary marvel of engineering crafted by the Azumabito family tethered to a desperate gamble. This aquatic aircraft represents a fragile alliance's last hope to soar in the sky and reach the architect of the world's end after the start of the <em>Rumbling</em>.
+
+                    <div class="offcanvas-img-panel">
+                        <img src="images/map/flying-boat.png" class="offcanvas-img" alt="The Azumabito's flying boat docked at the port">
+                    </div>
+                    
+                    Its design heavily draws from early 20th-century aviation, mirroring the bulky but functional aesthetics of vintage real-world seaplanes engineered for perilous oceanic crossings.
+
+                    <div class="offcanvas-img-panel">
+                        <a href="single_narrative.html?id=seaplane&narrative=historical">
+                            <img src="images/items/real_seaplane.jpg" class="offcanvas-img" alt="Vintage photography of an early 20th-century real-world flying boat">
+                        </a>
+                    </div>
+
+                    <p class="map-readmore"> Learn more about the <a href="https://attackontitan.fandom.com/wiki/Flying_boat_(Anime)">Flying Boat</a>.</p>
+                </div>
+            </div>
+
+            <!-- offcanvas for Planisphere -->
+                <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-planisphere" aria-labelledby="info-offcanvas-label-planisphere">
+                <div class="offcanvas-header">
+                    <h4 class="offcanvas-title" id="info-offcanvas-label-planisphere">Location Details: The world map, the Planisphere</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+
+                    A chilling revelation painted on parchment, shattering a century of isolated ignorance. This expansive map unveils a world far larger and more advanced than the islanders ever conceived—a sprawling civilization unified only by its shared hatred for those living within the walls.
+
+                    <div class="offcanvas-img-panel">
+                        <img src="images/map/marley-small.jpg" class="offcanvas-img" alt="The world map revealed by Marleyan outsiders">
+                    </div>
+                    
+                    A closer inspection reveals a striking, deliberate design choice: the geopolitical boundaries and landmasses are a direct, upside-down, and horizontally flipped mirror of our own Earth's geography. The island's geography and its position in relation to the Marleyan mainland strongly mirror an inverted map of real-world Madagascar and the African coast. This deliberate geographic parallel grounds the isolated, otherworldly setting in a tangible reality.
+
+                    <div class="offcanvas-img-panel">
+                        <a href="single_narrative.html?id=planisphere&narrative=historical">
+                            <img src="images/items/real_planisphere.png" class="offcanvas-img" alt="An inverted map of the real-world Earth for comparison">
+                        </a>
+                    </div>
+
+                    <p class="map-readmore"> Learn more about the <a href="https://attackontitan.fandom.com/wiki/Mid-East_Allied_Forces#Trivia">Outside World</a> and <a href="https://attackontitan.fandom.com/wiki/Marley_(Anime)">Marley</a>.</p>
+                </div>
+            </div>
+
+            <!-- Offcanvas Liberio + accordion -->
+            <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-liberio" aria-labelledby="info-offcanvas-label-liberio">
+                <div class="offcanvas-header">
+                    <h4 class="offcanvas-title" id="info-offcanvas-Label">Location Details: Liberio, Marleyan city.</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    Liberio is a Marleyan city located on the northeastern part of the mainland that contains an <em>internment</em> zone, a designated area of land for Eldians on the mainland to live in.
+                    
+                    <div class="offcanvas-img-panel">
+                        <img class="offcanvas-img" src="images/map/liberio.png" alt="Image of Liberio city from the anime">
+                    </div>
+                    
+                    <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Liberio_(Anime)">Liberio</a>.</p>
+
+                    <!-- accordion for Liberio items -->
+                    <div class="accordion accordion-flush" id="accordionLiberio">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#liberio-collapseOne" aria-expanded="false" aria-controls="liberio-collapseOne">
+                                    Identifying Armbands
+                                </button>
+                            </h2>
+                            <div id="liberio-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionLiberio">
+                                <div class="accordion-body">
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <img class="accordion-img" src="images/map/gray-armband.png" alt="Image of an Eldian citizen wearing a gray recognition armband outside">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>We are inside the main city of Marley's influence strolling peacefully around its streets. What would we see? Colors, specifically of three kinds: white/gray, yeallow and red. Differentiating their statuses, people of Eldia are obliged to wear these armbadns at any given moment when outside. Even if the outside for them was most often still within the confinement of the internment zones. </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <a href="single_narrative.html?id=armband&narrative=historical">
+                                                    <img class="accordion-img" src="images/items/real_armband.png" alt="Image of Jewish recognition armband from WW2">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>When looking at Eldian's recognition armbands it's hard not to be reminded of Jewish identifying armbands, that Jewish people were forced to wear during World War 2. The differences in the design are not many as well and we are brought to wonder and reflect more and more on how much of this narrative is cutting through paper and/or screens to our own reality.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#liberio-collapseTwo" aria-expanded="false" aria-controls="liberio-collapseTwo">
+                                    Letter from the "front"
+                                </button>
+                            </h2>
+                            <div id="liberio-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionLiberio">
+                                <div class="accordion-body">
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <img class="accordion-img" src="images/map/letter-handing.png" alt="Image of the key to Grisha Jaeger, father of Eren's basement">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>This is another crucial item that holds surprise and betrayal. In the confusion of being thrown inside another world and among other people but for a few familiar faces, we are wondering where our main character has disappeared until, in the middle of holding our breaths and after various uncatched hints, we are greeted with a more rugged and older version of Eren, enchanting the child-soldier Falco with words of sweetness and compassion-inducing. At last, he convinces him to send this letter to his "far beloved ones" which will turn the wheel of fate for Marley.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <a href="single_narrative.html?id=letter&narrative=historical">
+                                                    <img class="accordion-img" src="images/items/real_letter.png" alt="Image of letter from a soldier of WW1">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>Many letters were sent from soldiers from the front, most of them to loved ones for a cherished notice of being alive or missing the other person. Surely, some letters from the front must have been less neutral, but this one starts with a sweet "Dearest parents".</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offcanvas Fort Slava + accordion -->
+                <div class="offcanvas offcanvas-end offcanvas-wide" tabindex="-1" id="info-offcanvas-fortSlava" aria-labelledby="info-offcanvas-label-fortSlava">
+                <div class="offcanvas-header">
+                    <h4 class="offcanvas-title" id="info-offcanvas-Label">Location Details: Fort Slava, military fortress under the Mid-East Allied Forces.</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    Fort Slava is a fortress under the control of the Mid-East Allied Forces which acts as a strategic defense for the naval station. This is the first time we see a different <em>"enemy"</em> after we left the walls and our protagonists with a question and disenchantment of freedom.
+                    
+                    <div class="offcanvas-img-panel">
+                        <img class="offcanvas-img" src="images/map/Fort_Slava.png" alt="Image from above of Fot Slava in the anime">
+                    </div>
+
+                    <p class="map-readmore"> Learn more about <a href="https://attackontitan.fandom.com/wiki/Fort_Slava_(Anime)">Fort Slava</a>.</p>
+
+                    <div class="accordion accordion-flush" id="accordionFortSlava">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#slava-collapseOne" aria-expanded="false" aria-controls="slava-collapseOne">
+                                    The trenches: Marley vs. Mid-East and WW1
+                                </button>
+                            </h2>
+                            <div id="slava-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFortSlava">
+                                <div class="accordion-body">
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <img class="accordion-img" src="images/map/soldiers-trenches.png" alt="Image of season 4 Eldian soldiers fighting for Marley inside the trenches">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>After a temporal jump in the plot, we're suddenly watching soldiers fight in a war that looks much more realistic to what we're used from documentation pictures of real-world wars. We can soon see though, that children act as soldiers and Eldians are forced to sacrifice themselves in the name of the Marleyan nation in this battle against the Mid-East to conquer Fort Slava.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <a href="single_narrative.html?id=trench&narrative=historical">
+                                                    <img class="accordion-img" src="images/items/real_trincea.png" alt="Image of a photograph from WW1 trenches">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>Much of the dynamics, artillery and feeling we can see come up on screen from the scenes are reminiscing of World War 1 documentation photography. Where time and lives were disrupted inside tunnels dug deep in the ground and long waiting times were spent to understand the next move of the enemy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#slava-collapseTwo" aria-expanded="false" aria-controls="slava-collapseTwo">
+                                    Hand grenade
+                                </button>
+                            </h2>
+                            <div id="slava-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFortSlava">
+                                <div class="accordion-body">
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <img class="accordion-img" src="images/map/gabi-throwing-grenades.jpg" alt="Image of Gabi, an Eldian child soldier acting as bait and throwing a hand-made bomb out of grenades towards the enemies">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>As anticipated before, new kinds of figures and tools emerge here. A combo of these two categories is the child-soldier, particularly in this case we see Gabi, one of the eligible child-soldiers who are selected to compete and win for the chance to inherit one of the <em>Nine Titans</em>, swinging a cluster of hand grenades made by herself while she stages a diversion acting like an escaping child victim.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <a href="single_narrative.html?id=bomb&narrative=historical">
+                                                    <img class="accordion-img" src="images/items/real_granata.png" alt="Image of historic armored trains">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>Hand grenades were a very <em>common hand artillery</em> for soldiers to carry around. This one for example was a habitual piece in the military kit of german soldiers of Third Reich. This specific kind was often used as a "bunch" kept together by metal wires or ropes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#slava-collapseThree" aria-expanded="false" aria-controls="slava-collapseThree">
+                                    The dirigible: a war from the sky
+                                </button>
+                            </h2>
+                            <div id="slava-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFortSlava">
+                                <div class="accordion-body">
+                                    <div class="row mb-2">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <img class="accordion-img" src="images/map/airship.jpg" alt="Image of airship flying above Fort Slava">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>Another first we have here, we are witnessing new kinds of technologies and weaponized transportation methods. We see the kind of evolution the Outside world has followed and airships are one of the best examples. Soon after, Eldians soldiers will be sacrificed and turned into Titans to destroy the fortress helping other special Titans.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-7 mb-3 mb-md-0">
+                                            <div class="accordion-img-panel">
+                                                <a href="single_narrative.html?id=dirigible&narrative=historical">
+                                                    <img class="accordion-img" src="images/items/real_dirigibile.png" alt="Concept art of the Jaw Titan">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-5">
+                                            <p>This is a very close example of airship from real life. These are part of the collection of the <em>Zeppelin Series</em> of airships (E40) started by <em>Count Ferdinand von Zeppelin</em> from Germany.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <div id="footer-placeholder"></div>

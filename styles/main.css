@@ -74,6 +74,158 @@ html {
     cursor: url('widgets/aot-gear-sword-sweezy-cursor.png'), auto; /* TODO: understand if keeping cursor or pointer */
 }
 
+html.skip-intro #pre-loader,
+html.skip-intro #loader-screen {
+    display: none !important;
+}
+
+/* =============================================================
+
+PRE-LOADER AND LOADER STYLING:
+
+*/
+
+#pre-loader, #loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: center; */
+    color: white;
+    transition: opacity 4s ease, visibility 3s ease;
+}
+
+#pre-loader {
+    z-index: 9999;
+}
+
+#pre-loader-text {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.5em;
+    transition: opacity 0.8s ease-in;
+}
+
+#loader-screen {
+    position: fixed; /* or absolute, depending on how you built your loader */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Crucial: stops the video from spilling out */
+    
+    /* Assuming you are using flexbox to center your text/buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998; /* Keeps the loader on top of the whole website */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the video to fill the screen without stretching */
+    z-index: -1; /* Shoves the video behind the content */
+    
+    /* Optional but recommended: darken the video so your white text is readable */
+    filter: brightness(0.4); 
+}
+
+/* Keeps your content layered safely above the video */
+.loader-content {
+    position: relative;
+    z-index: 1; 
+    text-align: center; /* Centers your text and buttons */
+    width: 100%;
+    padding: 0 1em;;
+}
+
+#loader-screen-text { /*typwriter effect*/
+    width: 100%;
+    max-width: 992px;
+    font-family: monospace, sans-serif;
+    font-size: 1.2em;
+    font-weight: medium;
+    margin-inline: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.typewriter-cursor {
+    border-right: 2px solid white;
+    animation: blink-caret 0.85s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: 142ch; 
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% { 
+        border-color: white; 
+    }
+    50% { 
+        border-color: transparent; 
+    }
+}
+
+#toggleAudio {
+    font-family: 'Anime Ace', sans-serif;
+    margin-bottom: 1em;
+}
+
+#enter-button {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.4em;
+    margin: auto;
+    border: 2px solid;
+    border-radius: 0;
+    opacity: 0;
+    visibility: hidden;
+    /* This creates a smooth fade-in effect lasting 0.8 seconds */
+    transition: opacity 0.8s ease-in, visibility 0.8s ease-in; 
+}
+
+/* We will add this class with JavaScript when the typing is done */
+#enter-button.show-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+#enter-button:hover {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    color:#000000;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Ensures clicks pass through to the layer below */
+}
+
+
+/* ====================================================
+
+WEBSITE STYLING:
+
+*/
+
 body {
     display: flex;
     flex-direction: column;
@@ -597,7 +749,6 @@ button.btn {
 .narrative-panel #historical-tl {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
     font-size: 1.7em;
-    display: inline-block;
     transition: transform 0.3s ease;
 }
 
@@ -1014,6 +1165,13 @@ button.btn {
     }
 }
 
+@media (max-width: 576px) {
+    .team .card-title {
+        font-size: 0.8em !important;
+        text-wrap: wrap;
+    }
+}
+
 .team .card .btn {
     background-color: #2d2d2deb;
     color: rgb(241, 241, 241);
@@ -1191,7 +1349,7 @@ section.map img:hover {
 .offcanvas-img {
     width: 100%;
     height: auto;
-    border-radius: inherit;
+    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
@@ -1252,6 +1410,10 @@ section.map img:hover {
 
 .outside-btn:hover {
     background-color: rgb(46, 154, 255);
+}
+
+.outside-btn:active {
+    background-color: rgb(0, 81, 255) !important;
 }
 
 .map-btn {
@@ -1362,6 +1524,7 @@ SHIGANSHINA MAP
 
 .accordion-body {
     text-align: center;
+    padding: 1em 0;
 }
 
 .shiganshina-map-readmore {
@@ -1450,6 +1613,13 @@ MOBILE-SPECIFIC STYLES:
 */
 
 @media (max-width: 576px) {
+    #loader-screen-text {
+        font-size: 1em; /* Scales down the typewriter text a bit */
+    }
+    .loader-btns .btn {
+        font-size: 0.85em; /* Scales down the button text so they don't look cramped */
+        white-space: normal; /* Allows button text to wrap to a second line if necessary */
+    }
     .navbar {
         text-align: center;
         font-size: 0.9em;
@@ -1869,7 +2039,7 @@ MOBILE-SPECIFIC STYLES:
 }
 
 .narrative-text p {
-    font-family: 'Noto Sans'g, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
     color: #333;

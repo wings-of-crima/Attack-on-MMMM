@@ -12,7 +12,7 @@
 }
 
 @font-face {
-    font-family: 'Anime Ace';
+    font-family: 'Futurest Cosmo';
     src: url('fonts/animeace.ttf') format('truetype');
 }
 
@@ -81,6 +81,14 @@
     --wall-bg-color: rgb(163, 88, 27);
     --graffiti-color-dark: rgb(100, 46, 14);
     --graffiti-color-light: rgb(234, 153, 40);
+
+    --neon-cyan: rgb(0, 221, 255); 
+    --hover-cyan: rgb(0, 194, 223);
+    --background-light-panel-color: rgba(120, 152, 161, 0.85);
+    --dark-cyan: rgb(0, 87, 116);
+    --dark-cyan-transparent: rgba(0, 87, 116, 0.6);
+    --bg-tooltip: rgb(255, 255, 255);
+    --text-tooltip: rgb(0,0,0);
 }
 
 html {
@@ -93,6 +101,158 @@ html {
     -ms-overflow-style: none; 
     cursor: url('widgets/futuristic-cursor.png'), auto; /* TODO: change style */
 }
+
+html.skip-intro #pre-loader,
+html.skip-intro #loader-screen {
+    display: none !important;
+}
+
+/* =============================================================
+
+PRE-LOADER AND LOADER STYLING:
+
+*/
+
+#pre-loader, #loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: center; */
+    color: white;
+    transition: opacity 4s ease, visibility 3s ease;
+}
+
+#pre-loader {
+    z-index: 9999;
+}
+
+#pre-loader-text {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.5em;
+    transition: opacity 0.8s ease-in;
+}
+
+#loader-screen {
+    position: fixed; /* or absolute, depending on how you built your loader */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Crucial: stops the video from spilling out */
+    
+    /* Assuming you are using flexbox to center your text/buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998; /* Keeps the loader on top of the whole website */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the video to fill the screen without stretching */
+    z-index: -1; /* Shoves the video behind the content */
+    
+    /* Optional but recommended: darken the video so your white text is readable */
+    filter: brightness(0.4); 
+}
+
+/* Keeps your content layered safely above the video */
+.loader-content {
+    position: relative;
+    z-index: 1; 
+    text-align: center; /* Centers your text and buttons */
+    width: 100%;
+    padding: 0 1em;;
+}
+
+#loader-screen-text { /*typwriter effect*/
+    width: 100%;
+    max-width: 992px;
+    font-family: monospace, sans-serif;
+    font-size: 1.2em;
+    font-weight: medium;
+    margin-inline: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.typewriter-cursor {
+    border-right: 2px solid white;
+    animation: blink-caret 0.85s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: 142ch; 
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% { 
+        border-color: white; 
+    }
+    50% { 
+        border-color: transparent; 
+    }
+}
+
+#toggleAudio {
+    font-family: 'Anime Ace', sans-serif;
+    margin-bottom: 1em;
+}
+
+#enter-button {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.4em;
+    margin: auto;
+    border: 2px solid;
+    border-radius: 0;
+    opacity: 0;
+    visibility: hidden;
+    /* This creates a smooth fade-in effect lasting 0.8 seconds */
+    transition: opacity 0.8s ease-in, visibility 0.8s ease-in; 
+}
+
+/* We will add this class with JavaScript when the typing is done */
+#enter-button.show-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+#enter-button:hover {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    color:#000000;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Ensures clicks pass through to the layer below */
+}
+
+
+/* ====================================================
+
+WEBSITE STYLING:
+
+*/
 
 body {
     display: flex;
@@ -312,15 +472,15 @@ section {
     background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color);
     margin: 2em 3em 2em;
     padding: 0.2em;
+    align-items: center;
+    justify-content: center;
+    /* here I prefer filter instead of the box-shadow (see inspo from panels of psycho pass: */
     border-top: 2px solid var(--highlight-outline-border);
     border-right: 2px solid var(--highlight-outline-border);
     border-left: thick solid var(--highlight-outline-border);
     border-bottom: thick solid var(--highlight-outline-border);
     border-radius: 1px;
-    align-items: center;
-    justify-content: center;
-    /* here I prefer filter instead of the box-shadow (see inspo from panels of psycho pass: */
-    filter: drop-shadow(6px 8px 1px rgba(207, 234, 244, 0.2)); /* sono una grande è letteralmente UGUALE */
+    filter: drop-shadow(0 0 2px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
 }
 
 .section-title {
@@ -640,9 +800,8 @@ button.btn {
 }
 
 .narrative-panel #historical-tl {
-    font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
+    font-family: 'Amarillo USAF', sans-serif;
     font-size: 1.7em;
-    display: inline-block;
     transition: transform 0.3s ease;
 }
 
@@ -1132,60 +1291,14 @@ blockquote {
 
 /* MAP PAGE SPECIFIC STYLES: */
 
-section.map {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.35) 0%,
-        rgba(230, 230, 230, 0.9) 20%,
-        rgba(230, 230, 230, 0.9) 60%,
-        rgba(230, 230, 230, 0.3) 90%
-        ),
-
-        url('../images/map/walls-img.png');   
-    background-position: top;
-    background-size: 110% 130%;
-    background-repeat: no-repeat;
-}
-
 .map .section-text {
     text-align: center;
     font-size: 1em;
 }
 
 .map em {
-    color: #a11e15;
-    font-family: 'Anime Ace Italic', sans-serif;
+    color: var(--section-title);
 } 
-
-/* IN PIU': 
-section.map img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    padding: 0.5rem;
-}
-
-section.map img:hover {
-    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
-    cursor: pointer;
-} */
-
-/* styling the SVG: */
-/*
-.map-container {
-    width: 100%;
-    max-width: 1400px; 
-    margin: 2rem auto; 
-    padding: 0.5em 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.map-container svg {
-    width: 100%;         
-    max-height: 110vh;     
-    height: auto;
-} */
 
 .row {
     margin: 0.5em;
@@ -1196,15 +1309,20 @@ section.map img:hover {
 .map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
-    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
-    
+
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
     
     /* Optional: A background color just in case they zoom out too far */
-    background-color: #e8e4db; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+
+    border-top: thick solid var(--highlight-outline-border);
+    border-right: thick solid var(--highlight-outline-border);
+    border-left: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
+    border-radius: 1px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
 }
 
 .map-container:active {
@@ -1214,7 +1332,7 @@ section.map img:hover {
 .map-container svg {
     width: 100%;
     height: 100%;
-
+    padding: 1rem 0;
 }
 
 .interactive-shape {
@@ -1229,16 +1347,20 @@ section.map img:hover {
 }
 
 .custom-tooltip {
-    --bs-tooltip-bg: var(--bg-tooltip);
-    --bs-tooltip-color: var(--text-tooltip);
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8em;
+    --bs-tooltip-bg: var(--background-dark-panel-color);
+    --bs-tooltip-color: var(--text-neon-color);
+    font-family: 'Futurest Cosmo', sans-serif;
+    border: 3px double var(--highlight-outline-border);
+    border-radius: 10px;
+    font-size: 1em;
 }
 
 .offcanvas {
-    background-color: rgba(19, 19, 19, 0.9);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
     scrollbar-width: none !important;  /* TODO: understand why I can still see the scrollbar */
-    -ms-overflow-style: none !important; 
+    -ms-overflow-style: none !important;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+    border-left: thick double var(--highlight-outline-border) !important;
 }
 
 .offcanvas-wide {
@@ -1246,41 +1368,46 @@ section.map img:hover {
 }
 
 .offcanvas-header {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    color:rgb(0, 0, 0);
-    background-color:rgb(205, 205, 205, 0.7);
+    font-family: 'Amarillo USAF', sans-serif;
+    color: var(--section-title);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 80%, rgba(0,0,0, 0.3) 100%), var(--dark-cyan-transparent);
+    border-bottom: thick solid var(--highlight-outline-border);
+    filter: drop-shadow(0 2px 5px var(--neon-cyan)) drop-shadow(0 3px 3px rgba(207, 234, 244, 0.2));
+
 }
 
 .offcanvas-body {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 80%, rgba(0,0,0, 0.3) 100%), var(--dark-cyan-transparent);
     padding: 1.5em;
-    font-family: 'Anime Ace', sans-serif;
-    color:rgb(255,255,255);
-    font-size: 0.8em;
-    text-align: center;
+    font-family: 'Orbitron', sans-serif;    
+    color:rgb(255, 255, 255);
+    font-size: 0.9em;
+    font-weight: 100;
+    text-align: justify;
 }
 
 .offcanvas-body em {
-    font-family: 'Anime Ace Italic', sans-serif;
-    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+    font-family: 'Orbitron', sans-serif;
+    color: var(--section-title);
 }
 
 .offcanvas-img-panel {
     flex-shrink: 0; /* This stops Flexbox from squishing the container! */
     margin: 1em 1em;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 4px;
+    border: 5px double var(--highlight-outline-border);
+    border-radius: 3px;
     overflow: hidden;
 }
 
 .offcanvas-img {
     width: 100%;
     height: auto;
-    border-radius: inherit;
+    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
 .map-img-figcaption {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.9em;
     font-style: italic;
     margin-top: -10px;
@@ -1296,15 +1423,15 @@ section.map img:hover {
 
 .map-readmore {
     font-size: 1em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .map-readmore a {
-    color: #a11e15;
+    color: var(--neon-cyan);
 }
 
 .map-readmore a:hover{
-    color:#a11e15ac;
+    color: var(--hover-cyan);;
 }
 
 .shiganshina-btn {
@@ -1313,16 +1440,16 @@ section.map img:hover {
     background-color: transparent;
     color: rgb(255,255,255);
     border: 1px solid !important;
-    border-color: #a11e15 !important;
+    border-color: var(--highlight-outline-border) !important;
     transition: background-color 0.2s ease;
 }
 
 .shiganshina-btn:hover {
-    background-color: #a11e15;
+    background-color: var(--background-light-panel-color);
 }
 
 .shiganshina-btn:active {
-    background-color: #6e150f !important;
+    background-color: var(--hover-cyan) !important;
 }
 
 .outside-btn {
@@ -1330,18 +1457,30 @@ section.map img:hover {
     background-color: transparent;
     color: rgb(255,255,255);
     border: 1px solid !important;
-    border-color: rgb(46, 154, 255) !important;
+    border-color: var(--highlight-outline-border) !important;
     transition: background-color 0.2s ease;
 }
 
 .outside-btn:hover {
-    background-color: rgb(46, 154, 255);
+    background-color: var(--background-light-panel-color);
+}
+
+.outside-btn:active {
+    background-color: var(--hover-cyan) !important;
 }
 
 .map-btn {
     font-size: 1em;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     border: 2px solid !important;
+    text-wrap:nowrap;
+    border-color: var(--highlight-outline-border) !important;
+    color:var(--neon-cyan);
+    transition: color 0.2s ease;
+}
+
+.map-btn:active {
+    background-color: var(--background-light-panel-color)!important;
 }
 
 /* 
@@ -1351,33 +1490,22 @@ SHIGANSHINA MAP
 
 */
 
-.map#shiganshina {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.3) 0%,
-        rgba(230, 230, 230, 0.8) 20%,
-        rgba(230, 230, 230, 0.8) 80%,
-        rgba(230, 230, 230, 0.3) 100%
-        ),
-
-        url('../images/map/destroyed-shiganshina.png');   
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 .shiganshina-map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
-    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
-    
-    /* Optional: A background color just in case they zoom out too far */
-    background-color: #bee7ff; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+
+    border-top: thick solid var(--highlight-outline-border);
+    border-right: thick solid var(--highlight-outline-border);
+    border-left: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
+    border-radius: 1px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+
 }
 
 .shiganshina-map-container:active {
@@ -1395,27 +1523,43 @@ SHIGANSHINA MAP
 
 .accordion {
     /* Changes the background of the entire accordion item */
-    --bs-accordion-bg: rgb(108, 108, 108); 
+    --bs-accordion-bg: var(--background-dark-panel-color); 
     
     /* Changes the text color */
-    --bs-accordion-color: #000000; 
+    --bs-accordion-color: var(--text-neon-color) !important; /* TODO: understand why it's not working */
     
     /* Changes the background of the button when clicked/open */
-    --bs-accordion-active-bg: rgb(132, 132, 132); 
+    --bs-accordion-active-bg: var(--background-light-panel-color); 
     
     /* Changes the text color of the button when clicked/open */
-    --bs-accordion-active-color: #ffffff; 
+    --bs-accordion-active-color: var(--neon-cyan); 
     
     /* Changes the border color between items */
-    --bs-accordion-border-color: rgb(0, 0, 0);
+    --bs-accordion-border-color: var(--highlight-outline-border);
     
     /* Changes the focus ring color when clicking */
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.7);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 234, 255, 0.4);
+
+    /* Bootstrap chevron colors for closed/open accordion states */
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cfeaf4cc' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2300ddff' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.accordion-header .accordion-button {
+    color: var(--section-title) !important;
+    border-bottom: 3px solid var(--highlight-outline-border);
+}
+
+.accordion-button::after {
+    filter: drop-shadow(0 0 4px rgba(0, 221, 255, 0.45));
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: drop-shadow(0 0 6px rgba(0, 221, 255, 0.75));
 }
 
 .accordion-item {
-    background-color: rgb(0, 0, 0, 0.8) !important;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     color: white;
     border: 2px solid black;
     font-size: .8em;
@@ -1423,12 +1567,12 @@ SHIGANSHINA MAP
 
 .accordion-img-panel {
     margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
-    border: 3px solid rgb(255, 255, 255);
+    border: 5px double var(--highlight-outline-border);
     border-radius: 4px;
     overflow: hidden;
     
     /* Optional: Added a subtle shadow so the white border pops against the accordion background */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(3px 4px 1px rgba(207, 234, 244, 0.2)); 
 }
 
 .accordion-img {
@@ -1445,20 +1589,24 @@ SHIGANSHINA MAP
 }
 
 .accordion-body {
-    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-align: justify;
+    font-size: 1em !important;
+    padding: 1em 0;
 }
 
 .shiganshina-map-readmore {
     font-size: .9em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-neon-color);
 }
 
 .shiganshina-map-readmore a {
-    color: #a11e15;
+    color: var(--neon-cyan);
 }
 
 .shiganshina-map-readmore a:hover{
-    color:#a11e15ac;
+    color: var(--hover-cyan);
 }
 
 
@@ -1469,33 +1617,23 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 */
 
-.map#outside{
-    background-image: linear-gradient(
-        to bottom,
-        rgba(190, 190, 190, 0.6) 0%,
-        rgba(221, 221, 221, 0.9) 20%,
-        rgba(221, 221, 221, 0.9) 80%,
-        rgba(190, 190, 190, 0.6) 100%
-        ),
-
-        url('../images/map/world-map-manga-right-pos.png');   
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 .outside-map-container {
     width: 100%;
     height: 80vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
-    border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
     overflow: hidden; 
     cursor: grab; 
     
-    /* Optional: A background color just in case they zoom out too far */
-    background-color: #724f33e0; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+
+    border-top: thick solid var(--highlight-outline-border);
+    border-right: thick solid var(--highlight-outline-border);
+    border-left: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
+    border-radius: 1px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+
 }
 
 .outside-map-container:active {
@@ -1516,12 +1654,16 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     background-color: transparent;
     color: rgb(255,255,255);
     border: 1px solid !important;
-    border-color: rgb(33, 86, 54) !important;
+    border-color: var(--highlight-outline-border) !important;
     transition: background-color 0.2s ease;
 }
 
 .walls-btn:hover {
-    background-color: rgb(29, 75, 48);
+    background-color: var(--background-light-panel-color);
+}
+
+.walls-btn:active {
+    background-color: var(--hover-cyan) !important;
 }
 
 
@@ -1620,15 +1762,32 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* --- Section wrapper --- */
 .full-collection {
-    background-color: rgb(13, 13, 13); /* same as .collection in main.css */
     padding: 1rem;
+    isolation: isolate;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background-color: var(--wall-bg-color);
+}
+
+.full-collection::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/themes_imgs/wall-texture.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .full-collection .section-title {
     margin-top: 0;
+    margin-bottom: 0.5em;
     padding-top: 0.3em !important;
-    -webkit-text-stroke: 6.5px white;
-    paint-order: stroke fill;
+    color: var(--graffiti-color-light);
+    font-family: 'SD Glitch', sans-serif;
+    text-shadow: 0 0 5px var(--graffiti-color-dark), 0 0 10px rgba(244, 198, 134, 0.65);
 }
 
 #collection-page-intro {
@@ -1648,18 +1807,19 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* --- Item card --- */
 .item-card {
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.08) 100%), var(--background-dark-panel-color);
+    border: thick double var(--highlight-outline-border);
+    color: var(--text-neon-color);
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+    filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(3px 4px 1px rgba(207, 234, 244, 0.2));
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item-card:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
 }
 
 
@@ -1668,14 +1828,16 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #a11e15;
-    color: white;
-    font-family: 'Bangers', cursive;
+    background-color: var(--wall-bg-color);
+    color: var(--graffiti-color-light);
+    font-family: 'Mono Seahorse Graffiti Regular', sans-serif;
     font-size: 1em;
     letter-spacing: 0.05rem;
-    padding: 0.1em 0.55em;
+    padding: 0.1em 0.55em 0.25em;
     z-index: 2;
     border-bottom-right-radius: 3px;
+    border-right: 2px solid var(--highlight-outline-border);
+    border-bottom: 2px solid var(--highlight-outline-border);
 }
 
 
@@ -1685,7 +1847,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
-    border-bottom: 2px solid rgb(20, 20, 20);
+    border-bottom: 2px solid var(--highlight-outline-border);
     display: block;
     transition: transform 0.3s ease;
 }
@@ -1697,27 +1859,27 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 /* Special case: paintings where full composition matters more than fill */
 #ymir-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #liberty-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #mask-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #yggdrasil-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 #codex-full {
     object-fit: scale-down;
-    background-color: #e8e4db;
+    background-color: var(--wall-bg-color);
 }
 
 /* --- Card bottom: info + QR side by side --- */
@@ -1735,30 +1897,30 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     display: flex;
     flex-direction: column;
     gap: 0.25em;
-    border-right: 2px solid rgb(20, 20, 20);
+    border-right: 2px solid var(--highlight-outline-border);
 }
 
 .item-title {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.82em;
-    color: rgb(20, 20, 20);
+    color: var(--graffiti-color-light);
     line-height: 1.3;
     margin: 0;
 }
 
 .item-complete-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'Amarillo USAF', serif;
     font-size: 0.90em;
-    color: #a11e15;
+    color: var(--section-title);
     font-style: italic;
     margin: 0;
     letter-spacing: 0.02rem;
 }
 
 .item-desc {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.72em;
-    color: #3a3a3a;
+    color: var(--text-neon-color);
     line-height: 1.45;
     margin: 0;
     text-align: justify;
@@ -1766,14 +1928,15 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-readmore {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.65em;
-    color: #a11e15;
+    color: var(--section-title);
     text-decoration: none;
     margin-top: auto;
 }
 
 .item-readmore:hover {
+    color: rgb(255, 255, 255);
     text-decoration: underline;
 }
 
@@ -1787,14 +1950,14 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     justify-content: center;
     gap: 0.35em;
     padding: 0.6em 0.5em;
-    background-color: #e8e4db;
+    background-color: var(--dark-cyan-transparent);
 }
 
 .qr-box {
     width: 66px;
     height: 66px;
-    border: 2px dashed #888;
-    background-color: white;
+    border: 2px dashed var(--highlight-outline-border);
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1809,9 +1972,9 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .qr-label {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.55em;
-    color: #666;
+    color: var(--section-title);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.04rem;
@@ -1869,29 +2032,48 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 .readable-text .section-title, 
 .readable-text p, 
 .readable-text li {
-    font-family: 'Noto Sans', sans-serif !important;
+    font-family: 'Orbitron', sans-serif !important;
     text-transform: none !important;
     letter-spacing: normal !important;
     line-height: 1.5 !important;
-    font-size: 0.85rem !important; 
-    text-align: left !important;
+    font-size: 0.95em !important; 
     -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
-    color: black !important; /* Assicura che il testo sia nero leggibile */
+    color: rgb(255, 255, 255) !important; /* Assicura che il testo sia nero leggibile */
 }
 
 /* rule for Disclaimer title */
 .readable-text .section-title {
-    font-family: 'Noto Sans', sans-serif !important; /* Font leggibile */
-    font-size: 2rem !important;                     /* Molto più grande */
+    font-family: 'Amarillo USAF', sans-serif !important; /* Font leggibile */
+    font-size: 2.5em !important;                     /* Molto più grande */
     font-weight: 800 !important;                    /* Grassetto extra */
     text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
     -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
-    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
+    color: var(--section-title) !important;                      /* Rosso bordeaux come il sito */
     margin-bottom: 25px !important;                 /* Spazio dal testo */
     display: block !important;
+    margin-bottom:0 !important;
+    padding-bottom: 0 !important;
 }
 
+.readable-text p {
+    padding: 0.5rem 1.5em !important;
+    margin-bottom: 15px !important; /* Spazio tra i paragrafi */
+    text-align: justify !important; 
+}
 
+.readable-text-links {
+   padding-top: 1rem !important;
+}
+
+.readable-text a {
+    color: var(--neon-cyan) !important;
+    text-decoration: none !important;
+}
+
+.readable-text a:hover {
+    color: var(--hover-cyan) !important;
+    text-decoration: underline !important;
+}
 /*
 
 Rules for Narratives page
@@ -1913,11 +2095,12 @@ Rules for Narratives page
     display: flex;
     flex-direction: column;
     text-decoration: none !important; /* Rimuove la sottolineatura dei link */
-    color: inherit;
-    border: 3px solid #181818;
-    border-radius: 15px;
+    color: var(--text-neon-color);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color);
+    border: thick double var(--highlight-outline-border);
+    border-radius: 2px;
     overflow: hidden;
-    background-color: #fff;
+    filter: drop-shadow(0 0 2px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
     transition: transform 0.3s ease;
 }
 
@@ -1930,7 +2113,7 @@ Rules for Narratives page
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-bottom: 2px solid #181818;
+    border-bottom: 2px solid var(--highlight-outline-border);
 }
 
 /* Contenitore del testo */
@@ -1940,16 +2123,18 @@ Rules for Narratives page
 }
 
 .narrative-text h3 {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--section-title);
 }
 
 .narrative-text p {
-    font-family: 'Noto Sans'g, sans-serif;
-    font-size: 0.95rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
     line-height: 1.5;
-    color: #333;
+    color: var(--text-neon-color);
 }
 
 /* Mobile Responsive */
@@ -1966,27 +2151,28 @@ Rules for Narratives page
 
 /* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
-    color: #ffffff;
-    border: 2px solid rgb(0, 0, 0); 
-    background-color: transparent;
+    font-family: 'Futurest Cosmo', sans-serif; /* Aggiunto il font manga */
+    font-size: 1.1em;
+    color: var(--neon-cyan);
+    border: 2px solid var(--highlight-outline-border); 
+    background-color: var(--background-dark-panel-color);
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.15);
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-weight: 500;
 }
 
 /* 2. Effetto Hover: solo per i bottoni NON attivi */
 .btn-exhibit:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff;
+    background-color: var(--section-title) !important;
+    color: rgb(255, 255, 255) !important;
+    border-color: var(--highlight-outline-border);
 }
 
 /* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
 .btn-check:checked + .btn-exhibit {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
+    background-color: var(--dark-cyan);
+    color: rgb(255, 255, 255);
+    border-color: var(--highlight-outline-border);
     
     /* BLOCCA IL MOUSE: */
     pointer-events: none; 
@@ -2015,14 +2201,14 @@ Rules for Narratives page
 
 /* Etichetta stile didascalia manga */
 .manga-label {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    font-family: 'Futurest Cosmo', sans-serif;
+    font-size: 1em !important;
+    background: var(--background-dark-panel-color) !important;
+    color: var(--text-neon-color) !important;
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: -1px; 
-    border: 3px solid #000;
+    border: 3px solid var(--highlight-outline-border) !important;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -2030,11 +2216,12 @@ Rules for Narratives page
 
 /* La cornice definita e fissa */
 .manga-img-wrapper {
-    border: 5px solid #000; /* Bordo nero spesso */
-    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    border: thick double var(--highlight-outline-border) !important;
+    border-radius: 5px;
     aspect-ratio: 16 / 10; 
     overflow: hidden;
-    background-color: #000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%, rgba(255,255,255,0.08) 100%), var(--background-dark-panel-color);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
 }
 
 .manga-img-wrapper img {
@@ -2051,6 +2238,10 @@ Rules for Narratives page
     filter: brightness(1.1); /* Leggero aumento di luminosità invece del movimento */
 }
 
+.manga-frame-static:hover img {
+    filter: brightness(1.08) drop-shadow(0 0 8px rgba(0, 221, 255, 0.15));
+}
+
 /*lightbox exhibition*/
 
 /* --- COMPONENTI EXHIBIT: LIGHTBOX --- */
@@ -2062,7 +2253,7 @@ Rules for Narratives page
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(4, 33, 47, 0.94);
     cursor: zoom-out;
 }
 
@@ -2075,30 +2266,32 @@ Rules for Narratives page
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid #fff;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border: 3px double var(--highlight-outline-border);
+    background-color: var(--background-dark-panel-color);
+    box-shadow: 0 0 24px rgba(0, 221, 255, 0.25), 0 0 30px rgba(0,0,0,0.5);
 }
 
 .close-lightbox {
     position: absolute;
     top: 20px;
     right: 40px;
-    color: #fff;
+    color: var(--section-title);
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.8);
 }
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.9rem;
-    color: #fff;
-    background: #000;
+    color: var(--text-neon-color);
+    background: var(--background-dark-panel-color);
     padding: 10px 25px;
-    border: 3px solid #000;
-    box-shadow: 6px 6px 0px #6c757d;
+    border: 3px double var(--highlight-outline-border);
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.18), 6px 6px 0px rgba(0, 0, 0, 0.65);
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -2107,10 +2300,10 @@ Rules for Narratives page
 }
 
 .btn-manga-nav:hover {
-    color: #fff;
-    background: #333;
+    color: rgb(255, 255, 255);
+    background: var(--dark-cyan);
     transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px #000;
+    box-shadow: 0 0 14px rgba(0, 221, 255, 0.28), 8px 8px 0px rgba(0, 0, 0, 0.8);
 }
 
 .nav-hidden {
@@ -2125,22 +2318,23 @@ Rules for Narratives page
 }
 
 .manga-label {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Futurest Cosmo', sans-serif;
     font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    background: var(--wall-bg-color);
+    color: var(--graffiti-color-light);
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: -1px; 
-    border: 3px solid #000;
+    border: 3px solid var(--graffiti-color-dark);
+    box-shadow: 0 0 12px rgba(100, 46, 14, 0.35);
     position: relative;
     z-index: 2;
     text-transform: uppercase;
 }
 
 .manga-img-wrapper {
-    border: 5px solid #000;
-    box-shadow: 12px 12px 0px #000;
+    border: 3px double var(--highlight-outline-border);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
     
     aspect-ratio: 1 / 1; 
     width: 100%;
@@ -2148,7 +2342,7 @@ Rules for Narratives page
     overflow: hidden;
     /* Aggiungiamo un colore neutro (grigio chiaro o bianco) 
        per riempire gli spazi vuoti che si creano ai lati */
-    background-color: #f5f5f5; 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%, rgba(255,255,255,0.08) 100%), var(--background-dark-panel-color); 
     
     cursor: zoom-in;
     display: flex;
@@ -2168,7 +2362,7 @@ Rules for Narratives page
     
     display: block;
     transition: transform 0.3s ease;
-    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.35));
 }
 
 .manga-img-wrapper:hover img {
@@ -2192,12 +2386,14 @@ Rules for Narratives page
 
 /* 3. La box dei metadati vera e propria */
 .metadata-box {
-    background-color: #000;
-    color: #fff !important;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(255, 255, 255, 0.1) 100%), var(--background-dark-panel-color) !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 0.9em;
+    line-height: 1.65;
     padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px #6c757d;
-
+    border: 3px solid var(--highlight-outline-border);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+    border-radius: 4px;
     /* BLOCCA LA BOX ALLO SCHERMO */
     position: -webkit-sticky; /* Supporto per Safari */
     position: sticky;
@@ -2207,27 +2403,37 @@ Rules for Narratives page
     align-self: flex-start;
     width: 100%; 
     max-height: fit-content;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .metadata-box h5 {
-    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    color: var(--section-title) !important; /* Qui metti il rosso o il colore che preferisci */
+    font-family: 'Amarillo USAF', sans-serif; /* Opzionale: per dare lo stile manga */
+    font-size: 1.5em;
     text-transform: uppercase;
-    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    border-bottom: 3px solid var(--highlight-outline-border); /* Aggiunge una linea sotto il titolo */
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
 .metadata-box strong {
-    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
+    color: var(--text-neon-color) !important; 
+    font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 5px;
 }
 
+.metadata-box p,
+.metadata-box li,
+.metadata-box span {
+    font-size: 1em;
+}
+
 /* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    color: var(--neon-cyan) !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    font-size: 1.05em;
     text-decoration: none !important; /* Rimuove la sottolineatura */
     font-weight: 700;
     transition: all 0.2s ease;
@@ -2235,7 +2441,7 @@ Rules for Narratives page
 
 /* Effetto al passaggio del mouse (opzionale ma consigliato) */
 #meta-institution a:hover {
-    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
+    color: var(--section-title) !important; /* Diventa bianco al passaggio */
     text-decoration: none !important; /* Si assicura che non torni la linea */
     background-color: transparent !important; /* Nessun evidenziatore */
 }

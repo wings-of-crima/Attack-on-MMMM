@@ -75,6 +75,17 @@
     --red-highligh-manuscript: #6c1c13;
     --footer-bg-color: rgb(62, 45, 40); /* can look like the exterior of a manuscript */
     --button-outline-color: rgb(154, 132, 109);
+
+    --bg-tooltip: rgb(178, 157, 107);
+    --text-tooltip: rgb(0,0,0);
+    --tooltip-border: rgb(80, 50, 6);
+    --offcanvas-bg-color: rgb(196, 166, 106, 0.9);
+    --offcanvas-head-color: rgba(124, 97, 62, 0.9);
+
+    --accordion-bg-color:rgb(120, 100, 75); 
+    --accordion-color: rgb(0, 0, 0);
+    --accordion-active-bg: rgba(155, 132, 104, 0.8);
+    --accordion-active-color: rgb(0, 0, 0);
 }
 
 html {
@@ -87,6 +98,158 @@ html {
     -ms-overflow-style: none; 
     cursor: url('widgets/aoe-hand-cursor.cur'), auto;
 }
+
+html.skip-intro #pre-loader,
+html.skip-intro #loader-screen {
+    display: none !important;
+}
+
+/* =============================================================
+
+PRE-LOADER AND LOADER STYLING:
+
+*/
+
+#pre-loader, #loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: center; */
+    color: white;
+    transition: opacity 4s ease, visibility 3s ease;
+}
+
+#pre-loader {
+    z-index: 9999;
+}
+
+#pre-loader-text {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.5em;
+    transition: opacity 0.8s ease-in;
+}
+
+#loader-screen {
+    position: fixed; /* or absolute, depending on how you built your loader */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Crucial: stops the video from spilling out */
+    
+    /* Assuming you are using flexbox to center your text/buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998; /* Keeps the loader on top of the whole website */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the video to fill the screen without stretching */
+    z-index: -1; /* Shoves the video behind the content */
+    
+    /* Optional but recommended: darken the video so your white text is readable */
+    filter: brightness(0.4); 
+}
+
+/* Keeps your content layered safely above the video */
+.loader-content {
+    position: relative;
+    z-index: 1; 
+    text-align: center; /* Centers your text and buttons */
+    width: 100%;
+    padding: 0 1em;;
+}
+
+#loader-screen-text { /*typwriter effect*/
+    width: 100%;
+    max-width: 992px;
+    font-family: monospace, sans-serif;
+    font-size: 1.2em;
+    font-weight: medium;
+    margin-inline: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.typewriter-cursor {
+    border-right: 2px solid white;
+    animation: blink-caret 0.85s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: 142ch; 
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% { 
+        border-color: white; 
+    }
+    50% { 
+        border-color: transparent; 
+    }
+}
+
+#toggleAudio {
+    font-family: 'Anime Ace', sans-serif;
+    margin-bottom: 1em;
+}
+
+#enter-button {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.4em;
+    margin: auto;
+    border: 2px solid;
+    border-radius: 0;
+    opacity: 0;
+    visibility: hidden;
+    /* This creates a smooth fade-in effect lasting 0.8 seconds */
+    transition: opacity 0.8s ease-in, visibility 0.8s ease-in; 
+}
+
+/* We will add this class with JavaScript when the typing is done */
+#enter-button.show-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+#enter-button:hover {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    color:#000000;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Ensures clicks pass through to the layer below */
+}
+
+
+/* ====================================================
+
+WEBSITE STYLING:
+
+*/
 
 body {
     display: flex;
@@ -591,7 +754,6 @@ button.btn {
 .narrative-panel #historical-tl {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
     font-size: 1.8em;
-    display: inline-block;
     transition: transform 0.3s ease, color 0.2s ease;
 }
 
@@ -1095,62 +1257,20 @@ blockquote {
 }
 
 
-/* MAP PAGE SPECIFIC STYLES: */
+/* MAP PAGE SPECIFIC STYLES: inspired by geographical ancient globes */
 
-section.map {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.35) 0%,
-        rgba(230, 230, 230, 0.9) 20%,
-        rgba(230, 230, 230, 0.9) 60%,
-        rgba(230, 230, 230, 0.3) 90%
-        ),
-
-        url('../images/map/walls-img.png');   
-    background-position: top;
-    background-size: 110% 130%;
-    background-repeat: no-repeat;
+.map .section-title {
+    font-size: 2.5em !important;
 }
 
 .map .section-text {
-    text-align: center;
-    font-size: 1em;
+    text-align: justify;
 }
 
 .map em {
-    color: #a11e15;
-    font-family: 'Anime Ace Italic', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
 } 
-
-/* IN PIU': 
-section.map img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    padding: 0.5rem;
-}
-
-section.map img:hover {
-    filter: drop-shadow(0 0 5px rgba(161, 30, 21, 0.8));
-    cursor: pointer;
-} */
-
-/* styling the SVG: */
-/*
-.map-container {
-    width: 100%;
-    max-width: 1400px; 
-    margin: 2rem auto; 
-    padding: 0.5em 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.map-container svg {
-    width: 100%;         
-    max-height: 110vh;     
-    height: auto;
-} */
 
 .row {
     margin: 0.5em;
@@ -1161,7 +1281,7 @@ section.map img:hover {
 .map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
+    border: thick solid var(--text-borders);
     border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
@@ -1196,14 +1316,20 @@ section.map img:hover {
 .custom-tooltip {
     --bs-tooltip-bg: var(--bg-tooltip);
     --bs-tooltip-color: var(--text-tooltip);
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
     font-size: 0.8em;
+    border: 5px double var(--tooltip-border); /* slightly darker than text-borders */
+    --bs-tooltip-border-radius: 0;
 }
 
 .offcanvas {
-    background-color: rgba(19, 19, 19, 0.9);
+    background-color: var(--offcanvas-bg-color);
     scrollbar-width: none !important;  /* TODO: understand why I can still see the scrollbar */
     -ms-overflow-style: none !important; 
+
+    border-left: 5px double var(--tooltip-border) !important;
 }
 
 .offcanvas-wide {
@@ -1211,41 +1337,44 @@ section.map img:hover {
 }
 
 .offcanvas-header {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'EB Garamond', serif;
+    font-weight: 900 !important;
     color:rgb(0, 0, 0);
-    background-color:rgb(205, 205, 205, 0.7);
+    background-color:var(--offcanvas-head-color);
 }
 
 .offcanvas-body {
     padding: 1.5em;
-    font-family: 'Anime Ace', sans-serif;
-    color:rgb(255,255,255);
+    font-family: 'Baskervville', sans-serif;
+    font-size: 1em !important;
+    font-weight: 500;
+    color:rgb(0, 0, 0);
     font-size: 0.8em;
     text-align: center;
 }
 
 .offcanvas-body em {
-    font-family: 'Anime Ace Italic', sans-serif;
-    color: #a11e15;     /* Uses your established dark red to show emphasis instead */
+    font-family: 'Baskervville', sans-serif;
+    font-weight: 800 !important;
 }
 
 .offcanvas-img-panel {
     flex-shrink: 0; /* This stops Flexbox from squishing the container! */
     margin: 1em 1em;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 4px;
+    border: 5px solid var(--tooltip-border);
+    border-radius: 2px;
     overflow: hidden;
 }
 
 .offcanvas-img {
     width: 100%;
     height: auto;
-    border-radius: inherit;
+    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
 .map-img-figcaption {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
     font-size: 0.9em;
     font-style: italic;
     margin-top: -10px;
@@ -1261,52 +1390,69 @@ section.map img:hover {
 
 .map-readmore {
     font-size: 1em;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'EB Garamond', serif;
 }
 
 .map-readmore a {
-    color: #a11e15;
+    color: rgb(0, 0, 0);
+    font-weight:800;
 }
 
 .map-readmore a:hover{
-    color:#a11e15ac;
+    color:rgb(55, 55, 55);
 }
 
 .shiganshina-btn {
     padding: 0.5rem;
     font-size: 1.2em;
     background-color: transparent;
-    color: rgb(255,255,255);
-    border: 1px solid !important;
-    border-color: #a11e15 !important;
+    color: rgb(0,0,0);
+    border: 3px solid !important;
+    border-radius: 0;
+    border-color: rgb(75, 85, 41) !important;
     transition: background-color 0.2s ease;
 }
 
 .shiganshina-btn:hover {
-    background-color: #a11e15;
+    background-color: rgb(75, 85, 41);
 }
 
 .shiganshina-btn:active {
-    background-color: #6e150f !important;
+    background-color: rgb(59, 67, 33) !important;
 }
 
 .outside-btn {
     font-size: 1.2em;
     background-color: transparent;
-    color: rgb(255,255,255);
-    border: 1px solid !important;
-    border-color: rgb(46, 154, 255) !important;
+    color: rgb(0, 0, 0);
+    border: 3px solid !important;
+    border-radius: 0;
+    border-color: rgb(60, 88, 115) !important;
     transition: background-color 0.2s ease;
 }
 
 .outside-btn:hover {
-    background-color: rgb(46, 154, 255);
+    background-color: rgb(60, 88, 115);
 }
 
+.outside-btn:active {
+    background-color: rgb(45, 66, 86) !important;
+}   
+
 .map-btn {
-    font-size: 1em;
-    font-family: 'Anime Ace', sans-serif;
+    font-size: 1.2em;
+    font-family: 'EB Garamond', sans-serif;
+    text-wrap:nowrap;
+    font-weight: 600;
     border: 2px solid !important;
+    border-radius: 0;
+    border-color: var(--text-borders);
+}
+
+.map-btn:hover {
+    background-color: var(--section-bg-color);
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0) !important;
 }
 
 /* 
@@ -1316,25 +1462,15 @@ SHIGANSHINA MAP
 
 */
 
-.map#shiganshina {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.3) 0%,
-        rgba(230, 230, 230, 0.8) 20%,
-        rgba(230, 230, 230, 0.8) 80%,
-        rgba(230, 230, 230, 0.3) 100%
-        ),
-
-        url('../images/map/destroyed-shiganshina.png');   
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+#shiganshina .section-title {
+    text-wrap: wrap;
+    margin-right: 1em;
 }
 
 .shiganshina-map-container {
     width: 100%;
     height: 90vh; /* How tall you want the map window to be */
-    border: thick solid rgb(0,0,0);
+    border: thick solid var(--text-borders);
     border-radius: 2px; /* Optional: gives the map window slightly rounded, modern corners */
     
     /* CRITICAL for Panzoom */
@@ -1360,40 +1496,40 @@ SHIGANSHINA MAP
 
 .accordion {
     /* Changes the background of the entire accordion item */
-    --bs-accordion-bg: rgb(108, 108, 108); 
+    --bs-accordion-bg: var(--accordion-bg-color); 
     
     /* Changes the text color */
-    --bs-accordion-color: #000000; 
+    --bs-accordion-color: var(--accordion-text-color); 
     
     /* Changes the background of the button when clicked/open */
-    --bs-accordion-active-bg: rgb(132, 132, 132); 
+    --bs-accordion-active-bg: var(--accordion-active-bg); 
     
     /* Changes the text color of the button when clicked/open */
-    --bs-accordion-active-color: #ffffff; 
+    --bs-accordion-active-color: var(--accordion-active-color); 
     
     /* Changes the border color between items */
-    --bs-accordion-border-color: rgb(0, 0, 0);
+    --bs-accordion-border-color: var(--tooltip-border);
     
     /* Changes the focus ring color when clicking */
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.7);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.accordion-header .accordion-button {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.6em !important;
+    font-weight: 600 !important;
 }
 
 .accordion-item {
-    background-color: rgb(0, 0, 0, 0.8) !important;
-    font-family: 'Anime Ace', sans-serif;
-    color: white;
+    background-color: rgb(120, 100, 75, 0.8) !important;
     border: 2px solid black;
-    font-size: .8em;
 }
 
 .accordion-img-panel {
     margin: 0; /* Removed offcanvas margins so it fits the Bootstrap grid perfectly */
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 4px;
+    border: 5px solid var(--tooltip-border);
+    border-radius: 2px;
     overflow: hidden;
-    
-    /* Optional: Added a subtle shadow so the white border pops against the accordion background */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
 .accordion-img {
@@ -1410,20 +1546,26 @@ SHIGANSHINA MAP
 }
 
 .accordion-body {
-    text-align: center;
+    font-family: 'Baskervville', sans-serif;
+    font-size: 1em;
+    font-weight: 500 !important;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    padding: 1em 0;
 }
 
 .shiganshina-map-readmore {
-    font-size: .9em;
-    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    font-family: 'EB Garamond', sans-serif;
 }
 
 .shiganshina-map-readmore a {
-    color: #a11e15;
+    color: rgb(0, 0, 0);
+    font-weight:800;
 }
 
 .shiganshina-map-readmore a:hover{
-    color:#a11e15ac;
+    color:rgb(55, 55, 55);
 }
 
 
@@ -1477,16 +1619,22 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .walls-btn {
+    padding: 0.5rem;
     font-size: 1.2em;
     background-color: transparent;
-    color: rgb(255,255,255);
-    border: 1px solid !important;
-    border-color: rgb(33, 86, 54) !important;
+    color: rgb(0,0,0);
+    border: 3px solid !important;
+    border-radius: 0;
+    border-color: rgb(75, 85, 41) !important;
     transition: background-color 0.2s ease;
 }
 
 .walls-btn:hover {
-    background-color: rgb(29, 75, 48);
+    background-color: rgb(75, 85, 41);
+}
+
+.walls-btn:active {
+    background-color: rgb(59, 67, 33) !important;
 }
 
 
@@ -1635,9 +1783,10 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #a11e15;
-    color: white;
-    font-family: 'Bangers', cursive;
+    background-color: var(--section-bg-color);
+    color: rgb(0, 0, 0);
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
     font-size: 1em;
     letter-spacing: 0.05rem;
     padding: 0.1em 0.55em;
@@ -1724,7 +1873,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .item-desc {
-    font-family: 'Baskervvile', serif;
+    font-family: 'Baskervville', serif;
     font-size: 0.75em;
     font-weight: 500;
     color: #000000;
@@ -1890,10 +2039,10 @@ Rules for Narratives page
     flex-direction: column;
     text-decoration: none !important; /* Rimuove la sottolineatura dei link */
     color: inherit;
-    border: 3px solid #181818;
-    border-radius: 15px;
+    border: 3px solid var(--text-borders);
+    border-radius: 0;
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--collection-bg-color);
     transition: transform 0.3s ease;
 }
 
@@ -1906,7 +2055,7 @@ Rules for Narratives page
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-bottom: 2px solid #181818;
+    border-bottom: 2px solid var(--tooltip-border);
 }
 
 /* Contenitore del testo */
@@ -1916,16 +2065,18 @@ Rules for Narratives page
 }
 
 .narrative-text h3 {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Rebelink', serif;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
 .narrative-text p {
-    font-family: 'Noto Sans'g, sans-serif;
-    font-size: 0.95rem;
+    font-family: 'Baskervville', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.5;
-    color: #333;
+    color: rgb(0, 0, 0);
+    text-align: justify;
 }
 
 /* Mobile Responsive */
@@ -1940,29 +2091,33 @@ Rules for Narratives page
 
 /*Style for buttons single_narrative*/
 
+.section-title#item-title {
+    font-size: 2.5em;
+}
+
 /* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    font-family: 'Anime Ace', sans-serif; /* Aggiunto il font manga */
-    color: #ffffff;
-    border: 2px solid rgb(0, 0, 0); 
+    font-family: 'EB Garamond', serif; /* Aggiunto il font manga */
+    color: rgb(0, 0, 0);
+    border: 2px solid var(--text-borders) !important; 
     background-color: transparent;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* 2. Effetto Hover: solo per i bottoni NON attivi */
 .btn-exhibit:hover {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #ffffff;
+    background-color: var(--section-bg-color) !important;
+    color: rgb(0, 0, 0) !important;
+    border-color: var(--text-borders);
 }
 
 /* 3. Stile per il bottone ATTIVO + Disabilitazione click/hover */
 .btn-check:checked + .btn-exhibit {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
+    background-color: var(--section-bg-color);
+    color: rgb(102, 102, 102);
+    border-color: var(--text-borders);
     
     /* BLOCCA IL MOUSE: */
     pointer-events: none; 
@@ -1971,7 +2126,7 @@ Rules for Narratives page
     cursor: default; 
 }
 
-/*Rules for images in exhibition*/
+/*Rules for images in exhibition*/ /* Todo: understanding if conflicting with collection page rules */
 
 /* Contenitore stile tavola manga */
 .manga-frame-container {
@@ -1991,14 +2146,15 @@ Rules for Narratives page
 
 /* Etichetta stile didascalia manga */
 .manga-label {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8rem;
-    background: #000;
-    color: #fff;
+    font-family: 'EB Garamond', serif !important;
+    font-size: 0.9em !important;
+    font-weight: 600 !important;
+    background: var(--section-bg-color) !important;
+    color: rgb(0, 0, 0) !important;
     display: inline-block;
     padding: 5px 15px;
     margin-bottom: -1px; 
-    border: 3px solid #000;
+    border: 2px solid var(--text-borders) !important;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -2006,11 +2162,11 @@ Rules for Narratives page
 
 /* La cornice definita e fissa */
 .manga-img-wrapper {
-    border: 5px solid #000; /* Bordo nero spesso */
-    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    border: 2px solid var(--text-borders) !important; /* Bordo nero spesso */
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.4) !important; /* Ombra netta e solida che non cambia */
     aspect-ratio: 16 / 10; 
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--collection-bg-color) !important; /* Colore di sfondo neutro per evitare spazi vuoti neri */
 }
 
 .manga-img-wrapper img {
@@ -2038,7 +2194,7 @@ Rules for Narratives page
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     cursor: zoom-out;
 }
 
@@ -2068,13 +2224,14 @@ Rules for Narratives page
 
 /* --- COMPONENTI EXHIBIT: NAVIGAZIONE MANGA --- */
 .btn-manga-nav {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-weight: 600 !important;
     font-size: 0.9rem;
-    color: #fff;
-    background: #000;
+    color: rgb(0, 0, 0) !important;
+    background: var(--section-bg-color) !important;
     padding: 10px 25px;
-    border: 3px solid #000;
-    box-shadow: 6px 6px 0px #6c757d;
+    border: 2px solid var(--text-borders) !important;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.4) !important;
     text-decoration: none;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -2094,7 +2251,7 @@ Rules for Narratives page
     pointer-events: none;
 }
 
-/* --- COMPONENTI EXHIBIT: CORNICI MANGA --- */
+/* --- COMPONENTI EXHIBIT: CORNICI MANGA --- */ /* Todo: understanding if conflicting */
 .manga-frame-container {
     position: relative;
     padding: 10px;
@@ -2168,11 +2325,11 @@ Rules for Narratives page
 
 /* 3. La box dei metadati vera e propria */
 .metadata-box {
-    background-color: #000;
-    color: #fff !important;
+    background-color: var(--section-bg-color) !important;
+    color: rgb(0, 0, 0) !important;
     padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 4px 4px 0px #6c757d;
+    border: 2px solid var(--text-borders) !important;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4) !important;
 
     /* BLOCCA LA BOX ALLO SCHERMO */
     position: -webkit-sticky; /* Supporto per Safari */
@@ -2186,16 +2343,26 @@ Rules for Narratives page
 }
 
 .metadata-box h5 {
-    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    color: rgb(0, 0, 0) !important; /* Qui metti il rosso o il colore che preferisci */
+    font-family: 'EB Garamond', serif; /* Opzionale: per dare lo stile manga */
+    font-weight: 700;
+    font-size: 1em;
     text-transform: uppercase;
-    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    border-bottom: 3px solid var(--text-borders); /* Aggiunge una linea sotto il titolo */
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
+.metadata-box li {
+    color: rgb(0, 0, 0) !important; /* Cambia questo con il colore che vuoi */
+    font-family: 'Baskervville', serif; /* Opzionale: per dare lo stile manga */
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
 .metadata-box strong {
-    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
+    color: rgb(0, 0, 0) !important; /* Cambia questo con il colore che vuoi */
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 5px;
@@ -2203,15 +2370,14 @@ Rules for Narratives page
 
 /* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
-    text-decoration: none !important; /* Rimuove la sottolineatura */
-    font-weight: 700;
+    text-decoration: none !important;
+    font-weight: 800;
     transition: all 0.2s ease;
 }
 
 /* Effetto al passaggio del mouse (opzionale ma consigliato) */
 #meta-institution a:hover {
-    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
+    color: rgb(123, 123, 123) !important; /* Diventa bianco al passaggio */
     text-decoration: none !important; /* Si assicura che non torni la linea */
     background-color: transparent !important; /* Nessun evidenziatore */
 }
