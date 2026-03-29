@@ -102,6 +102,11 @@ html {
     cursor: url('widgets/futuristic-cursor.png'), auto; /* TODO: change style */
 }
 
+html.skip-intro #pre-loader,
+html.skip-intro #loader-screen {
+    display: none !important;
+}
+
 /* =============================================================
 
 PRE-LOADER AND LOADER STYLING:
@@ -1444,7 +1449,7 @@ blockquote {
 }
 
 .shiganshina-btn:active {
-    background-color: var(--hover-cyan); !important;
+    background-color: var(--hover-cyan) !important;
 }
 
 .outside-btn {
@@ -1461,7 +1466,7 @@ blockquote {
 }
 
 .outside-btn:active {
-    background-color: var(--hover-cyan); !important;
+    background-color: var(--hover-cyan) !important;
 }
 
 .map-btn {

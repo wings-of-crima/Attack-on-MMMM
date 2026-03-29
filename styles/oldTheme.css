@@ -99,6 +99,11 @@ html {
     cursor: url('widgets/aoe-hand-cursor.cur'), auto;
 }
 
+html.skip-intro #pre-loader,
+html.skip-intro #loader-screen {
+    display: none !important;
+}
+
 /* =============================================================
 
 PRE-LOADER AND LOADER STYLING:

@@ -8,90 +8,88 @@ window.addEventListener("load", () => {
     const enterButton = document.getElementById("enter-button");
     const gateSfx = document.getElementById("gate-sfx");
 
-    // 1. CHECK SHORT-TERM MEMORY
-    const hasVisited = sessionStorage.getItem("hasVisited");
+    const shouldSkipIntro =
+        window.skipIntro === true ||
+        document.documentElement.classList.contains("skip-intro");
 
-    if (hasVisited) {
-        // 2. THEY'VE BEEN HERE! Instantly nuke the loaders and video.
+    if (shouldSkipIntro) {
         if (preLoader) preLoader.remove();
         if (loadScreen) loadScreen.remove();
-        
+
         if (bgVideo) {
             bgVideo.pause();
-            bgVideo.removeAttribute('src');
+            bgVideo.removeAttribute("src");
+            while (bgVideo.firstChild) {
+                bgVideo.removeChild(bgVideo.firstChild);
+            }
             bgVideo.load();
             bgVideo.remove();
         }
-    } else {
-        // 3. FIRST TIME VISIT! Play the intro and leave the sticky note.
-        sessionStorage.setItem("hasVisited", "true");
 
-        // Fade out the tiny pre-loader spinner
-        if (preLoader) {
-            preLoader.classList.add("fade-out");
-            setTimeout(() => {
-                preLoader.remove();
-            }, 1000);
-        }
+        return;
+    }
 
-        // --- PASTE YOUR NEW TYPEWRITER JAVASCRIPT HERE ---
-        const textContainer = document.getElementById("loader-screen-text");
-        if (textContainer) {
-            const typeText = 'Year 845. "That day, the human race remembered... the terror of being dominated by them... and the shame of being held captive in a birdcage."';
-            
-            textContainer.innerHTML = '<span id="typewriter-text"></span><span class="typewriter-cursor">&#8203;</span>';
-            const textSpan = document.getElementById("typewriter-text");
-            
-            let i = 0;
-            const speed = 65; 
+    if (preLoader) {
+        preLoader.classList.add("fade-out");
+        setTimeout(() => {
+            preLoader.remove();
+        }, 1000);
+    }
 
-            function typeWriter() {
-                if (i < typeText.length) {
-                    textSpan.innerHTML += typeText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } else {
-                    setTimeout(() => {
-                        if (enterButton) {
-                            enterButton.classList.add("show-button");
-                        }
-                    }, 200);
-                }
-            }
-            setTimeout(typeWriter, 800); 
-        }
-        // -------------------------------------------------
+    const textContainer = document.getElementById("loader-screen-text");
+    if (textContainer) {
+        const typeText = 'Year 845. "That day, the human race remembered... the terror of being dominated by them... and the shame of being held captive in a birdcage."';
 
-        // Handle the Enter Button Click
-        if (enterButton) {
-            enterButton.addEventListener("click", () => {
-                if (loadScreen) loadScreen.classList.add("fade-out");
+        textContainer.innerHTML = '<span id="typewriter-text"></span><span class="typewriter-cursor">&#8203;</span>';
+        const textSpan = document.getElementById("typewriter-text");
 
-                if (gateSfx) {
-                    gateSfx.currentTime = 0.5; 
-                    gateSfx.play();
-                    gateSfx.volume = 0.5;
-                }
-                
-                if (bgVideo) {
-                    bgVideo.pause(); 
-                    bgVideo.removeAttribute('src'); 
-                    while (bgVideo.firstChild) {
-                        bgVideo.removeChild(bgVideo.firstChild);
-                    }
-                    bgVideo.load(); 
-                    bgVideo.remove(); 
-                }
+        let i = 0;
+        const speed = 65;
 
-                console.log("Welcome to Shiganshina, where everything started...");
-                
+        function typeWriter() {
+            if (i < typeText.length) {
+                textSpan.innerHTML += typeText.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
                 setTimeout(() => {
-                    if (loadScreen) loadScreen.remove();
-                }, 2000);
-            });
+                    if (enterButton) {
+                        enterButton.classList.add("show-button");
+                    }
+                }, 200);
+            }
         }
+
+        setTimeout(typeWriter, 800);
+    }
+
+    if (enterButton) {
+        enterButton.addEventListener("click", () => {
+            if (loadScreen) loadScreen.classList.add("fade-out");
+
+            if (gateSfx) {
+                gateSfx.currentTime = 0.5;
+                gateSfx.play();
+                gateSfx.volume = 0.5;
+            }
+
+            if (bgVideo) {
+                bgVideo.pause();
+                bgVideo.removeAttribute("src");
+                while (bgVideo.firstChild) {
+                    bgVideo.removeChild(bgVideo.firstChild);
+                }
+                bgVideo.load();
+                bgVideo.remove();
+            }
+
+            setTimeout(() => {
+                if (loadScreen) loadScreen.remove();
+            }, 3000);
+        });
     }
 });
+
 
 // ==========================================
 // Audio Toggle Logic
