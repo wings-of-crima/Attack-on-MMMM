@@ -913,7 +913,7 @@ button.btn {
 }
 
 .card-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
+    font-family: 'Oswald', serif;
     font-size: 1.7em;
     font-weight: 800;
     text-align: left;
@@ -921,7 +921,7 @@ button.btn {
 }
 
 .card-text {
-    font-family: 'Anime Ace', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 0.8em;
     text-align: justify;
 }
