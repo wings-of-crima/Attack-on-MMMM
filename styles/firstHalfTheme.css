@@ -491,13 +491,27 @@ section {
     align-items: center;
     align-content: center;
     justify-content: center;
-    color:#b71b10;
-    background-color: rgb(226, 226, 226);
-    padding: 0.8em 1em;
-    margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
-    border: 1px solid rgb(238, 238, 238);
-    border-radius: 18px;
-    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5);
+    
+    /* Colore testo: un rosso più cupo o nero inchiostro è più storico */
+    color: #a11e15; 
+    
+    /* Colore carta invecchiata/crema invece del grigio moderno */
+    background-color: #f2eee5; 
+    
+    padding: 1.2em 2em;
+    margin: 1em auto;
+    
+    /* STILE MANIFESTO: angoli vivi e bordi doppi */
+    border: 5px solid #1a1a1a; /* Bordo esterno spesso e nero */
+    border-radius: 0;           /* Rimuove lo smussato (fondamentale) */
+    
+    /* Effetto "cornice nella cornice" tipico della stampa d'epoca */
+    outline: 2px solid #1a1a1a;
+    outline-offset: -12px; 
+
+    /* Ombra netta (offset) senza sfocatura, stile litografico */
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+    
     text-align: center;
     width: fit-content;
     max-width: 90%;
@@ -536,13 +550,14 @@ section {
 }
 
 #intro-text {
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(151, 71, 71);
     padding: 1.2em 2.1em;
     margin: 2em 7em 0.5em;
     border: 1.5px solid black;
     font-size: 0.9em;
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
+    border: 4px solid #800020; /* Rosso Bordeaux */
 }
 
 @media (max-width: 768px) {
@@ -556,7 +571,7 @@ section {
 }
 
 #intro-text a {
-    color: #a11e15;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -567,7 +582,7 @@ section {
 #intro-text em {
     font-size: 1.1em;
     padding: 0 0.2rem 0;
-    color: #a11e15;
+    color: #000000;
 }
 
 .bigger-cap {
@@ -878,6 +893,9 @@ button.btn {
     object-fit: cover; /* Ensure image covers area without distorting */
     object-position: center;
     border-radius: 0%;
+    border: 3px solid #97a471; /* Rosso Bordeaux */
+    /* Assicura che il bordo non alteri le dimensioni del pannello */
+    box-sizing: border-box;
 }
 
 .manga-panel:hover .card-img {
@@ -1166,7 +1184,7 @@ button.btn {
 }
 
 .team .card .btn {
-    background-color: #2d2d2deb;
+    background-color: #9c9e28;
     color: rgb(241, 241, 241);
     border: 2px solid rgb(22, 22, 22);
 }
@@ -1199,46 +1217,22 @@ blockquote {
 
 /* MAP PAGE SPECIFIC STYLES: */
 section.map {
-    position: relative; /* Necessario per posizionare lo sfondo correttamente */
-    background-color: #1a1a1a; /* Colore di fondo che si vede sotto la trasparenza */
-    overflow: hidden; /* Evita che lo sfondo esca dai bordi */
-    
-    /* Cornice stile manifesto */
+    position: relative;
+    overflow: hidden;
     border: 10px solid #838250;
     outline: 9px solid #1a1a1a;
     outline-offset: -15px;
     padding: 60px 0;
+
+    background-color: #1a1a1a;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* velo scuro */
+        url('../images/fire.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-section.map::before {
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0;
-    
-    background-image: linear-gradient(
-            to bottom,
-            rgba(230, 230, 230, 0.35) 0%,
-            rgba(230, 230, 230, 0.9) 20%,
-            rgba(230, 230, 230, 0.9) 60%,
-            rgba(230, 230, 230, 0.3) 90%
-            ),
-
-            url('../images/fire.png');   
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    
-    /* REGOLA QUI LA TRASPARENZA: 0.1 (quasi invisibile) - 1.0 (piena) */
-    opacity: 0.6; 
-    
-    /* Manteniamo i tuoi filtri per lo stile d'epoca */
-    filter: brightness(0.8) contrast(1.2);
-    
-    z-index: 1; /* Sta dietro al contenuto */
-}
 
 .map .section-text {
     text-align: center;
@@ -1299,7 +1293,7 @@ section.map img:hover {
     /*background-color: transparent;*/
     
     /* Ombra esterna netta (stampa litografica) */
-    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);*/
     
     /* Effetto "fogli sovrapposti" usando uno pseudo-elemento o gradienti */
     position: relative;
@@ -1551,18 +1545,7 @@ SHIGANSHINA MAP
 */
 
 .map#shiganshina {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(230, 230, 230, 0.3) 0%,
-        rgba(230, 230, 230, 0.8) 20%,
-        rgba(230, 230, 230, 0.8) 80%,
-        rgba(230, 230, 230, 0.3) 100%
-        ),
-
-        url('../images/map/destroyed-shiganshina.png');   
     background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 .shiganshina-map-container {
@@ -1590,6 +1573,7 @@ SHIGANSHINA MAP
 
 #shiganshina-map-text {
     text-align: justify !important;
+    z-index: 10;
 }
 
 .accordion {
@@ -1650,10 +1634,11 @@ SHIGANSHINA MAP
 .shiganshina-map-readmore {
     font-size: .9em;
     font-family: 'Noto Sans', sans-serif;
+    color: white;
 }
 
 .shiganshina-map-readmore a {
-    color: #a11e15;
+    color: #ffffff;
 }
 
 .shiganshina-map-readmore a:hover{
@@ -1668,32 +1653,20 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 */
 
-.map#outside{
-    position: relative; /* Necessario per posizionare lo sfondo correttamente */
-    background-color: #1a1a1a; /* Colore di fondo che si vede sotto la trasparenza */
-    overflow: hidden; /* Evita che lo sfondo esca dai bordi */
-    
-    /* Cornice stile manifesto */
+.map#outside {
+    position: relative;
+    overflow: hidden;
     border: 10px solid #838250;
     outline: 9px solid #1a1a1a;
     outline-offset: -15px;
     padding: 60px 0;
-}
-
-/* Modifica qui lo sfondo */
-#outside.map::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('../images/fire.png');
-    background-position: center;
+    background-color: #1a1a1a;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('../images/fire.png');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.6; 
-    filter: brightness(0.8) contrast(1.2);
-    
-    z-index: 0; /* Portalo a zero */
-    pointer-events: none; /* FONDAMENTALE: il mouse "passa attraverso" il fumo */
 }
 
 .outside-map-container {
@@ -1710,7 +1683,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     z-index: 10;
     
     /* Optional: A background color just in case they zoom out too far */
-    background-color: #724f33e0; 
+    background-color: #c4814be0; 
 }
 
 .outside-map-container:active {
