@@ -1383,7 +1383,7 @@ blockquote {
     color:rgb(255, 255, 255);
     font-size: 0.9em;
     font-weight: 100;
-    text-align: center;
+    text-align: justify;
 }
 
 .offcanvas-body em {
@@ -1518,7 +1518,7 @@ SHIGANSHINA MAP
 }
 
 #shiganshina-map-text {
-    text-align: center !important;
+    text-align: justify !important;
 }
 
 .accordion {
@@ -1539,11 +1539,23 @@ SHIGANSHINA MAP
     
     /* Changes the focus ring color when clicking */
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 234, 255, 0.4);
+
+    /* Bootstrap chevron colors for closed/open accordion states */
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cfeaf4cc' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2300ddff' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
 
 .accordion-header .accordion-button {
     color: var(--section-title) !important;
     border-bottom: 3px solid var(--highlight-outline-border);
+}
+
+.accordion-button::after {
+    filter: drop-shadow(0 0 4px rgba(0, 221, 255, 0.45));
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: drop-shadow(0 0 6px rgba(0, 221, 255, 0.75));
 }
 
 .accordion-item {
@@ -1577,9 +1589,9 @@ SHIGANSHINA MAP
 }
 
 .accordion-body {
-    text-align: center;
-    font-size: 1.1em !important;
-    font-weight: 100;
+    font-family: 'Orbitron', sans-serif;
+    text-align: justify;
+    font-size: 1em !important;
     padding: 1em 0;
 }
 
@@ -1642,12 +1654,16 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     background-color: transparent;
     color: rgb(255,255,255);
     border: 1px solid !important;
-    border-color: rgb(33, 86, 54) !important;
+    border-color: var(--highlight-outline-border) !important;
     transition: background-color 0.2s ease;
 }
 
 .walls-btn:hover {
-    background-color: rgb(29, 75, 48);
+    background-color: var(--background-light-panel-color);
+}
+
+.walls-btn:active {
+    background-color: var(--hover-cyan) !important;
 }
 
 
@@ -1770,7 +1786,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     margin-bottom: 0.5em;
     padding-top: 0.3em !important;
     color: var(--graffiti-color-light);
-    font-family: 'Mono Seahorse Graffiti Regular', sans-serif;
+    font-family: 'SD Glitch', sans-serif;
     text-shadow: 0 0 5px var(--graffiti-color-dark), 0 0 10px rgba(244, 198, 134, 0.65);
 }
 
