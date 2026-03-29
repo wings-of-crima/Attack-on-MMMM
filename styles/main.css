@@ -1165,6 +1165,13 @@ button.btn {
     }
 }
 
+@media (max-width: 576px) {
+    .team .card-title {
+        font-size: 0.8em !important;
+        text-wrap: wrap;
+    }
+}
+
 .team .card .btn {
     background-color: #2d2d2deb;
     color: rgb(241, 241, 241);
