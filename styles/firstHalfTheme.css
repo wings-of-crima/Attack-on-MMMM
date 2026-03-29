@@ -478,6 +478,103 @@ section {
     color: black;
 }
 
+.intro {
+    background-color: transparent;
+    border: 0 !important;
+    outline: none;
+    box-shadow: none;
+}
+
+.intro-quotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color:#b71b10;
+    background-color: rgb(226, 226, 226);
+    padding: 0.8em 1em;
+    margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 18px;
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    width: fit-content;
+    max-width: 90%;
+}
+
+#motto-title-en {
+    font-family: 'Playfair Display Bold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    /* 1. FONT FLUIDO: Si rimpicciolisce millimetro per millimetro */
+    /* 4vw significa "4% della larghezza della finestra" */
+    font-size: clamp(1.1rem, 4vw, 2.2rem) !important; 
+
+    /* 2. ADDIO NOWRAP: Fondamentale per non farlo uscire dai bordi */
+    /* Permettiamo al testo di andare a capo, ma solo come "ultima spiaggia" */
+    white-space: normal !important; 
+    text-wrap: balance !important; 
+
+    /* 3. ALLINEAMENTO */
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    text-shadow: 
+        1px 1px 0px #000,
+        2px 2px 0px #000,
+        3px 3px 0px rgba(0,0,0,0.5);
+}
+
+#motto-title-jp {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 2em;
+}
+
+#intro-text {
+    background-color: rgb(226, 226, 226);
+    padding: 1.2em 2.1em;
+    margin: 2em 7em 0.5em;
+    border: 1.5px solid black;
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+    #intro-text { /* to fix width when shrinking screen size */
+        margin: 2em auto 0.5em;
+        padding: 1em 1.5em;
+    }
+}
+
+#intro-text a {
+    color: #a11e15;
+    text-decoration: none;
+}
+
+#intro-text a:hover {
+    text-decoration: underline;
+}
+
+#intro-text em {
+    font-size: 1.1em;
+    padding: 0 0.2rem 0;
+    color: #a11e15;
+}
+
+.bigger-cap {
+    font-size: 1.3em;
+    display: inline-block;
+}
+
 button.btn {
     margin: 0 auto;
     padding: 0.5em 1em;
@@ -685,100 +782,6 @@ button.btn {
     color: rgb(217, 192, 192);
 }
 
-.intro {
-    background-color: transparent;
-    border: 0;
-}
-
-.intro-quotes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    color:#b71b10;
-    background-color: rgb(226, 226, 226);
-    padding: 0.8em 1em;
-    margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
-    border: 1px solid rgb(238, 238, 238);
-    border-radius: 18px;
-    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5);
-    text-align: center;
-    width: fit-content;
-    max-width: 90%;
-}
-
-#motto-title-en {
-    font-family: 'Playfair Display Bold', sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
-
-    /* 1. FONT FLUIDO: Si rimpicciolisce millimetro per millimetro */
-    /* 4vw significa "4% della larghezza della finestra" */
-    font-size: clamp(1.1rem, 4vw, 2.2rem) !important; 
-
-    /* 2. ADDIO NOWRAP: Fondamentale per non farlo uscire dai bordi */
-    /* Permettiamo al testo di andare a capo, ma solo come "ultima spiaggia" */
-    white-space: normal !important; 
-    text-wrap: balance !important; 
-
-    /* 3. ALLINEAMENTO */
-    text-align: center;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-
-    text-shadow: 
-        1px 1px 0px #000,
-        2px 2px 0px #000,
-        3px 3px 0px rgba(0,0,0,0.5);
-}
-
-#motto-title-jp {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 2em;
-}
-
-#intro-text {
-    background-color: rgb(226, 226, 226);
-    padding: 1.2em 2.1em;
-    margin: 2em 7em 0.5em;
-    border: 1.5px solid black;
-    font-size: 0.9em;
-    color: black;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        text-align: center;
-    }
-    #intro-text { /* to fix width when shrinking screen size */
-        margin: 2em auto 0.5em;
-        padding: 1em 1.5em;
-    }
-}
-
-#intro-text a {
-    color: #a11e15;
-    text-decoration: none;
-}
-
-#intro-text a:hover {
-    text-decoration: underline;
-}
-
-#intro-text em {
-    font-size: 1.1em;
-    padding: 0 0.2rem 0;
-    color: #a11e15;
-}
-
-.bigger-cap {
-    font-size: 1.3em;
-    display: inline-block;
-}
 
 /* ============================================================
    SMALL COLLECTION SPECIFICS:                                  */
@@ -1084,8 +1087,8 @@ button.btn {
     margin: 0 auto;    /* Center them just in case */
     margin-bottom: 0.5rem;
     /* Optional: Add a shadow to make them pop like the header subtitle */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
-    background-color:rgba(156, 156, 156, 0.92)
+    box-shadow: 2px 2px 5px rgba(152, 126, 126, 0.2); 
+    background-color:rgba(4, 52, 12, 0.92)
 }
 
 .team .card-img-top {
@@ -1108,10 +1111,11 @@ button.btn {
 
 .team .card-body {
     padding-bottom: 0.5em;
+    color: white;
 }
 
 .team .card-title {
-    font-family: 'Ditty', serif;
+    font-family: 'Oswald', serif;
     font-size: 1.6em;
     font-weight: 600;
     text-wrap: nowrap;
@@ -1120,10 +1124,11 @@ button.btn {
 }
 
 .team .card-subtitle {
-    font-family: 'Ditty', serif;
+    font-family: 'Oswald', serif;
     font-size: 1em;
     letter-spacing: 0.04rem;
     text-align: center;
+    color: white !important;
 }
 
 /* TODO: style git button and hover effect? */
@@ -1149,6 +1154,14 @@ button.btn {
         font-size: 1.2em;
         font-weight: 600;
         letter-spacing: 0.06rem;
+        text-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .team .card-title {
+        font-size: 0.8em !important;
+        text-wrap: wrap;
     }
 }
 
@@ -1205,10 +1218,18 @@ section.map::before {
     right: 0; 
     bottom: 0;
     
-    background-image: url('../images/fire.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(230, 230, 230, 0.35) 0%,
+            rgba(230, 230, 230, 0.9) 20%,
+            rgba(230, 230, 230, 0.9) 60%,
+            rgba(230, 230, 230, 0.3) 90%
+            ),
+
+            url('../images/fire.png');   
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     
     /* REGOLA QUI LA TRASPARENZA: 0.1 (quasi invisibile) - 1.0 (piena) */
     opacity: 0.6; 
@@ -1275,10 +1296,10 @@ section.map img:hover {
     /* Bordo spesso e scuro come una cornice di metallo industriale */
     /*border: 3px solid #000000;*/
     border-radius: 0; 
-    background-color: transparent;
+    /*background-color: transparent;*/
     
     /* Ombra esterna netta (stampa litografica) */
-    /*box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);
     
     /* Effetto "fogli sovrapposti" usando uno pseudo-elemento o gradienti */
     position: relative;
@@ -2077,6 +2098,15 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     color: black !important; /* Assicura che il testo sia nero leggibile */
 }
 
+.readable-text-links a {
+    color: #a11e15;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.readable-text-links a:hover {
+    text-decoration: underline;
+}
 /* rule for Disclaimer title */
 .readable-text .section-title {
     font-family: 'Oswald', sans-serif !important; /* Font leggibile */
@@ -2489,7 +2519,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #76b43c !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
+    color: #fce38b !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
     text-decoration: none !important; /* Rimuove la sottolineatura */
     font-weight: 700;
     transition: all 0.2s ease;
