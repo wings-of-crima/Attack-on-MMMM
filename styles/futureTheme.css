@@ -2036,25 +2036,44 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     text-transform: none !important;
     letter-spacing: normal !important;
     line-height: 1.5 !important;
-    font-size: 0.85rem !important; 
-    text-align: left !important;
+    font-size: 0.95em !important; 
     -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
-    color: black !important; /* Assicura che il testo sia nero leggibile */
+    color: rgb(255, 255, 255) !important; /* Assicura che il testo sia nero leggibile */
 }
 
 /* rule for Disclaimer title */
 .readable-text .section-title {
-    font-family: 'Orbitron', sans-serif !important; /* Font leggibile */
-    font-size: 2rem !important;                     /* Molto più grande */
+    font-family: 'Amarillo USAF', sans-serif !important; /* Font leggibile */
+    font-size: 2.5em !important;                     /* Molto più grande */
     font-weight: 800 !important;                    /* Grassetto extra */
     text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
     -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
-    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
+    color: var(--section-title) !important;                      /* Rosso bordeaux come il sito */
     margin-bottom: 25px !important;                 /* Spazio dal testo */
     display: block !important;
+    margin-bottom:0 !important;
+    padding-bottom: 0 !important;
 }
 
+.readable-text p {
+    padding: 0.5rem 1.5em !important;
+    margin-bottom: 15px !important; /* Spazio tra i paragrafi */
+    text-align: justify !important; 
+}
 
+.readable-text-links {
+   padding-top: 1rem !important;
+}
+
+.readable-text a {
+    color: var(--neon-cyan) !important;
+    text-decoration: none !important;
+}
+
+.readable-text a:hover {
+    color: var(--hover-cyan) !important;
+    text-decoration: underline !important;
+}
 /*
 
 Rules for Narratives page
