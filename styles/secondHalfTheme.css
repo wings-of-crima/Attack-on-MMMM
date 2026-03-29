@@ -289,21 +289,25 @@ section {
     padding-top: 0.2em;
     padding-left: 0.8em;
     margin-bottom: 0.5rem;
-    
-    /* 1. Set the inside color */
-    color: black; 
-
-    /* 2. Create the true vector border */
-    -webkit-text-stroke: 7px white; 
-    
-    /* 3. CRITICAL: This ensures the border sits BEHIND the letter.
-       Without this, the white border will bleed inside and make 
-       your black text look too thin. */
-    paint-order: stroke fill;
-    
-    /* 4. Remove the old hack */
-    text-shadow: none;
     letter-spacing: 0.09rem;
+    line-height: 1.1;
+
+    /* 1. Colore interno del testo */
+    color: white; 
+
+    /* 2. EFFETTO POP ART: Contorno + Ombra di profondità */
+    /* Le prime 4 ombre creano il bordo nero (outline) */
+    /* L'ultima crea la profondità azzurra (o del colore che preferisci) */
+    text-shadow: 
+        2px 2px 0px #000, 
+       -2px -2px 0px #000, 
+        2px -2px 0px #000, 
+       -2px 2px 0px #000,
+        6px 6px 0px #000000; 
+
+    /* Rimuoviamo il vecchio stroke e il paint-order che non servono più */
+    -webkit-text-stroke: 0;
+    paint-order: normal;
 }
 
 .section-text {
@@ -507,7 +511,13 @@ button.btn {
     justify-content: center;
     
     /* 1. Colori Pop Art */
-    color: #b71b10; 
+    color: #c82418; 
+    text-shadow: 
+        2px 2px 0px #000, 
+       -2px -2px 0px #000, 
+        2px -2px 0px #000, 
+       -2px 2px 0px #000,
+        5px 5px 0px #000; /* Questa è l'ombra spessa di profondità */
     background-color: #fdfcf0; /* Un bianco "carta di giornale" invece del grigio */
     
     /* 2. Bordo da Fumetto (Sostituisce il tuo 1px solid) */
@@ -553,7 +563,7 @@ button.btn {
     font-size: 0.9em;
     color: black;
     text-align: center;
-    font-weight: 00;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -590,26 +600,39 @@ button.btn {
 /* ============================================================
    SMALL COLLECTION SPECIFICS:                                  */
 .collection {
+    /* Sostituisci background-color: white con questo: */
     background-color: white;
+    background-image: radial-gradient(#21bffe 15%, transparent 16%);
+    background-size: 10px 10px; /* Regola questo valore per la densità dei punti */
+
     padding: 2rem;
-    
     border: 6px solid black;
-    /*transform: rotate(-0.5deg); lo teniamo?*/ 
+    /* transform: rotate(-0.5deg); */
     margin: 40px 20px;
     z-index: 2;
-
 }
 
 .collection .section-title {
     margin-top: 0;
     padding-top: 0.3em !important;
-    -webkit-text-stroke: 6.5px white;
+    
+    /* Manteniamo il tuo contorno bianco */
+    -webkit-text-stroke: 6.5px #0098fd !important;
     paint-order: stroke fill;
+
+    /* AGGIUNTA: Ombra spessa e netta in stile Pop Art */
+    /* Spostata di 5px a destra e 5px in basso, colore nero (o un blu scuro) */
+    text-shadow: 6px 6px 0px #0098fd !important; 
+    
+    /* Opzionale: rendiamo il testo tutto maiuscolo per enfatizzare lo stile */
+    text-transform: uppercase;
+    font-family: 'Bangers', cursive; /* Se hai caricato Bangers, è perfetta qui */
 }
 
 #collection-intro {
     -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
     paint-order: stroke fill;
+    font-weight: 600;
 }
 
 .note {
@@ -620,20 +643,24 @@ button.btn {
     paint-order: stroke fill;
     margin-bottom: 0;
     padding: 0 1.5rem;
+    font-weight: 600;
 }
 
 .note u {
     text-underline-offset: 0.25rem;
+    font-weight: 600;
 }
 
 #remainder {
     -webkit-text-stroke: 3.5px rgba(255, 255, 255, 0.9);
     paint-order: stroke fill;
+    font-weight: 600;
 }
 
 #remainder a {
     color: #a11e15;
     text-underline-offset: 0.25rem;
+    font-weight: 600;
 }
 
 /* MANGA-LIKE PANELS FOR COLLECTION DISPLAY: */
@@ -725,16 +752,17 @@ button.btn {
 }
 
 .card-title {
-    font-family: 'Copperplate Gothic LT W01 29BC', serif;
-    font-size: 1.7em;
-    font-weight: 800;
+    font-family: 'Bangers', serif;
+    font-size: 1.4em;
+    font-weight: 500;
     text-align: left;
     text-wrap: nowrap;
 }
 
 .card-text {
-    font-family: 'Anime Ace', sans-serif;
-    font-size: 0.8em;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
     text-align: justify;
 }
 
@@ -1659,6 +1687,7 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     font-size: 0.9em;
     color: black;
     text-align: center;
+    font-weight: 600;
 }
 
     button.btn {
