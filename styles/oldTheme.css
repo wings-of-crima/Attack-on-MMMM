@@ -1157,9 +1157,14 @@ button.btn {
     height: fit-content;
     margin: 0 auto;    /* Center them just in case */
     margin-bottom: 0.5rem;
-    /* Optional: Add a shadow to make them pop like the header subtitle */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
-    background-color:rgba(156, 156, 156, 0.92)
+    color: var(--main-text-color);
+    background-image:
+        linear-gradient(rgba(243, 221, 177, 0.22), rgba(243, 221, 177, 0.22)),
+        url('../images/themes_imgs/paper-texture.png');
+    background-color: var(--collection-bg-color);
+    border: 1.5px solid var(--text-borders);
+    border-radius: 2px;
+    box-shadow: 3px 3px 8px rgba(80, 50, 6, 0.22);
 }
 
 .team .card-img-top {
@@ -1169,6 +1174,7 @@ button.btn {
     object-fit: cover;
     object-position: center 20%;
     display: block;
+    border-bottom: 1.5px solid var(--text-borders);
 }
 
 .team .section-text a {
@@ -1182,23 +1188,26 @@ button.btn {
 }
 
 .team .card-body {
-    padding-bottom: 0.5em;
+    padding: 0.75em 1em 1em;
 }
 
 .team .card-title {
     font-family: 'Ditty', serif;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 600;
     text-wrap: nowrap;
     letter-spacing: 0.08rem;
     text-align: center;
+    color: rgb(0, 0, 0);
 }
 
 .team .card-subtitle {
-    font-family: 'Ditty', serif;
-    font-size: 1em;
-    letter-spacing: 0.04rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
     text-align: center;
+    color: var(--red-highligh-manuscript);
 }
 
 @media (max-width: 992px) {
@@ -1234,9 +1243,20 @@ button.btn {
 }
 
 .team .card .btn {
-    background-color: #2d2d2deb;
-    color: rgb(241, 241, 241);
-    border: 2px solid rgb(22, 22, 22);
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    background-color: rgba(232, 217, 171, 0.95);
+    color: rgb(0, 0, 0);
+    border: 2px solid var(--button-outline-color);
+}
+
+.team .card .btn:hover {
+    background-color: var(--button-outline-color);
+    color: rgb(255, 249, 233);
+    border-color: var(--button-outline-color);
 }
 
 footer {
