@@ -2490,9 +2490,20 @@ Rules for Narratives page
 .documentation {
     margin: 2em 3em 2em;
     padding: 0.45em 1em 0.8em;
-    border: 3px solid rgb(0, 0, 0);
     text-align: justify;
-    color: rgb(0, 0, 0);
+    color: var(--text-neon-color);
+}
+
+.documentation p,
+.documentation li,
+.documentation a,
+.documentation figcaption,
+.documentation code,
+.documentation strong,
+.documentation em,
+.documentation i,
+.documentation u {
+    font-family: 'Orbitron', serif;
 }
 
 .documentation .section-title {
@@ -2502,9 +2513,9 @@ Rules for Narratives page
 }
 
 .documentation .section-subtitle {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 800;
-    color: rgb(0, 0, 0);
+    color: var(--text-neon-color);
     font-size: clamp(1.35rem, 1.1rem + 0.7vw, 1.75rem);
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -2527,15 +2538,15 @@ Rules for Narratives page
     flex: 0 0 auto;
     align-self: flex-start;
     margin-top: 0.15rem;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
     font-weight: 700;
     white-space: nowrap;
 }
 
 .documentation-text {
-    font-family: 'Noto Sans', sans-serif;
-    color: rgb(0, 0, 0);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-neon-color);
     font-size: 1rem;
     line-height: 1.85;
     letter-spacing: 0.01em;
@@ -2552,12 +2563,14 @@ Rules for Narratives page
 .documentation-index {
     margin: 0.25rem 0.85rem 1.8rem;
     padding: 1rem 1.15rem 0.85rem;
-    background-color: rgb(220, 220, 220);
-    border: 2px solid rgb(0, 0, 0);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0, 0.4) 100%), var(--background-light-panel-color);
+    border: thick solid var(--highlight-outline-border);
+    filter: drop-shadow(0 0 10px var(--neon-cyan)) drop-shadow(6px 8px 2px rgba(207, 234, 244, 0.2));
+
 }
 
 .documentation-index-title {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 0.05em;
@@ -2582,8 +2595,8 @@ Rules for Narratives page
 
 .documentation h5,
 .documentation h6 {
-    font-family: 'Noto Sans', sans-serif;
-    color: rgb(0, 0, 0);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-neon-color);
     margin-left: 0.7rem;
 }
 
@@ -2593,7 +2606,7 @@ Rules for Narratives page
     margin-top: 1.8rem;
     margin-bottom: 0.9rem;
     padding-left: 0.85rem;
-    border-left: 4px solid rgb(161, 30, 21);
+    border-left: 4px solid var(--neon-cyan);
 }
 
 .documentation h6 {
@@ -2607,8 +2620,8 @@ Rules for Narratives page
 
 .documentation ul,
 .documentation ol {
-    font-family: 'Noto Sans', sans-serif;
-    color: rgb(0, 0, 0);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-neon-color);
     margin: 0.35rem 0 1.35rem 1.5rem;
     padding: 0 0.85rem 0 1.35rem;
 }
@@ -2620,12 +2633,12 @@ Rules for Narratives page
 }
 
 .documentation li::marker {
-    color: rgb(161, 30, 21);
+    color: var(--neon-cyan);
     font-weight: 800;
 }
 
 .documentation a {
-    color: rgb(143, 18, 13);
+    color: var(--neon-cyan);
     font-weight: 700;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.16em;
@@ -2633,15 +2646,15 @@ Rules for Narratives page
 }
 
 .documentation a:hover {
-    color: rgb(0, 0, 0);
+    color: var(--hover-cyan);
 }
 
 .documentation img {
     display: block;
     width: min(100%, 52rem);
     margin: 1.5rem auto;
-    border: 2px solid rgb(0, 0, 0);
-    box-shadow: 0.55rem 0.55rem 0 rgba(0, 0, 0, 0.28);
+    border: 2px solid var(--highlight-outline-border);
+    box-shadow: 0.55rem 0.55rem 0 var(--background-light-panel-color);
 }
 
 .documentation figure {
@@ -2649,7 +2662,7 @@ Rules for Narratives page
 }
 
 .documentation figcaption {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
     text-align: center;

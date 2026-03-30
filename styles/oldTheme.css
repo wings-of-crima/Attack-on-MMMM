@@ -72,7 +72,7 @@
     --hover-bg-color: rgba(178, 157, 107, 0.40);
     --hover-text-color: rgb(113, 100, 68);
     --text-borders: rgba(80, 50, 6, 0.6); /* same as the shadow for the intro-quotes, but less transparent */
-    --red-highligh-manuscript: #6c1c13;
+    --red-highlight-manuscript: #6c1c13;
     --footer-bg-color: rgb(62, 45, 40); /* can look like the exterior of a manuscript */
     --button-outline-color: rgb(154, 132, 109);
 
@@ -483,7 +483,7 @@ section {
     align-items: center;
     align-content: center;
     justify-content: center; /* This should center the content vertically, but it seems like the padding and line-height might be affecting it. */
-    color: var(--red-highligh-manuscript); /* burnt red for more of a manuscript/textbook feel */
+    color: var(--red-highlight-manuscript); /* burnt red for more of a manuscript/textbook feel */
     background-color: var(--section-bg-color);
     padding: 0.8em 1em;
     margin: 0.5em auto; /* TODO: I don't why it's not shrinking both left and right but check */
@@ -545,7 +545,7 @@ section {
 }
 
 #intro-text a {
-    color: var(--red-highligh-manuscript);
+    color: var(--red-highlight-manuscript);
     text-decoration: none;
     font-weight: 500;
 }
@@ -558,7 +558,7 @@ section {
     font-size: 1.2em;
     font-weight: 600;
     padding: 0 0.2rem 0;
-    color: var(--red-highligh-manuscript);
+    color: var(--red-highlight-manuscript);
 }
 
 /* Not necessary here: 
@@ -1178,7 +1178,7 @@ button.btn {
 }
 
 .team .section-text a {
-    color: var(--red-highligh-manuscript);
+    color: var(--red-highlight-manuscript);
     font-weight: 600;
     text-decoration: none;
 }
@@ -1207,7 +1207,7 @@ button.btn {
     font-weight: 600;
     letter-spacing: 0.03rem;
     text-align: center;
-    color: var(--red-highligh-manuscript);
+    color: var(--red-highlight-manuscript);
 }
 
 @media (max-width: 992px) {
@@ -1270,10 +1270,10 @@ footer {
 }
 
 blockquote {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Son of Time', serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 1.3em;
+    font-size: 1.6em;
 }
 
 .blockquote-footer {
@@ -2406,9 +2406,26 @@ Rules for Narratives page
 .documentation {
     margin: 2em 3em 2em;
     padding: 0.45em 1em 0.8em;
-    border: 3px solid rgb(0, 0, 0);
+    background-image:
+        linear-gradient(rgb(243, 221, 177, 0.28), rgba(243, 221, 177, 0.28)),
+        url('../images/themes_imgs/paper-texture.png');
+    background-color: var(--section-bg-color);
+    border: 1.5px solid var(--text-borders);
+    box-shadow: 4px 4px 8px rgba(80, 50, 6, 0.18);
     text-align: justify;
-    color: rgb(0, 0, 0);
+    color: var(--main-text-color);
+}
+
+.documentation p,
+.documentation li,
+.documentation a,
+.documentation figcaption,
+.documentation code,
+.documentation strong,
+.documentation em,
+.documentation i,
+.documentation u {
+    font-family: 'Baskervville', serif;
 }
 
 .documentation .section-title {
@@ -2418,7 +2435,7 @@ Rules for Narratives page
 }
 
 .documentation .section-subtitle {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Baskervville', sans-serif;
     font-weight: 800;
     color: rgb(0, 0, 0);
     font-size: clamp(1.35rem, 1.1rem + 0.7vw, 1.75rem);
@@ -2434,50 +2451,61 @@ Rules for Narratives page
     align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
-    border-top: 2px solid rgb(0, 0, 0);
+    border-top: 1.5px solid var(--text-borders);
     margin: 2.4rem 0 0.85rem;
-    padding: 1.35rem 1.15rem 0 0.85rem;
+    padding: 1.15rem 1.35rem 0.15rem 0.95rem;
 }
 
 .documentation-back-top {
     flex: 0 0 auto;
     align-self: flex-start;
-    margin-top: 0.15rem;
-    font-family: 'Noto Sans', sans-serif;
+    margin-top: 0.25rem;
+    font-family: 'Baskervville', serif;
     font-size: 0.9rem;
+    font-style: italic;
     font-weight: 700;
+    color: rgb(0, 0, 0);
     white-space: nowrap;
 }
 
 .documentation-text {
-    font-family: 'Noto Sans', sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    line-height: 1.85;
-    letter-spacing: 0.01em;
+    font-family: 'Baskervville', serif;
+    color: var(--main-text-color);
+    font-size: 1.06rem;
+    line-height: 1.8;
+    font-weight: 450;
+    letter-spacing: 0.005em;
     margin: 0 0 1.15rem;
     padding: 0.2rem 1.15rem 0 1.55rem !important;
     text-wrap: pretty;
+    font-weight: 500;
 }
 
 .documentation > .documentation-text:first-of-type {
-    font-size: 1.08rem;
+    font-size: 1.12rem;
+    font-style: italic;
     margin-bottom: 1.2rem;
 }
 
 .documentation-index {
     margin: 0.25rem 0.85rem 1.8rem;
     padding: 1rem 1.15rem 0.85rem;
-    background-color: rgb(220, 220, 220);
-    border: 2px solid rgb(0, 0, 0);
+    background-image:
+        linear-gradient(rgb(243, 221, 177, 0.22), rgba(243, 221, 177, 0.22)),
+        url('../images/themes_imgs/paper-texture.png');
+    background-color: rgba(255, 249, 233, 0.92);
+    border: 1px solid var(--text-borders);
+    box-shadow: 2px 2px 4px rgba(80, 50, 6, 0.16);
 }
 
 .documentation-index-title {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Baskervville', serif;
     font-size: 0.95rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    color: rgb(0, 0, 0);
     margin: 0 0 0.75rem;
 }
 
@@ -2498,35 +2526,41 @@ Rules for Narratives page
 
 .documentation h5,
 .documentation h6 {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Baskervville', serif;
     color: rgb(0, 0, 0);
     margin-left: 0.7rem;
 }
 
 .documentation h5 {
-    font-size: 1.18rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 700;
     margin-top: 1.8rem;
     margin-bottom: 0.9rem;
-    padding-left: 0.85rem;
-    border-left: 4px solid rgb(161, 30, 21);
+    margin-right: 1.15rem;
+    padding: 0 0 0.3rem;
+    border-left: 0;
+    border-bottom: 1px solid var(--text-borders);
 }
 
 .documentation h6 {
-    font-size: 0.95rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: none;
     margin-top: 1.6rem;
     margin-bottom: 0.75rem;
 }
 
 .documentation ul,
 .documentation ol {
-    font-family: 'Noto Sans', sans-serif;
-    color: rgb(0, 0, 0);
+    font-family: 'Baskervville', serif;
+    color: var(--main-text-color);
+    font-size: 1.02rem;
     margin: 0.35rem 0 1.35rem 1.5rem;
     padding: 0 0.85rem 0 1.35rem;
+    font-weight: 500;
 }
 
 .documentation li {
@@ -2536,28 +2570,31 @@ Rules for Narratives page
 }
 
 .documentation li::marker {
-    color: rgb(161, 30, 21);
+    color: rgb(0, 0, 0);
     font-weight: 800;
 }
 
 .documentation a {
-    color: rgb(143, 18, 13);
+    color: rgb(0, 0, 0);
     font-weight: 700;
+    font-style: italic;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.16em;
     transition: color 0.2s ease;
 }
 
 .documentation a:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(87, 59, 42);
 }
 
 .documentation img {
     display: block;
     width: min(100%, 52rem);
     margin: 1.5rem auto;
-    border: 2px solid rgb(0, 0, 0);
-    box-shadow: 0.55rem 0.55rem 0 rgba(0, 0, 0, 0.28);
+    padding: 0.3rem;
+    background-color: rgba(255, 249, 233, 0.92);
+    border: 1.5px solid var(--text-borders);
+    box-shadow: 0.55rem 0.55rem 0 rgba(80, 50, 6, 0.22);
 }
 
 .documentation figure {
@@ -2565,8 +2602,10 @@ Rules for Narratives page
 }
 
 .documentation figcaption {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Baskervville', serif;
     font-size: 0.9rem;
+    font-style: italic;
+    color: rgb(87, 59, 42);
     line-height: 1.5;
     text-align: center;
     margin-top: -0.55rem;
@@ -2585,7 +2624,7 @@ Rules for Narratives page
     }
 
     .documentation .section-subtitle {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
     }
 
     .documentation-section-head {
@@ -2596,7 +2635,7 @@ Rules for Narratives page
 
     .documentation-back-top {
         font-size: 0.8rem;
-        margin-top: 0.1rem;
+        margin-top: 0.2rem;
     }
 
     .documentation-text,
@@ -2626,8 +2665,7 @@ Rules for Narratives page
     }
 
     .documentation h5 {
-        font-size: 1.05rem;
-        padding-left: 0.65rem;
+        font-size: 1.15rem;
     }
 
     .documentation ul,
