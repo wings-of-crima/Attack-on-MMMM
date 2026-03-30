@@ -1171,9 +1171,13 @@ button.btn {
     height: fit-content;
     margin: 0 auto;    /* Center them just in case */
     margin-bottom: 0.5rem;
-    /* Optional: Add a shadow to make them pop like the header subtitle */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
-    background-color:rgba(156, 156, 156, 0.92)
+    color: var(--text-neon-color);
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 55%, rgba(255,255,255,0.06) 100%),
+        var(--background-dark-panel-color);
+    border: 3px double var(--highlight-outline-border);
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(0, 221, 255, 0.18), 4px 6px 14px rgba(0, 0, 0, 0.55);
 }
 
 .team .card-img-top {
@@ -1183,6 +1187,7 @@ button.btn {
     object-fit: cover;
     object-position: center 20%;
     display: block;
+    border-bottom: 2px solid var(--highlight-outline-border);
 }
 
 .team .section-text a {
@@ -1195,22 +1200,34 @@ button.btn {
 }
 
 .team .card-body {
-    padding-bottom: 0.5em;
+    padding: 0.75em 1em 1em;
 }
 
 .team .card-title {
-    font-family: 'Ditty', serif;
-    font-size: 1.6em;
+    font-family: 'Amarillo USAF', sans-serif;
+    font-size: 1.45em;
     font-weight: 600;
     text-wrap: nowrap;
     letter-spacing: 0.08rem;
     text-align: center;
+    color: var(--section-title) !important;
+    text-shadow: 0 0 10px rgba(17, 156, 202, 0.6);
 }
 
 .team .card-subtitle {
-    font-family: 'Ditty', serif;
-    font-size: 1em;
-    letter-spacing: 0.04rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95em;
+    font-weight: 500;
+    letter-spacing: 0.12rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-neon-color) !important;
+}
+
+.email {
+    font-family: 'Futurest Cosmo', sans-serif;
+    font-size: 0.7em;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -1250,9 +1267,21 @@ button.btn {
 
 
 .team .card .btn {
-    background-color: #2d2d2deb;
-    color: rgb(241, 241, 241);
-    border: 2px solid rgb(22, 22, 22);
+    font-family: 'Futurest Cosmo', sans-serif;
+    font-size: 0.95em;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    background-color: var(--dark-cyan-transparent);
+    color: var(--neon-cyan);
+    border: 2px solid var(--highlight-outline-border);
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.15);
+}
+
+.team .card .btn:hover {
+    background-color: var(--section-title);
+    color: rgb(255, 255, 255);
+    border-color: var(--highlight-outline-border);
+    box-shadow: 0 0 14px rgba(0, 221, 255, 0.28);
 }
 
 footer {

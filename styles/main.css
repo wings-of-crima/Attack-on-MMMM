@@ -1125,7 +1125,7 @@ button.btn {
 
 .team .card-title {
     font-family: 'Ditty', serif;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 600;
     text-wrap: nowrap;
     letter-spacing: 0.08rem;
@@ -1133,9 +1133,15 @@ button.btn {
 }
 
 .team .card-subtitle {
-    font-family: 'Ditty', serif;
-    font-size: 1em;
+    font-family: 'Ditty', sans-serif;
+    font-size: 1.2em;
     letter-spacing: 0.04rem;
+    text-align: center;
+}
+
+.team .email {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.8em;
     text-align: center;
 }
 
@@ -1177,6 +1183,15 @@ button.btn {
     background-color: #2d2d2deb;
     color: rgb(241, 241, 241);
     border: 2px solid rgb(22, 22, 22);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team .card .btn:hover {
+    background-color: #a11e15;
+    color: rgb(255, 255, 255);
+    border-color: #6f140f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 footer {
