@@ -253,14 +253,47 @@
                     <h5 id="collection-curation"><strong>1. Items Curation</strong></h5>
 
                         <p class="documentation-text">
-                           Add text
+                            For the collection page, the structure was designed to provide continuity with the homepage layout, drawing inspiration from <strong>manga panels</strong>. Each element in the collection occupies a defined space reminiscent of comic book frames, maintaining a visual rhythm that guides the eye across the various cards. Each individual card is composed of several elements that provide the user with an initial presentation of the item:
+                        </p>
+
+                        <ul>
+                            <li><strong>The item’s image</strong>: This is not merely a decorative element, but the primary visual touchpoint. It functions as an interactive link that transports the user to the item's specific web page; in this way, the image acts as a "portal" to view the object within its original digital context.</li>
+                            <li><strong>The title and full name</strong>: This section combines the item's common name with its official designation as registered by the holding institution (such as museums or archives). This adds authority to the card, allowing the user to learn both the familiar name of the item and its formal identity within the world of cultural heritage preservation.</li>
+                            <li><strong>The introductory description</strong>: Written with a narrative and engaging tone, the choice to remain non-specific is strategic. The goal is to provide a "taste" of the item's significance, enticing the reader to explore the site’s narrative sections to uncover historical details and the item's role within the story.</li>
+                            <li><strong>Read more</strong>: This external link is essential for those wishing to conduct further research. The "Read more" button opens a window to external sources and academic or institutional insights, ensuring that the user can always trace back to broader information.</li>
+                            <li><strong>QR code</strong>: This serves a functional and technical purpose. While the page’s graphic layout offers a visual and narrative presentation of the item, the QR code provides direct access to the structured metadata. By scanning it, the user is redirected to the CSV files stored in the project's GitHub Repository; these files contain the technical information and cataloged data for the object, ensuring full transparency regarding the sources and the details of the database used.</li>
+                        </ul>
+
+                        <p class="documentation-text">
+                            The purpose of the collection page is to show the user all the items included in the digital exhibition, provide them with "external" information related to these items, and create a "bridge" between the graphical interface and the technical data.
                         </p>
 
                     <h5 id="essentials"><strong>2. Metadata</strong></h5>
                     
-                        <p class="documentation-text">
-                            Add text
-                        </p>
+                    <h6><strong>1. Methodological Approach</strong></h6>
+                    <p class="documentation-text">
+                        To ensure the high-quality description, findability, and interoperability of a diverse range of cultural heritage items a specialized metadata selection process was implemented, mapping each item to the international standard best suited to its physical and functional nature.
+                    </p>
+
+                    <h6><strong>2. Selection of Metadata Standards</strong></h6>
+                    <p class="documentation-text">
+                        The collection was categorized into three distinct groups, each governed by a specific schema:
+                    </p>
+                    <ul>
+                        <li><strong>CDWA (Categories for the Description of Works of Art)</strong>: Adopted for museum objects, including fine arts, scientific instruments, and historical artifacts. CDWA provided the necessary granularity to document materiality, dimensions, and the specific "Object Work Type" (e.g., the hypodermic syringe or the Abildgaard painting).</li>
+                        <li><strong>MODS (Metadata Object Description Schema)</strong>: Applied to digital images, photographs, and cartographic resources. MODS was selected for its robust ability to handle rich descriptive data for visual media, such as maps from the Rumsey and Leventhal collections, while maintaining a more sophisticated structure than simple Dublin Core.</li>
+                        <li><strong>BIBFRAME & Dublin Core</strong>: Utilized for bibliographic and archival manuscript resources. We integrated the Linked Data capabilities of BIBFRAME (to model the relationship between the "Work" and the "Instance") with the essential descriptive elements of Dublin Core. This hybrid approach ensures that complex items like the Codex Regius are both structurally sound and web-compatible.</li>
+                    </ul>
+
+                    <h6><strong>3. Data Architecture and Implementation</strong></h6>
+                    <p class="documentation-text">
+                        The workflow for data entry and distribution followed a rigorous three-step process:
+                    </p>
+                    <ul>
+                        <li><strong>Systematic Extraction</strong>: Each item underwent a systematic extraction of key metadata fields (Identifier, Creator, Object Type, Date, Title, Source, Materials, Dimensions, and Holding Institution). These were mapped to the formal technical labels of the chosen standards (e.g., <i>creatorIdentity</i> for CDWA or <i>namePart</i> for MODS).</li>
+                        <li><strong>Decentralized CSV Management</strong>: For every item, a unique, standalone CSV file was generated. This approach allows for modular data management, ensuring that metadata can be easily updated or harvested by external systems without affecting the entire database.</li>
+                        <li><strong>Digital Identity Access</strong>: To bridge the gap between the physical context and digital documentation, each item is associated with a unique QR code. Upon scanning, the user is redirected immediately to the specific CSV file hosted on the project’s server, providing instant access to the item’s "digital identity card."</li>
+                    </ul>
 
                 <div class="documentation-section-head">
                     <h4 class="section-subtitle" id="map-design">The Map and User Journey Design</h4>
@@ -321,14 +354,14 @@
 
                     <figure class="documentation-figure">
                         <img src="images/documentation/pinterest-board.png" alt="Screenshot of Pinterest board with inspirations for the themes" class="documentation-image" />
-                        <figcaption><i>Figure 7.</i></figcaption>
+                        <figcaption><i>Figure 6.</i></figcaption>
                     </figure>
 
                     <h5 id="1500-theme"><strong>1. 1500-1800</strong></h5>
 
                         <figure class="documentation-figure">
                             <img src="images/documentation/1500-1800-vision-board.png" alt="Screenshot of Canva vision board for 1500-1800 theme" class="documentation-image" />
-                            <figcaption><i>Figure 6.</i></figcaption>
+                            <figcaption><i>Figure 7.</i></figcaption>
                         </figure>
 
                         <p class="documentation-text">
@@ -350,22 +383,83 @@
                         </p>
                     
                     <h5 id="1900-1950-theme"><strong>2. 1900-1950</strong></h5>
+                        <figure class="documentation-figure">
+                            <img src="images/documentation/1900-1950-Vision-board.png" alt="Screenshot of Canva vision board for 1900-1950 theme" class="documentation-image" />
+                            <figcaption><i>Figure 8.</i></figcaption>
+                        </figure>
+
+                        <p class="documentation-text">
+                            Given the theme's focus on the first half of the 20th century, the style was designed to evoke an atmosphere of austerity, drawing primary inspiration from <strong>World War I and World War II propaganda posters</strong>. The design seeks to recreate an authoritative tone: bold borders are used to separate content and give a sense of "weight" and solidity to the elements, almost as if they were posters pasted onto a wall.
+                        </p>
+
+                        <p class="documentation-text">
+                            Regarding the colors, the selection is directly based on the limited color palette of the era's posters. The predominant color is <strong>military green</strong>, which conveys discipline and control. This is paired with a <strong>dark red</strong>, used to create strong contrast and draw attention. Instead of modern white, <strong>cream and ivory tones</strong> are used to simulate the cheap or aged paper of the period's flyers.
+                        </p>
+
+                        <p class="documentation-text">
+                            The choice of fonts also aims to reflect the communication style of that time. Specifically, the <strong>Oswald</strong> font was used: it is a tall, narrow character that mimics the headlines of enlistment posters, where space was limited and the message had to be readable from a distance. These features convey rigor and a certain "aggressiveness," an effect accentuated in the main titles through the use of <strong>very thick black outlines</strong>. This detail recalls the lettering made with stencils or heavy ink stamps typical of military equipment crates.
+                        </p>
 
 
                     <h5 id="1950-2000-theme"><strong>3. 1950-2000</strong></h5>
+                        <figure class="documentation-figure">
+                            <img src="images/documentation/1950-2000-Vision-board.png" alt="Screenshot of Canva vision board for 1950-2000 theme" class="documentation-image" />
+                            <figcaption><i>Figure 9.</i></figcaption>
+                        </figure>
+
+                        <p class="documentation-text">
+                            To represent the second half of the 20th century, the aesthetic shifts drastically toward the energy of <strong>Pop Art</strong>, drawing inspiration from the visual language of <strong>comic books and posters</strong>. Unlike the previous style, the design here moves away from rigidity to adopt a vibrant and playful tone. Several elements have been modified to appear like actual paper cutouts; the use of very thick, sharp black borders creates an "illustration" effect, making the content stand out as if pasted onto a comic book panel.
+                        </p>
+
+                        <p class="documentation-text">
+                            The color palette breaks away from the seriousness of military tones of the previous theme, utilizing <strong>extremely saturated primary colors</strong> like bright red, yellow, and blue. This choice communicates dynamism and recalls the mass media culture of the 1960s. The treatment of shadows follows this same logic: they are not blurred but solid and slightly misaligned with the blocks, a detail that deliberately mimics the <strong>printing errors</strong> found in old, low-cost magazines.
+                        </p>
+
+                        <p class="documentation-text">
+                            From a typographic standpoint, the main font chosen is <strong>Bangers</strong>, which immediately recalls comic book onomatopoeia with its bold shapes. This is paired with <strong>Comic Neue</strong>, used for texts to maintain the comic book atmosphere even in more discursive sections while ensuring better readability. To reinforce this graphic identity, titles are not static; they are often presented <strong>“tilted”</strong>, turning the interface into a dynamic and iconic visual experience.
+                        </p>
 
 
                     <h5 id="2035-theme"><strong>4. 2035</strong></h5>
 
                         <figure class="documentation-figure">
                             <img src="images/documentation/2035-vision-board.png" alt="Screenshot of Canva vision board for 2035 theme" class="documentation-image" />
-                            <figcaption><i>Figure 8.</i></figcaption>
+                            <figcaption><i>Figure 10.</i></figcaption>
                         </figure>
                 
 
                 <div class="documentation-section-head">
                     <h4 class="section-subtitle" id="narratives">The Narratives</h4>
                     <a class="documentation-back-top" href="#documentation-top">To top</a>
+                </div>
+
+                    <p class="documentation-text">
+                        Regarding the narratives, three different paths have been designed for the user:
+                    </p>
+
+                    <ul>
+                        <li><strong>Historical Timeline</strong>: The first path is historical; this narrative traverses the entire collection of items following their chronological order.</li>
+                        <li><strong>“To You, 2000 Years From Now”</strong>: This path can also be defined as "Legendary." The central theme is the Legend of Ymir, the starting point for the entire story described in the manga and anime. For this narrative, we have exclusively selected items related to the character of Ymir and the story arc regarding the history of the Titans.</li>
+                        <li><strong>“Currently Publicly Available Information”</strong>: The third narrative focuses on the "technological" aspect. In this case, all items that are products of human innovation or that are related to human warfare and rebellion, have been selected and arranged according to their chronological order of creation.</li>
+                    </ul>
+
+                    <h5 id="narratives-development"><strong>Narratives Development</strong></h5>
+
+                    <p class="documentation-text">
+                        In each narrative path of the digital exhibition, the individual items from the collection are displayed in sequence alongside their corresponding references to the manga and anime. This approach allows users to immediately and visually grasp the connection between the physical object and its appearance within the story.
+                    </p>
+
+                    <p class="documentation-text">
+                        For each item displayed we have created four different types of text. Our goal is to allow anyone to enjoy the exhibition, regardless of their prior knowledge of the <i>Attack on Titan</i> world or how much time they wish to spend reading. For every item, the visitor can read a description concerning the object in the real world (its physical form and actual function) as well as its significance and role within the AOT story. 
+                    </p>
+                    
+                    <p class="documentation-text">
+                        Specifically, the texts are divided based on two criteria: the <strong>level of difficulty</strong> and the <strong>depth and length</strong> of the information. Those who are not familiar with the subject will find basic, easy-to-understand information. Conversely, those who are already fans or wish to learn more can choose the longer, technical versions that go much deeper into specific details. In this way, each person is free to choose the mode that best suits their needs, making the exhibition experience personalized and never boring or overly complicated. For the collection of information about the anime, we combined the contributors' knowledge with data from the <i>Attack on Titan Wiki (Fandom)</i>. This wiki serves as the main reference for those seeking additional information or further insights.
+                    </p>
+
+                    <p class="documentation-text">
+                        Regarding the technical side of the exhibition page, all metadata, images, and texts are stored in a single <strong>JSON file</strong>. This centralized structure allows us to manage all the information for every item in one place. Using a <strong>JavaScript file</strong>, this data is then dynamically injected into the website. This approach makes the page flexible and easy to update.
+                    </p>
                 </div>
 
                         <p class="documentation-text">
