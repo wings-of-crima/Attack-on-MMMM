@@ -564,7 +564,7 @@ section {
 /* Not necessary here: 
 .bigger-cap {
     font-size: 1.2em;
-    display: inline-block;
+    display: inline;
 } */
 
 button.btn {

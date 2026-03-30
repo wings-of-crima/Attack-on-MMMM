@@ -559,7 +559,7 @@ section {
 
 .bigger-cap {
     font-size: 1.3em;
-    display: inline-block;
+    display: inline;
 }
 
 button.btn {
