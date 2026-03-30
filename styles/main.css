@@ -2355,7 +2355,6 @@ MOBILE-SPECIFIC STYLES:
 .documentation {
     margin: 2em 3em 2em;
     padding: 0.45em 1em 0.8em;
-    background-color: rgb(194, 194, 194);
     border: 3px solid rgb(0, 0, 0);
     text-align: justify;
     color: rgb(0, 0, 0);
@@ -2418,7 +2417,7 @@ MOBILE-SPECIFIC STYLES:
 .documentation-index {
     margin: 0.25rem 0.85rem 1.8rem;
     padding: 1rem 1.15rem 0.85rem;
-    background-color: rgba(255, 255, 255, 0.45);
+    background-color: rgb(220, 220, 220);
     border: 2px solid rgb(0, 0, 0);
 }
 
