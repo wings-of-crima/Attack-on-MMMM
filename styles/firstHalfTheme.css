@@ -429,18 +429,14 @@ main {
 }
 
 section {
-    /* Sfondo crema/carta invecchiata invece del grigio */
     background-color: #a5ae6e; 
     
     margin: 2em 3em;
-    padding: 1.5em; /* Più respiro per il testo */
+    padding: 1.5em; 
     
-    /* Doppia cornice: il bordo è l'oro, l'outline è il nero */
     border: 12px solid #c4af83; 
     outline: 4px solid #1a1a1a;
-    outline-offset: -12px; /* Spinge la linea nera dentro l'oro */
-    
-    /* Ombra netta e piatta, tipica della stampa litografica */
+    outline-offset: -12px; 
     box-shadow: 11px 11px 11px rgba(0,0,0,0.15);
 }
 
@@ -455,8 +451,6 @@ section {
         
     /* 1. Set the inside color */
     color: rgb(249, 249, 169); 
-
-    /* 2. Create the true vector border */
     -webkit-text-stroke: 7px rgb(0, 0, 0); 
     
     /* 3. CRITICAL: This ensures the border sits BEHIND the letter.
@@ -491,25 +485,18 @@ section {
     align-items: center;
     align-content: center;
     justify-content: center;
-    
-    /* Colore testo: un rosso più cupo o nero inchiostro è più storico */
     color: #a11e15; 
-    
-    /* Colore carta invecchiata/crema invece del grigio moderno */
     background-color: #f2eee5; 
     
     padding: 1.2em 2em;
     margin: 1em auto;
     
-    /* STILE MANIFESTO: angoli vivi e bordi doppi */
-    border: 5px solid #1a1a1a; /* Bordo esterno spesso e nero */
-    border-radius: 0;           /* Rimuove lo smussato (fondamentale) */
+    border: 5px solid #1a1a1a;
+    border-radius: 0;           
     
-    /* Effetto "cornice nella cornice" tipico della stampa d'epoca */
+    /* Double frame */
     outline: 2px solid #1a1a1a;
     outline-offset: -12px; 
-
-    /* Ombra netta (offset) senza sfocatura, stile litografico */
     box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
     
     text-align: center;
@@ -524,15 +511,14 @@ section {
     letter-spacing: 1px;
 
     /* 1. FONT FLUIDO: Si rimpicciolisce millimetro per millimetro */
-    /* 4vw significa "4% della larghezza della finestra" */
+    /* 4vw = "4% of window width" */
     font-size: clamp(1.1rem, 4vw, 2.2rem) !important; 
 
-    /* 2. ADDIO NOWRAP: Fondamentale per non farlo uscire dai bordi */
-    /* Permettiamo al testo di andare a capo, ma solo come "ultima spiaggia" */
+    /* Let the text wrap naturally, but only as a last resort */
     white-space: normal !important; 
     text-wrap: balance !important; 
 
-    /* 3. ALLINEAMENTO */
+    /* 3. Align */
     text-align: center;
     display: block;
     width: 100%;
@@ -557,7 +543,7 @@ section {
     font-size: 0.9em;
     color: rgb(255, 255, 255);
     text-align: center;
-    border: 4px solid #800020; /* Rosso Bordeaux */
+    border: 4px solid #800020; 
 }
 
 @media (max-width: 768px) {
@@ -610,11 +596,11 @@ button.btn {
     position: relative; 
     background-color: rgb(24, 24, 24); 
     border: 3px solid rgb(24, 24, 24); 
-    border-radius: 10px;     /* Gives it a nice button feel */
+    border-radius: 10px;     
     overflow: hidden;
     flex: 1 1 150px;         /* Grow/shrink evenly, baseline width of 180px */
     height: 150px;
-    padding: 0;              /* Strip padding so the button text can center properly */
+    padding: 0;              
     cursor: pointer;         /* Makes the whole block feel clickable */
 }
 
@@ -767,9 +753,9 @@ button.btn {
 .narrative-panel #historical-tl {
     font-family: 'Copperplate Gothic LT W01 29BC', sans-serif;
     font-size: 1.7em;
-    display: flex !important;       /* Usa flex per centrare il contenuto */
-    justify-content: center;        /* Centra orizzontalmente */
-    align-items: center;            /* Centra verticalmente */
+    display: flex !important;       /*To center the content*/
+    justify-content: center;        /* Centers horizontally */
+    align-items: center;            /* Centers vertically */
     text-align: center;
     width: 100%;
     height: 100%;
@@ -804,7 +790,7 @@ button.btn {
     background-color: #162724;
     padding: 1rem;
 
-    border: 15px solid #97a471; /* Cornice color oro/ottone spento */
+    border: 15px solid #97a471; 
     
 }
 
@@ -893,8 +879,8 @@ button.btn {
     object-fit: cover; /* Ensure image covers area without distorting */
     object-position: center;
     border-radius: 0%;
-    border: 3px solid #97a471; /* Rosso Bordeaux */
-    /* Assicura che il bordo non alteri le dimensioni del pannello */
+    border: 3px solid #97a471; 
+    /* Ensures that the border does not affect the panel dimensions */
     box-sizing: border-box;
 }
 
@@ -1226,7 +1212,7 @@ section.map {
 
     background-color: #1a1a1a;
     background-image: 
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* velo scuro */
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
         url('../images/fire.png');
     background-size: cover;
     background-position: center;
@@ -1238,9 +1224,9 @@ section.map {
     text-align: center;
     font-size: 1em;
     position: relative;
-    z-index: 2; /* Sta sopra l'immagine trasparente */
-    color: #ffffff; /* Testo bianco per contrasto col fondo scuro */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Ombra per leggere meglio */
+    z-index: 2; /* Stays above the transparent image */
+    color: #ffffff; /* White text for contrast with dark background */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Shadow for better readability */
 }
 
 .map em {
@@ -1298,9 +1284,9 @@ section.map img:hover {
     /* Effetto "fogli sovrapposti" usando uno pseudo-elemento o gradienti */
     position: relative;
     position: relative;
-    z-index: 2; /* Sta sopra l'immagine trasparente */
-    color: #ffffff; /* Testo bianco per contrasto col fondo scuro */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Ombra per leggere meglio */
+    z-index: 2; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
     overflow: hidden;
 }
 
@@ -1326,32 +1312,27 @@ section.map img:hover {
 }
 
 .custom-tooltip .tooltip-inner {
-    /* 1. Colori e Font */
-    background-color: #f2eee5 !important; /* Colore carta invecchiata */
-    color: #1a1a1a !important;           /* Nero inchiostro */
-    font-family: 'Oswald', sans-serif;   /* Font stile testata giornalistica */
+    background-color: #f2eee5 !important; 
+    color: #1a1a1a !important;           
+    font-family: 'Oswald', sans-serif;   
     font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 10px 18px;
     
-    /* 2. Reset bordi standard */
     border: none;
     border-radius: 0 !important;
     position: relative;
 
-    /* 3. Barra rossa laterale (Stile 'Top Secret') */
     border-left: 5px solid #670404 !important;
 
-    /* 4. Effetto Angolo Ripiegato (In alto a destra) */
-    /* Il primo gradient crea la linea della piega, il secondo lo sfondo che si ferma al taglio */
+    
     background: 
         linear-gradient(225deg, transparent 12px, #d4cfc1 12px, #d4cfc1 13px, transparent 13px),
         linear-gradient(225deg, transparent 12px, #f2eee5 12px);
     
-    /* 5. Effetto Angolo Tagliato (In basso a sinistra) */
-    /* Taglia via l'angolo opposto per un look più grezzo e strappato */
+    /* 5. Effect cut angle - bottom left*/
     clip-path: polygon(
         0% 0%, 
         calc(100% - 15px) 0%, 
@@ -1361,28 +1342,25 @@ section.map img:hover {
         0% calc(100% - 15px)
     );
     
-    /* 6. Ombra netta (Stampa litografica) */
     filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.25));
 }
 
 .custom-tooltip .tooltip-arrow::before {
-    border-top-color: #f2eee5 !important; /* Deve coincidere con lo sfondo carta */
+    border-top-color: #f2eee5 !important; 
 }
 
-/* Il corpo interno del tooltip */
 .tooltip-inner {
     padding: 8px 12px;
-    border: 1px solid #d4cfc1; /* Un bordo leggero per dare profondità alla carta */
-    border-radius: 0px !important; /* Rimuove l'arrotondamento moderno */
+    border: 1px solid #d4cfc1; 
+    border-radius: 0px !important; 
     
-    /* Allineamento testo tipico da colonna di giornale */
     text-align: center;
     font-weight: 700;
 }
 
 .offcanvas {
-    background-color: #1b2e2b !important; /* Verde militare profondo dal tema */
-    border-left: 5px solid #a11e15; /* Linea rossa di "urgenza/pericolo" sul bordo */
+    background-color: #1b2e2b !important; 
+    border-left: 5px solid #a11e15; 
     box-shadow: -5px 0 15px rgba(0,0,0,0.5);
 }
 
@@ -1391,7 +1369,6 @@ section.map img:hover {
 }
 
 .offcanvas-header {
-    /* Colore carta avorio/ottone per sembrare l'etichetta del fascicolo */
     background-color: #c4af83 !important; 
     font-family: 'Oswald', serif;
     color: #1a1a1a !important;
@@ -1401,11 +1378,11 @@ section.map img:hover {
 
 .offcanvas-body {
     padding: 1.5em;
-    font-family: 'Oswald', sans-serif; /* Più leggibile e militare */
+    font-family: 'Oswald', sans-serif; 
     letter-spacing: 1px;
     font-size: 1.1em;
-    color: #e8e4db; /* Testo color carta chiara per contrasto */
-    text-align: justify; /* Look da rapporto ufficiale */
+    color: #e8e4db; 
+    text-align: justify; 
     line-height: 1.6;
 }
 
@@ -1462,15 +1439,14 @@ section.map img:hover {
     color: #ffffff !important;
     font-size: 1.1em;
     border: 3px solid #000000 !important;
-    /* Ombra piatta che simula lo spessore di un timbro */
     box-shadow: 4px 4px 0px #000000;
     padding: 0.8rem 1.8rem;
-    border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
+    border: 3px solid #000000 !important; 
     border-radius: 0px !important;
 }
 
 .shiganshina-btn:hover {
-    background-color: #e8e4db; /* Colore carta */
+    background-color: #e8e4db; 
     color: #a11e15 !important;
     font-size:1.1em;
     transform: translate(-2px, -2px);
@@ -1489,15 +1465,14 @@ section.map img:hover {
     color: #ffffff !important;
     font-size: 1.1em;
     border: 3px solid #000000 !important;
-    /* Ombra piatta che simula lo spessore di un timbro */
     box-shadow: 4px 4px 0px #000000;
     padding: 0.8rem 1.8rem;
-    border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
+    border: 3px solid #000000 !important; 
     border-radius: 0px !important;
 }
 
 .outside-btn:hover {
-    background-color: #e8e4db; /* Colore carta */
+    background-color: #e8e4db; 
     color: #a11e15 !important;
     font-size: 1.1em;
     transform: translate(-2px, -2px);
@@ -1518,19 +1493,18 @@ section.map img:hover {
     text-transform: uppercase;
     font-weight: 600;
     border: 3px solid #000000 !important;
-    /* Ombra piatta che simula lo spessore di un timbro */
     box-shadow: 4px 4px 0px #000000;
     padding: 0.8rem 1.8rem;
-    border: 3px solid #000000 !important; /* Bordo nero spesso e netto */
+    border: 3px solid #000000 !important; 
     border-radius: 0px !important;
 
     position: relative; 
-    z-index: 10; /* Un valore molto alto per stare sopra a tutto */
+    z-index: 10; 
     cursor: pointer;
 }
 
 .map-btn:hover {
-    background-color: #e8e4db; /* Colore carta */
+    background-color: #e8e4db; 
     color: #a11e15 !important;
     font-size: 1.1em;
     transform: translate(-2px, -2px);
@@ -1558,7 +1532,6 @@ SHIGANSHINA MAP
     overflow: hidden; 
     cursor: grab; 
     
-    /* Optional: A background color just in case they zoom out too far */
     background-color: #bee7ff; 
 }
 
@@ -2056,7 +2029,6 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /* --- Disclaimer Specific Style --- */
 
-/* Applichiamo il font a tutto ciò che sta dentro readable-text (incluso h3, p, li) */
 .readable-text, 
 .readable-text .section-title, 
 .readable-text p, 
@@ -2067,8 +2039,8 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     line-height: 1.5 !important;
     font-size: 0.85rem !important; 
     text-align: left !important;
-    -webkit-text-stroke: 0px !important; /* Toglie il bordo bianco dai titoli */
-    color: black !important; /* Assicura che il testo sia nero leggibile */
+    -webkit-text-stroke: 0px !important; 
+    color: black !important; 
 }
 
 .readable-text-links a {
@@ -2082,13 +2054,13 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 /* rule for Disclaimer title */
 .readable-text .section-title {
-    font-family: 'Oswald', sans-serif !important; /* Font leggibile */
-    font-size: 2.5rem !important;                     /* Molto più grande */
-    font-weight: 800 !important;                    /* Grassetto extra */
-    text-transform: uppercase !important;           /* Tutto maiuscolo per impatto */
-    -webkit-text-stroke: 0px !important;            /* Rimuove bordi strani */
-    color: #a11e15 !important;                      /* Rosso bordeaux come il sito */
-    margin-bottom: 25px !important;                 /* Spazio dal testo */
+    font-family: 'Oswald', sans-serif !important; 
+    font-size: 2.5rem !important;                    
+    font-weight: 800 !important;                   
+    text-transform: uppercase !important;           
+    -webkit-text-stroke: 0px !important;            
+    color: #a11e15 !important;                      
+    margin-bottom: 25px !important;                 
     display: block !important;
 }
 
@@ -2100,15 +2072,14 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     justify-content: center;
     gap: 30px;
     padding: 20px;
-    flex-wrap: nowrap; /* Forza la riga singola su PC */
+    flex-wrap: nowrap; 
 }
 
-/* Stile per ogni singola box (cliccabile) */
 .narrative-box {
     flex: 1;
     display: flex;
     flex-direction: column;
-    text-decoration: none !important; /* Rimuove la sottolineatura dei link */
+    text-decoration: none !important; 
     color: inherit;
     border: 3px solid #181818;
     border-radius: 0px;
@@ -2121,7 +2092,6 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     transform: translateY(-5px);
 }
 
-/* Immagine interna alla box */
 .narrative-box img {
     width: 100%;
     height: 250px;
@@ -2129,7 +2099,6 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     border-bottom: 2px solid #181818;
 }
 
-/* Contenitore del testo */
 .narrative-text {
     padding: 20px;
     text-align: center;
@@ -2160,52 +2129,46 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /*Style for buttons single_narrative*/
 
-/* 1. Stile base per tutti i bottoni */
 .btn-exhibit {
-    font-family: 'Oswald', sans-serif; /* Font stretto e alto, tipico dei manifesti bellici */
+    font-family: 'Oswald', sans-serif; 
     color: #1a1a1a; 
-    background-color: #7b7e5e; /* Verde militare slavato / Oliva */
+    background-color: #7b7e5e; 
     
     border: 3px solid #1a1a1a;
     outline: 2px solid #7b7e5e;
-    outline-offset: -6px; /* Crea l'effetto cornice interna */
+    outline-offset: -6px; 
     
-    border-radius: 0; /* Rigorosamente squadrato */
+    border-radius: 0; 
     padding: 12px 24px;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
     
-    /* Niente ombra rossa: solo un leggero stacco nero piatto */
     box-shadow: 4px 4px 0px #1a1a1a;
     
-    transition: all 0.1s steps(2); /* Scatto secco, non fluido */
+    transition: all 0.1s steps(2); 
     position: relative;
     cursor: pointer;
 }
 
-/* 2. Effetto Hover: Il bottone sembra "premuto" */
 .btn-exhibit:hover {
-    background-color: #5b5e43 !important; /* Verde più scuro */
-    color: #e8e4db !important; /* Testo color carta */
+    background-color: #5b5e43 !important; 
+    color: #e8e4db !important; 
     border-color: #1a1a1a;
     outline-color: #e8e4db;
     
-    /* Il bottone si schiaccia */
     box-shadow: 1px 1px 0px #1a1a1a;
     transform: translate(3px, 3px);
 }
 
-/* 3. Stile per il bottone ATTIVO (Selezionato) */
-/* Immaginiamo che sia il bottone che rappresenta l'ordine impartito */
+
 .btn-check:checked + .btn-exhibit {
-    background-color: #1a1a1a !important; /* Diventa nero inchiostro */
-    color: #aaaf81 !important; /* Testo verde militare */
+    background-color: #1a1a1a !important; 
+    color: #aaaf81 !important; 
     border-color: #1a1a1a;
     outline: 2px solid #7b7e5e;
     outline-offset: -6px;
 
-    /* Rimuove movimento e ombra per simulare la pressione totale */
     box-shadow: none;
     transform: translate(4px, 4px);
     
@@ -2215,23 +2178,20 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 
 /*Rules for images in exhibition*/
 
-/* Contenitore stile tavola manga */
 .manga-frame-container {
-    /* Rimuoviamo eventuali sfondi bianchi ereditati */
+    /* Remove eventual white inherited backgrounds */
     background: transparent !important; 
     padding: 0;
     margin-bottom: 30px;
     position: relative;
 }
 
-/* Etichetta stile "baloon" o didascalia */
-/* Contenitore stile tavola manga senza movimento */
+/* Style label */
 .manga-frame-static {
     position: relative;
     padding: 10px;
 }
 
-/* Etichetta stile didascalia manga */
 .manga-label {
     font-family: 'Anime Ace', sans-serif;
     font-size: 0.8rem;
@@ -2246,10 +2206,9 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     text-transform: uppercase;
 }
 
-/* La cornice definita e fissa */
 .manga-img-wrapper {
-    border: 5px solid #000; /* Bordo nero spesso */
-    box-shadow: 8px 8px 0px #000; /* Ombra netta e solida che non cambia */
+    border: 5px solid #000; 
+    box-shadow: 8px 8px 0px #000; 
     aspect-ratio: 16 / 10; 
     overflow: hidden;
     background-color: #000;
@@ -2260,13 +2219,11 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     height: 100%;
     object-fit: cover;
     display: block;
-    /* Rimosse tutte le transizioni di movimento */
 }
 
-/* Opzionale: se vuoi che al passaggio del mouse 
-   l'immagine diventi solo più nitida senza muoversi */
+  
 .manga-frame-static:hover img {
-    filter: brightness(1.1); /* Leggero aumento di luminosità invece del movimento */
+    filter: brightness(1.1); 
 }
 
 /*lightbox exhibition*/
@@ -2364,8 +2321,6 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     width: 100%;
     
     overflow: hidden;
-    /* Aggiungiamo un colore neutro (grigio chiaro o bianco) 
-       per riempire gli spazi vuoti che si creano ai lati */
     background-color: #f5f5f5; 
     
     cursor: zoom-in;
@@ -2373,13 +2328,12 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     align-items: center;
     justify-content: center;
     
-    /* Un minimo di padding evita che l'immagine tocchi i bordi neri, 
-       dando un effetto "cornice da museo" */
+
     padding: 10px; 
 }
 
 .manga-img-wrapper img {
-    /* Fondamentale: l'immagine si adatta alla box senza mai essere tagliata */
+    /* The image adapts to the box without being cut */
     max-width: 100%;
     max-height: 100%;
     object-fit: contain; 
@@ -2390,34 +2344,33 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .manga-img-wrapper:hover img {
-    /* Lo zoom ora è più contenuto per non far uscire l'immagine dai bordi */
+    /* Zoom is contained: the zoom is now more contained to prevent the image from exiting the borders */
     transform: scale(1.03);
 }
 
 
 /*metadata box exhibition*/
 
-/* 1. Assicuriamoci che il contenitore della riga permetta lo sticky */
+/* 1. Ensure that the container of the row let the sticky work */
 .item-detail .row {
-    align-items: flex-start; /* Fondamentale per far funzionare lo sticky */
+    align-items: flex-start; 
 }
 
-/* 2. Regola specifica per la colonna che contiene la box */
+/* 2. Rule for the box column */
 .col-md-4:has(.metadata-box) {
     position: relative; 
-    height: 100%; /* La colonna deve estendersi per tutta la lunghezza della riga */
+    height: 100%; /* the column has to extend for the entire row length*/
 }
 
-/* 3. La box dei metadati vera e propria */
-/* L'Orecchia del foglio: ALTO DESTRA */
+/* Corner top right*/
 .metadata-box {
     background-color: #212529; /* O il tuo colore scuro */
     padding: 2rem;
     position: relative;
     border: 6px solid #a11e15;
     
-    /* CLIP-PATH: Taglia via i triangoli agli angoli */
-    /* Crea un poligono che salta gli angoli Alto-DX e Basso-SX */
+    /* CLIP-PATH: Cuts off the triangles at the corners */
+    /* Creates a polygon that skips the Top-Right and Bottom-Left corners */
     clip-path: polygon(
         0% 0%,                 /* Top-Left */
         calc(100% - 40px) 0%,  /* Inizio taglio Alto-DX */
@@ -2435,21 +2388,20 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     width: 100%;
 }
 
-/* L'Orecchia del foglio: ALTO DESTRA */
+/* Corner top right*/
 .metadata-box::before {
     content: "";
     position: absolute;
-    top: -2px;    /* Leggermente all'interno per coprire bene */
+    top: -2px;    /*Internally to fully cover */
     right: -2px;
     width: 32px;
     height: 32px;
     background: linear-gradient(225deg, #f8f5f0 45%, #bab5a9 50%, #8a857a 55%);
-    /* Ombra che dà profondità alla piega */
     box-shadow: -2px 2px 4px rgba(0,0,0,0.5);
     z-index: 5;
 }
 
-/* L'Orecchia del foglio: BASSO SINISTRA */
+/* Corner bottom left*/
 .metadata-box::after {
     content: "";
     position: absolute;
@@ -2462,14 +2414,12 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     z-index: 5;
 }
 .metadata-box h5 {
-    /* Utilizza 'Oswald', il font principale delle tue testate e nav-link */
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
     color: #fce38b !important;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    /* Sostituisce la linea rossa sotto il titolo con una più spessa in stile manifesto */
     border-bottom: 4px solid #a11e15;
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -2487,22 +2437,20 @@ OUTSIDE MAP (accordion rules from shiganshina map)
 }
 
 .metadata-box strong {
-    color: #a11e15 !important; /* Il tuo rosso d'accento */
+    color: #a11e15 !important; 
 }
 
-/* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #fce38b !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
-    text-decoration: none !important; /* Rimuove la sottolineatura */
+    color: #fce38b !important; 
+    text-decoration: none !important; 
     font-weight: 700;
     transition: all 0.2s ease;
 }
 
-/* Effetto al passaggio del mouse (opzionale ma consigliato) */
 #meta-institution a:hover {
-    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
-    text-decoration: none !important; /* Si assicura che non torni la linea */
-    background-color: transparent !important; /* Nessun evidenziatore */
+    color: #fcd8d8 !important; 
+    text-decoration: none !important; 
+    background-color: transparent !important; 
 }
 
 /* DOCUMENTATION PAGE SPECIFIC STYLES */
