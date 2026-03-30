@@ -447,7 +447,7 @@ main {
 }
 
 section {
-    background-color: rgb(194, 194, 194);
+    background-color: rgb(233, 233, 233); /*194,194,194*/
     margin: 2em 3em 2em;
     padding: 0.2em;
     border: 3px solid black;
@@ -2347,4 +2347,241 @@ MOBILE-SPECIFIC STYLES:
     color: #fcd8d8 !important; /* Diventa bianco al passaggio */
     text-decoration: none !important; /* Si assicura che non torni la linea */
     background-color: transparent !important; /* Nessun evidenziatore */
+}
+
+
+/* DOCUMENTATION PAGE SPECIFIC STYLES */
+
+.documentation {
+    margin: 2em 3em 2em;
+    padding: 0.45em 1em 0.8em;
+    border: 3px solid rgb(0, 0, 0);
+    text-align: justify;
+    color: rgb(0, 0, 0);
+}
+
+.documentation .section-title {
+    padding-left: 0.8em !important;
+    margin-bottom: 0.8rem;
+    line-height: 0.95;
+}
+
+.documentation .section-subtitle {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    font-size: clamp(1.35rem, 1.1rem + 0.7vw, 1.75rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 !important;
+    flex: 1 1 auto;
+}
+
+.documentation-section-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 2px solid rgb(0, 0, 0);
+    margin: 2.4rem 0 0.85rem;
+    padding: 1.35rem 1.15rem 0 0.85rem;
+}
+
+.documentation-back-top {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-top: 0.15rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.documentation-text {
+    font-family: 'Noto Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+    margin: 0 0 1.15rem;
+    padding: 0.2rem 1.15rem 0 1.55rem !important;
+    text-wrap: pretty;
+}
+
+.documentation > .documentation-text:first-of-type {
+    font-size: 1.08rem;
+    margin-bottom: 1.2rem;
+}
+
+.documentation-index {
+    margin: 0.25rem 0.85rem 1.8rem;
+    padding: 1rem 1.15rem 0.85rem;
+    background-color: rgb(220, 220, 220);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.documentation-index-title {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 0.75rem;
+}
+
+.documentation .documentation-index ol {
+    margin: 0;
+    padding: 0 0 0 1.35rem;
+}
+
+.documentation .documentation-index li {
+    margin-bottom: 0.45rem;
+    line-height: 1.55;
+}
+
+.documentation .section-subtitle,
+.documentation h5 {
+    scroll-margin-top: calc(var(--navbar-height) + 1.25rem);
+}
+
+.documentation h5,
+.documentation h6 {
+    font-family: 'Noto Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    margin-left: 0.7rem;
+}
+
+.documentation h5 {
+    font-size: 1.18rem;
+    font-weight: 800;
+    margin-top: 1.8rem;
+    margin-bottom: 0.9rem;
+    padding-left: 0.85rem;
+    border-left: 4px solid rgb(161, 30, 21);
+}
+
+.documentation h6 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.documentation ul,
+.documentation ol {
+    font-family: 'Noto Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    margin: 0.35rem 0 1.35rem 1.5rem;
+    padding: 0 0.85rem 0 1.35rem;
+}
+
+.documentation li {
+    line-height: 1.8;
+    margin-bottom: 0.85rem;
+    padding-left: 0.2rem;
+}
+
+.documentation li::marker {
+    color: rgb(161, 30, 21);
+    font-weight: 800;
+}
+
+.documentation a {
+    color: rgb(143, 18, 13);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.16em;
+    transition: color 0.2s ease;
+}
+
+.documentation a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.documentation img {
+    display: block;
+    width: min(100%, 52rem);
+    margin: 1.5rem auto;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0.55rem 0.55rem 0 rgba(0, 0, 0, 0.28);
+}
+
+.documentation figure {
+    margin: 0.4rem 0 1.25rem;
+}
+
+.documentation figcaption {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: -0.55rem;
+    padding: 0 1.55rem;
+}
+
+@media (max-width: 576px) {
+    .documentation {
+        margin: 1em 0.5em;
+        padding: 0.4em 0.75em;
+    }
+
+    .documentation .section-title {
+        padding-left: 0.8em !important;
+        margin-bottom: 0.55rem;
+    }
+
+    .documentation .section-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .documentation-section-head {
+        gap: 0.75rem;
+        margin-top: 1.8rem;
+        padding: 1rem 0.75rem 0 0.55rem;
+    }
+
+    .documentation-back-top {
+        font-size: 0.8rem;
+        margin-top: 0.1rem;
+    }
+
+    .documentation-text,
+    .documentation ul,
+    .documentation ol {
+        font-size: 0.95rem;
+    }
+
+    .documentation-text {
+        line-height: 1.7;
+        padding: 0.2rem 0.75rem 0 1.05rem !important;
+    }
+
+    .documentation-index {
+        margin-inline: 0.55rem;
+        padding: 0.85rem 0.9rem 0.7rem;
+    }
+
+    .documentation figcaption {
+        font-size: 0.85rem;
+        padding: 0 0.9rem;
+    }
+
+    .documentation h5,
+    .documentation h6 {
+        margin-left: 0.45rem;
+    }
+
+    .documentation h5 {
+        font-size: 1.05rem;
+        padding-left: 0.65rem;
+    }
+
+    .documentation ul,
+    .documentation ol {
+        margin-left: 1rem;
+        padding-inline: 0.5rem 0.2rem;
+    }
 }
