@@ -2420,11 +2420,11 @@ OUTSIDE MAP (accordion rules from shiganshina map)
     /* Crea un poligono che salta gli angoli Alto-DX e Basso-SX */
     clip-path: polygon(
         0% 0%,                 /* Top-Left */
-        calc(100% - 30px) 0%,  /* Inizio taglio Alto-DX */
-        100% 30px,             /* Fine taglio Alto-DX */
+        calc(100% - 40px) 0%,  /* Inizio taglio Alto-DX */
+        100% 40px,             /* Fine taglio Alto-DX */
         100% 100%,             /* Bottom-Right */
-        30px 100%,             /* Inizio taglio Basso-SX */
-        0% calc(100% - 30px)   /* Fine taglio Basso-SX */
+        40px 100%,             /* Inizio taglio Basso-SX */
+        0% calc(100% - 40px)   /* Fine taglio Basso-SX */
     );
 
     /* Sticky logic */
