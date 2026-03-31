@@ -65,7 +65,7 @@ html {
     scrollbar-width: none;  
     /* 2. HIDE THE SCROLLBAR (IE and Edge legacy) */
     -ms-overflow-style: none; 
-    cursor: url('widgets/aot-gear-sword-sweezy-cursor.png'), auto; /* TODO: understand if keeping cursor or pointer */
+    cursor: url('widgets/viewfinder-cursor.png'), auto; /* TODO: understand if keeping cursor or pointer */
 }
 
 
