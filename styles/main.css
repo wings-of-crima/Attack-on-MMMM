@@ -644,7 +644,7 @@ button.btn {
 .themes #first-nine-hundred {
     font-family: 'Oswald', sans-serif;
     font-size: 1.4em;
-    color: #000000;
+    color: #fbe09c;
 }
 
 .themes #second-nine-hundred {
@@ -2288,9 +2288,8 @@ MOBILE-SPECIFIC STYLES:
 
 /*metadata box exhibition*/
 
-/* 1. Assicuriamoci che il contenitore della riga permetta lo sticky */
 .item-detail .row {
-    align-items: flex-start; /* Fondamentale per far funzionare lo sticky */
+    align-items: flex-start; 
 }
 
 /* 2. Regola specifica per la colonna che contiene la box */
@@ -2299,7 +2298,6 @@ MOBILE-SPECIFIC STYLES:
     height: 100%; /* La colonna deve estendersi per tutta la lunghezza della riga */
 }
 
-/* 3. La box dei metadati vera e propria */
 .metadata-box {
     background-color: #000;
     color: #fff !important;
@@ -2319,34 +2317,32 @@ MOBILE-SPECIFIC STYLES:
 }
 
 .metadata-box h5 {
-    color: #ffffff !important; /* Qui metti il rosso o il colore che preferisci */
-    font-family: 'Anime Ace', sans-serif; /* Opzionale: per dare lo stile manga */
+    color: #ffffff !important; 
+    font-family: 'Anime Ace', sans-serif; 
     text-transform: uppercase;
-    border-bottom: 3px solid #a11e15; /* Aggiunge una linea sotto il titolo */
+    border-bottom: 3px solid #a11e15; 
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
 .metadata-box strong {
-    color: #ffffff !important; /* Cambia questo con il colore che vuoi */
+    color: #ffffff !important; 
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 5px;
 }
 
-/* Colore del link dell'istituzione */
 #meta-institution a {
-    color: #a11e15 !important; /* Qui puoi mettere il colore che preferisci, es. Rosso */
-    text-decoration: none !important; /* Rimuove la sottolineatura */
+    color: #f71e0f !important; 
+    text-decoration: none !important; 
     font-weight: 700;
     transition: all 0.2s ease;
 }
 
-/* Effetto al passaggio del mouse (opzionale ma consigliato) */
 #meta-institution a:hover {
-    color: #fcd8d8 !important; /* Diventa bianco al passaggio */
-    text-decoration: none !important; /* Si assicura che non torni la linea */
-    background-color: transparent !important; /* Nessun evidenziatore */
+    color: #fcd8d8 !important; 
+    text-decoration: none !important; 
+    background-color: transparent !important; 
 }
 
 
