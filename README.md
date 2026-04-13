@@ -1,7 +1,6 @@
-# Attack-on-MMMM
+<h1 align='center'> ⚔️ Attack on MMMM ⚔️ </h1>
 
 ![Header and logo image of Attack on Titan from the website.](images/aot-header.png "This is a sample image.")
-
 
 Welcome to _Attack-on-MMMM_, the final project for the course of **Information Modeling and Web Technologies** taught by professor Fabio Vitali at University of Bologna.
 
@@ -14,9 +13,10 @@ We hope to pique your interest about the world of this literary and mediatic wor
 
 If you want to know more fan-based or canon information about the work you can explore this wiki which we also used as inspiration: [_Attack on Titan Wiki_](https://attackontitan.fandom.com/wiki/Attack_on_Titan_Wiki). 
 
-Here is also the link to the website of the physical museum dedicated to the artwork and its mangaka (author and artist) in Hita, Oita prefecture: [_Attack on Hita_](https://shingeki-hita.com/index.html)
+Here is also the link to the website of the physical museum dedicated to the artwork and its mangaka (author and artist) in Hita, Oita prefecture: [_Attack on Hita_](https://shingeki-hita.com/index.html).
+
 
 ## Learn more about the contributors
 
-* [Martina Marchesi](https://github.com/martinamrc)
-* [Cristina Vercelli](https://github.com/cristinavercelli)
+* 🌊 [Martina Marchesi](https://github.com/martinamrc)
+* ✨ [Cristina Vercelli](https://github.com/cristinavercelli)
